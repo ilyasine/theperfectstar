@@ -1,0 +1,367 @@
+
+.content-area {
+    padding-top: 0;
+}
+
+
+.site-title {
+    font-size: 1.375rem;
+    font-weight: 500;
+    margin: 0;
+    color: var(--bb-headings-color);
+    position: relative;
+    padding-bottom: 10px;
+    ::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #66bfba;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%;
+    }
+}
+
+.bb-template-v2 .buddypanel .bb-toggle-panel:hover {
+    background-color: #ffffff !important;
+    color: $kwf-primary-color !important;
+}
+
+.buddypanel .side-panel-menu li.current-menu-item a,
+.bb-template-v2 .buddypanel .side-panel-menu li.current-menu-item > a,
+.buddypanel .side-panel-menu li a:is(:hover,:active,:focus) {
+    background-color: #ffffff; // White background on hover or active
+    color: $kwf-primary-color !important; // Change text color on hover or active
+    border-bottom-left-radius: 28px;
+    border-top-left-radius: 28px;
+}
+
+.bb-template-v2.buddypanel-open .buddypanel .side-panel-inner li:not(.current-menu-item) a i:not(.bb-icon-angle-down) {
+    opacity: 1 !important;
+}
+
+.buddypanel {
+    box-shadow: none;
+    .side-panel-menu {
+        a {
+            color: white;
+            background-color: $kwf-primary-color;
+            width: calc(100% - 10px);
+
+            &:is(:hover, :active, :focus) {
+                color: $kwf-primary-color !important;
+                background-color: white !important;
+            }
+        }
+
+        li {
+            margin-bottom: 10px;
+            /* &.logout-last{
+                ::before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #66bfba;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    border-radius: 50%;
+                }
+                a{
+                    padding-top: 20px;
+                }
+            } */
+            &.current-menu-item {
+                a {
+                    background-color: #ffffff; // White background on hover or active
+                    color: $kwf-primary-color !important; // Change text color on hover or active
+
+                    &::after {
+                        content: '';
+                        background: $kwf-primary-color; // Use primary color for the effect
+                        height: 2em;
+                        width: 2em;
+                        position: absolute;
+                        bottom: -2em;
+                        right: 0em;
+                        border-radius: 0 15px 0 0; // Curve at the bottom-right corner
+                        box-shadow: 0 -16px 0 0 #ffffff; // Matches background color
+                        z-index: -1;
+                    }
+
+                    &::before {
+                        content: '';
+                        background: $kwf-primary-color; // Use primary color for the effect
+                        height: 2em;
+                        width: 2em;
+                        position: absolute;
+                        top: -2em;
+                        right: 0em;
+                        border-radius: 0 0 15px 0; // Curve at the top-right corner
+                        box-shadow: 0 16px 0 0 #ffffff; // Matches background color
+                        z-index: -1;
+                    }
+                }
+
+                a:hover {
+                    background-color: #ffffff; // White background on hover or active
+                    color: $kwf-primary-color !important;
+                }
+            }
+
+            a:hover {
+                background-color: #ffffff; // White background on hover or active
+                color: $kwf-primary-color !important;
+
+                &::after {
+                    content: '';
+                    background: $kwf-primary-color; // Use primary color for the effect
+                    height: 2em;
+                    width: 2em;
+                    position: absolute;
+                    bottom: -2em;
+                    right: 0em;
+                    border-radius: 0 15px 0 0; // Curve at the bottom-right corner
+                    box-shadow: 0 -16px 0 0 #ffffff; // Matches background color
+                    z-index: -1;
+                }
+
+                &::before {
+                    content: '';
+                    background: $kwf-primary-color; // Use primary color for the effect
+                    height: 2em;
+                    width: 2em;
+                    position: absolute;
+                    top: -2em;
+                    right: 0em;
+                    border-radius: 0 0 15px 0; // Curve at the top-right corner
+                    box-shadow: 0 16px 0 0 #ffffff; // Matches background color
+                    z-index: -1;
+                }
+            }
+
+            a {
+                i {
+                    margin-right: 10px;
+                    transition: color 0.3s ease;
+                }
+            }
+
+            &.current-menu-item {
+                a {
+                    i {
+                        color: $kwf-primary-color !important; // Ensure icons change color as well
+                    }
+                }
+            }
+
+            a:hover {
+                i {
+                    color: $kwf-primary-color !important; // Ensure icons change color as well
+                }
+            }
+        }
+    }
+
+
+    &.buddypanel-open {
+        .side-panel-inner {
+            li:not(.current-menu-item) {
+                a {
+                    i:not(.bb-icon-angle-down) {
+                        opacity: 1 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .side-panel-menu {
+        li:not(.current-menu-item) {
+            a:hover {
+                i:not(.bb-icon-angle-down),
+                > .bs-submenu-toggle {
+                    color: $kwf-primary-color !important;
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+.kwf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 0 20px;
+    margin: 10px auto;
+    width: 100%;
+
+    .welcome-message {
+        display: flex;
+        align-items: flex-end;
+        div{
+            display: flex;
+            align-items: baseline;
+            flex-direction: column;
+        }
+
+        p {
+            margin: 0;
+            line-height: 65px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 10px;
+
+            span {
+                font-weight: normal;
+            }
+        }
+        span.user-mention{
+            font-size: 13px;
+            margin-top: -7px;
+        }
+    }
+
+    .school-info {
+        flex: 2;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .school-display {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                border: 1px solid #d5d4d4;
+                box-shadow: -1px -1px 3px 0px #eee;
+            }
+
+            a {
+                line-height: 85px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+
+        #selected-school-avatar{
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            border: 1px solid #d5d4d4;
+            box-shadow: -1px -1px 3px 0px #eee;
+        }
+
+        .school-dropdown {
+            margin-left: 10px;
+            position: relative;
+
+            .select2-container{
+                //width: 220px !important;
+                display: flex;
+                align-items: center;
+                position: relative;
+                span.selection{
+                    position: relative;
+                }
+                #select2-school-select-container{
+                    min-width: 160px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: $kwf-primary-color;
+                    font-family: "Montserrat", Sans-serif;
+                    background: transparent;
+                }
+                &.select2-container--open{
+                    .select2-dropdown {
+                        top: 10px;
+                        //min-width: 220px;
+                    }
+                    .select2-selection--single {
+                        .select2-selection__rendered {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            img{
+                                margin-right: 8px;
+                            }
+                        }
+                        .select2-selection__arrow b{
+                            border-color: transparent transparent $kwf-text-color transparent;
+                        }  
+                    }             
+                } 
+                .select2-selection__arrow{
+                    //left: 181px;
+                    background-color: $kwf-grey-bg-color;
+                    border-radius: 50%;
+                    width: 26px;
+                    position: absolute;
+                    right: -15px;
+                    b{
+                        border-color: $kwf-text-color transparent transparent transparent;
+                    }
+                }
+            }
+            #school-select {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 5px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    .user-info {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+.select2-dropdown.school-select.select2-dropdown{
+    padding: 0;
+    &--below {
+        top: 10px !important;
+        min-width: 220px;
+        li.select2-results__option{
+            img.img-avatar {
+                width: 50px;
+                height: 50px;
+                margin-right: 8px;
+                border-radius: 50%;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+.select2-container--school-select {
+    .select2-selection--single {
+        .select2-selection__rendered {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                margin-right: 8px;
+            }
+        }
+    }
+}

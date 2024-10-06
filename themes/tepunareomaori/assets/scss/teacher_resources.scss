@@ -1,0 +1,18 @@
+@import "variables" ;
+@import "mixins" ;
+
+body.resources{
+    .welcome-teacher {
+        text-align: center;
+        p {
+           margin: 0;
+           font-weight: 500;
+        }
+        
+    }
+    .learndash-wrapper .ld-pagination {
+        display: block;
+        margin-top: 50px;
+    }
+  
+}

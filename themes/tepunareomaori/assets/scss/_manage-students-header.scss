@@ -1,0 +1,163 @@
+@import "variables";
+@import "mixins";
+
+body.groups.students {
+  .students-management-header {
+    .print_students_credentials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 8px;
+
+      /* box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+      margin: 20px;
+      padding: 20px; */
+      &_text {
+        font-size: 16px;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $kwf-hard-grey-bg-color;
+        color: $kwf-text-color;
+        border: 1px solid $kwf-hard-grey-bg-color;
+
+        &:is(:hover, :active, :focus) {
+          background-color: $kwf-hard-grey-bg-color-hover;
+          border-color: $kwf-hard-grey-bg-color-hover;
+          color: $kwf-text-color;
+        }
+
+        .print_students_inner,
+        .print_students_excel_inner {
+          border-right: 1px solid;
+          padding-right: 10px;
+        }
+
+        span.bb-icon-download {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  .account-stats-container {
+    display: flex;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 100%;
+
+    .account-stat-box {
+      flex: 1;
+      margin: 30px 20px;
+      border-right: 1px solid $kwf-border-color;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 2em;
+        color: #333;
+        font-weight: 800;
+      }
+
+      p {
+        margin: -13px 0 0;
+        color: #000;
+      }
+    }
+  }
+
+  .manage_students_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    margin-bottom: 25px;
+
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+    margin: 20px;
+    padding: 20px; */
+    .search-form-has-reset input[type="search"],
+    #buddypress .search-form-has-reset {
+      border: none;
+      box-shadow: none;
+
+      #bbp_search {
+        padding-right: 30px;
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 38px;
+        background: $kwf-grey-bg-color;
+      }
+    }
+
+    .subnav-search.members-search {
+      margin-top: 0;
+      width: 150px;
+    }
+
+    .bulk-actions {
+      .select-wrap {
+        #select2-bulk-action-selector-container {
+          font-size: 14px;
+        }
+        width: 140px;
+      }
+    }
+
+    .bulk-assign,
+    .bulk-actions,
+    .students-search-form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+
+      button {
+        background-color: $kwf-hard-grey-bg-color;
+        color: $kwf-text-color;
+        border: 1px solid $kwf-hard-grey-bg-color;
+
+        &:is(:hover, :active, :focus) {
+          background-color: $kwf-hard-grey-bg-color-hover;
+          border-color: $kwf-hard-grey-bg-color-hover;
+          color: $kwf-text-color;
+        }
+      }
+
+      .select-wrap {
+        font-size: 16px;
+      }
+
+      .dropdown-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 5px 10px;
+        margin-right: 10px; // Optional space between dropdown and CSV upload
+      }
+    }
+  }
+}
+
+.select2-dropdown.bulk-action-select {
+  padding: 0 !important;
+}

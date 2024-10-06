@@ -1,0 +1,552 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tepunareomaori\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-04 14:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.4; wp-6.2.2\n"
+"X-Domain: tprm-theme"
+
+#: template-parts/learndash-activity-template.php:150
+msgid "%"
+msgstr ""
+
+#: template-parts/learndash-activity-template.php:144
+msgid "% Completed"
+msgstr ""
+
+#. 1: formatted order total 2: total order items
+#: woocommerce/myaccount/orders.php:69 woocommerce/myaccount/dashboard.php:138
+#: woocommerce/myaccount/my-orders.php:72
+#, php-format
+msgid "%1$s for %2$s item"
+msgid_plural "%1$s for %2$s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#. %s product name
+#: woocommerce/myaccount/my-downloads.php:39
+#, php-format
+msgid "%s download remaining"
+msgid_plural "%s downloads remaining"
+msgstr[0] ""
+msgstr[1] ""
+
+#. %s: Quantity.
+#: woocommerce/global/quantity-input.php:24
+#, php-format
+msgid "%s quantity"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:43
+msgid "<span class=\"pr-atts-title\">Category:</span>"
+msgid_plural "<span class=\"pr-atts-title\">Categories:</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product/meta.php:45
+msgid "<span class=\"pr-atts-title\">Tag:</span>"
+msgid_plural "<span class=\"pr-atts-title\">Tags:</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/myaccount/form-login.php:113
+msgid "A password will be sent to your email address."
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:25
+msgid "Account details"
+msgstr ""
+
+#: woocommerce/emails/email-addresses.php:29
+msgid "Account Details :"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:73
+msgid "Add"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:48
+msgid "Addresses"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:50
+msgid "Availability:"
+msgstr ""
+
+#: woocommerce/myaccount/my-downloads.php:29
+msgid "Available downloads"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:172
+#: woocommerce/myaccount/dashboard.php:177
+#: woocommerce/myaccount/my-address.php:26
+#: woocommerce/myaccount/my-address.php:35
+#: woocommerce/myaccount/form-edit-address.php:20
+#: woocommerce/order/order-details-customer.php:32
+msgid "Billing address"
+msgstr ""
+
+#: template-parts/content-dashboard.php:161
+msgid "Classes"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:68
+#: woocommerce/myaccount/form-edit-account.php:69
+msgid "Confirm new password"
+msgstr ""
+
+#: template-parts/learndash-activity-template.php:34
+msgid "Continue Course"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:61
+msgid "Current password"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:60
+msgid "Current password (leave blank to leave unchanged)"
+msgstr ""
+
+#. Name of the template
+msgid "Dashboard"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:78
+#: woocommerce/myaccount/my-orders.php:15
+msgid "Date"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:55
+msgid "Date:"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:32
+msgid "Dimensions:"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:44
+msgid "Display name"
+msgstr ""
+
+#: woocommerce/myaccount/downloads.php:29
+msgid "Downloads"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:194
+#: woocommerce/myaccount/my-address.php:73
+msgid "Edit"
+msgstr ""
+
+#. %s: Name of current post. Only visible to screen readers
+#: template-parts/content-dashboard.php:272
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:52
+#: woocommerce/myaccount/form-edit-account.php:53
+#: woocommerce/myaccount/form-login.php:100
+msgid "Email address"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:61
+msgid "Email:"
+msgstr ""
+
+#: template-parts/learndash-activity-template.php:200
+msgid "Explore Classes"
+msgstr ""
+
+#: template-parts/learndash-activity-template.php:37
+#: template-parts/learndash-activity-template.php:195
+msgid "Explore Courses"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:32
+#: woocommerce/myaccount/form-edit-account.php:33
+msgid "First name"
+msgstr ""
+
+#. 1: Orders URL 2: Address URL 3: Account URL.
+#: woocommerce/myaccount/dashboard.php:57
+#, php-format
+msgid ""
+"From your account dashboard you can view your <a href=\"%1$s\">recent "
+"orders</a>, manage your <a href=\"%2$s\">billing address</a>, and <a "
+"href=\"%3$s\">edit your password and account details</a>."
+msgstr ""
+
+#. 1: Orders URL 2: Addresses URL 3: Account URL.
+#: woocommerce/myaccount/dashboard.php:60
+#, php-format
+msgid ""
+"From your account dashboard you can view your <a href=\"%1$s\">recent "
+"orders</a>, manage your <a href=\"%2$s\">shipping and billing addresses</a>, "
+"and <a href=\"%3$s\">edit your password and account details</a>."
+msgstr ""
+
+#: woocommerce/myaccount/downloads.php:48
+msgid "Go shop"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:111
+msgid "Go to the shop"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:57 woocommerce/myaccount/dashboard.php:126
+#: woocommerce/myaccount/my-orders.php:60
+msgctxt "hash before order number"
+msgid "#"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:36
+#, php-format
+msgid "Hello %1$s"
+msgstr ""
+
+#. 1: user display name 2: logout url
+#: woocommerce/myaccount/dashboard.php:47
+#, php-format
+msgid "Hello %1$s (not %1$s? <a href=\"%2$s\">Log out</a>)"
+msgstr ""
+
+#. URI of the theme
+#. Author URI of the theme
+msgid "https://kodingkids.ma/"
+msgstr ""
+
+#. Name of the theme
+msgid "tepunareomaori"
+msgstr ""
+
+#. Author of the theme
+msgid "KWF"
+msgstr ""
+
+#: woocommerce/myaccount/view-order.php:44
+msgid "l jS \\o\\f F Y, h:ia"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:37
+#: woocommerce/myaccount/form-edit-account.php:38
+msgid "Last name"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:29
+#: woocommerce/myaccount/form-login.php:47
+#: woocommerce/myaccount/form-login.php:71
+#: woocommerce/myaccount/form-login.php:71
+msgid "Login"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:29
+#: woocommerce/myaccount/form-login.php:67
+msgid "Lost your password?"
+msgstr ""
+
+#. Description of the theme
+msgid "More Than Computer Coding, A 360° Digital Education."
+msgstr ""
+
+#: woocommerce/myaccount/navigation.php:28 woocommerce/checkout/thankyou.php:37
+msgid "My account"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:39
+#: woocommerce/order/order-details-customer.php:35
+#: woocommerce/order/order-details-customer.php:58
+#: woocommerce/order/order-details-item.php:57
+msgid "N/A"
+msgstr ""
+
+#: template-parts/content-dashboard.php:183
+msgid "Need Help"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:65
+msgid "New password"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:64
+msgid "New password (leave blank to leave unchanged)"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:101
+msgid "Next"
+msgstr ""
+
+#: woocommerce/myaccount/downloads.php:46
+msgid "No downloads available yet."
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:109
+msgid "No order has been made yet."
+msgstr ""
+
+#: woocommerce/order/order-details.php:103
+msgid "Note:"
+msgstr ""
+
+#: woocommerce/order/order-details-item.php:74
+msgid "Notes"
+msgstr ""
+
+#: template-parts/content-dashboard.php:135
+msgid "Number of classes"
+msgstr ""
+
+#: template-parts/content-dashboard.php:139
+msgid "Number of students"
+msgstr ""
+
+#: template-parts/content-dashboard.php:175
+msgid "Onboarding"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:77
+#: woocommerce/myaccount/my-orders.php:14
+msgid "Order"
+msgstr ""
+
+#. 1: order number 2: order date 3: order status
+#: woocommerce/myaccount/view-order.php:29
+#, php-format
+msgid "Order #%1$s was placed on %2$s and is currently %3$s."
+msgstr ""
+
+#: woocommerce/order/order-details.php:46
+msgid "Order details"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:50
+msgid "Order number:"
+msgstr ""
+
+#: woocommerce/myaccount/view-order.php:38
+msgid "Order updates"
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:25
+msgid "Orders"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:58
+#: woocommerce/myaccount/form-login.php:107
+msgid "Password"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:57
+msgid "Password change"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:35
+msgid "Pay"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:73
+msgid "Payment method:"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:36
+msgid ""
+"Please enter your username or email address. You will receive a link to "
+"create a new password via email."
+msgstr ""
+
+#: woocommerce/myaccount/orders.php:97
+msgid "Previous"
+msgstr ""
+
+#: woocommerce/order/order-details.php:53
+#: woocommerce/order/order-details-item.php:35
+#: woocommerce/checkout/review-order.php:23
+msgid "Product"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:49
+msgctxt "Product quantity input tooltip"
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/order/order-details.php:54
+#: woocommerce/order/order-details-item.php:60
+msgid "Qty"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:66
+msgid "Qty:"
+msgstr ""
+
+#: woocommerce/global/quantity-input.php:24
+msgid "Quantity"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:94
+#: woocommerce/myaccount/my-orders.php:32
+msgid "Recent orders"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:84
+#: woocommerce/myaccount/form-login.php:121
+#: woocommerce/myaccount/form-login.php:121
+msgid "Register"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:66
+msgid "Remember me"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:47
+msgid "Remove this item"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:49
+msgid "Reset password"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-address.php:49
+msgid "Save address"
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:78
+msgid "Save changes"
+msgstr ""
+
+#: woocommerce/emails/email-customer-details.php:24
+#: woocommerce/emails/plain/email-customer-details.php:22
+msgid "School details"
+msgstr ""
+
+#: template-parts/content-dashboard.php:127
+msgid "School group"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:173
+#: woocommerce/myaccount/my-address.php:27
+#: woocommerce/myaccount/form-edit-address.php:20
+#: woocommerce/order/order-details-customer.php:56
+msgid "Shipping address"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:39
+#: woocommerce/order/order-details-item.php:57
+msgid "SKU:"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:28
+msgid "Specs"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:79
+#: woocommerce/myaccount/my-orders.php:16
+msgid "Status"
+msgstr ""
+
+#: woocommerce/checkout/review-order.php:85
+msgid "Subtotal"
+msgstr ""
+
+#: template-parts/content-dashboard.php:150
+msgid "Support"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:45 woocommerce/checkout/thankyou.php:101
+msgid "Thank you. Your order has been received."
+msgstr ""
+
+#: learndash/ld30/learndash-sidebar.php:500
+msgid "The final quiz is not yet available"
+msgstr ""
+
+#: woocommerce/myaccount/my-address.php:50
+msgid "The following addresses will be used on the checkout page by default."
+msgstr ""
+
+#: woocommerce/myaccount/form-edit-account.php:46
+msgid ""
+"This will be how your name will be displayed in the account section and in "
+"reviews"
+msgstr ""
+
+#: template-parts/content-dashboard.php:29
+msgid "To your digital space"
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:80
+#: woocommerce/myaccount/my-orders.php:17
+#: woocommerce/order/order-details.php:55
+#: woocommerce/order/order-details-item.php:64
+#: woocommerce/checkout/review-order.php:24
+#: woocommerce/checkout/review-order.php:132
+msgid "Total"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:67
+msgid "Total:"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:32
+msgid ""
+"Unfortunately your order cannot be processed as the originating "
+"bank/merchant has declined your transaction. Please attempt your purchase "
+"again."
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:93
+msgid "Username"
+msgstr ""
+
+#: woocommerce/myaccount/form-lost-password.php:39
+msgid "Username or email"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:54
+msgid "Username or email address"
+msgstr ""
+
+#: template-parts/learndash-activity-template.php:35
+msgid "View My Courses"
+msgstr ""
+
+#: woocommerce/myaccount/view-order.php:25
+msgid "View order"
+msgstr ""
+
+#: template-parts/content-dashboard.php:26
+msgid "Welcome"
+msgstr ""
+
+#: template-parts/learndash-activity-template.php:190
+msgid "You are not logged in."
+msgstr ""
+
+#: template-parts/learndash-activity-template.php:36
+msgid "You don't have any ongoing courses."
+msgstr ""
+
+#: woocommerce/myaccount/dashboard.php:198
+#: woocommerce/myaccount/my-address.php:71
+msgid "You have not set up this type of address yet."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:28
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:64
+msgid "Your order"
+msgstr ""
+
+#: woocommerce/checkout/thankyou.php:43
+msgid "Your Order Confirmed"
+msgstr ""

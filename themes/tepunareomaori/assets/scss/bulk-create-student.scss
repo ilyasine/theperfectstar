@@ -1,0 +1,461 @@
+@import "variables";
+@import "mixins";
+
+body .select2-container {
+  .select2-dropdown {
+    max-width: 100vw !important;
+  }
+}
+
+#bulkmultistepsform {
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+  font-family: montserrat, arial, verdana;
+  min-height: 800px;
+
+  @include mobile {
+    width: 90%;
+    margin: auto;
+  }
+
+  .select2-container {
+    &--default .select2-selection--single {
+      //border: 1px solid var(--bb-content-border-color);
+      height: fit-content;
+      border-radius: 6px;
+      overflow: auto;
+
+      .select2-selection__rendered {
+        line-height: 32px;
+        font-size: 15px;
+      }
+    }
+  }
+
+  fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+
+    @include mobile {
+      margin: 0;
+    }
+
+    label {
+      font-size: 16px;
+    }
+
+    .fieldset-body {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      // .fieldset-body-component
+      &-component {
+        display: flex;
+        flex-direction: column;
+
+        #password_strength {
+          font-size: 15px;
+        }
+      }
+
+      .kwf-preloader {
+        #tepunareomaori-preloader {
+          position: relative !important;
+          background: none !important;
+          min-height: 400px !important;
+          height: 100% !important;
+          margin-top: -60px !important;
+        }
+      }
+
+      .notice {
+        font-family: "Montserrat", Sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+
+  }
+
+  fieldset:not(:first-of-type) {
+    display: none;
+  }
+
+  input,
+  textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+
+    &:focus {
+      border-color: $kwf-primary-color;
+      outline: none;
+      color: #637373;
+    }
+
+    &.create-student {
+      width: fit-content;
+    }
+  }
+
+  .action-button {
+    width: 100px;
+    background: $kwf-secondary-color;
+    font-weight: bold;
+    color: #fff;
+    transition: 150ms;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    width: fit-content;
+  }
+
+  .action-button:hover,
+  .action-button:focus {
+    box-shadow: 0 0 0 2px $kwf-primary-hover, 0 0 0 3px $green-light-color;
+    color: #fff;
+  }
+
+  .fieldset-header {
+    margin-bottom: 50px;
+
+    .fs-title {
+      font-size: 15px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 10px;
+      background: $kwf-primary-color;
+      position: absolute;
+      width: 100%;
+      margin-left: -30px;
+      height: 35px;
+      line-height: 35px;
+      margin-top: -20px;
+      border-radius: 5px 5px 0 0;
+
+      &.error {
+        background: $kwf-accent-color;
+        border-bottom: 1px solid;
+      }
+    }
+
+    .fs-subtitle {
+      font-weight: normal;
+      font-size: 13px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      background: $kwf-secondary-color;
+      position: absolute;
+      width: 100%;
+      margin-left: -30px;
+      margin-top: 15px;
+      height: 30px;
+      line-height: 30px;
+
+      &.error {
+        background: $kwf-accent-color;
+      }
+    }
+  }
+
+  fieldset#classrooms_setup {
+    .fieldset-header {
+      margin-bottom: 40px;
+    }
+
+    .classrooms-notice {
+      font-size: 16px;
+    }
+  }
+
+  #progressbar {
+    margin: 0;
+    overflow: hidden;
+    counter-reset: step;
+    width: 100%;
+    z-index: 100;
+    position: relative;
+
+    @include mobile {
+      margin: auto 0 30px 0;
+    }
+
+    li {
+      list-style-type: none;
+      color: $kwf-primary-color;
+      text-transform: uppercase;
+      font-size: 12px;
+      width: 33.33%;
+      float: left;
+      position: relative;
+
+      &:before {
+        content: counter(step);
+        counter-increment: step;
+        width: 20px;
+        line-height: 20px;
+        display: block;
+        font-size: 10px;
+        color: #fff;
+        background: $kwf-primary-color;
+        border-radius: 3px;
+        margin: 0 auto 5px auto;
+      }
+
+      &:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: $kwf-primary-color;
+        position: absolute;
+        left: -50%;
+        top: 9px;
+        z-index: -1;
+      }
+
+      &:first-child:after {
+        content: none;
+      }
+    }
+
+    li.active {
+      color: $kwf-secondary-color;
+
+      &:before,
+      &:after {
+        background: $kwf-secondary-color;
+        color: white;
+      }
+    }
+  }
+}
+
+#bulk-create-student {
+  background: #fff;
+  border: 1px solid #e7e9ec;
+  border-radius: 4px;
+  margin-bottom: 0;
+  display: flex;
+  min-height: 700px;
+
+  fieldset {
+    .fieldset-body {
+      .template-file-text {
+        font-size: 16px;
+
+        p {
+          text-align: left;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+
+        li {
+          text-align: left;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  fieldset#template_file {
+    a.button.download_template {
+      background-color: $kwf-primary-color;
+      border-color: $kwf-primary-color;
+
+      &:is(:hover, :active, :focus) {
+        background-color: $kwf-secondary-color;
+        border-color: $kwf-secondary-color;
+      }
+    }
+
+    #student_school {
+      margin: 0;
+      font-weight: 600;
+      color: $kwf-primary-color;
+    }
+  }
+
+  fieldset#classroom_setup {
+    #groups-dropdown {
+      .select-wrap {
+        width: auto;
+      }
+    }
+  }
+
+  fieldset#file_submit {
+    a.button.new_student_link {
+      width: fit-content;
+      margin: auto;
+      background-color: $kwf-primary-color;
+      border-color: $kwf-primary-color;
+
+      &:is(:hover, :active, :focus) {
+        background-color: $kwf-secondary-color;
+        border-color: $kwf-secondary-color;
+      }
+    }
+
+    .skipped_student_notice {
+      #ignored_students_count {
+        background-color: #f9b2b8;
+        color: #333;
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-radius: 6px;
+        padding: 7px 10px;
+        font-size: 17px;
+        font-weight: 500;
+        margin-right: 10px;
+      }
+    }
+
+    .proccessed-data {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+
+      span {
+        background-color: $kwf-hard-grey-bg-color;
+        color: $kwf-text-color;
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-radius: 6px;
+        padding: 7px 10px;
+        font-size: 17px;
+        font-weight: 500;
+      }
+    }
+
+    .progress-container {
+      width: 100%;
+      background-color: #f3f3f3;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .progress-bar {
+        height: 20px;
+        background-color: $kwf-primary-color;
+        background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+        background-size: 1rem 1rem;
+        text-align: center;
+        color: white;
+        line-height: 20px;
+        /* Center text vertically */
+        width: 0%;
+        /* Initial width */
+        background-size: 40px 40px;
+        -webkit-animation: f 2s linear infinite;
+        animation: f 2s linear infinite;
+      }
+    }
+
+    .file_upload_Container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //padding: 20px;
+      position: relative;
+
+      input[type="file"]#excel_file {
+        position: relative;
+        cursor: pointer;
+        //width: fit-content;
+        width: 86%;
+        padding-left: 8%;
+
+        /* Input Button */
+        &::file-selector-button {
+          padding: 0.625rem 0.9375rem 0.625rem 2.125rem;
+          color: #fff;
+          background-color: $kwf-primary-color;
+          border: none;
+          border-radius: 0.25rem;
+          cursor: pointer;
+          width: fit-content;
+          width: 40%;
+        }
+
+        &:hover {
+          &::file-selector-button {
+            background-color: $kwf-primary-hover;
+          }
+        }
+
+        /* Button Icon */
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          left: 10%;
+          width: 0.9375rem;
+          transform: translateY(-50%);
+          color: #ffffff;
+          pointer-events: none;
+          font-family: bb-icons;
+          font-style: normal;
+          display: inline-block;
+          text-decoration: inherit;
+          width: 2em;
+          margin-right: .2em;
+          text-align: center;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1em;
+          margin-left: .2em;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          content: '\e9e8';
+        }
+      }
+
+    }
+  }
+}
+
+.disabled {
+  position: relative !important;
+  opacity: 0.5 !important;
+  color: #b2b2ac !important;
+  border-color: #bdd2cb !important;
+  background-color: #f5f5f5;
+  pointer-events: none;
+}
+
+@-webkit-keyframes f {
+  0% {
+    background-position: 40px 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes f {
+  0% {
+    background-position: 40px 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.b845efbb.css","sources":["webpack:///./src/components/Gallery.vue"],"sourcesContent":["\n.vimeography-gallery {\n  width: 90%;\n  margin: 0 auto 1rem;\n}\n"],"mappings":"AACA;;","sourceRoot":""}

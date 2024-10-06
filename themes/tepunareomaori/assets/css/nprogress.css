@@ -1,0 +1,140 @@
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+body.elementor-default.elementor-template-canvas .elementor-sticky--active{
+  padding-top: 8px;
+}
+#nprogress .bar {
+  background: #00a79d;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+}
+.sticky-header .site-header {
+  padding-top: 8px;
+}
+#site-logo .site-title img {
+  padding-bottom: 18px;
+}
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #00a79d, 0 0 5px #00a79d;
+  opacity: 1.0;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+          transform: rotate(3deg) translate(0px, -4px);
+}
+/* Remove these to get rid of the spinner */
+/* #nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 35px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#nprogress .spinner-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #00a79d;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  -webkit-animation: nprogress-spinner 700ms linear infinite;
+          animation: nprogress-spinner 700ms linear infinite;
+}
+#nprogress .spinner-inverse {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #bc1c2c;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  -webkit-animation: nprogress-spinner-inverse 700ms linear infinite;
+  animation: nprogress-spinner-inverse 700ms linear infinite;
+}
+
+@-webkit-keyframes nprogress-spinner-inverse {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(-360deg); }
+}
+@keyframes nprogress-spinner-inverse {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+} */
+/* #tepunareomaori-preloader .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#tepunareomaori-preloader .spinner-icon {
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #00a79d;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  -webkit-animation: nprogress-spinner 700ms linear infinite;
+          animation: nprogress-spinner 700ms linear infinite;
+}
+#tepunareomaori-preloader .spinner-inverse {
+  position: absolute;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #bc1c2c;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  -webkit-animation: nprogress-spinner-inverse 700ms linear infinite;
+  animation: nprogress-spinner-inverse 700ms linear infinite;
+}
+
+@-webkit-keyframes nprogress-spinner-inverse {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(-360deg); }
+}
+@keyframes nprogress-spinner-inverse {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+} */
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 800px){
+  #nprogress .spinner {
+    right: 30px;
+  }
+}

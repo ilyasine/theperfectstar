@@ -1,0 +1,55 @@
+.bb-dash-grid{
+    //.bb-dash-grid__block
+    &__block{
+        padding: 20px;
+        flex: 50%;
+        @include border-radius(8px);
+        @include box-shadow(0px 6px 10px 0px rgba(0, 0, 0, 0.03));
+        border: 1px solid $kwf-content-border-color;
+        background-color: $kwf-content-background-color;
+        @include transition (box-shadow linear .2s);
+        &:hover {
+            @include box-shadow( 0 3px 34px 0 rgba(18, 43, 70, 0.12));
+            .bb-dash-grid__title h2 {
+                color: $kwf-primary-color;
+            }
+        }
+    }
+    //.bb-dash-grid__image
+    &__image{
+        margin-bottom: 15px;
+        img{
+            max-width: 87px;
+            width: 87px;
+            height: 87px;
+        }
+    }
+    //.bb-dash-grid__frame
+    &__frame{
+        @include flexbox;
+        @include flex-direction(column);
+        text-align: center;
+        width: 100%;
+        gap: 30px;
+        max-width: 290px;
+        margin: auto;
+        @include mobile{
+            width: 50%;
+            margin: auto;
+        }
+        @include responsive(512px){
+            width: 100%;
+            margin: auto;
+        }
+    }
+    //.bb-dash-grid__title h2
+    &__title h2 {
+        font-family: 'Nunito';
+        font-size: 22px;
+        color:  $kwf-primary-color !important;
+        margin-bottom: 10px;
+        font-weight: 600;
+        @include transition (color linear .2s);
+    }
+    
+}

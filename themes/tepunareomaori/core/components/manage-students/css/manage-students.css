@@ -1,0 +1,212 @@
+.group-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.group-member {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+    width: 98vw;
+}
+
+.avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.info {
+    flex-grow: 1;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+
+    .image-grid img {
+        width: 100%; 
+        height: auto;
+        max-height: 150px;
+        object-fit: cover;
+    }
+    
+/* Modal CSS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close {
+    color: white;
+    /* position: absolute; */
+    font-size: 2rem !important;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 25vh;
+    max-height: 100px;
+    object-fit: cover;
+}
+
+img.selected {
+    border: 2px solid blue;
+}
+
+.group-member:hover {
+  box-shadow: 0 3px 24px 0 rgba(18, 43, 70, 0.08);
+}
+
+#saveButton{
+    margin-top:10px;
+    padding:5px 30px;
+}
+
+.modal-title{
+  color:white;
+  text-align: left;
+  line-height: 24px;
+  margin: -30px -20px 20px;
+  background-color: var(--bb-content-alternate-background-color);
+  padding: 17px 30px;
+  border-top-left-radius: var(--bb-block-radius);
+  border-top-right-radius: var(--bb-block-radius);
+  border-bottom: 1px solid var(--bb-content-border-color);
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-title h1 {
+    color:white;
+    margin: 0;
+}
+#saveButton:disabled{
+    color: #a7aaad !important;
+    background: #f6f7f7 !important;
+    border-color: #dcdcde !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    cursor: default;
+  }
+
+.students_credentials-search{
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.column-kwf-membership-status-kwf-inactive:hover{
+    cursor: pointer;
+}
+
+#createNewStudentModal,#changePasswordModal{
+    z-index: 99;
+}
+#createNewStudentModal .modal-content{
+    margin-top: 150px !important;
+    width: auto !important;
+}
+#createNewStudentModalForm .form-field{
+    margin-bottom: 5px;
+    text-align: center;
+}
+#createNewStudentModalForm tr td:first-child {
+    text-align: start;
+}
+#create-new-student-button{
+    padding: 10px 50px;
+}
+
+#saveChangePassword{
+	margin-top:10px;
+}
+
+#createNewStudentModal::-webkit-scrollbar {
+    display: none;
+}
+
+#changePasswordModal .modal-content{
+	margin-top: 150px;
+}
+
+
+#saveChangePassword{
+    margin-top: 10px;
+}
+
+#buddypress .password-toggle, body .password-toggle{
+    width: 50% !important;
+}
+
+.pass_img img{
+	display: none;
+}
+.pass_img .bb-icon-eye-small{
+	display: block;
+}
+
+.csvContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+input[type="file"] {
+    flex: 1;
+    margin-right: 10px;
+    border-radius: 5px;
+    width: 100px;
+}
+
+#uploadBtn {
+    flex-shrink: 0;
+}
+
+div.students_credentials_header_top{
+	align-items: center !important;
+}

@@ -1,0 +1,328 @@
+@import "variables";
+@import "mixins";
+
+.kwf-schools-navigation {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    padding-right: 30px;
+    float: left;
+
+    #bp-ajax-loader {
+        margin-top: 100px;
+    }
+
+    ul {
+        display: flex;
+        margin: 30px auto;
+        list-style: none;
+
+        li {
+            padding-right: 20px;
+
+            a {
+                color: $kwf-text-color;
+                padding: 10px 0;
+
+                .nav-item {
+                    padding-bottom: 10px;
+                    display: inline;
+                    font-weight: 500;
+                }
+
+                .count {
+                    background-color: $kwf-header-background;
+                    color: $kwf-text-color;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    @include border-radius(6px);
+                    min-width: 23px;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: -0.26px;
+                    line-height: 16px;
+                    min-width: 25px;
+                    display: inline-block;
+                    margin-left: 7px;
+                    padding: 2px 6px;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+            }
+
+            &.ui-tabs-active,
+            &.ui-state-active {
+                a {
+                    color: $kwf-primary-color;
+                    padding: 10px 0;
+
+                    .nav-item {
+                        border-bottom: 2px solid $kwf-primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+table.schools_stats {
+    border: 1px solid #6b6b6b;
+    background-color: #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Nunito';
+    overflow-wrap: anywhere;
+
+    tr {
+        th {
+            font-weight: bold;
+            background-color: $kwf-primary-button-background-regular;
+            color: #ffffff;
+
+            &:first-child {
+                border-top-left-radius: var(--bb-block-radius-inner);
+            }
+
+            &:last-child {
+                border-top-right-radius: var(--bb-block-radius-inner);
+                background-color: white;
+                border-color: white;
+
+            }
+
+            &.column-kwf-student-username,
+            &.column-kwf-student-password {
+                min-width: 180px;
+            }
+        }
+
+        &:last-child {
+            &:first-child {
+                border-bottom-left-radius: var(--bb-block-radius-inner);
+            }
+
+            &:last-child {
+                border-bottom-right-radius: var(--bb-block-radius-inner);
+            }
+        }
+
+        td {
+            &:last-child {
+                background-color: white;
+                border-color: white;
+
+                button#copyCredentials {
+                    padding: 0 9px;
+                    line-height: 37px;
+                    height: 38px;
+                    width: 38px;
+
+                    i {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            &.column-kwf-student-username,
+            &.column-kwf-student-password {
+                cursor: pointer;
+            }
+
+        }
+
+
+        &.std-alternate {
+            background-color: #ececec;
+        }
+
+        td#kwf-active {
+            font-weight: bold;
+            background-color: $kwf-primary-color;
+            color: #ffffff;
+        }
+    }
+
+    td,
+    th {
+        border: 1px solid #f5f5f5 !important;
+        text-align: center;
+        vertical-align: middle;
+
+        @include responsive(600px) {
+            width: 100%;
+            float: left;
+            text-align: left;
+        }
+    }
+
+    &.schools-accounts {
+        td.accounts {
+
+            //label
+            &-label {
+                background: rgb(161, 206, 204);
+                background: -moz-linear-gradient(355deg, rgba(161, 206, 204, 1) 0%, rgba(0, 167, 157, 1) 100%, rgba(161, 206, 204, 1) 100%);
+                background: -webkit-linear-gradient(355deg, rgba(161, 206, 204, 1) 0%, rgba(0, 167, 157, 1) 100%, rgba(161, 206, 204, 1) 100%);
+                background: linear-gradient(355deg, rgba(161, 206, 204, 1) 0%, rgba(0, 167, 157, 1) 100%, rgba(161, 206, 204, 1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a1cecc", endColorstr="#a1cecc", GradientType=1);
+                color: #ffffff;
+
+                &:first-child {
+                    border-top-left-radius: var(--bb-block-radius-inner);
+                }
+
+                &:last-child {
+                    border-top-right-radius: var(--bb-block-radius-inner);
+                }
+            }
+
+            &-count {
+                color: #ffffff;
+            }
+
+            &-school,
+            &-schools {
+                color: #000000;
+            }
+
+            &-activated {
+                background-color: #1c8600;
+            }
+
+            &-inactivated {
+                background-color: #ea1f32;
+            }
+
+            &-total {
+                background-color: #FFD845;
+                color: #000000;
+            }
+
+            &-activation-rate {
+                background-color: #1c5cb2;
+            }
+
+            &-lang {
+                background-color: #00a2e8;
+            }
+
+            /* 
+            #item-body > div > table.schools-accounts.students_credentials > tbody > tr:nth-child(2) > td.accounts-count.accounts-activated */
+
+        }
+    }
+}
+
+#groups-list.schools {
+    .ecole-group {
+        &-container {
+            position: relative;
+            margin: 40px auto;
+        }
+
+        &-cover {
+            height: 80px;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                @include border-radius(8px);
+            }
+        }
+
+        &-avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &-wrap {
+                margin-top: -40px;
+                z-index: 1;
+                @include border-radius(15px);
+
+                img {
+                    max-width: 75px;
+                    width: 100%;
+                    @include border-radius(15px);
+                }
+            }
+        }
+
+        &-main {
+            text-align: center;
+        }
+
+        &-name {
+            span.name {
+                font-size: 20px;
+                font-weight: 600;
+                color: $kwf-primary-color;
+                letter-spacing: 0.5px;
+                font-weight: 600;
+                text-shadow: 0px 0.5px $kwf-primary-color !important;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    color: $kwf-primary-button-background-regular;
+                }
+            }
+        }
+
+        &-classes-count,
+        &-students-count {
+            @include flexbox();
+            @include flex-direction(column);
+            align-items: center;
+            justify-content: center;
+
+            span.classes-count,
+            span.students-count {
+                font-size: 13px;
+            }
+
+            span.count-nbr {
+                background-color: $kwf-content-alternate-background-color;
+                @include border-radius(23px);
+                padding: 3px 9px;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: 600;
+                color: $kwf-body-background-color;
+                letter-spacing: -0.55px;
+                color: #1D2327;
+                border: 1px solid rgba(0, 0, 0, .1);
+                border-radius: 6px;
+                min-width: 23px;
+            }
+        }
+
+        &-desc {
+            text-align: center;
+
+            span.bb-current-group-kwf-ecole {
+                background: $kwf-primary-button-background-regular;
+                color: $kwf-danger-color;
+                font-size: 11px;
+                font-weight: 700;
+                @include border-radius(100px);
+                display: inline-block;
+                font-size: 13px;
+                letter-spacing: 0.25px;
+                padding: 6px 10px;
+                margin: 10px;
+                line-height: 1;
+                white-space: nowrap;
+            }
+        }
+
+    }
+}

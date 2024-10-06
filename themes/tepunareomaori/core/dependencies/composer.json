@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mpdf/mpdf": "v8.2.2",
+        "shuchkin/simplexlsxgen": "^1.4",
+        "openspout/openspout": "^4.24"
+    }
+}

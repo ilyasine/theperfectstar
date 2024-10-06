@@ -1,0 +1,40 @@
+button, .button, input[type="button"], input[type="submit"], .buddypress .buddypress-wrap .comment-reply-link, .buddypress .buddypress-wrap .generic-button a, .buddypress .buddypress-wrap a.bp-title-button, .buddypress .buddypress-wrap a.button, .buddypress .buddypress-wrap button, .buddypress .buddypress-wrap input[type="button"], .buddypress .buddypress-wrap input[type="reset"], .buddypress .buddypress-wrap input[type="submit"], .buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a, .activity-list .comment-item .activity-meta .buddyboss_edit_activity_cancel, .activity-list .comment-item .activity-meta .buddyboss_edit_activity_comment, .activity-list .comment-item .activity-meta .buddyboss_edit_activity_comment.action-save {
+    color: var(--bb-primary-button-text-regular) !important;
+}
+#groups-list.bp-list:not(.grid) {
+    display: block;
+}
+body #buddypress #header-cover-image {
+    border-radius: 0 0 35px 35px;
+}
+.groups-header #item-header-content .group-actions-absolute .groups-meta .group-subscription {
+    background-color: #00a79d !important;
+    border: 1px solid #019e7c !important;
+}
+.buddypress-wrap ul.bp-list.groups-dir-list .bs-group-cover a {
+    height: auto;
+}
+.buddypress-wrap ul.bp-list.groups-dir-list .group-item-wrap .group-parent {
+    background: var(--bb-label-background-color);
+    color: var(--bb-label-text-color);
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 100px;
+    display: inline-block;
+    padding: 6px 10px;
+    letter-spacing: 0.25px;
+    margin-top: 10px;
+}
+/* 
+    background: var(--bb-label-background-color);
+    color: var(--bb-label-text-color);
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 100px;
+    display: inline-block;
+    padding: 6px 10px;
+    letter-spacing: 0.25px;
+    margin-top: 10px;
+
+    #groups-list > li:nth-child(1) > div > div.item > div.group-item-wrap > div.item-block > div.group-parent
+*/

@@ -1,0 +1,323 @@
+body {
+    background: #f7f7f7 !important;
+}
+
+.entry-content {
+    margin-top: 60px;
+}
+
+.box-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+    font-family: "Montserrat", Sans-serif;
+}
+
+.box {
+    position: relative;
+    min-height: 330px;
+    background-color: #F0F0F0;
+    background-color: #f4f4f4;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.language-switcher {
+    display: flex;
+    display: inline-flex;
+    width: 100px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-right: 65px;
+}
+
+.language-switch>img {
+    max-width: 50px;
+    max-height: 30px;
+    cursor: pointer;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    filter: grayscale(1) blur(0.3px) opacity(0.5);
+}
+
+.language-switch>img.active {
+    filter: grayscale(0);
+}
+
+.srctitle {
+    color: #00A79D !important;
+    text-align: left;
+    margin-left: 65px;
+    line-height: 1.5;
+    font-weight: 500;
+    border-left: 7px solid #00a79c79;
+    padding-left: 10px;
+    margin: 0;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 20px;
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+
+/*==================================================
+ * TPRM_-access-box
+ * ===============================================*/
+.TPRM_-access {
+    width: 70%;
+}
+
+.TPRM_-license {
+    width: 27%;
+}
+
+.TPRM_-access:before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width: 300px;
+    background: #777;
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+
+.TPRM_-access-desc {
+    margin-bottom: 20px;
+    font-size: 20px !important;
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 500;
+}
+
+.buybtn {
+    background-color: #00A79D !important;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: none !important;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 20px;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+
+
+}
+
+.TPRM_-access .woocommerce form button.single_add_to_cart_button {
+    font-size: 18px !important;
+    padding: 1em 3em !important;
+    height: auto !important;
+}
+
+/*==================================================
+ * TPRM_-license-box
+ * ===============================================*/
+.TPRM_-license {
+    position: relative;
+}
+
+.box.TPRM_-license * {
+    font-size: 13px;
+}
+
+.TPRM_-license:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    right: 10px;
+    left: auto;
+    width: 50%;
+    top: 80%;
+    max-width: 300px;
+    background: #777;
+    -webkit-box-shadow: 0 15px 10px #777;
+    -moz-box-shadow: 0 15px 10px #777;
+    box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+.licensebtn {
+    display: inline-block;
+    background-color: #00A79D !important;
+    color: white;
+    padding: 4px 10px;
+    text-decoration: none;
+    border-radius: 20px;
+    border: none !important;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 14px !important;
+
+}
+
+.buybtn:hover,
+.licensebtn:hover,
+.buybtn:active,
+.licensebtn:active,
+.buybtn:focus,
+.licensebtn:focus {
+    background-color: #1c5cb2 !important;
+}
+
+.TPRM_Erros {
+    background-color: #BE1E2D;
+    color: #fff;
+    font-weight: 400;
+    padding: 10px;
+    margin: 10px;
+    display: none;
+    border-radius: 4px;
+}
+
+.TPRM_-license-desc {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-size: 13px !important;
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 500;
+}
+
+.licenceperdu {
+    color: #BE1E2D !important;
+    border-bottom: 1px solid
+}
+
+.formwrapTPRM_ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    /*  gap: 15px; */
+}
+
+.licenseinpt {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #00A79D;
+    border-radius: 20px;
+    display: inline-block;
+    width: 200px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+.license-paste {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+
+.license-paste i {
+    position: absolute;
+    font-size: 24px !important;
+    right: 24px;
+    top: 21px;
+    color: #019e7c;
+    cursor: pointer;
+}
+
+.license-paste i:hover,
+.license-paste i:active,
+.license-paste i:focus {
+    color: #1c5cb2;
+}
+
+.licensebtn,
+.licenseinpt {
+    flex: 1;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:1200px) {
+    .entry-content {
+        margin-top: 0px;
+    }
+
+    .box-container {
+        flex-direction: column;
+        -ms-flex-direction: column;
+    }
+
+    .box-header {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .language-switcher {
+        margin: auto;
+    }
+
+    .TPRM_-access {
+        width: 80%;
+    }
+
+    .TPRM_-license {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .TPRM_-access {
+        width: 90%;
+    }
+
+    .TPRM_-license {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .TPRM_-access {
+        width: 100%;
+    }
+
+    .TPRM_-license {
+        width: 80%;
+    }
+
+    .formwrapTPRM_ {
+        gap: 15px;
+    }
+
+    .srctitle {
+        margin-left: 0;
+    }
+}

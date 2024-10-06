@@ -1,0 +1,111 @@
+/*
+Theme Name: 	tepunareomaori
+Theme URI: 		https://tepunareomaori.co.nz/
+Description: 	Learn and grow te reo Māori online for schools, ECE, organisations and whānau
+Author: 		ilyasine
+Author URI: 	https://dev.ilyasine.com/
+License: 		GNU General Public License v3 or later
+License URI: 	http://www.gnu.org/licenses/gpl-3.0.html
+Template: 		buddyboss-theme
+Version: 		3.0.0
+*/
+
+/*
+
+-- Stylesheet locations --
+
+Add your own customizations into /css/custom.css in this child theme.
+
+Parent styles are called from /tprm-theme/inc/theme/functions.php in the 
+parent theme and are located in /tprm-theme/assets/css/ in the parent theme.
+
+
+--- If you are editing CSS via the WordPress admin, do the following ---
+
+1. Install the plugin WP Editor: http://wordpress.org/plugins/wp-editor/
+2. Navigate to Appearance > Theme Editor in the WordPress admin.
+3. Navigate into the /css/ folder of your child theme to edit custom.css.
+
+*/
+
+.bb-course-item-wrap {
+	transition: transform 0.3s ease-in-out;
+}
+
+/* Define transition states */
+/* .bb-course-item-wrap.move-up {
+    transform: translateY(calc(-100% - 20px));
+    z-index: 10000;
+    position: relative;
+}
+
+.bb-course-item-wrap.move-down {
+    transform: translateY(calc(100% + 20px));
+    z-index: 10000;
+    position: relative;
+}
+
+
+body input#user_login::placeholder, 
+body input#user_pass::placeholder {
+    color: white; 
+}
+body input#wp-submit, input#class_code, input#class_code_submit{
+	height:55px !important;
+}
+input#class_code{
+	width:80%;
+		border-radius: 100px 0px 0px 100px;
+	height:55px;
+	border:none;
+		background-color:#A1CECB;
+
+}
+input#class_code::placeholder{
+	color:white;
+}
+
+.login form#loginform label[for="user_login"]:before {
+  top:18px;
+	color:white;
+}
+
+.login .user-pass-wrap .wp-pwd:before {
+top:15px;
+	color:white;
+}
+
+.login .user-pass-wrap .wp-pwd .dashicons {
+top:15px;
+	color:white;
+	opacity:1;
+}
+input#class_code_submit{
+	color:white !important;
+	border:none;
+	height:56px !important;
+	background-color:#00a79d !important;
+	margin-left:-12% !important;
+}
+input#class_code_submit:hover{
+	background-color:#1c5cb2 !important;
+}
+
+body.login.login-split-page #login h1 a{
+	margin-left:0px !important;
+} 
+.privacy-policy-page-link {
+margin-bottom:0px!important;
+	color:#00a79d !important;
+}
+body .help-div{
+	display:none;
+}
+body.login .privacy-policy-page-link a{
+		color:#00a79d !important;
+
+}
+
+.login h1 a{
+	width:auto !important
+} */

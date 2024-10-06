@@ -1,0 +1,117 @@
+.coupon-container.email {
+  position: relative;
+  max-width: 600px;
+  position: relative;
+  margin: 25px auto;
+  display: block;
+}
+
+.coupon-container.email .coupon-container-inner {
+  display: block;
+}
+
+.coupon-container.email .code {
+  padding: 24px !important;
+  display: inline-block !important;
+  font-size: 45px !important;
+  font-weight: 900 !important;
+  font-family: "Roboto", sans-serif !important;
+  color: white !important;
+  background: rgb(234, 159, 7) !important;
+  background: -moz-linear-gradient(117deg, rgba(234, 159, 7, 1) 0%, rgba(179, 105, 14, 1) 100%, rgba(234, 159, 7, 1) 100%) !important;
+  background: -webkit-linear-gradient(117deg, rgba(234, 159, 7, 1) 0%, rgba(179, 105, 14, 1) 100%, rgba(234, 159, 7, 1) 100%) !important;
+  background: linear-gradient(117deg, rgba(234, 159, 7, 1) 0%, rgba(179, 105, 14, 1) 100%, rgba(234, 159, 7, 1) 100%) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ea9f07", endColorstr="#ea9f07", GradientType=1) !important;
+  margin: auto auto 20px auto !important;
+  display: block !important;
+  width: fit-content !important;
+
+}
+
+.coupon-container.email p {
+  font-size: 14px;
+  color: inherit;
+  display: block;
+  margin-block-start: 1em !important;
+  margin-block-end: 1em !important;
+}
+
+.coupon-container.email .coupon-explain p.next-step {
+  position: relative;
+  background: #bd2332;
+  color: white !important;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 4px 50px 50px 4px;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.coupon-container.email p.next-step>span {
+  content: '' !important;
+  top: 0 !important;
+  right: -20px !important;
+  position: absolute !important;
+  border-width: 21px 0 20px 20px !important;
+  border-style: solid !important;
+  border-color: transparent transparent transparent #bd2332 !important;
+  /* gmail + outlook */
+  border-width: 0px 0 0px 20px !important;
+}
+
+.coupon-container.email p.you-lic-code {
+  color: #00a79d;
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 130%;
+  margin: 0 0 18px;
+  text-align: left;
+  align-self: normal;
+}
+
+a.dashboard-page {
+  text-decoration: none;
+  background: rgb(234, 159, 7);
+  padding: 16px;
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+  width: fit-content;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 300ms ease;
+}
+
+a.dashboard-page:hover,
+a.dashboard-page:active,
+a.dashboard-page:focus {
+  background: #00A79D !important;
+}
+
+.woo_email_footer .footer-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 30px;
+}
+
+.woo_email_footer p.TPRM_copyright_footer {
+  font-family: system-ui, Segoe UI, sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+  color: #939598;
+}
+
+.woo_email_footer p.TPRM_footer_border {
+  border-top: solid 0.5px #dee0e1;
+  font-size: 1px;
+  width: 100%;
+  margin: 40px auto 15px auto !important;
+}

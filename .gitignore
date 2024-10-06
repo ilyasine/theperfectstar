@@ -41,6 +41,10 @@ wp-config.php
 # uncomment the next line
 #/wp-content/plugins
 
+/backups-dup-pro/
+uploads/
+wflogs/
+
 # All themes
 #
 # Note: If you wish to whitelist themes,

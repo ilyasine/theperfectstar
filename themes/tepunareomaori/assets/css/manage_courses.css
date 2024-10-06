@@ -1,0 +1,335 @@
+body.groups.courses {
+    margin: 0;
+    backface-visibility: hidden
+}
+
+body.groups.courses .courses-order-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px
+}
+
+@media screen and (max-width: 767px) {
+    body.groups.courses .courses-order-container {
+        flex-direction: column;
+        gap: 15px
+    }
+}
+
+body.groups.courses .courses-order-container .order-notice {
+    max-width: 500px;
+    text-align: center;
+    background-color: #d6fcf4;
+    margin: auto;
+    padding: 10px;
+    border-radius: var(--bb-block-radius)
+}
+
+body.groups.courses ul#courses-list.order-enabled {
+    border-left: 5px solid #ffca00
+}
+
+body.groups.courses ul#courses-list .bb-course-item-wrap.order-enabled {
+    position: relative;
+    padding-left: 35px
+}
+
+body.groups.courses ul#courses-list .bb-course-item-wrap.order-enabled::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 25px;
+    background-color: #ffca00;
+    border-radius: 0 10px 10px 0
+}
+
+body.groups.courses ul#courses-list .bb-course-item-wrap.order-enabled::after {
+    content: counter(list-item);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff
+}
+
+@media screen and (max-width: 700px) {
+    body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item {
+        flex-direction: column
+    }
+}
+
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 10px;
+    border-left: 1.4px solid #f6f6f6;
+    margin: 10px auto
+}
+
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions a.button,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions button {
+    background-color: #00a79d;
+    border-color: #00a79d
+}
+
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions a.button:is(:hover, :active, :focus),
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions button:is(:hover, :active, :focus) {
+    background-color: #1c5cb2;
+    border-color: #1c5cb2
+}
+
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions a.button#cancel_selected_course,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions button#cancel_selected_course {
+    background-color: #be1e2d;
+    border-color: #be1e2d
+}
+
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions a.button#cancel_selected_course:hover,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions a.button#cancel_selected_course:active,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions a.button#cancel_selected_course:focus,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions button#cancel_selected_course:hover,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions button#cancel_selected_course:active,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions button#cancel_selected_course:focus {
+    background-color: #ff0018;
+    border-color: #ff0018
+}
+
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions a.button#confirm_selected_course:hover,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions a.button#confirm_selected_course:active,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions a.button#confirm_selected_course:focus,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions button#confirm_selected_course:hover,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions button#confirm_selected_course:active,
+body.groups.courses ul#courses-list .bb-course-item-wrap .bb-cover-list-item .course-actions button#confirm_selected_course:focus {
+    background-color: #1c8600;
+    border-color: #1c8600
+}
+
+body.groups.courses .see-related-courses {
+    position: relative;
+    background: #fff;
+    width: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    resize: both;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 40px auto;
+    box-shadow: 0 3px 24px 0 rgba(18, 43, 70, .28);
+    font-size: 16px;
+    line-height: 1.6875rem;
+    color: var(--bb-body-text-color)
+}
+
+body.groups.courses .see-related-courses header {
+    margin-bottom: .4em
+}
+
+body.groups.courses .see-related-courses-head {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    flex-direction: column
+}
+
+body.groups.courses .see-related-courses-head h1.notes {
+    margin-bottom: 5px
+}
+
+@media screen and (max-width: 767px) {
+    body.groups.courses .see-related-courses-head {
+        flex-direction: column;
+        gap: 20px
+    }
+}
+
+body.groups.courses .see-related-courses-head-title {
+    color: #fff;
+    font-family: cursive;
+    background-color: #01a49c;
+    text-align: left;
+    line-height: 24px;
+    margin: -30px -30px 30px;
+    padding: 17px 30px;
+    border-top-left-radius: var(--bb-block-radius);
+    border-top-right-radius: var(--bb-block-radius);
+    font-size: 20px
+}
+
+body.groups.courses .see-related-courses-head-notices {
+    text-align: center;
+    background-color: #a1cecc;
+    width: 50%;
+    margin: auto;
+    padding: 5px;
+    border-radius: var(--bb-block-radius)
+}
+
+body.groups.courses .see-related-courses-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 20px
+}
+
+body.groups.courses .see-related-courses-footer a.button,
+body.groups.courses .see-related-courses-footer button {
+    background-color: #00a79d;
+    border-color: #00a79d
+}
+
+body.groups.courses .see-related-courses-footer a.button:is(:hover, :active, :focus),
+body.groups.courses .see-related-courses-footer button:is(:hover, :active, :focus) {
+    background-color: #1c5cb2;
+    border-color: #1c5cb2
+}
+
+body.groups.courses .see-related-courses-footer a.button#cancel_selected_course,
+body.groups.courses .see-related-courses-footer button#cancel_selected_course {
+    background-color: #be1e2d;
+    border-color: #be1e2d
+}
+
+body.groups.courses .see-related-courses-footer a.button#cancel_selected_course:hover,
+body.groups.courses .see-related-courses-footer a.button#cancel_selected_course:active,
+body.groups.courses .see-related-courses-footer a.button#cancel_selected_course:focus,
+body.groups.courses .see-related-courses-footer button#cancel_selected_course:hover,
+body.groups.courses .see-related-courses-footer button#cancel_selected_course:active,
+body.groups.courses .see-related-courses-footer button#cancel_selected_course:focus {
+    background-color: #ff0018;
+    border-color: #ff0018
+}
+
+body.groups.courses .see-related-courses-footer a.button#confirm_selected_course:hover,
+body.groups.courses .see-related-courses-footer a.button#confirm_selected_course:active,
+body.groups.courses .see-related-courses-footer a.button#confirm_selected_course:focus,
+body.groups.courses .see-related-courses-footer button#confirm_selected_course:hover,
+body.groups.courses .see-related-courses-footer button#confirm_selected_course:active,
+body.groups.courses .see-related-courses-footer button#confirm_selected_course:focus {
+    background-color: #1c8600;
+    border-color: #1c8600
+}
+
+body.groups.courses .see-related-courses .popup-scroll {
+    resize: both;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 400px;
+    padding: 0 1em 0 0;
+    border-radius: var(--bb-block-radius)
+}
+
+body.groups.courses .see-related-courses .popup-scroll::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    z-index: 1
+}
+
+body.groups.courses .see-related-courses .popup-scroll .ld-item-list-item-preview {
+    cursor: pointer
+}
+
+body.groups.courses .see-related-courses .popup-scroll .ld-item-name.course-preview {
+    justify-content: space-between
+}
+
+body.groups.courses .see-related-courses .popup-scroll .ld-item-name.course-preview .ld-item-link {
+    color: #00a79d !important;
+    font-family: "Montserrat", Sans-serif !important;
+    font-size: 15px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+body.groups.courses .see-related-courses .popup-scroll .ld-item-name.course-preview span.bb-icon-l {
+    font-size: 30px;
+    margin-left: 5px
+}
+
+body.groups.courses .see-related-courses .popup-scroll .ld-course-list-content {
+    margin-bottom: 30px;
+    width: 80%;
+    margin: auto auto 30px auto
+}
+
+body.groups.courses .see-related-courses .popup-scroll .preview-course-content {
+    border-bottom: 2px dashed #e2e2e3;
+    margin-bottom: 30px
+}
+
+body.groups.courses .see-related-courses .mfp-close {
+    opacity: 1;
+    width: auto;
+    padding: 10px 20px
+}
+
+body.groups.courses .bb-modal.bb_course_video_details.preview-course-container {
+    overflow: hidden
+}
+
+body.groups.courses .bb-modal.bb_course_video_details.preview-course-container .preview-course-container-head {
+    height: 50px
+}
+
+body.groups.courses .bb-modal.bb_course_video_details.preview-course-container button.mfp-close {
+    color: #333 !important;
+    right: 50px
+}
+
+body.groups.courses .bb-modal.bb_course_video_details.preview-course-container .popup-scroll {
+    resize: both;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 600px;
+    padding: 20px 20px 0 10px;
+    border-radius: var(--bb-block-radius)
+}
+
+body.groups.courses .bb-modal.bb_course_video_details.preview-course-container .popup-scroll::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    z-index: 1
+}
+
+body.groups.courses .bb-modal.bb_course_video_details.preview-course-container .popup-scroll .course-description-heading {
+    margin-bottom: 10px;
+    width: -moz-fit-content;
+    width: fit-content
+}
+
+body.groups.courses .bb-modal.bb_course_video_details.preview-course-container .popup-scroll .course-description-content {
+    background: rgba(146, 164, 183, .05);
+    padding: .5em 1em;
+    border-radius: var(--bb-block-radius);
+    margin: 20px auto
+}
+
+body.groups.courses .bb-modal.bb_course_video_details.preview-course-container .popup-scroll .course-video-embed-heading {
+    margin-bottom: 10px;
+    width: -moz-fit-content;
+    width: fit-content
+}
+
+body.groups.courses .bb-modal.bb_course_video_details.preview-course-container .popup-scroll .course-video-embed-content .fluid-width-video-wrapper iframe {
+    border-radius: var(--bb-block-radius)
+}

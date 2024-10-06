@@ -1,0 +1,309 @@
+@import "variables";
+@import "mixins";
+
+#groups-list.bp-list:not(.grid) {
+    display: block;
+}
+
+.buddypress-wrap {
+    #header-cover-image {
+        @include border-radius(0 0 35px 35px)
+    }
+
+    .bp-pagination .bp-pagination-links {
+        display: flex;
+    }
+
+    ul.bp-list.groups-dir-list .bs-group-cover a {
+        height: auto;
+    }
+
+    &#buddypress.bp-dir-hori-nav .create-class-button a {
+        background-color: $kwf-primary-color;
+        border-color: $kwf-primary-color;
+        color: #ffffff;
+        border-radius: 50px;
+        padding: 10px 20px 0px 20px;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: #ffffff;
+            background-color: $kwf-secondary-color;
+            border-color: $kwf-secondary-color;
+        }
+    }
+
+    ul.bp-list.groups-dir-list .group-item-wrap .group-parent {
+        background: var(--bb-label-background-color);
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 700;
+        border-radius: 100px;
+        display: inline-block;
+        padding: 6px 10px !important;
+        letter-spacing: 0.25px;
+        margin-top: 10px;
+        text-align: center !important;
+    }
+
+}
+
+#groups-list.bp-list.grid.bb-cover-enabled .list-title :is(:hover, :active, :focus),
+#groups-list.bp-list.grid.bb-cover-enabled .item-meta :is(:hover, :active, :focus) {
+    color: $kwf-primary-color;
+}
+
+.buddypress-wrap .filter select,
+.buddypress-wrap .filter .select2,
+.buddypress-wrap #whats-new-post-in-box select {
+    font-size: 14px;
+    width: 100% !important;
+    border-radius: 6px;
+}
+
+.groups-header #cover-image-container #item-header-cover-image .groups-meta.action {
+    align-items: center;
+
+    .disconnect-classroom-button {
+        transition: all .6s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        height: auto;
+
+        i {
+            &.bb-icon-file-export {
+                display: none;
+            }
+        }
+
+        &:hover i {
+            transform: translateX(3px);
+        }
+
+        &:hover i.bb-icon-file-export {
+            display: inline-block;
+        }
+
+        &:hover i.bb-icon-file-import {
+            display: none;
+        }
+
+    }
+}
+
+.single-headers {
+    margin-bottom: 10px;
+
+    .classroom_manage_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_left {
+            display: flex;
+            align-items: flex-end;
+            align-items: center;
+
+            .classroom_avatar {
+                margin-right: 20px;
+            }
+
+            .classroom_name {
+                font-size: 40px;
+                color: #1D2327;
+                font-weight: 500;
+                padding: 20px;
+                border-right: 1px solid $kwf-border-color;
+            }
+
+            .classroom_level {
+                font-size: 16px;
+                color: #2E2E2E;
+                padding: 20px;
+                border-right: 1px solid $kwf-border-color;
+            }
+
+            .classroom_curriculum {
+                font-size: 16px;
+                color: #2E2E2E;
+                padding: 20px;
+                border-right: 1px solid $kwf-border-color;
+
+                span.group-visibility {
+                    display: none !important;
+                }
+
+                span.group-type {
+                    background: $kwf-secondary-color;
+                    color: #ffffff;
+                    font-size: 14px;
+                    font-weight: 700;
+                    padding: 10px 15px;
+                    border-radius: 50px;
+                }
+            }
+        }
+
+        &_right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+
+            .classroom_code {
+                display: flex;
+                align-items: center;
+
+                &_inner {
+                    margin: auto;
+                    //background-color: $kwf-hard-grey-bg-color;
+                    background-color: $kwf-grey-bg-color;
+                    color: #333;
+                    //border: 1px solid $kwf-hard-grey-bg-color;
+                    border-radius: 8px;
+                    padding: 6px 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+
+                    .bb-icon-l {
+                        padding: 5px;
+                        cursor: pointer;
+                        font-size: 20px;
+                        color: $kwf-primary-color;
+                    }
+                }
+
+                &_text {
+                    font-size: 16px;
+                    font-weight: 500;
+                    text-align: center;
+                }
+
+                &_label {
+                    padding: 10px;
+                    font-size: 16px;
+                    font-family: 'Nunito';
+                }
+            }
+        }
+    }
+}
+
+.single-item.groups {
+    nav#object-nav  {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        ul{
+            flex: 1;
+            li {
+                float: left;
+                margin: 0;
+                padding: 0;
+                //background: $kwf-hard-grey-bg-color;
+                background-color: $kwf-grey-bg-color;
+                overflow: hidden;
+        
+                .bb-single-nav-item-point {
+                    &+span.count {
+                        background: $kwf-primary-hover;
+                        color: white;
+        
+                    }
+                }
+        
+                a {
+                    padding: 10px 30px !important;
+                    font-size: 15px;
+                    font-weight: 500;
+        
+                    &:hover {
+                        background-color: $kwf-green-light-hover;
+                        color: #4f4d4d;
+                    }
+                }
+        
+                &.selected {
+                    background-color: $kwf-primary-color;
+        
+                    .bb-single-nav-item-point {
+                        border-bottom: none;
+                        color: #FFF;
+        
+                        &+span.count {
+                            background: $kwf-green-light;
+                            color: $kwf-text-color;
+                        }
+                    }
+        
+                    a {
+                        font-weight: 600;
+        
+                        &:hover {
+                            background-color: $kwf-primary-hover;
+                        }
+                    }
+                }
+        
+                &:nth-last-child(2) {
+                    border-radius: 0 8px 8px 0 !important;
+                }
+        
+                &:first-child {
+                    border-radius: 8px 0 0 8px;
+                    &:nth-last-child(2) {
+                        border-radius: 8px !important;
+                    }
+                }
+            }
+        }
+       
+        .school_code {
+            display: flex;
+            align-items: center;
+
+            &_inner {
+                margin: auto;
+                //background-color: $kwf-hard-grey-bg-color;
+                background-color: $kwf-grey-bg-color;
+                color: #333;
+                //border: 1px solid $kwf-hard-grey-bg-color;
+                border-radius: 8px;
+                padding: 6px 16px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+
+                .bb-icon-l {
+                    padding: 5px;
+                    cursor: pointer;
+                    font-size: 20px;
+                    color: $kwf-primary-color;
+                }
+            }
+
+            &_text {
+                font-size: 16px;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            &_label {
+                padding: 10px;
+                font-size: 16px;
+                font-family: 'Nunito';
+            }
+        }
+    }
+ 
+
+}
+
+.tepunareomaori-theme.groups .select2-container--default .select2-selection--single .select2-selection__rendered {
+    background: $kwf-grey-bg-color;
+}

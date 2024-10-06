@@ -1,0 +1,46 @@
+*** WooCommerce Shipping Changelog ***
+
+= 1.1.1 - 2024-09-06 =
+* Fix    - Get rates button doesn't get active after correcting customs information.
+* Fix    - Accessing products from old labels when migrating shipments causes the process to stall.
+
+= 1.1.0 - 2024-09-03 =
+* New    - Support for migrating WooCommerce Shipping & Tax labels and settings.
+* Add    - Tooltip to explain disabled delete button on default origin address.
+* Add    - Necessary endpoints to load the plugin dynamically in WooCommerce.
+* Add    - Allow the WooCommerce mobile app to access API.
+* Tweak  - Move shipment tracking metabox to upper position.
+* Fix    - Browser always ask to exit the settings screen after settings has been saved.
+* Fix    - Force shipments with a purchased label to be locked.
+* Fix    - Loading plugin version in Loader class.
+
+= 1.0.5 - 2024-08-21 =
+* Add   - Show error in Onboarding Connection component.
+* Fix   - Conflict with Jetpack connection class.
+* Tweak - Change to sender checkbox text on the customs form.
+* Tweak - Added new "source" parameter to the /wpcom-connection endpoint.
+
+= 1.0.4 - 2024-08-13 =
+* Add   - New Connect component on the shipping settings page.
+* Add   - Upload sourcemaps to sentry.
+* Add   - Hook into WPCOM Connection dependency list to communicate we share logic with e.g. WooCommerce.
+* Tweak - Make composer package versions specific.
+* Tweak - Show confirmation banner after accepting Terms of Service.
+* Tweak - Hide connect banners if store currency is not supported by WooCommerce Shipping.
+* Tweak - Hide connect banners on the WooCommerce Shipping settings page.
+
+= 1.0.3 - 2024-08-02 =
+* Fix - Error accessing the continents API endpoint.
+
+= 1.0.2 - 2024-07-30 =
+* Tweak - WordPress 6.6 Compatibility.
+* Add   - Display the NUX banner on HPOS Order pages.
+
+= 1.0.1 - 2024-06-24 =
+* Tweak - Adhering to the plugin review standards.
+
+= 1.0.0 - 2024-04-18 =
+* Initial release.
+
+= 0.9.0 - 2024-03-20 =
+* Beta release.

@@ -1,0 +1,1317 @@
+# Copyright (C) 2024 The Post Grid Pro
+# This file is distributed under the same license as the The Post Grid Pro package.
+msgid ""
+msgstr ""
+"Project-Id-Version: The Post Grid Pro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-05-15 06:26+0000\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:"
+"1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;"
+"esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2024-06-27 05:23+0000\n"
+"Last-Translator: Habib Rahman\n"
+"Language-Team: বাংলা\n"
+"Language: bn_BD\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.10; wp-6.5.5"
+
+#: ../app/RtTpgPro.php:250, ../app/Widgets/VcWidget.php:53,
+#: ../app/Controllers/Admin/UpgradeController.php:41
+msgid "The Post Grid"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:128,
+#: ../app/Controllers/AjaxController.php:710
+msgid "Session error"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:120,
+#: ../app/Controllers/AjaxController.php:701,
+#: ../app/Controllers/Blocks/SliderLayout.php:246,
+#: ../app/Controllers/Blocks/SliderLayout.php:319,
+#: ../app/Controllers/Hooks/FilterHooks.php:593
+msgid "No post found"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:707
+msgid "Shortcode Id not defined"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:211,
+#: ../templates/layouts/isotope2.php:122
+msgid "Read More"
+msgstr "আমাকে পড়ুন"
+
+#: ../app/Controllers/AjaxController.php:217
+msgid "Show all"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:752
+msgid "Template Settings"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:757
+msgid "Session Expired..."
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:793,
+#: ../app/Controllers/AjaxController.php:796
+msgid "Template name"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:799
+msgid "This field is required"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:802
+msgid "Template Type"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:830
+msgid "Set Default Template"
+msgstr ""
+
+#: ../app/Controllers/AjaxController.php:836
+msgid "Save"
+msgstr ""
+
+#: ../app/Controllers/FrontEndController.php:66
+msgid "Wocommerce not Installed"
+msgstr ""
+
+#: ../app/Controllers/FrontEndController.php:62
+msgid "Product not selected"
+msgstr ""
+
+#: ../app/Controllers/FrontEndController.php:59
+msgid "Product not found"
+msgstr ""
+
+#: ../app/Controllers/FrontEndController.php:57
+msgid "Product has been added to your cart."
+msgstr ""
+
+#: ../app/Controllers/FrontEndController.php:186,
+#: ../app/Controllers/FrontEndController.php:315
+msgid "No item id found"
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:137,
+#: ../app/Controllers/LicensingController.php:257
+msgid "Session Error !!"
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:94,
+#: ../app/Controllers/LicensingController.php:185
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:102,
+#: ../app/Controllers/LicensingController.php:193
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:105,
+#: ../app/Controllers/LicensingController.php:196
+msgid "Invalid license."
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:109,
+#: ../app/Controllers/LicensingController.php:200
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:113,
+#: ../app/Controllers/LicensingController.php:204
+msgid "This appears to be an invalid license key for %s."
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:118,
+#: ../app/Controllers/LicensingController.php:209
+msgid "Your license key has reached its activation limit."
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:121,
+#: ../app/Controllers/LicensingController.php:86,
+#: ../app/Controllers/LicensingController.php:212,
+#: ../app/Controllers/LicensingController.php:178,
+#: ../app/Controllers/LicensingController.php:246
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:130
+msgid "Successfully activated"
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:133
+msgid "Deactivate License"
+msgstr ""
+
+#: ../app/Controllers/LicensingController.php:134
+msgid "Activate License"
+msgstr ""
+
+#: ../app/Controllers/ScriptController.php:219
+msgid "Loading"
+msgstr ""
+
+#: ../app/Helpers/Functions.php:148
+msgid "Download"
+msgstr ""
+
+#: ../app/Helpers/Functions.php:197
+msgid "Share on facebook"
+msgstr ""
+
+#: ../app/Helpers/Functions.php:204
+msgid "Share on twitter"
+msgstr ""
+
+#: ../app/Helpers/Functions.php:208
+msgid "Share on linkedin"
+msgstr ""
+
+#: ../app/Helpers/Functions.php:215
+msgid "Share on pinterest"
+msgstr ""
+
+#: ../app/Helpers/Functions.php:223
+msgid "Share on reddit"
+msgstr ""
+
+#: ../app/Helpers/Functions.php:236
+msgid "Share on Email"
+msgstr ""
+
+#: ../app/Helpers/Functions.php:300
+msgid "Awaiting product image"
+msgstr ""
+
+#: ../app/Models/EDD_RT_TPG_Plugin_Updater.php:311
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+
+#: ../app/Models/EDD_RT_TPG_Plugin_Updater.php:303
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+
+#: ../app/Models/EDD_RT_TPG_Plugin_Updater.php:508
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: ../app/Models/EDD_RT_TPG_Plugin_Updater.php:508
+msgid "Error"
+msgstr ""
+
+#: ../app/Widgets/VcWidget.php:64
+msgid "Short Code"
+msgstr ""
+
+#: ../app/Widgets/VcWidget.php:68
+msgid "Short Code list"
+msgstr ""
+
+#: ../app/Controllers/Admin/MenuController.php:36,
+#: ../app/Controllers/Admin/MenuController.php:37
+msgid "Taxonomy Order"
+msgstr ""
+
+#: ../app/Controllers/Admin/MetaController.php:48,
+#: ../app/Controllers/Admin/MetaController.php:76
+msgid "Category Color - The Post Grid"
+msgstr ""
+
+#: ../app/Controllers/Admin/MetaController.php:51,
+#: ../app/Controllers/Admin/MetaController.php:82
+msgid "Please add category color for The Post Grid plugins's Layout"
+msgstr ""
+
+#: ../app/Controllers/Admin/MetaController.php:55
+msgid "Upload and Image"
+msgstr ""
+
+#: ../app/Controllers/Admin/MetaController.php:57,
+#: ../app/Controllers/Admin/MetaController.php:99
+msgid "Upload an Image"
+msgstr ""
+
+#: ../app/Controllers/Admin/MetaController.php:87,
+#: ../app/Controllers/Admin/MetaController.php:92
+msgid "Category Image"
+msgstr ""
+
+#: ../app/Controllers/Admin/MetaController.php:139
+msgid "Color"
+msgstr ""
+
+#: ../app/Controllers/Admin/MetaController.php:140
+msgid "Thumb"
+msgstr ""
+
+#: ../app/Controllers/Admin/TaxOrderController.php:63,
+#: ../app/Controllers/Admin/TaxOrderController.php:98,
+#: ../app/Controllers/Admin/TaxOrderController.php:167
+msgid "Security error"
+msgstr ""
+
+#: ../app/Controllers/Admin/TaxOrderController.php:60
+msgid "Select a post type"
+msgstr ""
+
+#: ../app/Controllers/Admin/TaxOrderController.php:50
+msgid "Select one taxonomy"
+msgstr ""
+
+#: ../app/Controllers/Admin/TaxOrderController.php:57
+msgid "No terms found"
+msgstr ""
+
+#: ../app/Controllers/Admin/TaxOrderController.php:95
+msgid "No terms in list"
+msgstr ""
+
+#: ../app/Controllers/Admin/TaxOrderController.php:164
+msgid "Select a taxonomy"
+msgstr ""
+
+#: ../app/Controllers/Admin/TaxOrderController.php:161
+msgid "No term found"
+msgstr ""
+
+#: ../app/Controllers/Blocks/CategoryBlock.php:633
+msgid "Please choose few categories from the category lists."
+msgstr ""
+
+#: ../app/Controllers/Blocks/SliderLayout.php:86
+msgid "Please upgrade to pro for slider layout!"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:184
+msgctxt "Post Type General Name"
+msgid "Template Builder"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:185
+msgctxt "Post Type Singular Name"
+msgid "Template Builder"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:186,
+#: ../app/Controllers/Builder/TemplateBuilder.php:187,
+#: ../app/Controllers/Builder/TemplateBuilder.php:191,
+#: ../app/Controllers/Builder/TemplateBuilder.php:214
+msgid "Template Builder"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:188
+msgid "Template Archives"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:189
+msgid "Template Attributes"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:190
+msgid "Parent Item:"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:192
+msgid "Add New Template"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:193
+msgid "Add New"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:194
+msgid "New Template"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:195
+msgid "Edit Template"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:196
+msgid "Update Template"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:197
+msgid "View Template"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:198
+msgid "View Templates"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:199
+msgid "Search Templates"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:200
+msgid "Not found"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:201
+msgid "Not found in Trash"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:202
+msgid "Featured Image"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:203
+msgid "Set featured image"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:204
+msgid "Remove featured image"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:205
+msgid "Use as featured image"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:206
+msgid "Insert into Template"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:207
+msgid "Uploaded to this Template"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:208
+msgid "Templates list"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:209
+msgid "Templates list navigation"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:210
+msgid "Filter from list"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:215
+msgid "The Post Grid Template"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:270
+msgid "All"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:271
+msgid "Single"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:272
+msgid "Post Archive"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:273
+msgid "Author Archive"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:274
+msgid "Search Archive"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:275
+msgid "Date Archive"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:276
+msgid "Category Archive"
+msgstr ""
+
+#: ../app/Controllers/Builder/TemplateBuilder.php:277
+msgid "Tags Archive"
+msgstr ""
+
+#: ../app/Controllers/Hooks/ActionHooks.php:44
+msgid "Plugin License"
+msgstr ""
+
+#: ../app/Controllers/Hooks/ActionHooks.php:71
+msgid "Content Wrap"
+msgstr ""
+
+#: ../app/Controllers/Hooks/ActionHooks.php:89,
+#: ../app/Widgets/elementor/post-meta.php:495
+msgid "Category"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:54
+msgid "Ajax Number Pagination ( Only for Grid )"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:55
+msgid "Load more button (by ajax loading)"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:56
+msgid "Load more on scroll (by ajax loading)"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:71
+msgid "Date Range"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:86
+msgid "Feature Image Size (Small)"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:93,
+#: ../app/Controllers/Hooks/FilterHooks.php:712
+msgid "Custom Image Size"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:112
+msgid "Random"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:113
+msgid "Number of comments"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:114
+msgid "Post In"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:117
+msgid "Price"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:118
+msgid "AVG Rating"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:136
+msgid "Slider"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:142
+msgid "WooCommerce"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:149
+msgid "Easy Digital Downloads"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:166
+msgid "Grid Layout 3"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:172
+msgid "Grid Layout 4"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:178
+msgid "Grid Layout 5"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:184
+msgid "Grid Layout 6"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:188,
+#: ../app/Controllers/Hooks/FilterHooks.php:195,
+#: ../app/Controllers/Hooks/FilterHooks.php:202,
+#: ../app/Controllers/Hooks/FilterHooks.php:263,
+#: ../app/Controllers/Hooks/FilterHooks.php:270,
+#: ../app/Controllers/Hooks/FilterHooks.php:277,
+#: ../app/Controllers/Hooks/FilterHooks.php:284,
+#: ../app/Controllers/Hooks/FilterHooks.php:291,
+#: ../app/Controllers/Hooks/FilterHooks.php:298,
+#: ../app/Controllers/Hooks/FilterHooks.php:305,
+#: ../app/Controllers/Hooks/FilterHooks.php:323,
+#: ../app/Controllers/Hooks/FilterHooks.php:330
+msgid "New"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:191
+msgid "Grid Layout 7"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:198
+msgid "Grid Layout 8"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:205
+msgid "Gallery Layout"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:211
+msgid "Grid Hover 4"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:217
+msgid "Grid Hover 5"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:223
+msgid "Grid Hover 6"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:229
+msgid "Grid Hover 7"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:235
+msgid "Grid Hover 8"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:241
+msgid "Grid Hover 9"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:247
+msgid "Grid Hover 10"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:253
+msgid "Grid Hover 11"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:259
+msgid "Grid Hover 12"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:266
+msgid "Grid Hover 13"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:273
+msgid "Grid Hover 14"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:280
+msgid "Grid Hover 15"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:287
+msgid "Grid Hover 16"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:294
+msgid "Grid Hover 17"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:301
+msgid "Grid Hover 18"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:308
+msgid "List Layout 3"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:314
+msgid "List Layout 4"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:320
+msgid "List Layout 5"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:327
+msgid "List Layout 6"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:334
+msgid "Isotope Layout 2"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:340
+msgid "Isotope Layout 3"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:346
+msgid "Isotope Layout 4"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:352
+msgid "Isotope Layout 5"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:358
+msgid "Isotope Layout 6"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:364
+msgid "Isotope Layout 7"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:370
+msgid "Isotope Layout 8"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:376
+msgid "Isotope Layout 9"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:382
+msgid "Isotope Layout 10"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:388
+msgid "Isotope Layout 11"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:394
+msgid "Isotope Layout 12"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:400
+msgid "Carousel Layout 1"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:406
+msgid "Carousel Layout 2"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:412
+msgid "Carousel Layout 3"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:418
+msgid "Carousel Layout 4"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:424
+msgid "Carousel Layout 5"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:430
+msgid "Carousel Layout 6"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:436
+msgid "Carousel Layout 7"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:442
+msgid "Carousel Layout 8"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:448
+msgid "Carousel Layout 9"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:454
+msgid "Carousel Layout 10"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:460
+msgid "Carousel Layout 11"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:466
+msgid "Carousel Layout 12"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:478
+msgid "WC Layout 1"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:484
+msgid "WC Layout 2"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:490
+msgid "WC Layout 3"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:496
+msgid "WC Layout 4"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:502
+msgid "WC Carousel 1"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:508
+msgid "WC Carousel 2"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:514
+msgid "WC Isotope 1"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:520
+msgid "WC Isotope 2"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:534
+msgid "EDD Layout 1"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:540
+msgid "EDD Layout 2"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:546
+msgid "EDD Layout 3"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:552
+msgid "EDD Carousel 1"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:558
+msgid "EDD Carousel 2"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:564
+msgid "EDD Isotope 1"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:569
+msgid "EDD Isotope 2"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:598
+msgid "Margin"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:606
+msgid "Grid style"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:614
+msgid "Content will be visible for"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:617
+msgid "Allowed for all"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:618
+msgid "Leave it blank for all"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:623
+msgid "Default preview image"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:624
+msgid "Add an image for default preview"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:646
+msgid "Gutter / Padding"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:647
+msgid ""
+"Unit will be pixel, No need to give any unit. Only integer value will be "
+"valid.<br> Leave it blank for default"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:654
+msgid "Overlay color"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:659
+msgid "Overlay opacity"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:663
+msgid "Overlay opacity use only positive integer value"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:667
+msgid "Overlay top padding"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:669
+msgid ""
+"Overlay top padding use only positive integer value, e.g : 20 (with out "
+"postfix like px, em, % etc). it will displayed by %"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:694
+msgid "Border"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:724
+msgid "Social share"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:725,
+#: ../app/Widgets/elementor/post-meta.php:154
+msgid "Post View Count"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:728
+msgid "Rating (WooCommerce)"
+msgstr ""
+
+#: ../app/Controllers/Hooks/FilterHooks.php:732
+msgid "Custom Fields"
+msgstr ""
+
+#: ../app/Widgets/elementor/acf.php:33
+msgid "TPG - Advance Custom Field"
+msgstr ""
+
+#: ../app/Widgets/elementor/acf.php:57
+msgid "TPG Advance Custom Field"
+msgstr ""
+
+#: ../app/Widgets/elementor/acf.php:67
+msgid "ACF Style"
+msgstr ""
+
+#: ../app/Widgets/elementor/acf.php:78
+msgid "Wrapper Spacing"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-comment.php:32
+msgid "TPG - Comment Box"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-comment.php:57
+msgid "TPG Comment Box"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-comment.php:65
+msgid "Comment Spacing"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-comment.php:104
+msgid "Name"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-comment.php:109
+msgid "Email"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-comment.php:117
+msgid "Comment *"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-content.php:32
+msgid "TPG - Post Content"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-content.php:57,
+#: ../app/Widgets/elementor/post-thumbnail.php:61
+msgid "TPG Post Content"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-content.php:66
+msgid "Content Typography"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-content.php:74
+msgid "Paragrap Margin Bottom"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-content.php:80
+msgid "Margin bottom for each paragraph (p) item"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-content.php:87
+msgid "Content Spacing"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:34
+msgid "TPG - Post Meta"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:58
+msgid "TPG Post Meta"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:66
+msgid "Meta Visibility Options"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:75
+msgid "Post Date"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:77,
+#: ../app/Widgets/elementor/post-meta.php:90,
+#: ../app/Widgets/elementor/post-meta.php:103,
+#: ../app/Widgets/elementor/post-meta.php:131,
+#: ../app/Widgets/elementor/post-meta.php:144,
+#: ../app/Widgets/elementor/post-meta.php:156,
+#: ../app/Widgets/elementor/post-meta.php:168,
+#: ../app/Widgets/elementor/post-thumbnail.php:145,
+#: ../app/Widgets/elementor/post-thumbnail.php:157
+msgid "Show"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:78,
+#: ../app/Widgets/elementor/post-meta.php:91,
+#: ../app/Widgets/elementor/post-meta.php:104,
+#: ../app/Widgets/elementor/post-meta.php:132,
+#: ../app/Widgets/elementor/post-meta.php:145,
+#: ../app/Widgets/elementor/post-meta.php:157,
+#: ../app/Widgets/elementor/post-meta.php:169,
+#: ../app/Widgets/elementor/post-thumbnail.php:146,
+#: ../app/Widgets/elementor/post-thumbnail.php:158
+msgid "Hide"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:88
+msgid "Post Categories"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:101
+msgid "Post Author"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:113
+msgid "Author Image / Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:115
+msgid "Image"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:116
+msgid "Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:129
+msgid "Post Tags"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:142
+msgid "Post Comment Count"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:166
+msgid "Show Meta Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:178
+msgid "Additional Options"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:187
+msgid "Meta Separator"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:191
+msgid "Default - None"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:192
+msgid "Dot ( . )"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:193
+msgid "Single Slash ( / )"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:194
+msgid "Double Slash ( // )"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:195
+msgid "Hyphen ( - )"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:196
+msgid "Vertical Pipe ( | )"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:204
+msgid "Author Prefix"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:206
+msgid "By"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:221
+msgid "Change Meta Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:223
+msgid "Default"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:224
+msgid "Custom"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:237
+msgid "Author Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:252
+msgid "Category Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:267
+msgid "Date Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:282
+msgid "Tags Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:297
+msgid "Comment Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:312
+msgid "Post Count Icon"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:329
+msgid "Meta Spacing"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:349
+msgid "Meta Style"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:360
+msgid "Meta Typography"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:369
+msgid "Author Image Size"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:388
+msgid "Space between each meta"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:411
+msgid "Meta Color Options"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:420
+msgid "Meta Color"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:431
+msgid "Meta Icon Color"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:442
+msgid "Meta Link Color"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:453
+msgid "Meta Link Color - Hover"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:464
+msgid "Meta Ordering"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:482
+msgid "Meta Ordering (Drag and Drop)"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:487
+msgid "Author"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:491
+msgid "Date"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:499
+msgid "Tags"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:503
+msgid "Comment Count"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:507
+msgid "Post Count"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-meta.php:511
+msgid "Extra Field"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:36
+msgid "TPG - Post Thumbnail"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:79
+msgid "Border Style"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:83
+msgid "Top"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:84,
+#: ../app/Widgets/elementor/post-thumbnail.php:200
+msgid "Left"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:85,
+#: ../app/Widgets/elementor/post-thumbnail.php:208
+msgid "Right"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:93
+msgid "Thumbnail Spacing"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:114
+msgid "Thumbnail Border"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:122
+msgid "Border Radius"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:134
+msgid "Thumbnail Caption"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:143
+msgid "Show Caption"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:155
+msgid "Show Caption Label"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:170
+msgid "Caption Label"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:172
+msgid "Photo Credit:"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:173
+msgid "Type your title here"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:184
+msgid "Caption Style"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:196
+msgid "Alignment"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:204
+msgid "Center"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:225,
+#: ../app/Widgets/elementor/post-title.php:78
+msgid "Typography"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:237
+msgid "Caption Spacing"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:257
+msgid "Caption Color"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:271
+msgid "Caption Border Color"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-thumbnail.php:285
+msgid "Label Color"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:52
+msgid "TPG Post Title"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:60
+msgid "Choose Title Tag"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:64
+msgid "H1"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:65
+msgid "H2"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:66
+msgid "H3"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:67
+msgid "H4"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:68
+msgid "H5"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:69
+msgid "H6"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:86
+msgid "Title Color"
+msgstr ""
+
+#: ../app/Widgets/elementor/post-title.php:97
+msgid "Title Spacing"
+msgstr ""
+
+#: ../app/Widgets/elementor/social-share.php:32
+msgid "TPG - Social Share"
+msgstr ""
+
+#: ../app/Widgets/elementor/social-share.php:56
+msgid "TPG Social Share"
+msgstr ""
+
+#: ../resources/taxonomy-order.php:19
+msgid "Taxonomy Ordering"
+msgstr ""
+
+#: ../templates/search.php:23
+msgid "Search Results for: "
+msgstr ""
+
+#: ../templates/layouts/grid_hover1.php:31,
+#: ../templates/layouts/grid_hover2.php:31,
+#: ../templates/layouts/grid_hover3.php:31,
+#: ../templates/layouts/grid_hover5.php:31,
+#: ../templates/layouts/grid_hover6.php:31,
+#: ../templates/layouts/grid_hover7.php:31,
+#: ../templates/layouts/grid_layout1.php:31,
+#: ../templates/layouts/list_layout1.php:30,
+#: ../templates/layouts/list_layout2.php:40,
+#: ../templates/layouts/offset05.php:30, ../templates/layouts/offset06.php:30
+msgid "By %s"
+msgstr ""
+
+#: ../templates/layouts/wc-carousel2.php:27,
+#: ../templates/layouts/wc-isotope2.php:26, ../templates/layouts/wc2.php:35,
+#: ../templates/layouts/wc2.php:33, ../templates/layouts/wc3.php:53,
+#: ../templates/layouts/wc4.php:28
+msgid "Add To Cart"
+msgstr ""
+
+#: ../templates/layouts/wc3.php:56
+msgid "Out of stock"
+msgstr ""

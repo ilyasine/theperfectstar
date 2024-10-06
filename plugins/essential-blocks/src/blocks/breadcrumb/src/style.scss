@@ -1,0 +1,14 @@
+.eb-breadcrumb-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	.eb-breadcrumb {
+		display: inline-flex;
+		align-items: center;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}

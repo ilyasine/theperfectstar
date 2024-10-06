@@ -1,0 +1,9 @@
+<wpml-config>
+  <admin-texts>
+    <key name="TPRM_importer_mail_subject"/>
+    <key name="TPRM_importer_mail_body"/>
+  </admin-texts>
+  <custom-types>
+	<custom-type translate="1">TPRM_importer_email_template</custom-type>
+</custom-types>
+</wpml-config>

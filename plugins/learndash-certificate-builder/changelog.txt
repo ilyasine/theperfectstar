@@ -1,0 +1,8 @@
+= [1.1.1] =
+
+* Fix = Resolved missing blocks on widgets block editor page.
+
+= [1.1.0] =
+
+* Fix - Resolved fatal error related to non-prefixed Composer dependencies
+* Tweak - Added actions: `learndash_certificate_builder_uninstall`.

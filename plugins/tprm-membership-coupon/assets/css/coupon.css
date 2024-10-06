@@ -1,0 +1,322 @@
+  .coupon-container {
+    position: relative;
+    max-width: 600px;
+    position: relative;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .coupon-container-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #coupon-container-empty {
+    z-index: -100000 !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .coupon-container .code-card {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 355px;
+    aspect-ratio: 1.85;
+    margin: auto;
+    padding: 0 40px 35px 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .coupon-container .code-card.howto {
+    margin-top: 30px;
+  }
+
+  .coupon-container .sku-code {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+  }
+
+  .coupon-container h2,
+  .coupon-container p,
+  .coupon-container .code,
+  .coupon-container .btn {
+    position: relative;
+  }
+
+  .coupon-container h2 {
+    color: #023047;
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+
+  .coupon-container#coupon-container-empty p {
+    margin: 15px auto 10px auto;
+  }
+
+  .coupon-container p {
+    font-size: 16px;
+    margin: 20px;
+    /*  color: #076170; */
+  }
+
+  .coupon-explain p {
+    font-size: 16px;
+    margin: 20px;
+    text-align: left;
+  }
+
+  .coupon-explain p.next-step {
+    position: relative;
+    background: #bd2332;
+    color: white;
+    padding: 10px;
+    width: fit-content;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+  }
+
+  .coupon-explain p.next-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -20px;
+    border-width: 24px 0 23px 20px;
+    border-style: solid;
+    border-color: transparent transparent transparent #bd2332;
+  }
+
+  .coupon-container .code {
+    padding: 24px;
+    display: inline-block;
+    font-size: 45px;
+    position: absolute;
+    bottom: 64px;
+    font-weight: 900;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    background: rgb(234, 159, 7);
+    background: -moz-linear-gradient(117deg, rgba(234, 159, 7, 1) 0%, rgba(179, 105, 14, 1) 0%, rgba(234, 159, 7, 1) 100%);
+    background: -webkit-linear-gradient(117deg, rgba(234, 159, 7, 1) 0%, rgba(179, 105, 14, 1) 0%, rgba(234, 159, 7, 1) 100%);
+    background: linear-gradient(117deg, rgba(234, 159, 7, 1) 0%, rgba(179, 105, 14, 1) 0%, rgba(234, 159, 7, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ea9f07", endColorstr="#ea9f07", GradientType=1);
+  }
+
+  .coupon-container p.you-lic-code {
+    margin: 30px auto;
+  }
+
+  .coupon-container .cpnbtn {
+    text-decoration: none;
+    background: #00A79D;
+    padding: 16px;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    width: fit-content;
+    box-sizing: border-box;
+    margin: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 300ms ease;
+  }
+
+  .coupon-container .cpnbtn:hover {
+    background: rgb(234, 159, 7);
+  }
+
+  .coupon-container a.savecouponbtn {
+    text-decoration: none;
+    background: rgb(234, 159, 7);
+    padding: 16px;
+    display: inline-block;
+    width: 50%;
+    color: #fff;
+    box-sizing: border-box;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 300ms ease;
+  }
+
+  .coupon-container a.savecouponbtn:hover {
+    background: #00A79D;
+  }
+
+  /* mobile */
+
+  @media screen and (max-width:500px) {
+    .coupon-container {
+      width: 90%;
+    }
+
+    .coupon-container .code-card {
+      background-size: cover;
+    }
+
+    .coupon-container .gift {
+      width: 80px;
+      top: -20px;
+    }
+
+    .coupon-container h2 {
+      font-size: 19px;
+    }
+
+    .coupon-container p {
+      font-size: 15px;
+      margin: 15px;
+    }
+
+    .coupon-container .code {
+      font-size: 30px;
+    }
+
+    .coupon-container .cpnbtn {
+      margin-top: 15px;
+      font-size: 15px;
+    }
+  }
+
+  .coupon-container.email {
+    position: relative;
+    max-width: 600px;
+    position: relative;
+    margin: 25px auto;
+    display: block;
+  }
+
+  .coupon-container.email .coupon-container-inner {
+    display: block;
+  }
+
+  .coupon-container.email .code-card {
+    height: 333px;
+    background-size: 100% 370px;
+    width: 90% !important;
+    position: relative !important;
+  }
+
+  .coupon-container.email .code-card.howto {
+    margin-top: 0;
+    margin-bottom: 15px;
+    background-size: 100% 343px;
+  }
+
+  .coupon-container.email .code {
+    padding: 24px !important;
+    display: inline-block !important;
+    font-size: 45px !important;
+    font-weight: 900 !important;
+    font-family: "Roboto", sans-serif !important;
+    color: white !important;
+    background: rgb(234, 159, 7) !important;
+    background: -moz-linear-gradient(117deg, rgba(234, 159, 7, 1) 0%, rgba(179, 105, 14, 1) 100%, rgba(234, 159, 7, 1) 100%) !important;
+    background: -webkit-linear-gradient(117deg, rgba(234, 159, 7, 1) 0%, rgba(179, 105, 14, 1) 100%, rgba(234, 159, 7, 1) 100%) !important;
+    background: linear-gradient(117deg, rgba(234, 159, 7, 1) 0%, rgba(179, 105, 14, 1) 100%, rgba(234, 159, 7, 1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ea9f07", endColorstr="#ea9f07", GradientType=1) !important;
+
+  }
+
+  .coupon-container.email p {
+    font-size: 14px;
+    color: inherit;
+  }
+
+  .coupon-container.email .coupon-explain p.next-step {
+    position: relative;
+    background: #bd2332;
+    color: white !important;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 4px 50px 50px 4px;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: bold;
+  }
+
+  .coupon-container.email p.next-step>span {
+    content: '' !important;
+    top: 0 !important;
+    right: -20px !important;
+    position: absolute !important;
+    border-width: 21px 0 20px 20px !important;
+    border-style: solid !important;
+    border-color: transparent transparent transparent #bd2332 !important;
+    /* gmail + outlook */
+    border-width: 0px 0 0px 20px !important;
+  }
+
+  .coupon-container.email p.you-lic-code {
+    color: #00a79d;
+    display: block;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 130%;
+    margin: 0 0 18px;
+    text-align: left;
+    align-self: normal;
+  }
+
+  a.dashboard-page {
+    text-decoration: none;
+    background: rgb(234, 159, 7);
+    padding: 16px;
+    display: block;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    width: fit-content;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 300ms ease;
+  }
+
+  a.dashboard-page:hover,
+  a.dashboard-page:active,
+  a.dashboard-page:focus {
+    background: #00A79D !important;
+  }
+
+  .woo_email_footer .footer-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 30px;
+  }
+
+  .woo_email_footer p.TPRM_copyright_footer {
+    font-family: system-ui, Segoe UI, sans-serif;
+    font-size: 11px;
+    line-height: 1.6;
+    text-align: center;
+    color: #939598;
+  }
+
+  .woo_email_footer p.TPRM_footer_border {
+    border-top: solid 0.5px #dee0e1;
+    font-size: 1px;
+    width: 100%;
+    margin: 40px auto 15px auto !important;
+  }

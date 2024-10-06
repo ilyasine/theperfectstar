@@ -1,0 +1,3193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KWF Importer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-08 16:03+0000\n"
+"PO-Revision-Date: 2023-10-11 11:45+0000\n"
+"Last-Translator: Admin\n"
+"Language-Team: Français\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.4; wp-6.2.2\n"
+"X-Domain: kwf-importer"
+
+#: classes/doc.php:149
+msgid " rows deleted"
+msgstr "lignes supprimées"
+
+#: classes/import-users.php:205
+msgid "\">(email template found here)</a>"
+msgstr "\">(modèle d'e-mail trouvé ici)</a>"
+
+#: classes/doc.php:13
+msgid ""
+"(Documents should look like the one presented into screenshot. Remember you "
+"should fill the first two columns with the next values)"
+msgstr ""
+"(Les documents doivent ressembler à celui présenté dans la capture d'écran. "
+"N'oubliez pas que vous devez remplir les deux premières colonnes avec les "
+"valeurs suivantes)"
+
+#: classes/columns.php:59
+msgid ""
+"(if you load another CSV with different columns, the new ones will replace "
+"this list)"
+msgstr ""
+"(si vous chargez un autre CSV avec des colonnes différentes, les nouvelles "
+"remplaceront cette liste)"
+
+#: classes/doc.php:20
+msgid ""
+"(If you want to disable the extra profile information, please deactivate "
+"this plugin after make the import)"
+msgstr ""
+"(Si vous souhaitez désactiver les informations de profil supplémentaires, "
+"veuillez désactiver ce plugin après avoir effectué l'importation)"
+
+#: classes/doc.php:18
+msgid ""
+"(The next columns are totally customizable and you can use whatever you want."
+" All rows must contains same columns)"
+msgstr ""
+"(Les colonnes suivantes sont totalement personnalisables et vous pouvez "
+"utiliser ce que vous voulez. Toutes les lignes doivent contenir les mêmes "
+"colonnes)"
+
+#: classes/doc.php:19
+msgid "(User profile will be adapted to the kind of data you have selected)"
+msgstr ""
+"(Le profil utilisateur sera adapté au type de données que vous avez "
+"sélectionné)"
+
+#: classes/cron.php:91
+msgid "--Finished at"
+msgstr "--Terminé à"
+
+#: kwf-importer.php:141
+#, php-format
+msgid "<a href=\"%s\">Documentation</a>"
+msgstr "<a href=\"%s\">Documents</a>"
+
+#: kwf-importer.php:142
+#, php-format
+msgid "<a href=\"%s\">Settings</a>"
+msgstr "<a href=\"%s\">Paramètres</a>"
+
+#: classes/import.php:408 classes/import.php:410 classes/import.php:1037
+#: classes/import.php:1040 classes/import.php:1153 classes/import.php:1157
+#, php-format
+msgid "<em>Converted to: %s</em>"
+msgstr "<em>Converti en : %s</em>"
+
+#: addons/wp-user-manager.php:33
+msgid ""
+"<span class=\"TPRM_importer_force_reset_password_message\">Please change your "
+"password</span>"
+msgstr ""
+"<span class=\"TPRM_importer_force_reset_password_message\">Veuillez changer "
+"votre mot de passe</span>"
+
+#: addons/paid-member-subscriptions.php:31
+msgid ""
+"<strong>expiration_date (optional)</strong>: if you leave it empty, no "
+"expired date will be defined"
+msgstr ""
+"<strong>expiration_date (facultatif)</strong> : si vous le laissez vide, "
+"aucune date d'expiration ne sera définie"
+
+#: addons/paid-member-subscriptions.php:30
+msgid ""
+"<strong>start_date <em>(optional)</em></strong>: if you leave empty, current "
+"moment will be used, format is Y-m-d H:i:s"
+msgstr ""
+"<strong>start_date <em>(facultatif)</em></strong> : si vous laissez vide, le "
+"moment actuel sera utilisé, le format est Y-m-d H:i:s"
+
+#: addons/paid-member-subscriptions.php:32
+msgid ""
+"<strong>status <em>(optional)</em></strong>: if you do not fill it, active "
+"will be used"
+msgstr ""
+"<strong>statut <em>(facultatif)</em></strong> : si vous ne le remplissez pas,"
+" actif sera utilisé"
+
+#: addons/paid-member-subscriptions.php:29
+msgid ""
+"<strong>subscription_plan_id</strong>: you can find it in Paid Member "
+"Subscriptions, Subscriptions Plans "
+msgstr ""
+"<strong>subscription_plan_id</strong> : vous pouvez le trouver dans les "
+"abonnements payants des membres, les plans d'abonnement"
+
+#. Description of the plugin
+msgid "A plugin created by KWF that import and export tepunareomaori Data"
+msgstr ""
+"Un module créé par KWF qui importe et exporte des données tepunareomaori"
+
+#: classes/doc.php:92
+msgid "A string containing content about the user."
+msgstr "Une chaîne contenant du contenu sur l'utilisateur."
+
+#: classes/doc.php:87
+msgid "A string containing the user's URL for the user's web site."
+msgstr ""
+"Une chaîne contenant l'URL de l'utilisateur pour le site Web de "
+"l'utilisateur."
+
+#: classes/doc.php:86
+msgid ""
+"A string that contains a URL-friendly name for the user. The default is the "
+"user's username."
+msgstr ""
+"Une chaîne qui contient un nom convivial pour l'URL de l'utilisateur. La "
+"valeur par défaut est le nom d'utilisateur de l'utilisateur."
+
+#: classes/doc.php:34
+msgid ""
+"A string that contains user passwords. We have different options for this "
+"case:"
+msgstr ""
+"Chaîne contenant les mots de passe des utilisateurs. Nous avons différentes "
+"options pour ce cas :"
+
+#: classes/doc.php:88
+msgid ""
+"A string that will be shown on the site. Defaults to user's username. It is "
+"likely that you will want to change this, for both appearance and security "
+"through obscurity (that is if you don't use and delete the default admin "
+"user)."
+msgstr ""
+"Une chaîne qui sera affichée sur le site. Par défaut, le nom d'utilisateur "
+"de l'utilisateur. Il est probable que vous souhaitiez modifier cela, à la "
+"fois pour l'apparence et la sécurité par le biais de l'obscurité (c'est-à-"
+"dire si vous n'utilisez pas et ne supprimez pas l'utilisateur administrateur "
+"par défaut)."
+
+#: classes/export.php:137
+msgid "accepted formats"
+msgstr "formats acceptés"
+
+#: classes/actions.php:72
+msgid "Actions"
+msgstr "Actions"
+
+#: classes/cron.php:180
+msgid "Activate periodical import?"
+msgstr "Activer l'importation périodique ?"
+
+#: addons/wp-members.php:21 addons/wp-members.php:45
+msgid "Activate users when they are being imported"
+msgstr "Activer les utilisateurs lors de leur importation"
+
+#: classes/email-options.php:37
+msgid "Activate WordPress automatic email when an user is created or edited"
+msgstr ""
+"Activer l'e-mail automatique de WordPress lorsqu'un utilisateur est créé ou "
+"modifié"
+
+#: classes/email-options.php:57
+msgid ""
+"Activate WordPress automatic email when an user is updated or his password "
+"is changed"
+msgstr ""
+"Activer l'e-mail automatique de WordPress lorsqu'un utilisateur est mis à "
+"jour ou que son mot de passe est modifié"
+
+#: classes/email-templates.php:29 classes/email-templates.php:30
+msgid "Add new email template"
+msgstr "Ajouter un nouveau modèle d'e-mail"
+
+#: addons/woocommerce-membership-rightpress.php:23
+#: addons/woocommerce-membership.php:24
+msgid "Add users to membership plans"
+msgstr "Ajouter des utilisateurs aux plans d'abonnement"
+
+#: classes/import-users.php:339 classes/cron.php:293
+msgid ""
+"Administrators will not be deleted anyway. After delete users, we can choose "
+"if we want to assign their posts to another user. If you do not choose some "
+"user, content will be deleted."
+msgstr ""
+"Les administrateurs ne seront pas supprimés de toute façon. Après avoir "
+"supprimé des utilisateurs, nous pouvons choisir si nous voulons attribuer "
+"leurs messages à un autre utilisateur. Si vous ne choisissez pas "
+"d'utilisateur, le contenu sera supprimé."
+
+#: addons/advanced-custom-fields.php:27
+msgid "Advaced Custom Fields is activated"
+msgstr "Les champs personnalisés avancés sont activés"
+
+#: classes/import-groups.php:85
+msgid ""
+"After completing the processing of your groups-import.xlsx file, please "
+"ensure that you save the file as a CSV (Comma-Separated Values) file format."
+msgstr ""
+"Après avoir terminé le traitement de votre fichier groups-import.xlsx, "
+"assurez-vous d'enregistrer le fichier au format de fichier CSV (Comma-"
+"Separated Values)."
+
+#: classes/import-users.php:50
+msgid ""
+"After completing the processing of your users-import.xlsx file, please "
+"ensure that you save the file as a CSV (Comma-Separated Values) file format."
+msgstr ""
+"Après avoir terminé le traitement de votre fichier users-import.xlsx, "
+"assurez-vous d'enregistrer le fichier au format de fichier CSV (Comma-"
+"Separated Values)."
+
+#: classes/frontend.php:185
+msgid ""
+"After delete users, we can choose if we want to assign their posts to "
+"another user. Please do not delete them or posts will be deleted."
+msgstr ""
+"Après avoir supprimé des utilisateurs, nous pouvons choisir si nous voulons "
+"attribuer leurs messages à un autre utilisateur. Veuillez ne pas les "
+"supprimer ou les messages seront supprimés."
+
+#: classes/frontend.php:204 classes/import-users.php:358 classes/cron.php:312
+msgid ""
+"After import users which is not present in the CSV and can be changed to a "
+"different role."
+msgstr ""
+"Après avoir importé des utilisateurs qui ne sont pas présents dans le CSV et "
+"qui peuvent être modifiés pour un rôle différent."
+
+#: classes/html.php:94
+msgctxt "all dropdown items"
+msgid "All"
+msgstr "Tous"
+
+#: classes/email-templates.php:28
+msgid "All email template"
+msgstr "Tous les modèles d'e-mail"
+
+#: classes/export.php:103
+msgid "All roles"
+msgstr "Tous les rôles"
+
+#: kwf-importer.php:118
+msgid "All settings"
+msgstr "Tous les paramètres"
+
+#: addons/allow-multiple-accounts.php:28 addons/allow-multiple-accounts.php:47
+msgid "Allow Multiple Accounts"
+msgstr "Autoriser plusieurs comptes"
+
+#: addons/allow-multiple-accounts.php:38
+msgid "Allow Multiple Accounts compatibility"
+msgstr "Autoriser la compatibilité de plusieurs comptes"
+
+#: addons/allow-multiple-accounts.php:17
+msgid "Allow multiple accounts compatibility"
+msgstr "Autoriser la compatibilité de plusieurs comptes"
+
+#: addons/allow-multiple-accounts.php:28 addons/allow-multiple-accounts.php:47
+msgid ""
+"Allow multiple user accounts to be created having the same email address."
+msgstr ""
+"Autoriser la création de plusieurs comptes d'utilisateurs avec la même "
+"adresse e-mail."
+
+#: addons/allow-multiple-accounts.php:26
+msgid "Allowed"
+msgstr "Autorisé"
+
+#: addons/woocommerce-subscriptions.php:764
+msgid ""
+"An error occurred when trying to add the shipping item to the subscription, "
+"a subscription not been created for this row."
+msgstr ""
+"Une erreur s'est produite lors de la tentative d'ajout de l'article "
+"d'expédition à l'abonnement, un abonnement n'a pas été créé pour cette ligne."
+
+#: addons/woocommerce-subscriptions.php:652
+#, php-format
+msgid ""
+"An unexpected error occurred when trying to add product \"%s\" to your "
+"subscription. The error was caught and no subscription for this row will be "
+"created. Please fix up the data from your CSV and try again."
+msgstr ""
+"Une erreur inattendue s'est produite lors de la tentative d'ajout du produit "
+"\"%s\" à votre abonnement. L'erreur a été détectée et aucun abonnement pour "
+"cette ligne ne sera créé. Veuillez corriger les données de votre CSV et "
+"réessayer."
+
+#: classes/help.php:13 classes/donate.php:12
+msgid "and all the team of"
+msgstr "et toute l'équipe de"
+
+#: addons/buddypress.php:138
+msgid "And the role assigned in this group:"
+msgstr "Et le rôle attribué dans ce groupe :"
+
+#: classes/help.php:37
+msgid "and the team of"
+msgstr "et l'équipe de"
+
+#: addons/groups.php:30
+msgid "Another option is use group_name as the column title"
+msgstr "Une autre option consiste à utiliser group_name comme titre de colonne"
+
+#: classes/frontend.php:276
+msgid "Any meta_key"
+msgstr "N'importe quelle meta_key"
+
+#: classes/doc.php:109
+msgid "Any question about it"
+msgstr "Toute question à ce sujet"
+
+#: addons/new-user-approve.php:17
+msgid "Approve users at the same time is being created"
+msgstr "Approuver les utilisateurs en même temps est en cours de création"
+
+#: addons/new-user-approve.php:21
+msgid "Approve users when they are being imported"
+msgstr "Approuver les utilisateurs lors de leur importation"
+
+#: classes/import-users.php:440
+msgid ""
+"Are you sure to delete ALL CSV files uploaded? There can be CSV files from "
+"other plugins."
+msgstr ""
+"Êtes-vous sûr de supprimer TOUS les fichiers CSV téléchargés ? Il peut y "
+"avoir des fichiers CSV d'autres plugins."
+
+#: classes/cron.php:395
+msgid ""
+"Are you sure to delete all users that are not present in the CSV? This "
+"action cannot be undone."
+msgstr ""
+"Êtes-vous sûr de supprimer tous les utilisateurs qui ne sont pas présents "
+"dans le CSV ? Cette action ne peut pas être annulée."
+
+#: classes/import-users.php:420
+msgid "Are you sure to delete this file?"
+msgstr "Êtes-vous sûr de vouloir supprimer ce fichier ?"
+
+#: classes/columns.php:119
+msgid ""
+"Are you sure to reset all fields, it will delete current fields and they "
+"will restored in next import"
+msgstr ""
+"Êtes-vous sûr de réinitialiser tous les champs, cela supprimera les champs "
+"actuels et ils seront restaurés lors de la prochaine importation"
+
+#: classes/import-users.php:398
+msgid "Are you sure you want to disables roles from this users?"
+msgstr "Voulez-vous vraiment désactiver les rôles de ces utilisateurs ?"
+
+#: classes/doc.php:135
+msgid "Are you sure?"
+msgstr "Es-tu sûr?"
+
+#: classes/doc.php:66
+msgid "Arrays with string keys"
+msgstr "Tableaux avec des clés de chaîne"
+
+#: classes/email-templates.php:115 classes/email-templates.php:127
+#: classes/email-options.php:127
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#: classes/frontend.php:258
+msgid "Attribute columns"
+msgstr "Colonnes d'attributs"
+
+#: classes/frontend.php:70
+msgid "Attribute delete-only-specified-role"
+msgstr "Attribut delete-only-specified-role"
+
+#: classes/frontend.php:246
+msgid "Attribute delimiter"
+msgstr "Délimiteur d'attribut"
+
+#: classes/frontend.php:234
+msgid "Attribute from"
+msgstr "Attribut de"
+
+#: classes/frontend.php:283
+msgid "Attribute order"
+msgstr "Ordre des attributs"
+
+#: classes/frontend.php:252
+msgid "Attribute order-alphabetically"
+msgstr "Ordre des attributs par ordre alphabétique"
+
+#: classes/frontend.php:264
+msgid "Attribute orderby"
+msgstr "Orderby d'attribut"
+
+#: classes/frontend.php:64 classes/frontend.php:228
+msgid "Attribute role"
+msgstr "Rôle d'attribut"
+
+#: classes/frontend.php:240
+msgid "Attribute to"
+msgstr "Attribuer à"
+
+#: classes/cron.php:258
+msgid "Auto rename after move?"
+msgstr "Renommer automatiquement après déplacement ?"
+
+#: addons/wp-user-avatar.php:35
+msgid "avatar_url as the column title"
+msgstr "avatar_url comme titre de colonne"
+
+#: addons/buddypress.php:100
+msgid "BuddyPress & BuddyBoss compatibility"
+msgstr "Compatibilité BuddyPress et BuddyBoss"
+
+#: classes/import.php:907
+msgid ""
+"BuddyPress is not installed or the Groups component is not activated. Cannot "
+"continue."
+msgstr ""
+"BuddyPress n'est pas installé ou le composant Groupes n'est pas activé. "
+"Impossible de continuer."
+
+#: addons/buddypress.php:133
+msgid "BuddyPress or BuddyBoss is activated"
+msgstr "BuddyPress ou BuddyBoss est activé"
+
+#: addons/buddypress.php:124
+msgid "BuddyPress/BuddyBoss avatar"
+msgstr "Avatar BuddyPress/BuddyBoss"
+
+#: addons/buddypress.php:105
+msgid "BuddyPress/BuddyBoss users"
+msgstr "Utilisateurs de BuddyPress/BuddyBoss"
+
+#: addons/buddypress.php:141
+msgid "But you will have to assign a role for each group:"
+msgstr "Mais vous devrez attribuer un rôle à chaque groupe :"
+
+#: classes/help.php:12 classes/donate.php:11
+msgid "buy me a coffee"
+msgstr "achète-moi un café"
+
+#: classes/cron.php:319
+msgid "Call cron process using REST-API"
+msgstr "Appeler le processus cron à l'aide de REST-API"
+
+#: classes/frontend.php:191 classes/import-users.php:345 classes/cron.php:299
+msgid "Change role of users that are not present in the CSV?"
+msgstr ""
+"Changer le rôle des utilisateurs qui ne sont pas présents dans le CSV ?"
+
+#: classes/frontend.php:438
+msgid "Choose file"
+msgstr "Choisir le fichier"
+
+#: classes/wp-importer.php:35
+msgid "Choose options..."
+msgstr "Choisissez les options..."
+
+#: classes/email-options.php:296
+msgid "Choose or upload file"
+msgstr "Choisissez ou téléchargez un fichier"
+
+#: classes/import.php:1192
+#, php-format
+msgid ""
+"Classe called \"%s\" with ID \"%s\" already exists under the school \"%s\", "
+"we ignore it"
+msgstr ""
+"La classe appelée \"%s\" avec l'ID \"%s\" existe déjà sous l'école \"%s\", "
+"nous l'ignorons"
+
+#: classes/helper.php:418
+msgid "Classes created"
+msgstr "Classes créées"
+
+#: classes/helper.php:426
+msgid "Classes deleted"
+msgstr "Classes supprimées"
+
+#: classes/helper.php:414
+msgid "Classes processed"
+msgstr "Classes traitées"
+
+#: classes/helper.php:422
+msgid "Classes updated"
+msgstr "Classes mises à jour"
+
+#: classes/import-groups.php:159 classes/import-users.php:82
+msgid "click here"
+msgstr "Cliquez ici"
+
+#: classes/import-users.php:515
+msgid "Click to open/close"
+msgstr "Cliquez pour ouvrir/fermer"
+
+#: classes/helper.php:60
+msgid "Colon"
+msgstr "Côlon"
+
+#: addons/learndash.php:26
+msgid "Column "
+msgstr "Colonne"
+
+#: classes/export.php:108
+msgid "Columns"
+msgstr "Colonnes"
+
+#: classes/doc.php:12
+msgid "Columns position"
+msgstr "Emplacement des colonnes"
+
+#: classes/helper.php:59
+msgid "Comma"
+msgstr "Virgule"
+
+#: classes/export.php:133
+msgid "Convert timestamp data to date format"
+msgstr "Convertir les données d'horodatage au format de date"
+
+#: classes/frontend.php:59 classes/frontend.php:223
+msgid "Copy to clipboard"
+msgstr "Copier dans le presse-papier"
+
+#: addons/woocommerce-subscriptions.php:715
+msgid ""
+"Could not add the fee to your subscription, the subscription has not been "
+"imported."
+msgstr ""
+"Impossible d'ajouter les frais à votre abonnement, l'abonnement n'a pas été "
+"importé."
+
+#: addons/woocommerce-subscriptions.php:275
+#, php-format
+msgid "Could not create subscription: %s"
+msgstr "Impossible de créer l'abonnement : %s"
+
+#: addons/woocommerce-subscriptions.php:556
+#, php-format
+msgid "Could not find coupon with code \"%s\" in your store."
+msgstr ""
+"Impossible de trouver le coupon avec le code \"%s\" dans votre boutique."
+
+#: addons/woocommerce-subscriptions.php:500
+#, php-format
+msgid ""
+"Could not set payment method as PayPal, defaulted to manual renewals. Either "
+"PayPal was not enabled or your PayPal account does not have Reference "
+"Transaction setup. Learn more about enabling Reference Transactions "
+"%1$shere%2$s."
+msgstr ""
+"Impossible de définir le mode de paiement sur PayPal, par défaut les "
+"renouvellements manuels. Soit PayPal n'a pas été activé, soit votre compte "
+"PayPal n'a pas de configuration de transaction de référence. En savoir plus "
+"sur l'activation des transactions de référence %1$she%2$s."
+
+#: addons/woocommerce-subscriptions.php:576
+#, php-format
+msgid "Coupon \"%s\" could not be added to subscription."
+msgstr "Le coupon \"%s\" n'a pas pu être ajouté à l'abonnement."
+
+#: classes/doc.php:102
+msgid "Cron"
+msgstr "Cron"
+
+#: classes/doc.php:103
+msgid ""
+"Cron tab allows you to make periodical imports using the WordPress cron "
+"scheduler."
+msgstr ""
+"L'onglet Cron vous permet d'effectuer des importations périodiques à l'aide "
+"du planificateur WordPress cron."
+
+#: classes/cron.php:375
+msgid "Cron task successfully executed"
+msgstr ""
+"Tâche périodique exécutée avec succès\n"
+
+#: classes/import-groups.php:147 classes/import-users.php:70
+msgid "CSV file (required)"
+msgstr "Fichier CSV (obligatoire)"
+
+#: classes/frontend.php:437
+msgid "CSV file <span class=\"description\">(required)</span>"
+msgstr "Fichier CSV <span class=\"description\">(obligatoire)</span>"
+
+#: classes/import.php:347 classes/import.php:967
+msgid ""
+"CSV file seems to be bad formed. Please use LibreOffice to create and manage "
+"CSV to be sure the format is correct"
+msgstr ""
+"Le fichier CSV semble être mal formé. Veuillez utiliser LibreOffice pour "
+"créer et gérer CSV afin de vous assurer que le format est correct"
+
+#: classes/import-groups.php:80 classes/import-users.php:47
+msgid "CSV file structure must match with the sample."
+msgstr "La structure du fichier CSV doit correspondre à l'échantillon."
+
+#: classes/import-groups.php:97 classes/import-users.php:88
+msgid "CSV Sample"
+msgstr "Échantillon CSV"
+
+#: classes/email-templates.php:81
+msgid "current site login url"
+msgstr "URL de connexion actuelle au site"
+
+#: addons/customer-area.php:27
+msgid "customer_area_groups as the column title"
+msgstr "customer_area_groups comme titre de colonne"
+
+#: classes/email-options.php:113
+msgid "Customize the email that can be sent when importing users"
+msgstr ""
+"Personnalisez l'e-mail qui peut être envoyé lors de l'importation "
+"d'utilisateurs"
+
+#: addons/woocommerce-subscriptions.php:81
+#, php-format
+msgid ""
+"Data format: use the column names <a href=\"%s\">described here</a>, except "
+"the ones that are not used because we have the own ones:"
+msgstr ""
+"Format des données : utilisez les noms de colonne <a href=\"%s\">décrits "
+"ici</a>, à l'exception de ceux qui ne sont pas utilisés car nous en avons "
+"nos propres :"
+
+#: classes/email-options.php:37
+msgid "Deactivate WordPress automatic email when an user is created or edited"
+msgstr ""
+"Désactiver l'e-mail automatique de WordPress lorsqu'un utilisateur est créé "
+"ou modifié"
+
+#: classes/email-options.php:57
+msgid ""
+"Deactivate WordPress automatic email when an user is updated or his password "
+"is changed"
+msgstr ""
+"Désactiver l'e-mail automatique de WordPress lorsqu'un utilisateur est mis à "
+"jour ou que son mot de passe est modifié"
+
+#: classes/frontend.php:81 classes/import-users.php:138
+msgid "Default role"
+msgstr "Rôle par défaut"
+
+#: classes/import-users.php:533
+msgid "Delete"
+msgstr "Supprimer"
+
+#: classes/import-users.php:523
+msgid "Delete all CSV files uploaded"
+msgstr "Supprimer tous les fichiers CSV téléchargés"
+
+#: classes/doc.php:79
+msgid "Delete all metadata forcing password change for all users"
+msgstr ""
+"Supprimer toutes les métadonnées forçant le changement de mot de passe pour "
+"tous les utilisateurs"
+
+#: classes/frontend.php:183 classes/import-users.php:477
+#: classes/import-users.php:599 classes/cron.php:290
+msgid "Delete posts of deleted users without assigning to any user"
+msgstr ""
+"Supprimer les messages des utilisateurs supprimés sans les attribuer à aucun "
+"utilisateur"
+
+#: classes/import-users.php:336
+msgid ""
+"Delete posts of deleted users without assigning to any user or type to "
+"search a user"
+msgstr ""
+"Supprimer les messages des utilisateurs supprimés sans attribuer à aucun "
+"utilisateur ou type pour rechercher un utilisateur"
+
+#: classes/import-users.php:192
+msgid "Delete the metadata"
+msgstr "Supprimer les métadonnées"
+
+#: classes/frontend.php:172 classes/import-users.php:326 classes/cron.php:279
+msgid "Delete users that are not present in the CSV?"
+msgstr "Supprimer les utilisateurs qui ne sont pas présents dans le CSV ?"
+
+#: classes/export.php:122
+msgid "Delimiter"
+msgstr "Délimiteur"
+
+#: classes/helper.php:350 classes/helper.php:357
+msgid "Details"
+msgstr "Détails"
+
+#: classes/help.php:13 classes/help.php:37 classes/donate.php:12
+msgid "developers of this plugin."
+msgstr "développeurs de ce plugin."
+
+#: classes/cron.php:230
+msgid "Disable role assignment in cron import"
+msgstr "Désactiver l'attribution de rôle dans l'importation cron"
+
+#: classes/frontend.php:88
+msgid "Disable role assignment in frontend import"
+msgstr "Désactiver l'attribution de rôle dans l'importation frontale"
+
+#: classes/email-options.php:90
+msgid "Disable WP Editor:"
+msgstr "Désactiver l'éditeur WP :"
+
+#: addons/wp-members.php:20 addons/wp-members.php:44
+msgid "Do not activate users"
+msgstr "Ne pas activer les utilisateurs"
+
+#: addons/new-user-approve.php:20
+msgid "Do not approve users"
+msgstr "Ne pas approuver les utilisateurs"
+
+#: classes/help.php:9 classes/donate.php:8
+msgid "Do you like it?"
+msgstr "Aimez-vous?"
+
+#: classes/email-options.php:95
+msgid "Do you want to disable WP Editor?"
+msgstr "Voulez-vous désactiver WP Editor ?"
+
+#: classes/email-options.php:79
+msgid "Do you want to enable mail templates?"
+msgstr "Voulez-vous activer les modèles de courrier ?"
+
+#: classes/frontend.php:104
+msgid "Do you wish to send a mail with credentials and other data?"
+msgstr ""
+"Souhaitez-vous envoyer un e-mail avec des informations d'identification et "
+"d'autres données ?"
+
+#: classes/frontend.php:107 classes/import-users.php:208
+msgid ""
+"Do you wish to send this mail also to users that are being updated? (not "
+"only to the one which are being created)"
+msgstr ""
+"Souhaitez-vous également envoyer cet e-mail aux utilisateurs en cours de "
+"mise à jour ? (pas seulement à celui qui est en train d'être créé)"
+
+#: kwf-importer.php:104 classes/import.php:123 classes/doc.php:8
+msgid "Documentation"
+msgstr "Documentation"
+
+#: classes/export.php:148
+msgid "Double encapsulate serialized values"
+msgstr "Double encapsulation des valeurs sérialisées"
+
+#: classes/export.php:157
+msgid "Download"
+msgstr "Télécharger"
+
+#: addons/woocommerce-subscriptions.php:82
+#, php-format
+msgid "Download <a href=\"%s\">this sample file</a> to see how it works"
+msgstr ""
+"Téléchargez <a href=\"%s\">cet exemple de fichier</a> pour voir comment cela "
+"fonctionne"
+
+#: classes/export.php:155
+msgid "Download CSV file with users"
+msgstr "Télécharger le fichier CSV avec les utilisateurs"
+
+#: classes/doc.php:125
+msgid "Download this"
+msgstr "Téléchargez ceci"
+
+#: classes/email-templates.php:32
+msgid "Edit email template"
+msgstr "Modifier le modèle d'e-mail"
+
+#: classes/import.php:516 classes/import.php:573
+#, php-format
+msgid "Email has changed, new user created with username %s"
+msgstr ""
+"L'e-mail a changé, un nouvel utilisateur a été créé avec le nom "
+"d'utilisateur %s"
+
+#: classes/import.php:464 classes/import.php:465
+msgid "Email not specified"
+msgstr "E-mail non spécifié"
+
+#: classes/email-templates.php:46
+msgid "Email template list navigation"
+msgstr "Navigation dans la liste des modèles d'e-mail"
+
+#: classes/email-templates.php:23
+msgid "Email templates"
+msgstr "Modèles d'e-mails"
+
+#: classes/email-templates.php:24
+msgid "Email templates (Import and Export Users and Customers)"
+msgstr ""
+"Modèles d'e-mails (importation et exportation d'utilisateurs et de clients)"
+
+#: classes/email-options.php:71
+msgid "Email templates from this plugin"
+msgstr "Modèles d'e-mails de ce plugin"
+
+#: classes/doc.php:16
+msgid "Email:"
+msgstr "E-mail:"
+
+#: classes/email-options.php:75
+msgid "Enable mail templates:"
+msgstr "Activer les modèles d'e-mail :"
+
+#: classes/export.php:24
+msgid ""
+"Error thrown in the server, we cannot continue. Please check console to see "
+"full details about the error."
+msgstr ""
+"Erreur renvoyée dans le serveur, nous ne pouvons pas continuer. Veuillez "
+"vérifier la console pour voir tous les détails sur l'erreur."
+
+#: classes/import.php:214 classes/import.php:244
+msgid "Error, path to file is not well written"
+msgstr "Erreur, le chemin d'accès au fichier n'est pas bien écrit"
+
+#: classes/import.php:218 classes/import.php:248
+msgid "Error, we cannot find the file"
+msgstr "Erreur, nous ne pouvons pas trouver le fichier"
+
+#: classes/helper.php:345
+msgid "Errors, warnings and notices"
+msgstr "Erreurs, avertissements et notices"
+
+#: classes/helper.php:396 classes/helper.php:430
+msgid "Errors, warnings and notices found"
+msgstr "Erreurs, avertissements et notices trouvés"
+
+#: classes/doc.php:124
+msgid "Example"
+msgstr "Exemple"
+
+#: classes/frontend.php:215
+msgid "Execute an export of users in the frontend"
+msgstr "Exécuter une exportation des utilisateurs dans le frontend"
+
+#: classes/frontend.php:49
+msgid "Execute an import of users in the frontend"
+msgstr "Exécuter une importation d'utilisateurs dans le frontend"
+
+#: classes/cron.php:173
+msgid "Execute an import of users periodically"
+msgstr "Exécuter une importation d'utilisateurs périodiquement"
+
+#: classes/cron.php:350
+msgid "Execute cron task now"
+msgstr "Exécuter la tâche cron maintenant"
+
+#: kwf-importer.php:101 classes/frontend.php:489 classes/import.php:119
+msgid "Export"
+msgstr "Exporter"
+
+#: classes/export.php:219
+msgid "Export results"
+msgstr "Exporter les résultats"
+
+#: classes/export.php:92
+msgid "Export users"
+msgstr "Exporter les utilisateurs"
+
+#: classes/columns.php:33
+msgid "Extra profile fields"
+msgstr "Champs de profil supplémentaires"
+
+#: classes/columns.php:58
+msgid "Extra profile fields loadad in previous files"
+msgstr "Champs de profil supplémentaires chargés dans les fichiers précédent"
+
+#: classes/email-templates.php:39
+msgid "Featured Image"
+msgstr "L'image sélectionnée"
+
+#: addons/woocommerce-subscriptions.php:675
+msgid ""
+"Fee name is missing from your CSV. This subscription has not been imported."
+msgstr ""
+"Le nom des frais est absent de votre CSV. Cet abonnement n'a pas été importé."
+
+#: classes/doc.php:125
+msgid "file"
+msgstr "fichier"
+
+#: classes/import.php:365
+msgid "File must contain at least 3 columns: username, email and password"
+msgstr ""
+"Le fichier doit contenir au moins 3 colonnes : nom d'utilisateur, e-mail et "
+"mot de passe"
+
+#: classes/import-users.php:46
+#, fuzzy
+#| msgid ""
+#| "File must contain exactly <strong>8 columns and respect CSV Sample "
+#| "format</strong>."
+msgid ""
+"File must contain at least <strong>8 columns and respect CSV Sample "
+"format</strong>."
+msgstr ""
+"Le fichier doit contenir exactement <strong>10 colonnes et respecter le "
+"format CSV Sample</strong>."
+
+#: classes/import.php:984
+msgid "File must contain exactly 4 columns: ecole, classe, year and curriculum"
+msgstr ""
+"Le fichier doit contenir exactement 4 colonnes : école, classe, année et "
+"curriculum"
+
+#: classes/import-groups.php:79
+msgid ""
+"File must contain exactly<strong> 4 columns: ecole, year, classe and "
+"curriculum</strong>"
+msgstr ""
+"Le fichier doit contenir exactement<strong> 4 colonnes : école, année, "
+"classe et curriculum</strong>"
+
+#: classes/import-users.php:432
+msgid "File successfully deleted"
+msgstr "Fichier supprimé avec succès"
+
+#: classes/import-users.php:451
+msgid "Files successfully deleted"
+msgstr "Fichiers supprimés avec succès"
+
+#: classes/email-templates.php:47
+msgid "Filter email template list"
+msgstr "Filtrer la liste des modèles d'e-mails"
+
+#: classes/import.php:320
+msgid "First row represents the form of sheet"
+msgstr "La première ligne représente la forme de la feuille"
+
+#: classes/import-users.php:157
+msgid "For Directors :"
+msgstr "Pour les directeurs :"
+
+#: classes/import-groups.php:154
+msgid "For downloading groups-import.xlsx file for school & classes, click"
+msgstr ""
+"Pour télécharger le fichier groups-import.xlsx pour l’école et les classes, "
+"cliquez sur"
+
+#: classes/import-users.php:77
+#, fuzzy
+#| msgid "For downloading sample.csv file for users, click"
+msgid "For downloading users-import.xlsx file for users, click"
+msgstr ""
+"Pour télécharger le fichier sample.csv pour les utilisateurs, cliquez sur"
+
+#: classes/frontend.php:278
+msgid "For example"
+msgstr "Par exemple"
+
+#: classes/import-users.php:522
+msgid ""
+"For security reasons you should delete this files, probably they would be "
+"visible in the Internet if a bot or someone discover the URL. You can delete "
+"each file or maybe you want delete all CSV files you have uploaded:"
+msgstr ""
+"Pour des raisons de sécurité, vous devez supprimer ces fichiers, ils "
+"seraient probablement visibles sur Internet si un bot ou quelqu'un "
+"découvrait l'URL. Vous pouvez supprimer chaque fichier ou peut-être voulez-"
+"vous supprimer tous les fichiers CSV que vous avez téléchargés :"
+
+#: classes/import-users.php:159
+msgid "For Students :"
+msgstr "Pour les étudiants :"
+
+#: classes/import-users.php:160
+msgid "For Students with active subscription :"
+msgstr "Pour les étudiants avec abonnement actif :"
+
+#: classes/import-users.php:158
+msgid "For Teachers :"
+msgstr "Pour les enseignants :"
+
+#: classes/doc.php:71
+msgid "Force users to reset their passwords"
+msgstr "Forcer les utilisateurs à réinitialiser leurs mots de passe"
+
+#: classes/frontend.php:113 classes/import-users.php:214
+msgid "Force users to reset their passwords?"
+msgstr "Forcer les utilisateurs à réinitialiser leurs mots de passe?"
+
+#: classes/doc.php:112
+msgid "Free support (in WordPress forums):"
+msgstr "Assistance gratuite (dans les forums WordPress) :"
+
+#: classes/import-groups.php:84
+msgid ""
+"From this tab, you can import tepunareomaori groups ( school & classes ) "
+"along with their settings from a CSV file."
+msgstr ""
+"À partir de cet onglet, vous pouvez importer des groupes tepunareomaori "
+"(école et classes) ainsi que leurs paramètres à partir d'un fichier CSV."
+
+#: kwf-importer.php:102 classes/import.php:120
+msgid "Frontend"
+msgstr "Frontend"
+
+#: classes/cron.php:324
+msgid "GET endpoint to execute cron"
+msgstr "GET endpoint pour exécuter cron"
+
+#: addons/advanced-custom-fields.php:32
+msgid "Group name"
+msgstr "Nom de groupe"
+
+#: addons/groups.php:28
+msgid "group_id as the column title"
+msgstr "group_id comme titre de colonne"
+
+#: addons/groups.php:24
+msgid "Groups is activated"
+msgstr "Groupes activés"
+
+#: classes/import-groups.php:155 classes/import-users.php:78
+msgid "Here"
+msgstr "Ici"
+
+#: classes/help.php:13 classes/help.php:37 classes/donate.php:12
+msgid "Hi! we are"
+msgstr "Salut! nous sommes"
+
+#: classes/doc.php:119
+msgid "Hooks"
+msgstr "Hooks"
+
+#: classes/cron.php:204
+msgid "How often the event should reoccur?"
+msgstr "À quelle fréquence l'événement doit-il se reproduire ?"
+
+#. URI of the plugin
+msgid "https://tepunareomaori.com/"
+msgstr "https://tepunareomaori.com/"
+
+#. Author URI of the plugin
+msgid "https://profiles.wordpress.org/kodingkids/"
+msgstr "https://profiles.wordpress.org/kodingkids/"
+
+#: classes/doc.php:24
+msgid "id (column id)"
+msgstr "id (identifiant de colonne)"
+
+#: classes/frontend.php:116 classes/import-users.php:216
+msgid ""
+"If a password is set to an user and you activate this option, the user will "
+"be forced to reset their password in their first login"
+msgstr ""
+"Si un mot de passe est défini pour un utilisateur et que vous activez cette "
+"option, l'utilisateur sera obligé de réinitialiser son mot de passe lors de "
+"sa première connexion"
+
+#: classes/doc.php:27
+msgid ""
+"If id <strong>doesn't exist in your users table</strong>: WordPress core "
+"does not allow us insert it, so it will throw an error of kind: "
+"invalid_user_id"
+msgstr ""
+"Si l'identifiant <strong>n'existe pas dans votre table "
+"d'utilisateurs</strong> : le cœur de WordPress ne nous permet pas de "
+"l'insérer, il générera donc une erreur de type : invalid_user_id"
+
+#: classes/doc.php:28
+msgid ""
+"If id <strong>exists</strong>: plugin check if username is the same, if yes, "
+"it will update the data, if not, it ignores the cell to avoid problems"
+msgstr ""
+"Si l'identifiant <strong>existe</strong> : le plugin vérifie si le nom "
+"d'utilisateur est le même, si oui, il mettra à jour les données, sinon, il "
+"ignore la cellule pour éviter les problèmes"
+
+#: classes/frontend.php:128
+msgid "If list is empty, the admin email will be used"
+msgstr "Si la liste est vide, l'e-mail de l'administrateur sera utilisé"
+
+#: classes/doc.php:48
+msgid ""
+"If you <strong>create a column called 'role'</strong>: if cell is empty, "
+"roles would be chosen from 'Default role' field in import screen; if cell "
+"has a value, it will be used as role, if this role doesn't exist the default "
+"one would be used"
+msgstr ""
+"Si vous <strong>créez une colonne appelée 'rôle'</strong> : si la cellule "
+"est vide, les rôles seront choisis dans le champ 'Rôle par défaut' dans "
+"l'écran d'importation ; si la cellule a une valeur, elle sera utilisée comme "
+"rôle, si ce rôle n'existe pas, celui par défaut sera utilisé"
+
+#: classes/doc.php:37
+msgid ""
+"If you <strong>create a column called user_pass</strong>: this will be a "
+"hashed password that will be inserted directly in database, this is the best "
+"option to move users with their passwords using export tool"
+msgstr ""
+"Si vous <strong>créez une colonne appelée user_pass</strong> : ce sera un "
+"mot de passe haché qui sera inséré directement dans la base de données, "
+"c'est la meilleure option pour déplacer les utilisateurs avec leurs mots de "
+"passe à l'aide de l'outil d'exportation"
+
+#: classes/doc.php:36
+msgid ""
+"If you <strong>create a column password</strong>: if cell is empty, password "
+"won't be updated; if cell has a value, it will be used."
+msgstr ""
+"Si vous <strong>créez un mot de passe de colonne</strong> : si la cellule "
+"est vide, le mot de passe ne sera pas mis à jour ; si la cellule a une "
+"valeur, elle sera utilisée."
+
+#: classes/doc.php:38
+msgid ""
+"If you <strong>don't create a column for passwords (nor user_pass nor "
+"password)</strong>: passwords will be generated automatically."
+msgstr ""
+"Si vous <strong>ne créez pas de colonne pour les mots de passe (ni user_pass "
+"ni password)</strong> : les mots de passe seront générés automatiquement."
+
+#: classes/doc.php:47
+msgid ""
+"If you <strong>don't create a column for roles</strong>: roles would be "
+"chosen from the 'Default role' field in import screen."
+msgstr ""
+"Si vous <strong>ne créez pas de colonne pour les rôles</strong> : les rôles "
+"seront choisis dans le champ \"Rôle par défaut\" de l'écran d'importation."
+
+#: classes/doc.php:120
+msgid ""
+"If you are a developer you can extend or use this plugin with all the hooks "
+"we provide, you have <a href=\"https://codection.com/import-users-csv-"
+"meta/listado-de-hooks-de-import-and-exports-users-and-customers/\">a list of "
+"them here</a>"
+msgstr ""
+"Si vous êtes un développeur, vous pouvez étendre ou utiliser ce plugin avec "
+"tous les crochets que nous fournissons, vous avez <a href=\"https:"
+"//codection.com/import-users-csv-meta/listado-de-hooks-de- import-and-"
+"exports-users-and-customers/\">une liste d'entre eux ici</a>"
+
+#: classes/import.php:445
+msgid "If you are upgrading roles, you must choose at least one role"
+msgstr "Si vous mettez à niveau des rôles, vous devez choisir au moins un rôle"
+
+#: classes/doc.php:50
+msgid ""
+"If you choose <strong>no role</strong> checkbox or write <strong>"
+"no_role</strong> in the column role, the users created or updated won't have "
+"any role assigned."
+msgstr ""
+"Si vous cochez la case <strong>aucun rôle</strong> ou écrivez <strong>"
+"aucun_rôle</strong> dans la colonne rôle, les utilisateurs créés ou mis à "
+"jour ne se verront attribuer aucun rôle."
+
+#: addons/buddypress.php:142
+msgid ""
+"If you choose to update roles and group role is empty, user will be removed "
+"from the group"
+msgstr ""
+"Si vous choisissez de mettre à jour les rôles et que le rôle du groupe est "
+"vide, l'utilisateur sera supprimé du groupe"
+
+#: classes/import-groups.php:81 classes/import-users.php:51
+msgid ""
+"If you get \"Request timeout\" or similar timeout message while trying to "
+"import large CSV file contact your hosting support or split your files into "
+"two or more part."
+msgstr ""
+"Si vous obtenez \"Request timeout\" ou un message de délai d'expiration "
+"similaire lorsque vous essayez d'importer un fichier CSV volumineux, "
+"contactez votre support d'hébergement ou divisez vos fichiers en deux "
+"parties ou plus."
+
+#: addons/buddypress.php:143
+msgid "If you get some error of this kind:"
+msgstr "Si vous obtenez une erreur de ce type :"
+
+#: classes/export.php:137
+msgid ""
+"If you have problems and you get some value exported as a date that should "
+"not be converted to date, please deactivate this option. If this option is "
+"not activated, datetime format will be ignored."
+msgstr ""
+"Si vous rencontrez des problèmes et que vous obtenez une valeur exportée en "
+"tant que date qui ne doit pas être convertie en date, veuillez désactiver "
+"cette option. Si cette option n'est pas activée, le format datetime sera "
+"ignoré."
+
+#: classes/doc.php:76
+msgid ""
+"If you have this redirection problem, you can delete the metadata that "
+"forces you to change the password and causes the redirection loop problem "
+"for all users using the following button:"
+msgstr ""
+"Si vous rencontrez ce problème de redirection, vous pouvez supprimer les "
+"métadonnées qui vous obligent à changer de mot de passe et provoquent le "
+"problème de boucle de redirection pour tous les utilisateurs à l'aide du "
+"bouton suivant :"
+
+#: classes/email-options.php:138
+msgid ""
+"If you send a test email, no wildcards will be replaced becuase when you "
+"test, we have no data to replace."
+msgstr ""
+"Si vous envoyez un e-mail de test, aucun caractère générique ne sera "
+"remplacé car lors du test, nous n'avons aucune donnée à remplacer."
+
+#: addons/buddypress.php:78
+msgid "If you use more than one value, please use ## to separate each item"
+msgstr ""
+"Si vous utilisez plusieurs valeurs, veuillez utiliser ## pour séparer chaque "
+"élément"
+
+#: classes/frontend.php:284
+msgid ""
+"If you use orderby attrbute you can also use order attribute that designates "
+"the ascending or descending order of the \"orderby\" parameter, values can "
+"be \"asc\" or \"desc\", for example"
+msgstr ""
+"Si vous utilisez l'attribut orderby, vous pouvez également utiliser "
+"l'attribut order qui désigne l'ordre croissant ou décroissant du paramètre "
+"\"orderby\", les valeurs peuvent être \"asc\" ou \"desc\", par exemple"
+
+#: addons/buddypress.php:136
+msgid ""
+"If you want to assign an user to a group you have to create a column "
+"'bp_group' and a column 'bp_group_role'"
+msgstr ""
+"Si vous souhaitez affecter un utilisateur à un groupe, vous devez créer une "
+"colonne 'bp_group' et une colonne 'bp_group_role'"
+
+#: addons/wp-lms-course.php:28
+msgid ""
+"If you want to import multiple values, you can use a list using / to "
+"separate items"
+msgstr ""
+"Si vous souhaitez importer plusieurs valeurs, vous pouvez utiliser une liste "
+"en utilisant / pour séparer les éléments"
+
+#: addons/users-group.php:26 addons/groups.php:32 addons/wp-users-group.php:26
+#: addons/customer-area.php:29
+msgid ""
+"If you want to import multiple values, you can use a list using commas to "
+"separate items"
+msgstr ""
+"Si vous souhaitez importer plusieurs valeurs, vous pouvez utiliser une liste "
+"en utilisant des virgules pour séparer les éléments"
+
+#: classes/import-users.php:48
+msgid ""
+"If you want to remove user from a specific groups you should add a column "
+"\"[old_group]\" just before \"[bp_group]\" "
+msgstr ""
+"Si vous souhaitez supprimer un utilisateur d'un ou plusieurs groupes "
+"spécifiques, vous devez ajouter une colonne \"[old_group]\" juste avant "
+"\"[bp_group]\"."
+
+#: classes/email-options.php:99
+msgid ""
+"If you want to use email with custom HTML and CSS tags, disable WP Editor"
+msgstr ""
+"Si vous souhaitez utiliser le courrier électronique avec des balises HTML et "
+"CSS personnalisées, désactivez WP Editor"
+
+#: classes/wp-importer.php:12
+msgid "Import <strong>users or customers</strong> to your site via a csv file."
+msgstr ""
+"Importez <strong>les utilisateurs ou les clients</strong> sur votre site via "
+"un fichier csv."
+
+#: addons/woocommerce-membership.php:23
+msgid "Import all membership information"
+msgstr "Importer toutes les informations de membership"
+
+#: classes/cron.php:65
+msgid "Import cron task starts at"
+msgstr "La tâche périodique d'importation commence à"
+
+#: addons/woocommerce-subscriptions.php:325
+msgid "Import forced manual renewal."
+msgstr "Importer le renouvellement manuel forcé."
+
+#: kwf-importer.php:99 classes/import-groups.php:91 classes/import.php:117
+msgid "Import Groups"
+msgstr "Importer les groupes"
+
+#: kwf-importer.php:100 classes/import.php:118
+msgid "Import Users "
+msgstr "Importer les utilisateurs"
+
+#: classes/import-users.php:56
+msgid "Import users into groups from CSV"
+msgstr "Importer les utilisateurs dans les groupes à partir de CSV"
+
+#: classes/wp-importer.php:12
+msgid "Import users or customers (CSV)"
+msgstr "Importer des utilisateurs ou des clients (CSV)"
+
+#: addons/woocommerce-subscriptions.php:251
+msgid ""
+"Importing a pending cancelled subscription requires an end date in the "
+"future."
+msgstr ""
+"L'importation d'un abonnement annulé en attente nécessite une date de fin "
+"dans le futur."
+
+#: classes/import.php:915
+msgid "Importing groups"
+msgstr "Importation de groupes"
+
+#: classes/import.php:271
+msgid "Importing users"
+msgstr "Importation d'utilisateurs"
+
+#: addons/mailpoet.php:23
+msgid ""
+"In this case you will only have to use <strong>mailpoet_list_ids</strong> "
+"column in order to associate a user to their users list, you can use a ID or "
+"a list of IDs separated by commas"
+msgstr ""
+"Dans ce cas vous n'aurez qu'à utiliser la colonne <strong>"
+"mailpoet_list_ids</strong> afin d'associer un utilisateur à sa liste "
+"d'utilisateurs, vous pouvez utiliser un identifiant ou une liste "
+"d'identifiants séparés par des virgules"
+
+#: addons/woocommerce-membership.php:24
+msgid ""
+"In this case you will only have to use <strong>membership_plan_id</strong> "
+"column in order to associate a user to their membership plan"
+msgstr ""
+"Dans ce cas, vous n'aurez qu'à utiliser la colonne <strong>"
+"membership_plan_id</strong> afin d'associer un utilisateur à son plan "
+"d'adhésion"
+
+#: addons/woocommerce-membership-rightpress.php:23
+msgid ""
+"In this case you will only have to use <strong>plan_id</strong> column in "
+"order to associate a user to their membership plan"
+msgstr ""
+"Dans ce cas, vous n'aurez qu'à utiliser la colonne <strong>plan_id</strong> "
+"afin d'associer un utilisateur à son plan de membership"
+
+#: classes/frontend.php:127
+msgid ""
+"Include a list of emails where notification will be sent, use commas to "
+"separate addresses"
+msgstr ""
+"Incluez une liste d'e-mails où la notification sera envoyée, utilisez des "
+"virgules pour séparer les adresses"
+
+#: addons/indeed-ultimate-membership-pro.php:27
+msgid "Indeed Ultimate Membership Pro is activated"
+msgstr "Indeed Ultimate Membership Pro est activé"
+
+#: classes/cron.php:189 classes/cron.php:251
+msgid "Insert complete path to the file"
+msgstr "Insérer le chemin complet du fichier"
+
+#: classes/email-templates.php:43
+msgid "Insert into email template"
+msgstr "Insérer dans le modèle d'e-mail"
+
+#: classes/helper.php:266
+msgid "Inserting and updating data"
+msgstr "Insertion et mise à jour des données"
+
+#: classes/import.php:460
+msgid "Invalid Email"
+msgstr "Email invalide"
+
+#: classes/import.php:459
+#, php-format
+msgid "Invalid email \"%s\""
+msgstr "E-mail invalide \"%s\""
+
+#: classes/import.php:669
+msgid "Invalid role"
+msgstr "Rôle invalide"
+
+#: classes/import.php:671
+msgid "Invalid roles"
+msgstr "Rôles invalides"
+
+#: classes/multisite.php:74
+msgid ""
+"It will work as follows: if there is only one site in the network, the URL "
+"will be that site's URL; if there is more than one site, it will lead to the "
+"login of the main site in the network of sites."
+msgstr ""
+"Cela fonctionnera comme suit : s'il n'y a qu'un seul site dans le réseau, "
+"l'URL sera l'URL de ce site ; s'il y a plus d'un site, cela conduira à la "
+"connexion du site principal dans le réseau de sites."
+
+#: classes/email-templates.php:25
+msgid "Item Archives"
+msgstr "Archives des articles"
+
+#: classes/email-templates.php:26
+msgid "Item Attributes"
+msgstr "Attributs de l'article"
+
+#: classes/email-templates.php:45
+msgid "Items list"
+msgstr "Liste des articles"
+
+#. Author of the plugin
+msgid "KWF"
+msgstr "KWF"
+
+#. Name of the plugin
+msgid "KWF Importer"
+msgstr "Importateur KWF"
+
+#: addons/user-language.php:35
+msgid "lang"
+msgstr ""
+
+#: classes/cron.php:340
+msgid "Last actions of schedule task"
+msgstr "Dernières actions de la tâche planifiée"
+
+#: addons/learndash.php:22
+msgid "LearnDash is activated"
+msgstr "LearnDash est activé"
+
+#: classes/import-users.php:192
+msgid "Leave the old value for this metadata"
+msgstr "Laissez l'ancienne valeur pour ces métadonnées"
+
+#: addons/wp-lms-course.php:22
+msgid "LifterLMS is activated"
+msgstr "LifterLMS est activé"
+
+#: classes/doc.php:61
+msgid "Lists"
+msgstr "Listes"
+
+#: addons/wp-lms-course.php:26
+msgid "lms_courses as the column title"
+msgstr "lms_courses comme titre de colonne"
+
+#: classes/email-options.php:108
+msgid "Load custom email from email templates"
+msgstr "Charger un e-mail personnalisé à partir de modèles d'e-mail"
+
+#: classes/email-options.php:110
+msgid "Load subject, content and attachment from this email template"
+msgstr ""
+"Charger l'objet, le contenu et la pièce jointe à partir de ce modèle d'e-mail"
+
+#: classes/cron.php:335
+msgid "Log"
+msgstr "Log"
+
+#: classes/email-templates.php:82
+msgid "lost password url"
+msgstr "URL du mot de passe perdu"
+
+#: kwf-importer.php:103 classes/import.php:121
+msgid "Mail options"
+msgstr "Options de messagerie"
+
+#: classes/email-options.php:115
+msgid "Mail subject:"
+msgstr "Objet du courrier :"
+
+#: classes/email-templates.php:50
+msgid "Mail template (Import Users From CSV With Meta)"
+msgstr "Modèle de courrier (Importer des utilisateurs depuis CSV avec Meta)"
+
+#: classes/email-options.php:194
+msgid "Mail template and options updated correctly"
+msgstr "Modèle de courrier et options mis à jour correctement"
+
+#: classes/email-templates.php:51
+msgid "Mail templates for Import Users From CSV With Meta"
+msgstr ""
+"Modèles de courrier pour importer des utilisateurs à partir de CSV avec Meta"
+
+#: addons/mailpoet.php:20
+msgid "MailPoet is activated"
+msgstr "MailPoet est activé"
+
+#: classes/meta-keys.php:18
+msgid "Meta keys used in your database for users"
+msgstr "Clés méta utilisées dans votre base de données pour les utilisateurs"
+
+#: addons/woocommerce-subscriptions.php:803
+#, php-format
+msgid "Missing tax code or ID from column: %s"
+msgstr "Code ou ID de taxe manquant dans la colonne : %s"
+
+#: classes/cron.php:244
+msgid "Move file after import?"
+msgstr "Déplacer le fichier après l'importation ?"
+
+#: classes/multisite.php:31
+msgid ""
+"Multiple blogs can be assigned creating <strong>a list of blog ids</strong> "
+"using commas to separate values."
+msgstr ""
+"Plusieurs blogs peuvent être attribués en créant <strong>une liste "
+"d'identifiants de blog</strong> en utilisant des virgules pour séparer les "
+"valeurs."
+
+#: classes/doc.php:49
+msgid ""
+"Multiple roles can be imported creating <strong>a list of roles</strong> "
+"using commas to separate values."
+msgstr ""
+"Plusieurs rôles peuvent être importés en créant <strong>une liste de "
+"rôles</strong> en utilisant des virgules pour séparer les valeurs."
+
+#: classes/multisite.php:72
+msgid "Multisite activated"
+msgstr "Multisite activé"
+
+#: classes/multisite.php:27
+msgid "Multisite is activated"
+msgstr "Le multisite est activé"
+
+#: classes/help.php:34
+msgid "Need proffessional help with WordPress or WooCommerce?"
+msgstr "Besoin d'une aide professionnelle avec WordPress ou WooCommerce ?"
+
+#: classes/import-users.php:304
+msgid "Never update passwords when updating a user"
+msgstr ""
+"Ne jamais mettre à jour les mots de passe lors de la mise à jour d'un "
+"utilisateur"
+
+#: classes/import-users.php:301
+msgid "Never update passwords?"
+msgstr "Ne jamais mettre à jour les mots de passe ?"
+
+#: classes/email-templates.php:31
+msgid "New email template"
+msgstr "Nouveau modèle d'e-mail"
+
+#: classes/new_features.php:9
+msgid "New features"
+msgstr "Nouvelles fonctionnalités"
+
+#: addons/new-user-approve.php:24
+msgid "New User Approve"
+msgstr "Nouvel utilisateur approuvé"
+
+#: addons/new-user-approve.php:12
+msgid "New User Approve compatibility"
+msgstr "Compatibilité avec l'approbation des nouveaux utilisateurs"
+
+#: classes/frontend.php:143 classes/frontend.php:156
+#: classes/import-users.php:237 classes/import-users.php:264
+#: classes/import-users.php:277 classes/import-users.php:291
+msgid "No"
+msgstr "Non"
+
+#: classes/html.php:95
+msgctxt "no dropdown items"
+msgid "None"
+msgstr "Aucun"
+
+#: classes/frontend.php:440
+msgid "No file selected"
+msgstr "Aucun fichier sélectionné"
+
+#: addons/woocommerce-subscriptions.php:496
+#, php-format
+msgid ""
+"No payment meta was set for your %1$s subscription (%2$s). The next renewal "
+"is going to fail if you leave this."
+msgstr ""
+"Aucune méta de paiement n'a été définie pour votre abonnement %1$s (%2$s). "
+"Le prochain renouvellement échouera si vous laissez cela."
+
+#: addons/woocommerce-subscriptions.php:323
+msgid ""
+"No payment method was given in CSV and so the subscription has been set to "
+"manual renewal."
+msgstr ""
+"Aucun mode de paiement n'a été indiqué en CSV et l'abonnement a donc été "
+"défini sur un renouvellement manuel."
+
+#: addons/woocommerce-subscriptions.php:593
+#, php-format
+msgid "No product or variation in your store matches the product ID #%s."
+msgstr ""
+"Aucun produit ou variation dans votre boutique ne correspond à l'ID de "
+"produit #%s."
+
+#: classes/helper.php:52
+msgid "No role"
+msgstr "Aucun rôle"
+
+#: addons/woocommerce-subscriptions.php:212
+msgid ""
+"No subscription status was specified. The subscription will be created with "
+"the status \"pending\". "
+msgstr ""
+"Aucun statut d'abonnement n'a été spécifié. L'abonnement sera créé avec le "
+"statut \"en attente\"."
+
+#: classes/import-users.php:35
+msgid "No user selected"
+msgstr "Aucun utilisateur sélectionné"
+
+#: classes/import-users.php:277
+msgid "No, but create a new user with a prefix in the username"
+msgstr ""
+"Non, mais créez un nouvel utilisateur avec un préfixe dans le nom "
+"d'utilisateur"
+
+#: classes/columns.php:230 classes/frontend.php:344 classes/frontend.php:382
+#: classes/import.php:22 classes/import.php:207 classes/import.php:237
+#: classes/email-options.php:158 classes/cron.php:14
+msgid "Nonce check failed"
+msgstr "La vérification nonce a échoué"
+
+#: addons/allow-multiple-accounts.php:25
+msgid "Not allowed"
+msgstr "Interdit"
+
+#: classes/email-templates.php:37
+msgid "Not found"
+msgstr "Pas trouvé"
+
+#: classes/email-templates.php:38
+msgid "Not found in Trash"
+msgstr "Introuvable dans la corbeille"
+
+#: classes/import-groups.php:77 classes/import-users.php:44
+msgid "Notes :"
+msgstr "Notes :"
+
+#: classes/doc.php:52
+msgid ""
+"Notice: If the default new role is administrator in WordPress settings, role "
+"will not be set during a CSV file import with this plugin. Check it if all "
+"users are being imported as administrators and you have set another role in "
+"this plugin."
+msgstr ""
+"Remarque : Si le nouveau rôle par défaut est administrateur dans les "
+"paramètres de WordPress, le rôle ne sera pas défini lors d'une importation "
+"de fichier CSV avec ce plugin. Vérifiez-le si tous les utilisateurs sont "
+"importés en tant qu'administrateurs et que vous avez défini un autre rôle "
+"dans ce plugin."
+
+#: classes/export.php:22
+msgid "of approximately"
+msgstr "d'environ"
+
+#: classes/import-users.php:519
+msgid "Old CSV files uploaded"
+msgstr "Anciens fichiers CSV téléchargés"
+
+#: classes/import-groups.php:137
+msgid "Once CSV file is ready, click Choose file "
+msgstr "Une fois le fichier CSV prêt, cliquez sur Choisir le fichier"
+
+#: classes/import-groups.php:82
+msgid ""
+"Once the import process has finished, a PDF file will be downloaded "
+"automatically."
+msgstr ""
+"Une fois le processus d'importation terminé, un fichier PDF sera téléchargé "
+"automatiquement."
+
+#: addons/wp-members.php:24 addons/wp-members.php:48
+#: addons/new-user-approve.php:24 addons/allow-multiple-accounts.php:28
+#: addons/allow-multiple-accounts.php:47
+msgid "Only for"
+msgstr "Seulement pour"
+
+#: classes/import-users.php:569
+msgid ""
+"Only users who are able to create users can bulk delete CSV attachments."
+msgstr ""
+"Seuls les utilisateurs capables de créer des utilisateurs peuvent supprimer "
+"en masse des pièces jointes CSV."
+
+#: classes/import-users.php:547
+msgid "Only users who are able to create users can delete CSV attachments."
+msgstr ""
+"Seuls les utilisateurs capables de créer des utilisateurs peuvent supprimer "
+"des pièces jointes CSV."
+
+#: classes/frontend.php:476 classes/export.php:235
+msgid "Only users who are able to create users can export them."
+msgstr ""
+"Seuls les utilisateurs capables de créer des utilisateurs peuvent les "
+"exporter."
+
+#: classes/frontend.php:378
+msgid "Only users who are able to create users can manage this form."
+msgstr ""
+"Seuls les utilisateurs capables de créer des utilisateurs peuvent gérer ce "
+"formulaire."
+
+#: classes/import-users.php:597
+msgid "Only users who are able to create users can manage this option."
+msgstr ""
+"Seuls les utilisateurs capables de créer des utilisateurs peuvent gérer "
+"cette option."
+
+#: classes/frontend.php:96 classes/import-users.php:182
+msgid "Options"
+msgstr "Choix"
+
+#: classes/help.php:24 classes/donate.php:23
+msgid "Or if you prefer, you can also help us becoming a Patreon:"
+msgstr ""
+"Ou si vous préférez, vous pouvez également nous aider à devenir un Patreon :"
+
+#: classes/import-groups.php:159 classes/import-users.php:82
+msgid "or you can upload it directly from your PC"
+msgstr "ou vous pouvez le télécharger directement depuis votre PC"
+
+#: classes/export.php:144
+msgid ""
+"Order all columns alphabetically to check easier your data. First two "
+"columns won't be affected"
+msgstr ""
+"Triez toutes les colonnes par ordre alphabétique pour vérifier plus "
+"facilement vos données. Les deux premières colonnes ne seront pas affectées"
+
+#: classes/frontend.php:268
+msgid "Order by user display name"
+msgstr "Trier par nom d'affichage de l'utilisateur"
+
+#: classes/frontend.php:272
+msgid "Order by user email"
+msgstr "Commande par e-mail de l'utilisateur"
+
+#: classes/frontend.php:267
+msgid "Order by user id"
+msgstr "Trier par ID utilisateur"
+
+#: classes/frontend.php:270
+msgid "Order by user login"
+msgstr "Trier par login utilisateur"
+
+#: classes/frontend.php:276
+msgid "Order by user meta value"
+msgstr "Trier par méta-valeur utilisateur"
+
+#: classes/frontend.php:269
+msgid "Order by user name"
+msgstr "Trier par nom d'utilisateur"
+
+#: classes/frontend.php:271
+msgid "Order by user nicename"
+msgstr "Trier par nom d'utilisateur nicename"
+
+#: classes/frontend.php:275
+msgid "Order by user post count"
+msgstr "Trier par nombre de publications d'utilisateurs"
+
+#: classes/frontend.php:274
+msgid "Order by user registered date"
+msgstr "Trier par date d'enregistrement de l'utilisateur"
+
+#: classes/frontend.php:273
+msgid "Order by user url"
+msgstr "Trier par URL d'utilisateur"
+
+#: classes/export.php:141
+msgid "Order fields alphabetically"
+msgstr "Trier les champs par ordre alphabétique"
+
+#: addons/pmpro.php:45
+msgid "Paid Mebership Pro is activated"
+msgstr "Paid Mebership Pro est activé"
+
+#: addons/paid-member-subscriptions.php:26
+msgid "Paid Member Subscriptions is activated"
+msgstr "Paid Member Subscriptions est activé"
+
+#: classes/email-templates.php:27
+msgid "Parent Item:"
+msgstr "Élément parent :"
+
+#: classes/email-options.php:150
+msgid "Password"
+msgstr "Mot de passe"
+
+#: classes/email-options.php:49
+msgid "Password changed"
+msgstr "Mot de passe changé"
+
+#: classes/import.php:780 classes/email-options.php:264
+msgid "Password has not been changed"
+msgstr "Le mot de passe n'a pas été modifié"
+
+#: classes/email-options.php:259 addons/woocommerce.php:112
+msgid "Password reset link"
+msgstr "Lien de réinitialisation du mot de passe"
+
+#: classes/email-templates.php:83
+msgid "password reset url"
+msgstr "URL de réinitialisation du mot de passe"
+
+#: classes/multisite.php:77
+msgid "password reset url for the sub-site"
+msgstr "URL de réinitialisation du mot de passe pour le sous-site"
+
+#: classes/email-templates.php:84
+msgid "password reset url with HTML link"
+msgstr "URL de réinitialisation du mot de passe avec lien HTML"
+
+#: classes/doc.php:33
+msgid "Passwords (column password and user_pass)"
+msgstr "Mots de passe (mot de passe de la colonne et user_pass)"
+
+#: classes/cron.php:187
+msgid "Path of file that are going to be imported"
+msgstr "Chemin du fichier qui va être importé"
+
+#: classes/help.php:18 classes/donate.php:17
+msgid "PayPal – The safer, easier way to pay online."
+msgstr "PayPal – Le moyen le plus sûr et le plus simple de payer en ligne."
+
+#: classes/cron.php:195
+msgid "Period"
+msgstr "Période"
+
+#: classes/force-reset-password.php:60 addons/woocommerce.php:136
+#: addons/woocommerce.php:137
+msgid "Please change your password"
+msgstr "Veuillez changer votre mot de passe"
+
+#: classes/import-groups.php:184 classes/import-users.php:385
+msgid "Please choose a file"
+msgstr "Veuillez choisir un fichier"
+
+#: addons/buddypress.php:143
+msgid ""
+"please enable Buddypress Extended Profile then import the csv file. You can "
+"then disable this afterwards"
+msgstr ""
+"veuillez activer le profil étendu de Buddypress puis importer le fichier csv."
+" Vous pouvez ensuite le désactiver par la suite"
+
+#: classes/import-groups.php:189 classes/import-users.php:390
+msgid "Please enter a path to the file"
+msgstr "Veuillez entrer un chemin d'accès au fichier"
+
+#: classes/import-users.php:217
+#, php-format
+msgid ""
+"Please, <a href=\"%s\">read the documentation</a> before activating this "
+"option"
+msgstr ""
+"Veuillez <a href=\"%s\">lire la documentation</a> avant d'activer cette "
+"option"
+
+#: classes/import-users.php:49
+#, fuzzy
+#| msgid ""
+#| "Please, be sure <strong> you have imported all Groups first ( Parent "
+#| "Group : School ⚊ Subgroups : Classes ) </strong> before importing users "
+#| "data."
+msgid ""
+"Please, be sure <strong> you have imported all Groups first ( School and "
+"Classes ) </strong> before importing users data."
+msgstr ""
+"Assurez-vous d'abord d'avoir <strong> importé tous les groupes ( Groupe "
+"parent : École ⚊ Sous-groupes : Classes ) </strong> avant d'importer les "
+"données des utilisateurs."
+
+#: classes/doc.php:67
+msgid "Plugin can also import arrays with string keys. Use this separator:"
+msgstr ""
+"Le plugin peut également importer des tableaux avec des clés de chaîne. "
+"Utilisez ce séparateur :"
+
+#: classes/multisite.php:28
+msgid ""
+"Plugin can assing users to blogs after importing them roles. This is how it "
+"works:"
+msgstr ""
+"Le plugin peut affecter des utilisateurs à des blogs après leur avoir "
+"importé des rôles. Voilà comment cela fonctionne:"
+
+#: addons/paid-member-subscriptions.php:27
+msgid ""
+"Plugin can create member subscriptions while this is importing. You will "
+"need to use those columns:"
+msgstr ""
+"Le plugin peut créer des abonnements de membres pendant l'importation. Vous "
+"devrez utiliser ces colonnes :"
+
+#: classes/doc.php:62
+msgid "Plugin can import lists an array. Use this separator:"
+msgstr ""
+"Le plugin peut importer des listes dans un tableau. Utilisez ce séparateur :"
+
+#: classes/doc.php:45
+msgid "Plugin can import roles from the CSV. This is how it works:"
+msgstr ""
+"Le plugin peut importer des rôles depuis le CSV. Voilà comment cela "
+"fonctionne:"
+
+#: classes/doc.php:57
+msgid ""
+"Plugin can now import serialized data. You have to use the serialized string "
+"directly in the CSV cell in order the plugin will be able to understand it "
+"as an serialized data instead as any other string."
+msgstr ""
+"Le plugin peut maintenant importer des données sérialisées. Vous devez "
+"utiliser la chaîne sérialisée directement dans la cellule CSV afin que le "
+"plug-in puisse la comprendre comme une donnée sérialisée à la place de toute "
+"autre chaîne."
+
+#: classes/email-templates.php:21
+msgctxt "Post Type General Name"
+msgid "Email templates (Import and Export Users and Customers)"
+msgstr ""
+"Modèles d'e-mails (importation et exportation d'utilisateurs et de clients)"
+
+#: classes/email-templates.php:22
+msgctxt "Post Type Singular Name"
+msgid "Email template (Import and Export Users and Customers)"
+msgstr "Modèle d'e-mail (Importer et exporter les utilisateurs et les clients)"
+
+#: classes/doc.php:113
+msgid "Premium support (with a quote):"
+msgstr "Support Premium (avec un devis)"
+
+#: classes/import-groups.php:86 classes/import-users.php:52
+msgid "Prepare CSV file, make sure the structure match with the sample below :"
+msgstr ""
+"Préparez le fichier CSV, assurez-vous que la structure correspond à "
+"l'exemple ci-dessous :"
+
+#: classes/cron.php:373
+msgid "Problems executing cron task: "
+msgstr "Problèmes d'exécution de la tâche périodique :"
+
+#: classes/doc.php:147
+msgid "Problems executing task: "
+msgstr "Problèmes lors de l'exécution de la tâche :"
+
+#: classes/import.php:524
+#, php-format
+msgid ""
+"Problems with ID \"%s\" username is not the same in the CSV and in database"
+msgstr ""
+"Problèmes avec l'ID \"%s\" le nom d'utilisateur n'est pas le même dans le "
+"CSV et dans la base de données"
+
+#: classes/import.php:619
+#, php-format
+msgid "Problems with user: \"%s\" does not exists, error: %s"
+msgstr "Problèmes avec l'utilisateur : \"%s\" n'existe pas, erreur : %s"
+
+#: classes/helper.php:442 classes/helper.php:449
+#, php-format
+msgid ""
+"Process finished you can go <a href=\"%s\">here to see results</a> or you "
+"can do <a href=\"%s\">a new import</a>."
+msgstr ""
+"Processus terminé, vous pouvez aller <a href=\"%s\">ici pour voir les "
+"résultats</a> ou vous pouvez faire <a href=\"%s\">une nouvelle "
+"importation</a>."
+
+#: addons/woocommerce-membership.php:23
+msgid "Read more about columns and formats"
+msgstr "En savoir plus sur les colonnes et les formats"
+
+#: classes/import.php:319
+msgid "Ready to registers"
+msgstr "Prêt à enregistrer"
+
+#: classes/import.php:215 classes/import.php:219 classes/import.php:245
+#: classes/import.php:249
+#, php-format
+msgid "Reload or try <a href=\"%s\">a new import here</a>"
+msgstr "Rechargez ou essayez <a href=\"%s\">une nouvelle importation ici</a>"
+
+#: classes/email-templates.php:41
+msgid "Remove featured image"
+msgstr "Supprimer l'image sélectionnée"
+
+#: classes/email-templates.php:131 classes/email-options.php:131
+msgid "Remove file"
+msgstr "Supprimer le fichier"
+
+#: classes/import-users.php:234
+msgid "Remove users from groups that are not present in the CSV? "
+msgstr ""
+"Supprimer les utilisateurs des groupes qui ne sont pas présents dans le CSV ?"
+
+#: addons/allow-multiple-accounts.php:22 addons/allow-multiple-accounts.php:44
+msgid "Repeated email in different users?"
+msgstr "E-mail répété chez différents utilisateurs ?"
+
+#: classes/doc.php:16
+#, php-format
+msgid ""
+"required, although you can use <a href=\"%s\">this addon to allow users to "
+"be imported without an associated email address</a>."
+msgstr ""
+"requis, bien que vous puissiez utiliser <a href=\"%s\">cet addon pour "
+"permettre aux utilisateurs d'être importés sans adresse e-mail associée</a>."
+
+#: classes/columns.php:53
+msgid "Reset fields"
+msgstr "Réinitialisation des champs"
+
+#: classes/columns.php:48
+msgid "Reset fields in profile?"
+msgstr "Réinitialiser les champs dans le profil ?"
+
+#: classes/helper.php:376
+msgid "Results"
+msgstr "Résultats"
+
+#: classes/cron.php:223 classes/export.php:97
+msgid "Role"
+msgstr "Rôle"
+
+#: classes/frontend.php:77 classes/import-users.php:131
+msgid "Roles"
+msgstr "Rôled"
+
+#: classes/doc.php:44
+msgid "Roles (column role)"
+msgstr "Rôles (rôle de colonne)"
+
+#: classes/helper.php:270 classes/helper.php:279 classes/helper.php:349
+#: classes/helper.php:356
+msgid "Row"
+msgstr "Ligne"
+
+#: classes/import.php:399 classes/import.php:1017
+msgid ""
+"Row does not have the same columns than the header, we are going to ignore "
+"this row"
+msgstr ""
+"La ligne n'a pas les mêmes colonnes que l'en-tête, nous allons ignorer cette "
+"ligne"
+
+#: classes/multisite.php:75
+msgid "same behaviour as above"
+msgstr "même comportement que ci-dessus"
+
+#: classes/email-options.php:136
+msgid "Save email template and options"
+msgstr "Enregistrer le modèle d'e-mail et les options"
+
+#: classes/frontend.php:212
+msgid "Save frontend import options"
+msgstr "Enregistrer les options d'importation frontale"
+
+#: classes/columns.php:43
+msgid "Save option"
+msgstr "Enregistrer l'option"
+
+#: classes/import-users.php:373
+msgid "Save options without importing"
+msgstr "Enregistrer les options sans importer"
+
+#: classes/cron.php:349
+msgid "Save schedule options"
+msgstr "Enregistrer les options de planification"
+
+#: classes/helper.php:410
+msgid "School"
+msgstr "École"
+
+#: classes/helper.php:406
+msgid "School & Classes"
+msgstr "École et Classes"
+
+#: classes/email-templates.php:36
+msgid "Search email template"
+msgstr "Rechercher un modèle d'e-mail"
+
+#: classes/import-groups.php:138
+msgid "Select your file ,then click import. That is all, enjoy"
+msgstr ""
+"Sélectionnez votre fichier, puis cliquez sur importer. C'est tout, profitez-"
+"en"
+
+#: classes/helper.php:61
+msgid "Semicolon"
+msgstr "Point-virgule"
+
+#: classes/email-options.php:53
+msgid "Send automatic change password WordPress emails?"
+msgstr ""
+"Envoyer des e-mails WordPress de changement de mot de passe automatique ?"
+
+#: classes/frontend.php:101 classes/import-users.php:202
+msgid "Send mail"
+msgstr "Envoyer un mail"
+
+#: classes/cron.php:216
+msgid "Send mail also to users that are being updated?"
+msgstr ""
+"Envoyer également des e-mails aux utilisateurs en cours de mise à jour ?"
+
+#: classes/cron.php:209
+msgid "Send mail when using periodical import?"
+msgstr "Envoyer un e-mail lors de l'importation périodique ?"
+
+#: classes/frontend.php:121
+msgid "Send notification to admin when the frontend importer is used?"
+msgstr ""
+"Envoyer une notification à l'administrateur lorsque l'importateur frontal "
+"est utilisé ?"
+
+#: classes/email-options.php:137
+msgid "Send test email"
+msgstr "Envoyer un e-mail test"
+
+#: classes/doc.php:56
+msgid "Serialized data"
+msgstr "Données sérialisées"
+
+#: classes/export.php:151
+msgid ""
+"Serialized values sometimes can have problems being displayed in Microsoft "
+"Excel or LibreOffice, we can double encapsulate this kind of data but you "
+"would not be able to import this data beucase instead of serialized data it "
+"would be managed as strings"
+msgstr ""
+"Les valeurs sérialisées peuvent parfois avoir des problèmes d'affichage dans "
+"Microsoft Excel ou LibreOffice, nous pouvons double encapsuler ce type de "
+"données mais vous ne seriez pas en mesure d'importer ces données car au lieu "
+"de données sérialisées, elles seraient gérées comme des chaînes"
+
+#: classes/email-templates.php:40
+msgid "Set featured image"
+msgstr "Définir l'image sélectionnée"
+
+#: classes/frontend.php:350 classes/cron.php:59
+msgid "Settings updated correctly"
+msgstr "Paramètres mis à jour correctement"
+
+#: addons/woocommerce-subscriptions.php:380
+msgid ""
+"Shipping method and title for the subscription have been left as empty. "
+msgstr ""
+"La méthode d'expédition et le titre de l'abonnement ont été laissés vides."
+
+#: classes/columns.php:37
+msgid "Show fields in profile?"
+msgstr "Afficher les champs dans le profil ?"
+
+#: classes/import.php:447
+#, php-format
+msgid "Some of the next roles \"%s\" does not exists"
+msgstr "Certains des rôles suivants \"%s\" n'existent pas"
+
+#: classes/export.php:220
+msgid "Some values has been altered"
+msgstr "Certaines valeurs ont été modifiées"
+
+#: classes/import-groups.php:172 classes/import-users.php:372
+msgid "Start importing"
+msgstr "Commencer l'importation"
+
+#: classes/export.php:20
+msgid "Starting process"
+msgstr "Processus de démarrage"
+
+#: classes/export.php:21
+msgid "Step"
+msgstr "Étape"
+
+#: classes/export.php:23
+msgid "steps"
+msgstr "ÉtapeS"
+
+#: addons/mailpoet.php:23
+msgid "Subscribe users to MailPoet lists"
+msgstr "Abonnez les utilisateurs aux listes MailPoet"
+
+#: classes/helper.php:62
+msgid "Tab"
+msgstr "Onglet"
+
+#: classes/doc.php:149
+msgid "Task successfully executed: "
+msgstr "Tâche exécutée avec succès :"
+
+#: classes/email-options.php:309
+msgid "Test email sent"
+msgstr "E-mail de test envoyé"
+
+#: addons/learndash.php:30
+msgid "Thanks to @prangesco who explain us how to do it"
+msgstr "Merci à @prangesco qui nous explique comment faire"
+
+#: addons/woocommerce-subscriptions.php:232
+#, php-format
+msgid "The %s date must occur after the next payment date."
+msgstr "La date %s doit être postérieure à la prochaine date de paiement."
+
+#: addons/woocommerce-subscriptions.php:236
+#, php-format
+msgid "The %s date must occur after the trial end date."
+msgstr "La date %s doit être postérieure à la date de fin de l'essai."
+
+#: addons/woocommerce-subscriptions.php:240
+#, php-format
+msgid "The %s must occur after the start date."
+msgstr "Le %s doit se produire après la date de début."
+
+#: classes/import.php:581
+#, php-format
+msgid ""
+"The email %s already exists in the system but is used by a different user "
+"than the one indicated in the CSV"
+msgstr ""
+"L'email %s existe déjà dans le système mais est utilisé par un utilisateur "
+"différent de celui indiqué dans le CSV"
+
+#: addons/woocommerce-subscriptions.php:376
+#, php-format
+msgid "The following billing address fields have been left empty: %s. "
+msgstr ""
+"Les champs d'adresse de facturation suivants ont été laissés vides : %s."
+
+#: addons/woocommerce-subscriptions.php:372
+#, php-format
+msgid "The following shipping address fields have been left empty: %s. "
+msgstr "Les champs d'adresse de livraison suivants ont été laissés vides : %s."
+
+#: addons/woocommerce-subscriptions.php:502
+#, php-format
+msgid ""
+"The payment method \"%s\" is either not enabled or does not support the new "
+"features of Subscriptions 2.0 and can not be properly attached to your "
+"subscription. This subscription has been set to manual renewals."
+msgstr ""
+"Le mode de paiement \"%s\" n'est pas activé ou ne prend pas en charge les "
+"nouvelles fonctionnalités des abonnements 2.0 et ne peut pas être "
+"correctement associé à votre abonnement. Cet abonnement a été configuré pour "
+"des renouvellements manuels."
+
+#: classes/import-groups.php:83
+msgid ""
+"The PDF file includes all groups informations required for importing users "
+"in the next step."
+msgstr ""
+"Le fichier PDF contient toutes les informations de groupe nécessaires à "
+"l'importation des utilisateurs à l'étape suivante."
+
+#: addons/woocommerce-subscriptions.php:587
+msgid "The product_id is missing from CSV."
+msgstr "Le product_id est absent du CSV."
+
+#: classes/import.php:1061
+#, php-format
+msgid ""
+"The School called \"%s\" with ID \"%s\" exists, it has been updated with new "
+"classes"
+msgstr ""
+"L'école dénomée \"%s\" avec l'ID \"%s\" existe, elle a été mise à jour avec "
+"de nouvelles classes"
+
+#: classes/doc.php:90
+msgid "The user's first name."
+msgstr "Le prénom de l'utilisateur."
+
+#: classes/doc.php:91
+msgid "The user's last name."
+msgstr "Le nom de famille de l'utilisateur."
+
+#: classes/doc.php:89
+msgid "The user's nickname, defaults to the user's username."
+msgstr ""
+"Le surnom de l'utilisateur est par défaut le nom d'utilisateur de "
+"l'utilisateur."
+
+#: addons/groups.php:29
+msgid ""
+"The value of each cell will be the ID of the group that you want to assign "
+"to this user"
+msgstr ""
+"La valeur de chaque cellule sera l'ID du groupe que vous souhaitez attribuer "
+"à cet utilisateur"
+
+#: addons/user-language.php:36
+msgid "The value of each cell will be the language of the user has acces to"
+msgstr "La valeur de chaque cellule sera la langue de l'utilisateur a accès à"
+
+#: addons/groups.php:31
+msgid ""
+"The value of each cell will be the name of the group that you want to assign "
+"to this user"
+msgstr ""
+"La valeur de chaque cellule sera le nom du groupe que vous souhaitez "
+"attribuer à cet utilisateur"
+
+#: addons/users-group.php:25 addons/wp-users-group.php:25
+msgid ""
+"The value of each cell will be the name of the user group (do not use slugs)"
+msgstr ""
+"La valeur de chaque cellule sera le nom du groupe d'utilisateurs (n'utilisez "
+"pas de slugs)"
+
+#: addons/wp-lms-course.php:27
+msgid ""
+"The value of each cell will be the NUMBER of the course to enroll (do not "
+"use slugs)"
+msgstr ""
+"La valeur de chaque cellule sera le NUMERO du cours à inscrire (ne pas "
+"utiliser de slugs)"
+
+#: addons/customer-area.php:28
+msgid "The value of each cell will be the slug of the group"
+msgstr ""
+"La valeur de chaque cellule sera le slug du groupe\n"
+"TRANSLATE"
+
+#: addons/wp-user-avatar.php:36
+msgid "The value of each cell will be the url to the image in your system"
+msgstr "La valeur de chaque cellule sera l'URL de l'image dans votre système"
+
+#: addons/user-language.php:37
+msgid ""
+"The values must be : <strong>en</strong> ( for english ) , <strong>"
+"fr</strong> ( for french ) , <strong>ar</strong> ( for arabic )"
+msgstr ""
+"Les valeurs doivent être : <strong>en</strong> ( pour l'anglais ) , <strong>"
+"fr</strong> ( pour le français ) , <strong>ar</strong> ( pour l'arabe )"
+
+#: addons/buddypress.php:137
+msgid ""
+"Then in each cell you have to fill with the BuddyPress <strong>group "
+"slug</strong>"
+msgstr ""
+"Ensuite, dans chaque cellule, vous devez remplir avec le BuddyPress <strong>"
+"group slug</strong>"
+
+#: classes/columns.php:68
+msgid "There is no columns loaded yet"
+msgstr "Il n'y a pas encore de colonnes chargées"
+
+#: classes/import-users.php:558
+msgid "There were problems deleting the file, please check file permissions"
+msgstr ""
+"Il y a eu des problèmes lors de la suppression du fichier, veuillez vérifier "
+"les autorisations du fichier"
+
+#: classes/import-users.php:449
+msgid "There were problems deleting the files, please check files permissions"
+msgstr ""
+"Il y a eu des problèmes lors de la suppression des fichiers, veuillez "
+"vérifier les autorisations des fichiers"
+
+#: classes/cron.php:327
+msgid ""
+"This endpoint does an administrative task, so in order to run it you must be "
+"authenticated with a user with privileges."
+msgstr ""
+"Ce point de terminaison effectue une tâche administrative, donc pour "
+"l'exécuter, vous devez être authentifié avec un utilisateur disposant de "
+"privilèges."
+
+#: classes/new_features.php:12
+msgid ""
+"This is a list of new features that we want to include, but we have not been "
+"able to do yet. We have a bussiness and have not so much time for this "
+"plugin as we would like to have. If you need some new feature not included "
+"in this list, please write us to:"
+msgstr ""
+"Il s'agit d'une liste de nouvelles fonctionnalités que nous souhaitons "
+"inclure, mais nous n'avons pas encore pu le faire. Nous avons une entreprise "
+"et n'avons pas autant de temps pour ce plugin que nous aimerions en avoir. "
+"Si vous avez besoin d'une nouvelle fonctionnalité non incluse dans cette "
+"liste, veuillez nous écrire à :"
+
+#: classes/doc.php:74
+msgid ""
+"This option will force users to go to their edit password screen after being "
+"created with this plugin. As this is an option that deals with profile "
+"screens and password edit actions that can change, <strong>you should be "
+"careful if you use a plugin to modify any of these functions</strong>."
+msgstr ""
+"Cette option obligera les utilisateurs à accéder à leur écran de "
+"modification du mot de passe après avoir été créés avec ce plugin. Comme il "
+"s'agit d'une option qui traite des écrans de profil et des actions de "
+"modification de mot de passe qui peuvent changer, <strong>vous devez être "
+"prudent si vous utilisez un plug-in pour modifier l'une de ces "
+"fonctions</strong>."
+
+#: addons/learndash.php:24
+msgid "This plugin lets you bulk import users into Learndash courses:"
+msgstr ""
+"Ce plugin vous permet d'importer en masse des utilisateurs dans les cours "
+"Learndash :"
+
+#: classes/import-users.php:553 classes/import-users.php:580
+msgid "This plugin only can delete the type of file it manages, CSV files."
+msgstr ""
+"Ce plugin ne peut supprimer que le type de fichier qu'il gère, les fichiers "
+"CSV."
+
+#: addons/woocommerce-subscriptions.php:83
+#, php-format
+msgid ""
+"This subscription importer is based in the official <a href=\"%s\">"
+"WooCommerce Subscription Importer Exporter</a>."
+msgstr ""
+"Cet importateur d'abonnements est basé sur l'<a href=\"%s\">WooCommerce "
+"Subscription Importer Exporter</a> officiel."
+
+#: classes/email-options.php:137
+msgid "This test email will be sent to the current user"
+msgstr "Cet e-mail de test sera envoyé à l'utilisateur actuel"
+
+#: classes/doc.php:125
+msgid "to test"
+msgstr "tester"
+
+#: classes/doc.php:62
+msgid ""
+"two colons, inside the cell in order to split the string in a list of items."
+msgstr ""
+"deux deux-points, à l'intérieur de la cellule afin de diviser la chaîne dans "
+"une liste d'éléments."
+
+#: classes/doc.php:67
+msgid ""
+"two colons, inside the cell in order to split the string in a list of items. "
+"Every item should be splitted using => to separate the key from the value. "
+"For example: "
+msgstr ""
+"deux deux-points, à l'intérieur de la cellule afin de diviser la chaîne dans "
+"une liste d'éléments. Chaque élément doit être divisé en utilisant => pour "
+"séparer la clé de la valeur. Par exemple:"
+
+#: classes/helper.php:351 classes/helper.php:358
+msgid "Type"
+msgstr "Type"
+
+#: classes/email-templates.php:33
+msgid "Update email template"
+msgstr "Mettre à jour le modèle d'e-mail"
+
+#: classes/import-users.php:274
+msgid "Update emails?"
+msgstr "Mettre à jour les e-mails ?"
+
+#: classes/frontend.php:140 classes/import-users.php:261
+msgid "Update existing users?"
+msgstr "Mettre à jour les utilisateurs existants ?"
+
+#: classes/import-users.php:226
+msgid "Update Groups"
+msgstr "Mettre à jour les groupes"
+
+#: classes/import-users.php:304
+msgid "Update passwords as it is described in documentation"
+msgstr "Mettez à jour les mots de passe comme décrit dans la documentation"
+
+#: classes/frontend.php:153 classes/import-users.php:288 classes/cron.php:237
+msgid "Update roles for existing users?"
+msgstr "Mettre à jour les rôles des utilisateurs existants ?"
+
+#: classes/frontend.php:135 classes/import-users.php:253
+msgid "Update users"
+msgstr "Mettre à jour les utilisateurs"
+
+#: classes/frontend.php:444
+msgid "Upload and process"
+msgstr "Télécharger et traiter"
+
+#: classes/email-templates.php:130 classes/email-options.php:130
+msgid "Upload file"
+msgstr "Téléverser un fichier"
+
+#: classes/import-users.php:533
+msgid "uploaded on"
+msgstr "téléchargé sur"
+
+#: classes/email-templates.php:44
+msgid "Uploaded to this email template"
+msgstr "Importé dans ce modèle d'e-mail"
+
+#: classes/options.php:11 classes/email-options.php:150
+msgid "URL to login"
+msgstr "URL pour se connecter"
+
+#: classes/email-templates.php:42
+msgid "Use as featured image"
+msgstr "Utiliser comme image vedette"
+
+#: classes/email-options.php:297
+msgid "Use this file"
+msgstr "Utilisez ce fichier"
+
+#: classes/frontend.php:56 classes/frontend.php:220
+msgid "Use this shortcode in any page or post"
+msgstr "Utilisez ce shortcode dans n'importe quelle page ou publication"
+
+#: classes/import.php:588
+#, php-format
+msgid "User already exists as: %s (in this CSV file is called: %s)"
+msgstr ""
+"L'utilisateur existe déjà en tant que : %s (dans ce fichier CSV, il "
+"s'appelle : %s)"
+
+#: classes/export.php:115
+msgid "User created"
+msgstr "Utilisateur créé"
+
+#: classes/email-options.php:29 classes/email-options.php:33
+msgid "User created or edited"
+msgstr "Utilisateur créé ou modifié"
+
+#: classes/email-templates.php:80
+msgid "user email"
+msgstr "e-mail de l'utilisateur"
+
+#: addons/user-language.php:31
+msgid "User language"
+msgstr "Langue de l'utilisateur"
+
+#: classes/email-templates.php:79
+msgid "user password"
+msgstr "mot de passe de l'utilisateur"
+
+#: classes/import.php:558
+#, php-format
+msgid "User with email \"%s\" exists with other username, we ignore it"
+msgstr ""
+"L'utilisateur avec l'e-mail \"%s\" existe avec un autre nom d'utilisateur, "
+"nous l'ignorons"
+
+#: classes/import.php:501
+#, php-format
+msgid "User with email \"%s\" exists, we ignore it"
+msgstr "L'utilisateur avec l'e-mail \"%s\" existe, nous l'ignorons"
+
+#: classes/import.php:483
+#, php-format
+msgid "User with ID \"%s\" exists, we ignore it"
+msgstr "L'utilisateur avec l'ID \"%s\" existe, nous l'ignorons"
+
+#: classes/export.php:216
+#, php-format
+msgid ""
+"User with id: %s has the cell of the column: %s edited because has content "
+"that may auto-run formulas in certain spreadsheet apps, new value is: %s"
+msgstr ""
+"L'utilisateur avec l'identifiant : %s a modifié la cellule de la colonne : "
+"%s, car son contenu peut exécuter automatiquement des formules dans "
+"certaines applications de tableur, la nouvelle valeur est : %s"
+
+#: classes/import.php:546
+#, php-format
+msgid "User with username \"%s\" exists, we ignore it"
+msgstr "L'utilisateur avec le nom d'utilisateur \"%s\" existe, nous l'ignorons"
+
+#: classes/frontend.php:367
+#, php-format
+msgid ""
+"User with username: %s has executed an import using the shortcode in the "
+"frontend."
+msgstr ""
+"L'utilisateur avec le nom d'utilisateur : %s a exécuté une importation en "
+"utilisant le shortcode dans le frontend."
+
+#: classes/doc.php:94
+msgid "User's AOL IM account."
+msgstr "Compte de messagerie instantanée AOL de l'utilisateur."
+
+#: classes/doc.php:93
+msgid "User's Jabber account."
+msgstr "Compte Jabber de l'utilisateur."
+
+#: classes/doc.php:95
+msgid "User's Yahoo IM account."
+msgstr "Compte Yahoo IM de l'utilisateur."
+
+#: addons/users-group.php:24 addons/wp-users-group.php:24
+msgid "user_group as the column title"
+msgstr "user_group comme titre de colonne"
+
+#: classes/options.php:11 classes/email-options.php:150
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: classes/email-templates.php:78
+msgid "username to login"
+msgstr "nom d'utilisateur pour se connecter"
+
+#: classes/doc.php:15
+msgid ""
+"Username: you can leave it empty and the username will be generated randomly"
+msgstr ""
+"Nom d'utilisateur : vous pouvez le laisser vide et le nom d'utilisateur sera "
+"généré aléatoirement"
+
+#: addons/wp-members.php:24 addons/wp-members.php:48
+#: addons/new-user-approve.php:24 addons/allow-multiple-accounts.php:28
+#: addons/allow-multiple-accounts.php:47
+msgid "users"
+msgstr "utilisateurs"
+
+#: classes/wp-importer.php:20
+msgid "Users (in CSV format)"
+msgstr "Utilisateurs (au format CSV)"
+
+#: classes/wp-importer.php:20
+msgid "Users and customers (in CSV format)"
+msgstr "Utilisateurs et clients (au format CSV)"
+
+#: classes/helper.php:384
+msgid "Users created"
+msgstr "Utilisateurs créés"
+
+#: classes/helper.php:392
+msgid "Users deleted"
+msgstr "Utilisateurs supprimés"
+
+#: classes/frontend.php:167 classes/import-users.php:318 classes/cron.php:273
+msgid "Users not present in CSV file"
+msgstr "Utilisateurs non présents dans le fichier CSV"
+
+#: classes/helper.php:380
+msgid "Users processed"
+msgstr "Utilisateurs traités"
+
+#: classes/helper.php:388
+msgid "Users updated"
+msgstr "Utilisateurs mis à jour"
+
+#: classes/email-templates.php:34
+msgid "View email template"
+msgstr "Afficher le modèle d'e-mail"
+
+#: classes/email-templates.php:35
+msgid "View email templates"
+msgstr "Afficher les modèles d'e-mails"
+
+#: classes/doc.php:75
+msgid ""
+"We <strong>support the standard WordPress method and WooCommerce</strong> "
+"but if you use other plugins that modify these views or actions you may have "
+"problems with infinite redirection loops with users who have this option "
+"checked."
+msgstr ""
+"Nous <strong>supportons la méthode WordPress standard et WooCommerce</strong>"
+" mais si vous utilisez d'autres plugins qui modifient ces vues ou actions, "
+"vous pouvez avoir des problèmes avec des boucles de redirection infinies "
+"avec les utilisateurs qui ont coché cette option."
+
+#: classes/help.php:14 classes/donate.php:13
+msgid ""
+"We have been spending many hours to develop this plugin and answering "
+"questions in the forum to give you the best support. <br>If you like and use "
+"this plugin, you can <strong>buy us a cup of coffee</strong>."
+msgstr ""
+"Nous avons passé de nombreuses heures à développer ce plugin et à répondre "
+"aux questions du forum pour vous offrir le meilleur support. <br>Si vous "
+"aimez et utilisez ce plugin, vous pouvez <strong>nous offrir une tasse de "
+"café</strong>."
+
+#: classes/help.php:38
+msgid ""
+"We work daily with WordPress and WooCommerce if you need professional help, "
+"hire us. You can send us a message at"
+msgstr ""
+"Nous travaillons quotidiennement avec WordPress et WooCommerce si vous avez "
+"besoin d'une aide professionnelle, engagez-nous. Vous pouvez nous envoyer un "
+"message à"
+
+#: classes/options.php:10 classes/email-options.php:153
+msgid "Welcome to"
+msgstr "Bienvenue à"
+
+#: classes/options.php:11 classes/email-options.php:150
+msgid "Welcome,"
+msgstr "Bienvenue,"
+
+#: classes/import-users.php:189
+msgid "What should the plugin do with empty cells?"
+msgstr "Que doit faire le plugin avec les cellules vides ?"
+
+#: classes/import-users.php:283
+msgid ""
+"What the plugin should do if the plugin find an user, identified by their "
+"username, with a different email"
+msgstr ""
+"Ce que le plugin doit faire si le plugin trouve un utilisateur, identifié "
+"par son nom d'utilisateur, avec un e-mail différent"
+
+#: addons/learndash.php:27
+msgid ""
+"where courseID needs to be replaced (as column header) with the same id you "
+"used in lms_courses, and the column cells populated with a string such as "
+"the one you will find in the metakey section of the plugin looking for that "
+"particular metakey (course_courseID_access_from). \n"
+"This is because Learndash needs to know when a user was enrolled to which "
+"course."
+msgstr ""
+"où courseID doit être remplacé (comme en-tête de colonne) par le même "
+"identifiant que vous avez utilisé dans lms_courses, et les cellules de "
+"colonne remplies d'une chaîne telle que celle que vous trouverez dans la "
+"section metakey du plugin à la recherche de cette metakey particulière "
+"(course_courseID_access_from) . En effet, Learndash a besoin de savoir quand "
+"un utilisateur a été inscrit à quel cours."
+
+#: classes/frontend.php:90 classes/cron.php:232
+msgid "Which role would be used to import users?"
+msgstr "Quel rôle serait utilisé pour importer des utilisateurs ?"
+
+#: classes/frontend.php:71
+msgid ""
+"will only delete (if the deletion is active) the users not present in the "
+"CSV with are editors"
+msgstr ""
+"supprimera uniquement (si la suppression est active) les utilisateurs non "
+"présents dans le CSV avec sont des éditeurs"
+
+#: classes/actions.php:75
+msgid ""
+"Within each cell, you must indicate the post_id that will be assigned to "
+"this user. You can use a list separating each ID by commas. The post can be "
+"of any post type."
+msgstr ""
+"Dans chaque cellule, vous devez indiquer le post_id qui sera attribué à cet "
+"utilisateur. Vous pouvez utiliser une liste séparant chaque ID par des "
+"virgules. Le message peut être de n'importe quel type de message."
+
+#: addons/woocommerce-custom-fields.php:35
+msgid "WooCommerce Custom Fields is activated"
+msgstr "Les champs personnalisés WooCommerce sont activés"
+
+#: addons/woocommerce.php:57
+msgid "WooCommerce is activated"
+msgstr "WooCommerce est activé"
+
+#: addons/woocommerce.php:120
+msgid "WooCommerce lost password url"
+msgstr "WooCommerce a perdu l'URL du mot de passe"
+
+#: addons/woocommerce-membership-rightpress.php:20
+msgid "WooCommerce Membership by RightPress is activated"
+msgstr "WooCommerce Membership par RightPress est activée"
+
+#: addons/woocommerce-membership.php:20
+msgid "WooCommerce Memberships is activated"
+msgstr "Les abonnements WooCommerce sont activés"
+
+#: addons/woocommerce.php:121
+msgid "WooCommerce password reset url"
+msgstr "URL de réinitialisation du mot de passe WooCommerce"
+
+#: addons/woocommerce.php:122
+msgid "WooCommerce password reset url with HTML link"
+msgstr "URL de réinitialisation du mot de passe WooCommerce avec lien HTML"
+
+#: addons/woocommerce-subscriptions.php:25
+msgid "WooCommerce Subscriptions import errors"
+msgstr "Erreurs d'importation des abonnements WooCommerce"
+
+#: addons/woocommerce-subscriptions.php:24
+msgid "WooCommerce Subscriptions import warnings"
+msgstr "Avertissements d'importation des abonnements WooCommerce"
+
+#: addons/woocommerce-subscriptions.php:77
+msgid "WooCommerce Subscriptions is activated"
+msgstr "Les abonnements WooCommerce sont activés"
+
+#: classes/email-options.php:24
+msgid "WordPress automatic emails"
+msgstr "Courriels automatiques WordPress"
+
+#: classes/doc.php:83
+msgid "WordPress default profile data"
+msgstr "Données de profil par défaut de WordPress"
+
+#: addons/customer-area.php:23
+msgid "WP Customer Area Managed Groups is activated"
+msgstr "WP Customer Area Managed Groups est activés"
+
+#: addons/wp-members.php:24 addons/wp-members.php:48
+msgid "WP Members"
+msgstr "Membres WP"
+
+#: addons/wp-members.php:12 addons/wp-members.php:36
+msgid "WP Members compatibility"
+msgstr "Compatibilité des membres WP"
+
+#: addons/wp-user-avatar.php:31
+msgid "WP Users Avatar is activated"
+msgstr "L'avatar des utilisateurs WP est activé"
+
+#: addons/users-group.php:20 addons/wp-users-group.php:20
+msgid "WP Users Group is activated"
+msgstr "Le groupe d'utilisateurs WP est activé"
+
+#: classes/frontend.php:143 classes/frontend.php:156
+#: classes/import-users.php:237 classes/import-users.php:264
+#: classes/import-users.php:277
+msgid "Yes"
+msgstr "Oui"
+
+#: classes/frontend.php:156 classes/import-users.php:291
+#: classes/import-users.php:304
+msgid "Yes, add new roles and not override existing ones"
+msgstr "Oui, ajouter de nouveaux rôles et ne pas remplacer ceux existants"
+
+#: classes/import-users.php:291
+msgid "Yes, update and override existing roles"
+msgstr "Oui, mettre à jour et remplacer les rôles existants"
+
+#: addons/learndash.php:27
+msgid "You also need to create, for each course, the respective "
+msgstr "Vous devez également créer, pour chaque cours, les"
+
+#: classes/import.php:13
+msgid "You are not allowed to see this content."
+msgstr "Vous n'êtes pas autorisé à voir ce contenu."
+
+#: classes/frontend.php:49
+msgid "you can also do an export in the frontend"
+msgstr "vous pouvez également faire une exportation dans le frontend"
+
+#: classes/new_features.php:12
+msgid ""
+"You can also donate us or talk with us to have some of the next new features "
+"done soon."
+msgstr ""
+"Vous pouvez également nous faire un don ou parler avec nous pour que "
+"certaines des prochaines nouvelles fonctionnalités soient bientôt réalisées."
+
+#: classes/import-users.php:146
+msgid ""
+"You can also import roles from a CSV column. Please read documentation tab "
+"to see how it can be done. If you choose more than one role, the roles would "
+"be assigned correctly but you should use some plugin like <a href=\"https:"
+"//wordpress.org/plugins/user-role-editor/\">User Role Editor</a> to manage "
+"them."
+msgstr ""
+"Vous pouvez également importer des rôles à partir d'une colonne CSV. "
+"Veuillez lire l'onglet documentation pour voir comment cela peut être fait. "
+"Si vous choisissez plus d'un rôle, les rôles seront attribués correctement, "
+"mais vous devez utiliser un plugin comme <a href=\"https://wordpress."
+"org/plugins/user-role-editor/\">User Role Editor</a > pour les gérer."
+
+#: classes/email-templates.php:85
+msgid ""
+"You can also use any WordPress user standard field or an own metadata, if "
+"you have used it in your CSV. For example, if you have a first_name column, "
+"you could use **first_name** or any other meta_data like **my_custom_meta**"
+msgstr ""
+"Vous pouvez également utiliser n'importe quel champ utilisateur standard de "
+"WordPress ou vos propres métadonnées, si vous les avez utilisées dans votre "
+"CSV. Par exemple, si vous avez une colonne first_name, vous pouvez utiliser "
+"**first_name** ou toute autre meta_data comme **my_custom_meta**"
+
+#: addons/buddypress.php:139
+msgid ""
+"You can also use group ids if you know it using a column 'bp_group_id' "
+"instead of 'bp_group'"
+msgstr ""
+"Vous pouvez également utiliser des identifiants de groupe si vous le "
+"connaissez en utilisant une colonne 'bp_group_id' au lieu de 'bp_group'"
+
+#: addons/buddypress.php:140
+msgid ""
+"You can do it with multiple groups at the same time using commas to separate "
+"different groups, in bp_group column, i.e.: <em>group_1, group_2, "
+"group_3</em>"
+msgstr ""
+"Vous pouvez le faire avec plusieurs groupes en même temps en utilisant des "
+"virgules pour séparer les différents groupes, dans la colonne bp_group, "
+"c'est-à-dire : <em>group_1, group_2, group_3</em>"
+
+#: classes/actions.php:73
+msgid ""
+"You can do some actions while you are importing. You have to name the column "
+"as indicated below and follow the instructions:"
+msgstr ""
+"Vous pouvez effectuer certaines actions pendant l'importation. Vous devez "
+"nommer la colonne comme indiqué ci-dessous et suivre les instructions :"
+
+#: classes/cron.php:326
+msgid ""
+"You can execute the cron process out of your site using the next REST-API "
+"endpoint:"
+msgstr ""
+"Vous pouvez exécuter le processus cron hors de votre site à l'aide du point "
+"de terminaison REST-API suivant :"
+
+#: addons/woocommerce-subscriptions.php:80
+msgid "You can import subscriptions with their info"
+msgstr "Vous pouvez importer des abonnements avec leurs informations"
+
+#: addons/advanced-custom-fields.php:29
+msgid ""
+"You can import those fields, look at every group which fields you can import "
+"using the column names shown below."
+msgstr ""
+"Vous pouvez importer ces champs, regardez chaque groupe de champs que vous "
+"pouvez importer en utilisant les noms de colonne indiqués ci-dessous."
+
+#: addons/woocommerce-custom-fields.php:37
+msgid ""
+"You can import those fields, look at fields you can import using the column "
+"names shown below."
+msgstr ""
+"Vous pouvez importer ces champs, regardez les champs que vous pouvez "
+"importer en utilisant les noms de colonne indiqués ci-dessous."
+
+#: addons/groups.php:26
+msgid ""
+"You can import user and assign them to the users groups using the next format"
+msgstr ""
+"Vous pouvez importer des utilisateurs et les affecter aux groupes "
+"d'utilisateurs en utilisant le format suivant"
+
+#: addons/wp-user-avatar.php:33
+msgid ""
+"You can import user avatar and assign them to the users using the next format"
+msgstr ""
+"Vous pouvez importer des avatars d'utilisateurs et les attribuer aux "
+"utilisateurs en utilisant le format suivant"
+
+#: addons/users-group.php:22 addons/wp-users-group.php:22
+#: addons/customer-area.php:25
+msgid ""
+"You can import user groups and assign them to the users using the next format"
+msgstr ""
+"Vous pouvez importer des groupes d'utilisateurs et les affecter aux "
+"utilisateurs en utilisant le format suivant"
+
+#: addons/wp-lms-course.php:24
+msgid "You can import users and assign them to LMS Course using next format"
+msgstr ""
+"Vous pouvez importer des utilisateurs et les affecter au cours LMS en "
+"utilisant le format suivant"
+
+#: addons/buddypress.php:125
+msgid ""
+"You can import users avatars using a column called <strong>bp_avatar</strong>"
+", in this field you can place:"
+msgstr ""
+"Vous pouvez importer des avatars d'utilisateurs à l'aide d'une colonne "
+"appelée <strong>bp_avatar</strong>, dans ce champ vous pouvez placer :"
+
+#: addons/buddypress.php:106
+msgid ""
+"You can insert any profile from BuddyPress using his name as header. Plugin "
+"will check, before import, which fields are defined in BuddyPress and will "
+"assign it in the update. You can use this fields:"
+msgstr ""
+"Vous pouvez insérer n'importe quel profil de BuddyPress en utilisant son nom "
+"comme en-tête. Le plugin vérifiera, avant l'importation, quels champs sont "
+"définis dans BuddyPress et les attribuera dans la mise à jour. Vous pouvez "
+"utiliser ces champs :"
+
+#: classes/email-templates.php:76
+msgid "You can use"
+msgstr "Vous pouvez utiliser"
+
+#: classes/doc.php:25
+msgid ""
+"You can use a column called id in order to make inserts or updates of an "
+"user using the ID used by WordPress in the wp_users table. We have two "
+"different cases:"
+msgstr ""
+"Vous pouvez utiliser une colonne appelée id afin de faire des insertions ou "
+"des mises à jour d'un utilisateur en utilisant l'ID utilisé par WordPress "
+"dans la table wp_users. Nous avons deux cas différents :"
+
+#: classes/frontend.php:259
+msgid ""
+"You can use columns attribute to set which columns must be exported and in "
+"which order. Use a list of fields separated by commas, for example"
+msgstr ""
+"Vous pouvez utiliser l'attribut columns pour définir quelles colonnes "
+"doivent être exportées et dans quel ordre. Utilisez une liste de champs "
+"séparés par des virgules, par exemple"
+
+#: classes/frontend.php:247
+msgid ""
+"You can use delimiter attribute to set which delimiter is going to be used, "
+"allowed values are:"
+msgstr ""
+"Vous pouvez utiliser l'attribut delimiter pour définir quel délimiteur va "
+"être utilisé, les valeurs autorisées sont :"
+
+#: classes/frontend.php:241
+msgid ""
+"You can use from attribute to filter users created before a specified date. "
+"Date format has to be: Y-m-d, for example:"
+msgstr ""
+"Vous pouvez utiliser l'attribut from pour filtrer les utilisateurs créés "
+"avant une date spécifiée. Le format de date doit être : A-m-j, par exemple :"
+
+#: classes/frontend.php:235
+msgid ""
+"You can use from attribute to filter users created from a specified date. "
+"Date format has to be: Y-m-d, for example:"
+msgstr ""
+"Vous pouvez utiliser l'attribut from pour filtrer les utilisateurs créés à "
+"partir d'une date spécifiée. Le format de date doit être : A-m-j, par "
+"exemple :"
+
+#: classes/frontend.php:253
+msgid ""
+"You can use order-alphabetically attribute to order alphabetically the "
+"fields, for example"
+msgstr ""
+"Vous pouvez utiliser l'attribut order-alphabetically pour trier les champs "
+"par ordre alphabétique, par exemple"
+
+#: classes/frontend.php:265
+msgid ""
+"You can use orderby attribute to set the order in which users would be "
+"exported. You can use some of the next fields or a meta_key:"
+msgstr ""
+"Vous pouvez utiliser l'attribut orderby pour définir l'ordre dans lequel les "
+"utilisateurs seront exportés. Vous pouvez utiliser certains des champs "
+"suivants ou une meta_key :"
+
+#: classes/frontend.php:229
+msgid ""
+"You can use role as attribute to choose directly in the shortcode the role "
+"to use during the export. Remind that you must use the role slug, for "
+"example:"
+msgstr ""
+"Vous pouvez utiliser role comme attribut pour choisir directement dans le "
+"shortcode le rôle à utiliser lors de l'export. Rappelez-vous que vous devez "
+"utiliser le slug de rôle, par exemple :"
+
+#: classes/frontend.php:65
+msgid ""
+"You can use role as attribute to choose directly in the shortcode the role "
+"to use during the import. Remind that you must use the role slug, for "
+"example:"
+msgstr ""
+"Vous pouvez utiliser role comme attribut pour choisir directement dans le "
+"shortcode le rôle à utiliser lors de l'import. Rappelez-vous que vous devez "
+"utiliser le slug de rôle, par exemple :"
+
+#: addons/woocommerce-membership.php:23
+msgid ""
+"You can use the <strong>columns in the CSV format created by WooCommercer "
+"Membership</strong> in order to import data from this plugin."
+msgstr ""
+"Vous pouvez utiliser les <strong>colonnes au format CSV créées par "
+"WooCommercer Membership</strong> afin d'importer des données à partir de ce "
+"plugin."
+
+#: addons/buddypress.php:134
+msgid ""
+"You can use the <strong>profile fields</strong> you have created and also "
+"you can set one or more groups for each user. For example:"
+msgstr ""
+"Vous pouvez utiliser les <strong>champs de profil</strong> que vous avez "
+"créés et vous pouvez également définir un ou plusieurs groupes pour chaque "
+"utilisateur. Par exemple:"
+
+#: addons/indeed-ultimate-membership-pro.php:29
+msgid ""
+"You can use the columns in the CSV in order to import data from Indeed "
+"Ultimate Membership Pro."
+msgstr ""
+"Vous pouvez utiliser les colonnes du CSV pour importer des données depuis "
+"Indeed Ultimate Membership Pro."
+
+#: addons/pmpro.php:47
+msgid ""
+"You can use the columns in the CSV in order to import data from Paid "
+"Membership Pro plugin."
+msgstr ""
+"Vous pouvez utiliser les colonnes du CSV afin d'importer des données à "
+"partir du plug-in Paid Membership Pro."
+
+#: classes/frontend.php:71
+msgid ""
+"You can use this attribute to make delete only users of the specified role "
+"that are not present in the CSV, for example:"
+msgstr ""
+"Vous pouvez utiliser cet attribut pour supprimer uniquement les utilisateurs "
+"du rôle spécifié qui ne sont pas présents dans le CSV, par exemple :"
+
+#: classes/export.php:111
+msgid ""
+"You can use this field to set which columns must be exported and in which "
+"order.  If you leave it empty, all columns will be exported. Use a list of "
+"fields separated by commas, for example"
+msgstr ""
+"Vous pouvez utiliser ce champ pour définir quelles colonnes doivent être "
+"exportées et dans quel ordre. Si vous le laissez vide, toutes les colonnes "
+"seront exportées. Utilisez une liste de champs séparés par des virgules, par "
+"exemple"
+
+#: addons/woocommerce.php:58
+msgid ""
+"You can use those labels if you want to set data adapted to the WooCommerce "
+"default user columns"
+msgstr ""
+"Vous pouvez utiliser ces étiquettes si vous souhaitez définir des données "
+"adaptées aux colonnes utilisateur par défaut de WooCommerce"
+
+#: classes/doc.php:84
+msgid ""
+"You can use those labels if you want to set data adapted to the WordPress "
+"default user columns (the ones who use the function"
+msgstr ""
+"Vous pouvez utiliser ces étiquettes si vous souhaitez définir des données "
+"adaptées aux colonnes utilisateur par défaut de WordPress (ceux qui "
+"utilisent la fonction"
+
+#: classes/import.php:452
+#, php-format
+msgid "You do not have permission to assign some of the next roles \"%s\""
+msgstr ""
+"Vous n'êtes pas autorisé à attribuer certains des rôles suivants \"%s\""
+
+#: classes/multisite.php:30
+msgid ""
+"You have to <strong>create a column called 'blogs'</strong>: if cell is "
+"empty, it won't assign users to any blog; if cell has a value, it will be "
+"used. You have to fill it with blog_id"
+msgstr ""
+"Vous devez <strong>créer une colonne appelée 'blogs'</strong> : si la "
+"cellule est vide, elle n'affectera aucun utilisateur à un blog ; si la "
+"cellule a une valeur, elle sera utilisée. Vous devez le remplir avec blog_id"
+
+#: classes/import-groups.php:158 classes/import-users.php:81
+#: classes/cron.php:190 classes/cron.php:252
+msgid "You have to introduce the path to file, i.e.:"
+msgstr "Vous devez introduire le chemin d'accès au fichier, c'est-à-dire :"
+
+#: addons/learndash.php:26
+msgid ""
+"You have to specify the course IDs you want to enrol a specific user into"
+msgstr ""
+"Vous devez spécifier les ID de cours auxquels vous souhaitez inscrire un "
+"utilisateur spécifique"
+
+#: classes/frontend.php:386
+msgid "You must choose a file"
+msgstr "Vous devez choisir un fichier"
+
+#: addons/user-language.php:33
+msgid "You must specify a language and assign it to the user"
+msgstr "Vous devez spécifier une langue et l'attribuer à l'utilisateur"
+
+#: classes/doc.php:39
+msgid "You should not use both columns in the same import"
+msgstr "Vous ne devez pas utiliser les deux colonnes dans la même importation"
+
+#: classes/options.php:11 classes/email-options.php:150
+msgid "Your data to login in this site is:"
+msgstr "Vos données pour vous connecter à ce site sont :"
+
+#: classes/cron.php:265
+msgid ""
+"Your file will be renamed after moved, so you will not lost any version of "
+"it. The way to rename will be append the time stamp using this date format: "
+"YmdHis."
+msgstr ""
+"Votre fichier sera renommé après avoir été déplacé, vous n'en perdrez donc "
+"aucune version. La façon de renommer sera d'ajouter l'horodatage en "
+"utilisant ce format de date : YmdHis."

@@ -1,0 +1,193 @@
+
+@import "variables" ;
+@import "mixins" ;
+@import "animations" ;
+@import "dash-grid" ;
+@import "dash-welcome" ;
+@import "ld-activity-template" ;
+
+.flex{
+    @include flexbox();
+}
+.block{
+    display: block;
+}
+
+.bb-grid{
+    .entry-content{
+        
+        @include mobile{
+            @include flex-direction(column);
+        }
+        gap: 30px;
+        .bb-dash{
+            flex: 2;
+        }
+        .bb-dash-grid{
+            flex: 1;
+            &__block{
+                z-index: 1;
+                &.onboarding{
+                    &.not_started{
+                        animation: shockwaveJump 1s ease-out infinite;
+                        &:after {
+                        @include afterBg;
+                        animation: shockwave 1s .65s ease-out infinite;
+                        }                  
+                        &:before {
+                        @include afterBg;
+                        animation: shockwave 1s .5s ease-out infinite;
+                        }
+                    }
+                    .bb-dash-grid-onboarding-title > h2{
+                        background: $kwf-primary-button-background-regular;
+                        color: $kwf-danger-color;
+                        font-size: 11px;
+                        font-weight: 700;
+                        @include border-radius(100px);
+                        display: inline-block;
+                        font-size: 13px;
+                        letter-spacing: 0.25px;
+                        padding: 6px 10px;
+                        margin: 10px;
+                        line-height: 1;
+                        white-space: nowrap;
+                        font-family: "Montserrat", Sans-serif;
+                    }
+                }
+                
+            }
+            &__link{
+                z-index: 111111;
+                position: relative;
+            }             
+            &__image{
+                &.classes-container{
+                    background: #fadbcd;
+                    @include border-radius(50%);
+                    margin: auto auto 20px;
+                    padding: 14px;
+                    width: fit-content;
+                }
+                &.onboarding-container{
+                    background: #ccf7e3;
+                    @include border-radius(50%);
+                    margin: auto auto 20px;
+                    padding: 14px;
+                    width: fit-content;
+                   
+                }
+                &.need-help-container{
+                    background: #e5d7f1;
+                    @include border-radius(50%);
+                    margin: auto auto 20px;
+                    padding: 14px;
+                    width: fit-content;
+                }
+            }
+            &_classes_title{
+                color: #f46b43 !important;
+            }
+            &_onboarding_title{
+                color: #07c16c !important;
+            }
+            &_need-help_title{
+                color: #8a54f5 !important;
+            }
+        }
+    }
+}
+.ecole-group{
+    &-container{
+        position: relative;
+        margin: 40px auto;
+    }
+    &-cover{
+        height: 80px;
+        overflow: hidden;
+        position: relative;
+        img{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            @include border-radius(8px);
+        }
+    }
+    &-avatar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-wrap{
+            margin-top: -40px;
+            z-index: 1;
+            @include border-radius(15px);
+            img{
+                max-width: 75px;
+                width: 100%;
+                @include border-radius(15px);
+            }
+        }     
+    }
+    &-main{
+        text-align: center;    
+    }
+    &-name{
+       span.name{
+        font-size: 20px;
+        font-weight: 600;
+        color: $kwf-primary-color;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        text-shadow: 0px 0.5px $kwf-primary-color !important;
+        &:hover, &:active, &:focus{
+            color: $kwf-primary-button-background-regular;
+        }
+       }
+    }
+    &-classes-count, &-students-count{
+        @include flexbox();
+        @include flex-direction(column);
+        align-items: center;
+        justify-content: center;
+       span.classes-count, span.students-count{
+        font-size: 13px;
+       }
+       span.count-nbr{
+        background-color: $kwf-content-alternate-background-color;
+        @include border-radius(23px);
+        padding: 3px 9px;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 600;
+        color: $kwf-body-background-color;
+        letter-spacing: -0.55px;
+        color: #1D2327;
+        border: 1px solid rgba(0,0,0,.1);
+        border-radius: 6px;
+        min-width: 23px;
+       }
+    }
+    &-desc{
+        text-align: center;
+        span.bb-current-group-kwf-ecole{
+            background: $kwf-primary-button-background-regular;
+            color: $kwf-danger-color;
+            font-size: 11px;
+            font-weight: 700;
+            @include border-radius(100px);
+            display: inline-block;
+            font-size: 13px;
+            letter-spacing: 0.25px;
+            padding: 6px 10px;
+            margin: 10px;
+            line-height: 1;
+            white-space: nowrap;
+        }  
+    }
+   
+}

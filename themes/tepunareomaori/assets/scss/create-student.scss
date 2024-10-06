@@ -1,0 +1,474 @@
+@import "variables";
+@import "mixins";
+
+body .select2-container {
+  .select2-dropdown {
+    max-width: 100vw !important;
+  }
+}
+
+#multistepsform {
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+  font-family: montserrat, arial, verdana;
+  min-height: 800px;
+
+  @include mobile {
+    width: 90%;
+    margin: auto;
+  }
+
+  .select2-container {
+    &--default .select2-selection--single {
+      //border: 1px solid var(--bb-content-border-color);
+      height: fit-content;
+      border-radius: 6px;
+      overflow: auto;
+
+      .select2-selection__rendered {
+        line-height: 32px;
+        font-size: 15px;
+      }
+    }
+  }
+
+  #confirm-picture-password {
+    margin: auto;
+    margin-top: 30px;
+    background-color: $kwf-grey-bg-color;
+    color: #1D2327;
+    border: none;
+    width: fit-content;
+
+    &:hover {
+      background-color: $kwf-green-light-hover;
+      color: #4f4d4d;
+    }
+  }
+
+  input.invalid,
+  select.invalid {
+    border-color: red;
+  }
+
+  input:disabled,
+  select:disabled {
+    background-color: rgba(0, 0, 0, 0.05);
+    opacity: 1;
+    cursor: not-allowed;
+  }
+
+  span.bb-icon-l {
+    margin-left: 5px;
+  }
+
+  fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    //margin: 0 10%;
+    position: relative;
+
+    @include mobile {
+      margin: 0;
+    }
+
+    label {
+      font-size: 16px;
+    }
+
+    .fieldset-body {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      // .fieldset-body-component
+      &-component {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #password_strength {
+          font-size: 15px;
+        }
+      }
+
+      .kwf-preloader {
+        #tepunareomaori-preloader {
+          position: relative !important;
+          background: none !important;
+          min-height: 400px !important;
+          height: 100% !important;
+          margin-top: -60px !important;
+        }
+      }
+
+      .notice {
+        font-family: "Montserrat", Sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+
+    #student_school {
+      color: $kwf-primary-color;
+    }
+  }
+
+  fieldset:not(:first-of-type) {
+    display: none;
+  }
+
+  input,
+  textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2c3e50;
+    font-size: 13px;
+    text-align: center;
+
+    &:focus {
+      border-color: $kwf-primary-color;
+      outline: none;
+      color: #637373;
+    }
+
+    &.create-student {
+      width: fit-content;
+    }
+  }
+
+  .action-button {
+    width: 100px;
+    background: $kwf-secondary-color;
+    font-weight: bold;
+    color: #fff;
+    transition: 150ms;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    width: fit-content;
+  }
+
+  .action-button:hover,
+  .action-button:focus {
+    box-shadow: 0 0 0 2px $kwf-primary-hover, 0 0 0 3px $green-light-color;
+    color: #fff;
+  }
+
+  .fieldset-header {
+    margin-bottom: 50px;
+
+    .fs-title {
+      font-size: 15px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 10px;
+      background: $kwf-primary-color;
+      position: absolute;
+      width: 100%;
+      margin-left: -30px;
+      height: 35px;
+      line-height: 35px;
+      margin-top: -20px;
+      border-radius: 5px 5px 0 0;
+
+      &.error {
+        background: $kwf-accent-color;
+        border-bottom: 1px solid;
+      }
+    }
+
+    .fs-subtitle {
+      font-weight: normal;
+      font-size: 13px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      background: $kwf-secondary-color;
+      position: absolute;
+      width: 100%;
+      margin-left: -30px;
+      margin-top: 15px;
+      height: 30px;
+      line-height: 30px;
+
+      &.error {
+        background: $kwf-accent-color;
+      }
+    }
+  }
+
+  fieldset#classrooms_setup {
+    .fieldset-header {
+      margin-bottom: 40px;
+    }
+
+    .classrooms-notice {
+      font-size: 16px;
+    }
+  }
+
+  #progressbar {
+    margin: 0;
+    overflow: hidden;
+    counter-reset: step;
+    width: 100%;
+    z-index: 100;
+    position: relative;
+
+    @include mobile {
+      margin: auto 0 30px 0;
+    }
+
+    li {
+      list-style-type: none;
+      color: $kwf-primary-color;
+      text-transform: uppercase;
+      font-size: 12px;
+      width: 33.33%;
+      float: left;
+      position: relative;
+
+      &:before {
+        content: counter(step);
+        counter-increment: step;
+        width: 20px;
+        line-height: 20px;
+        display: block;
+        font-size: 10px;
+        color: #fff;
+        background: $kwf-primary-color;
+        border-radius: 3px;
+        margin: 0 auto 5px auto;
+      }
+
+      &:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: $kwf-primary-color;
+        position: absolute;
+        left: -50%;
+        top: 9px;
+        z-index: -1;
+      }
+
+      &:first-child:after {
+        content: none;
+      }
+    }
+
+    li.active {
+      color: $kwf-secondary-color;
+
+      &:before,
+      &:after {
+        background: $kwf-secondary-color;
+        color: white;
+      }
+    }
+  }
+}
+
+#create-student {
+  background: #fff;
+  border: 1px solid #e7e9ec;
+  border-radius: 4px;
+  margin-bottom: 0;
+  display: flex;
+  min-height: 700px;
+
+  fieldset#student_credentials {
+    .fieldset-body-component {
+      .text-password {}
+
+      .picture-password {
+        max-height: 300px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 20px;
+        padding-right: 10px;
+
+        .images-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 10px; // Adjust the gap between images as needed
+
+          .picture-container {
+            position: relative;
+
+            img {
+              width: 100%;
+              height: 100%;
+              max-height: 80px;
+              object-fit: cover;
+              cursor: pointer;
+              filter: brightness(0.9);
+              transition: .3s ease-in-out;
+
+              &:hover {
+                filter: brightness(1.1);
+                transform: scale(1.1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              }
+            }
+
+            &.selected {
+              img {
+                filter: brightness(1.2) saturate(1.5) drop-shadow(2px 4px 6px black);
+                transform: scale(1.1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                border: 1px solid #fff;
+              }
+            }
+
+            .bb-icon-thumbtack-star {
+              display: none;
+              position: absolute;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              top: 5px;
+              right: 5px;
+              background: #fff;
+              width: 25px;
+              height: 25px;
+            }
+
+            &.selected .bb-icon-thumbtack-star {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #classrooms_setup {
+
+    td,
+    th {
+      vertical-align: middle;
+    }
+  }
+}
+
+
+.classrooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow-y: scroll;
+  overflow-x: clip;
+
+  table.school-classroom-table {
+    border: none;
+    width: 100%;
+
+    td {
+      padding: 0;
+    }
+
+    border-collapse: collapse;
+
+    td,
+    th {
+      vertical-align: middle;
+    }
+
+    th {
+      text-align: center;
+      border-bottom: 1px solid var(--bb-content-border-color) !important;
+      position: sticky;
+      top: 0;
+      background: #fff; // to ensure header is visible above the body content
+      z-index: 1;
+
+      &.classroom_action>.toggle-btn {
+        margin-left: -24px;
+      }
+    }
+
+    tbody {
+      display: block;
+      max-height: 300px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      width: 100%;
+
+      tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed; // ensure the table cells maintain the same width
+      }
+    }
+
+    thead,
+    tbody tr {
+      display: table;
+      width: 100%;
+      table-layout: fixed; // ensure the table cells maintain the same width
+    }
+  }
+
+  .classroom {
+    margin-bottom: 10px;
+    border-radius: 20px;
+
+    &_item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 100px;
+    }
+
+    td {
+      border-bottom: none;
+    }
+
+    &.selected {
+      background: $kwf-yellow;
+      background-color: $kwf-hard-grey-bg-color;
+      margin-bottom: 10px;
+
+      td {
+        &.classroom_name a {
+          color: #019e7c;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &.previous-selected {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.disabled {
+  position: relative !important;
+  opacity: 0.5 !important;
+  color: #b2b2ac !important;
+  border-color: #bdd2cb !important;
+  background-color: #f5f5f5;
+  pointer-events: none;
+}
