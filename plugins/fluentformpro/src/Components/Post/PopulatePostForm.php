@@ -313,60 +313,11 @@ class PopulatePostForm
                 JetEngineHelper::maybePopulateMetaFields($meta_fields, $feed, $postId, $formId);
             }
             if (MetaboxHelper::hasMetabox()) {
-                $postType = $this->getPostType($formId);
-                $mb_fields = MetaboxHelper::getPostFields($postType);
-                $args = [
-                    'object_type' => 'post'
-                ];
-                if ($mb_general_fields = ArrayHelper::get($feed->value, 'metabox_mappings', [])) {
-                    $meta_fields['mb_general_metas'] = $this->getMetBoxFieldsValue($mb_fields['general'], $mb_general_fields, $args, $postId);
-                }
-
-                if ($mb_advanced_fields = ArrayHelper::get($feed->value, 'advanced_metabox_mappings', [])) {
-                    $meta_fields['mb_advanced_metas'] = $this->getMetBoxFieldsValue($mb_fields['advanced'], $mb_advanced_fields, $args, $postId,'advanced');
-                }
+                MetaboxHelper::maybePopulatePostUpdateMetaFields($meta_fields, $feed, $postId, $formId);
             }
         }
 		return $meta_fields;
 	}
-
-    private function getMetBoxFieldsValue($mb_fields, $mappingFields, $args, $postId, $from = 'general')
-    {
-        $meta_fields = [];
-        $mb_fields_keys = array_keys($mb_fields);
-
-
-        foreach ($mappingFields as $field) {
-            if (!in_array($field['field_key'], $mb_fields_keys) || !function_exists('rwmb_get_value')) {
-                continue;
-            }
-            $fieldName = ArrayHelper::get($field, 'field_value', '');
-            $field = ArrayHelper::get($mb_fields, $field['field_key'], '');
-
-            if ($from === 'advanced') {
-                $name = $fieldName;
-            } else {
-                $name = $this->getFormFieldName($fieldName);
-            }
-
-            if (!$name && !$field) {
-                continue;
-            }
-
-            $value = rwmb_get_value($field['key'], $args, $postId);
-	        if (in_array($field['type'], ['file_upload', 'image_upload', 'image', 'file_advanced', 'file'])) {
-				if (count($value) > 0) {
-					$value = array_values($value);
-				}
-	        }
-            $meta_fields[] = [
-                "name" => $name,
-                "type" => $field['type'],
-                "value" => $value
-            ];
-        }
-        return $meta_fields;
-    }
 
     private function getFormFieldName($value = '')
     {
@@ -377,15 +328,4 @@ class PopulatePostForm
         return '';
     }
 
-    private function getPostType($formId)
-    {
-        $postSettings = wpFluent()->table('fluentform_form_meta')
-                                  ->where('form_id', $formId)
-                                  ->where('meta_key', 'post_settings')
-                                  ->first()->value;
-
-        $postSettings = json_decode($postSettings);
-
-        return $postSettings->post_type;
-    }
 }

@@ -2,9 +2,9 @@
 Contributors: techjewel,adreastrian,heera,wpmanageninja
 Tags: contact form, contact forms, wp forms, forms, form builder, contact form builder, fluent forms
 Requires at least: 4.5
-Tested up to: 6.6.1
+Tested up to: 6.6.2
 Requires PHP: 7.4
-Stable tag: 5.2.0
+Stable tag: 5.2.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -361,6 +361,24 @@ The entire source code is <a href="https://github.com/fluentform/fluentform">ava
 12. Asset Loading Comparison with Other Plugins
 
 == Changelog ==
+
+= 5.2.3 (Date: September 30, 2024) =
+- Add Paddle payment method
+- Adds Square inline payment integration
+- Adds Metabox for user registration and updates
+- Adds dynamic default values for dynamic fields
+- Improved dynamic fields CSV with a delimiter option
+- Improved dynamic repeater field SmartCode
+- Improved repeater field accessibility
+- Fixes rich text data handling for partial entries
+- Fixes issue with Zapier entry action resends
+- Fixes SmartCode issue with post permalinks
+- Fixes issue with TranslatePress shortcode in double optin confirmation messages
+- Fixes validation error on single payment stockout messages
+- Fixes required validation for featured images in post updates
+- Fixes issue with temporary directory files not being deleted on AWS S3
+- Fixes image preview style issues in 4, 5, and 6-column layouts
+- Fixes radio field button type custom style
 
 = 5.2.0 (Date: Aug 7, 2024) =
 - Adds dynamic field

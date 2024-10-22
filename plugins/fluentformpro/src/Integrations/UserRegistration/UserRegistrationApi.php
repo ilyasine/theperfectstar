@@ -254,7 +254,7 @@ class UserRegistrationApi
 
         $this->addUserMeta($parsedData, $userId, $form->id);
 
-        // Update acf, jet-engine metas
+        // Update acf, jet-engine, metabox metas
         $this->updatePluginsMetas($formData, $userId, $feed, $form);
 
         $this->maybeLogin($parsedData, $userId, $entry);

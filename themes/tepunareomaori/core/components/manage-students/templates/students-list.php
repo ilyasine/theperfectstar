@@ -263,75 +263,49 @@ $follow_class     = $is_follow_active ? 'follow-active' : '';
 								}else{
 									$access_product_id = $kmc_helper->TPRM_multilang_product()['fr']['access'];
 								}
-								// Fetch the school_type meta key value
-								$school_type = groups_get_groupmeta($school_id, 'school_type');
+
 								$school_seats = get_school_seats($school_id);
-								// Check if the school_type is 'paid'
-								if ( !empty($school_type) && $school_type == 'paid'  ) {
-									if(is_TPRM_manager()){
-										$membershipID = get_this_year_membership_id();
-										$account_status = '<a class="activate" data-studentID="' . esc_attr($student_id) . '" data-schoolID="' . esc_attr($school_id) . '" data-security="' . esc_attr($activate_paid_student_nonce) . '">  
-															<span>
-																<svg><use xlink:href="#circle"></svg>																														
-																<svg><use xlink:href="#arrow"></svg>																												
-																<svg><use xlink:href="#check"></svg>																														
-															</span>
-															<ul>															
-																<li>' . __( "Activate", "tprm-theme" ) . '</li>														
-																<li>' . __( "Waiting", "tprm-theme" ) . '</li>															
-																<li>' . __( "Active", "tprm-theme" ) . '</li>
-															</ul>
-														</a>
-														<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-															<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="circle">
-																<circle cx="8" cy="8" r="7.5"></circle>
-															</symbol>
-															<symbol id="arrow" viewBox="0 0 122.88 122.88">
-																<path fill="current_color" d="M61.44,0A61.44,61.44,0,1,1,0,61.44,61.44,61.44,0,0,1,61.44,0Z"/>
-																<path fill="#fff" d="M81,44.75a7.08,7.08,0,0,1,10.71-9.27,40,40,0,1,1-60.87.39A7.07,7.07,0,0,1,41.67,45,25.85,25.85,0,1,0,81,44.75ZM68.54,47.92a7.1,7.1,0,1,1-14.2,0V26.74a7.1,7.1,0,1,1,14.2,0V47.92Z"/>
-																<path fill="current_color" d="M61.44,2.23a59.15,59.15,0,0,1,59.15,59.15c0,.77,0,1.54,0,2.31a59.14,59.14,0,0,0-118.2,0c0-.77,0-1.54,0-2.31A59.15,59.15,0,0,1,61.44,2.23Z"/>
-															</symbol>									
-															<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" id="check">
-																	<path id="test" d="M4.76499011,6.7673683 L8.2641848,3.26100386 C8.61147835,2.91299871 9.15190114,2.91299871 9.49919469,3.26100386 C9.51164115,3.27347582 9.52370806,3.28637357 9.53537662,3.29967699 C9.83511755,3.64141434 9.81891834,4.17816549 9.49919469,4.49854425 L5.18121271,8.82537365 C4.94885368,9.05820878 4.58112654,9.05820878 4.34876751,8.82537365 L2.50080531,6.97362503 C2.48835885,6.96115307 2.47629194,6.94825532 2.46462338,6.93495189 C2.16488245,6.59321455 2.18108166,6.0564634 2.50080531,5.73608464 C2.84809886,5.3880795 3.38852165,5.3880795 3.7358152,5.73608464 L4.76499011,6.7673683 Z"></path>
-															</symbol>
-														</svg>';
-									}else{
-										$account_status = '<a class="inactivated" disabled>
-														<span>																												
-															<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 122.88"><defs><style>.cls-1{fill:#ff4141;fill-rule:evenodd;}</style></defs><title>cross</title><path class="cls-1" d="M6,6H6a20.53,20.53,0,0,1,29,0l26.5,26.49L87.93,6a20.54,20.54,0,0,1,29,0h0a20.53,20.53,0,0,1,0,29L90.41,61.44,116.9,87.93a20.54,20.54,0,0,1,0,29h0a20.54,20.54,0,0,1-29,0L61.44,90.41,35,116.9a20.54,20.54,0,0,1-29,0H6a20.54,20.54,0,0,1,0-29L32.47,61.44,6,34.94A20.53,20.53,0,0,1,6,6Z"/></svg>	
+								if(is_TPRM_manager()){
+									$membershipID = get_this_year_membership_id();
+									$account_status = '<a class="activate" data-studentID="' . esc_attr($student_id) . '" data-schoolID="' . esc_attr($school_id) . '" data-security="' . esc_attr($activate_paid_student_nonce) . '">  
+														<span>
+															<svg><use xlink:href="#circle"></svg>																														
+															<svg><use xlink:href="#arrow"></svg>																												
+															<svg><use xlink:href="#check"></svg>																														
 														</span>
-														<ul>
-															<li>' . __( "Inactive", "tprm-theme" ) . '</li>
+														<ul>															
+															<li>' . __( "Activate", "tprm-theme" ) . '</li>														
+															<li>' . __( "Waiting", "tprm-theme" ) . '</li>															
+															<li>' . __( "Active", "tprm-theme" ) . '</li>
 														</ul>
 													</a>
-												';
-									}
-									
-									$text_status = 'kwf-inactive';
-									$inactive_count++;
-								}else {
-									$account_status = '<div class="box kwf-license">
-															<form method="POST" class="kwfFormSCLicense" action="" style="margin-bottom:0px;" data-security="'.$TPRM_ajax_nonce.'">
-																<input type="hidden" name="uId" value="' . esc_attr($student_id) . '" />
-																<input type="hidden" name="prId" value="' . esc_attr($access_product_id) . '" />
-																<input type="hidden" name="gId" value="' . esc_attr($school_id) . '" />
-																<div class="formwrapkwf">
-																	<div class="license-paste">
-																		<input class="licenseinpt" type="text" placeholder="' . esc_attr__('License Code', 'kwf-membership-coupon') . '" required>
-																		<i class="bb-icon-l bb-icon-paste"></i>
-																	</div>
-																																	
-																	<input class="licensebtn" type="submit" value="' . esc_attr__('Activate', 'kwf-membership-coupon') . '">
-																	<div class="icon-container">
-																		<i class="loader"></i>
-																	</div>
-																	
-																</div>
-															</form>
-														</div>';
-									$text_status = 'kwf-inactive';
-									$inactive_count++;
+													<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+														<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="circle">
+															<circle cx="8" cy="8" r="7.5"></circle>
+														</symbol>
+														<symbol id="arrow" viewBox="0 0 122.88 122.88">
+															<path fill="current_color" d="M61.44,0A61.44,61.44,0,1,1,0,61.44,61.44,61.44,0,0,1,61.44,0Z"/>
+															<path fill="#fff" d="M81,44.75a7.08,7.08,0,0,1,10.71-9.27,40,40,0,1,1-60.87.39A7.07,7.07,0,0,1,41.67,45,25.85,25.85,0,1,0,81,44.75ZM68.54,47.92a7.1,7.1,0,1,1-14.2,0V26.74a7.1,7.1,0,1,1,14.2,0V47.92Z"/>
+															<path fill="current_color" d="M61.44,2.23a59.15,59.15,0,0,1,59.15,59.15c0,.77,0,1.54,0,2.31a59.14,59.14,0,0,0-118.2,0c0-.77,0-1.54,0-2.31A59.15,59.15,0,0,1,61.44,2.23Z"/>
+														</symbol>									
+														<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" id="check">
+																<path id="test" d="M4.76499011,6.7673683 L8.2641848,3.26100386 C8.61147835,2.91299871 9.15190114,2.91299871 9.49919469,3.26100386 C9.51164115,3.27347582 9.52370806,3.28637357 9.53537662,3.29967699 C9.83511755,3.64141434 9.81891834,4.17816549 9.49919469,4.49854425 L5.18121271,8.82537365 C4.94885368,9.05820878 4.58112654,9.05820878 4.34876751,8.82537365 L2.50080531,6.97362503 C2.48835885,6.96115307 2.47629194,6.94825532 2.46462338,6.93495189 C2.16488245,6.59321455 2.18108166,6.0564634 2.50080531,5.73608464 C2.84809886,5.3880795 3.38852165,5.3880795 3.7358152,5.73608464 L4.76499011,6.7673683 Z"></path>
+														</symbol>
+													</svg>';
+								}else{
+									$account_status = '<a class="inactivated" disabled>
+													<span>																												
+														<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 122.88"><defs><style>.cls-1{fill:#ff4141;fill-rule:evenodd;}</style></defs><title>cross</title><path class="cls-1" d="M6,6H6a20.53,20.53,0,0,1,29,0l26.5,26.49L87.93,6a20.54,20.54,0,0,1,29,0h0a20.53,20.53,0,0,1,0,29L90.41,61.44,116.9,87.93a20.54,20.54,0,0,1,0,29h0a20.54,20.54,0,0,1-29,0L61.44,90.41,35,116.9a20.54,20.54,0,0,1-29,0H6a20.54,20.54,0,0,1,0-29L32.47,61.44,6,34.94A20.53,20.53,0,0,1,6,6Z"/></svg>	
+													</span>
+													<ul>
+														<li>' . __( "Inactive", "tprm-theme" ) . '</li>
+													</ul>
+												</a>
+											';
 								}
+								
+								$text_status = 'kwf-inactive';
+								$inactive_count++;
                             }
                             ?>
                             <div class="column-kwf-student-status-<?php echo esc_attr($text_status); ?>" id="<?php echo esc_attr($text_status); ?>"><?php echo $account_status; ?></div>

@@ -225,7 +225,7 @@ class DoubleOptin
             'insert_id'  => $insertId,
             'result'     => [
                 'redirectTo' => 'samePage',
-                'message'    => $data['confirmation_message'],
+                'message'    => do_shortcode($data['confirmation_message']),
                 'action'     => 'hide_form'
             ],
             'error'      => '',

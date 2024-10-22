@@ -2,7 +2,6 @@
 <?php
 $is_school = is_school(bp_get_current_group_id()) ? true : false;
 $school_seats = !is_null(get_school_seats($school_id)) ? intval(get_school_seats($school_id)) : 0;
-$school_type = groups_get_groupmeta($school_id, 'school_type');
 $this_year = get_option('school_year');
 $students_with_classroom = count(get_students_classroom_for_year($school_id, $this_year));
 // Define the path to the helper class
@@ -16,13 +15,11 @@ if ( file_exists( $helper_class_path ) ) {
 if( is_students_page() ) : ?>
 
 <div class="students-management">
-  <div class="account-stats-container">
-      <?php if( !empty($school_type) && $school_type == 'paid') : ?>     
+  <div class="account-stats-container">   
       <div class="account-stat-box" id="school_seats">
           <h2><?php echo esc_html($school_seats); ?></h2>
           <p><?php _e('Available Seats', 'tprm-theme') ?></p>
       </div>
-      <?php endif; ?>
       <div class="account-stat-box" id="enrolled_students_count">
           <h2><?php echo esc_html($students_with_classroom) ?></h2>
           <p><?php _e('Enrolled Students', 'tprm-theme') ?></p>

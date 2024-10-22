@@ -61,9 +61,9 @@ class TPRM_importer{
 		}
 	
 		// addons
-		foreach ( glob( plugin_dir_path( __FILE__ ) . "addons/*.php" ) as $file ) {
+		/* foreach ( glob( plugin_dir_path( __FILE__ ) . "addons/*.php" ) as $file ) {
 			include_once( $file );
-		}
+		} */
 	}
 	
 	static function activate(){

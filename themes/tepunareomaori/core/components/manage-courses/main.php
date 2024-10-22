@@ -17,7 +17,7 @@ add_action('wp_enqueue_scripts', 'manage_courses_front' );
 
 function manage_courses_front(){
     // group default page (courses) or courses profile page 
-    if( is_group_courses_page() || is_global_courses_page() ){
+    if( is_group_courses_page() || is_group_content_page() ){//
         wp_enqueue_script('kwf-manage-courses-script', MC_JS_PATH . 'front.js' , array('jquery'), TPRM_THEME_VERSION, true);
         wp_enqueue_script('jquery-dragsort.min', TPRM_JS_PATH . 'dragsort.min.js' , array('jquery'), TPRM_THEME_VERSION, true);
         wp_enqueue_style('kwf-manage-courses-style', TPRM_CSS_PATH .'manage-courses.css' );

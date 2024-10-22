@@ -31,16 +31,16 @@ body.groups.students {
                 align-items: center;
                 justify-content: center;
                 justify-items: center;
-                background-color: $kwf-primary-color;
+                background-color: $tprm-primary-color;
                 border-radius: 4px;
                 flex-wrap: wrap;
 
                 button {
-                    background-color: $kwf-primary-color;
-                    border-color: $kwf-primary-color;
+                    background-color: $tprm-primary-color;
+                    border-color: $tprm-primary-color;
                     border: 0;
                     height: 40px;
-                    
+
                     &.create-student {
                         display: flex;
                         align-items: center;
@@ -52,12 +52,14 @@ body.groups.students {
                             font-size: 25px;
                         }
                     }
+
                     &.bulk-create-student {
                         border-radius: 0 4px 4px 0;
                         display: flex;
                         align-items: center;
                         gap: 10px;
-                        span.bb-icon-l.bb-icon-upload{
+
+                        span.bb-icon-l.bb-icon-upload {
                             font-size: 25px;
                         }
                     }
@@ -70,13 +72,13 @@ body.groups.students {
                     &:hover,
                     &:active,
                     &:focus {
-                        background-color: $kwf-primary-hover;
+                        background-color: $tprm-primary-hover;
                         box-shadow: none;
                     }
 
                     &.active-tab {
-                        //background-color: $kwf-primary-hover;
-                        background-color: $kwf-secondary-color;
+                        //background-color: $tprm-primary-hover;
+                        background-color: $tprm-secondary-color;
                         box-shadow: none;
                     }
                 }
@@ -95,10 +97,10 @@ body.groups.students {
     }
 
     .manage-students-header {
-        
+
         display: flex;
         justify-content: space-evenly;
-        background-color: $kwf-grey-bg-color;
+        background-color: $tprm-grey-bg-color;
         @include border-radius(var(--bb-block-radius));
         padding: 15px 0;
         margin-bottom: 20px;
@@ -113,16 +115,19 @@ body.groups.students {
             align-items: center;
             justify-content: center;
             padding-right: 26px;
+
             &.student {
                 &_avatar {
                     width: 6%;
-                    padding-right: 0;               
-                    &.school{
+                    padding-right: 0;
+
+                    &.school {
                         padding-left: 26px;
                     }
-                    div{
+
+                    div {
                         border-right: none !important;
-                    }             
+                    }
                 }
 
                 &_name {
@@ -145,14 +150,17 @@ body.groups.students {
                     div {
                         border: none;
                     }
-                    .sub-cell-container{
+
+                    .sub-cell-container {
                         display: flex;
                         align-items: center;
-                        justify-content: center;                     
-                        .sub-cell{
+                        justify-content: center;
+
+                        .sub-cell {
                             padding: 10px;
                             border-top: 1px solid #D6D6D6;
-                            &.previous-year{
+
+                            &.previous-year {
                                 border-right: 1px solid var(--bb-content-border-color);
                             }
                         }
@@ -162,7 +170,7 @@ body.groups.students {
                 // .student_account_status
                 &_account_status {
                     width: 20%;
-            
+
                 }
 
                 &_actions {
@@ -227,14 +235,15 @@ body.groups.students {
             margin-bottom: 10px;
             align-items: center;
         }
-        .student-delete-content-body{
+
+        .student-delete-content-body {
             .kwf-preloader {
                 #tepunareomaori-preloader {
-                  position: relative !important;
-                  background: none !important;
-                  min-height: 400px !important;
-                  height: 100% !important;
-                  margin-top: -60px !important;
+                    position: relative !important;
+                    background: none !important;
+                    min-height: 400px !important;
+                    height: 100% !important;
+                    margin-top: -60px !important;
                 }
             }
         }
@@ -273,14 +282,14 @@ body.groups.students {
         justify-content: center;
         flex-direction: column;
 
-        .classrooms-list{
+        .classrooms-list {
             .kwf-preloader {
                 #tepunareomaori-preloader {
-                  position: relative !important;
-                  background: none !important;
-                  min-height: 400px !important;
-                  height: 100% !important;
-                  //margin-top: -60px !important;
+                    position: relative !important;
+                    background: none !important;
+                    min-height: 400px !important;
+                    height: 100% !important;
+                    //margin-top: -60px !important;
                 }
             }
         }
@@ -297,7 +306,7 @@ body.groups.students {
             text-align: center;
             border-radius: 20px;
             color: #fff;
-            background-color: $kwf-primary-color;
+            background-color: $tprm-primary-color;
             font-size: 25px;
             font-weight: 500;
             position: relative;
@@ -378,7 +387,7 @@ body.groups.students {
             text-align: center;
             border-radius: 20px;
             color: #fff;
-            background-color: $kwf-primary-color;
+            background-color: $tprm-primary-color;
             font-size: 25px;
             font-weight: 500;
             position: relative;
@@ -458,26 +467,26 @@ body.groups.students {
                 justify-content: center;
 
                 li.ui-tab {
-                    background-color: $kwf-grey-bg-color;
+                    background-color: $tprm-grey-bg-color;
                     float: left;
                     margin: 0;
                     padding: 10px;
                     overflow: hidden;
 
                     a {
-                        color: $kwf-text-color;
+                        color: $tprm-text-color;
                         font-size: 15px;
                         font-weight: 500;
                         padding: 20px 30px;
                     }
 
                     &:hover {
-                        background-color: $kwf-green-light-hover;
+                        background-color: $tprm-green-light-hover;
                         color: #4f4d4d;
                     }
 
                     &.ui-state-active {
-                        background-color: $kwf-primary-color;
+                        background-color: $tprm-primary-color;
 
                         a {
                             font-weight: 600;
@@ -506,13 +515,15 @@ body.groups.students {
             justify-content: space-evenly;
 
             .student {
+
                 //student_avatar
                 &_avatar {
                     //margin-right: 0;   
                     margin-right: 20px;
-                    &.school{
+
+                    &.school {
                         padding-left: 20px;
-                    }                                
+                    }
                 }
 
                 //student_students
@@ -525,6 +536,7 @@ body.groups.students {
                     width: 12%;
                     font-size: 15px;
                     font-weight: 500;
+
                     button#copyusername {
                         right: 4px;
                         top: 0;
@@ -533,7 +545,7 @@ body.groups.students {
                         border: 0;
                         padding: 0;
                         background: 0 0 !important;
-                        color: $kwf-primary-color !important;
+                        color: $tprm-primary-color !important;
                         box-shadow: none;
                         cursor: pointer;
                     }
@@ -542,7 +554,8 @@ body.groups.students {
                 //student_password
                 &_password {
                     width: 15%;
-                    position: relative;                  
+                    position: relative;
+
                     button#copypass {
                         position: absolute;
                         right: 36px;
@@ -556,18 +569,22 @@ body.groups.students {
                         box-shadow: none;
                         cursor: pointer;
                     }
+
                     .password-toggle {
                         width: 80%;
-                        &>.picture-password{
+
+                        &>.picture-password {
                             max-height: 72px !important;
                             border-radius: 10px;
                             max-width: 100px;
                         }
+
                         &>input {
                             pointer-events: none;
                             font-weight: 600;
                         }
                     }
+
                     &_inner {
                         width: 90%;
                         margin: auto;
@@ -589,12 +606,13 @@ body.groups.students {
                             padding: 5px;
                             cursor: pointer;
                             font-size: 20px;
-                            color: $kwf-primary-color;
+                            color: $tprm-primary-color;
                         }
                     }
+
                     .bb-icon-l,
                     .bb-icon {
-                        color: $kwf-primary-color !important;
+                        color: $tprm-primary-color !important;
                     }
                 }
 
@@ -603,27 +621,32 @@ body.groups.students {
                     width: 15%;
                     text-align: center;
 
-                    .sub-cell-container{
+                    .sub-cell-container {
                         display: flex;
                         align-items: center;
-                        justify-content: center;                     
-                        .sub-cell{
+                        justify-content: center;
+
+                        .sub-cell {
                             padding: 20px 10px;
                             flex: 1;
                             text-align: center;
-                            &.previous-year{
+
+                            &.previous-year {
                                 border-right: 1px solid var(--bb-content-border-color);
                             }
                         }
                     }
 
                 }
-                &_account_status{
+
+                &_account_status {
                     width: 20%;
                     text-align: center;
-                    .column-kwf-student-status-kwf{
+
+                    .column-kwf-student-status-kwf {
+
                         // .column-kwf-student-status-kwf-active
-                        &-active{
+                        &-active {
                             .activated {
                                 display: table;
                                 background: $green-success;
@@ -637,6 +660,7 @@ body.groups.students {
                                 transition: transform .2s ease, background .3s ease, box-shadow .3s ease;
                                 margin: auto;
                                 pointer-events: none;
+
                                 span {
                                     display: inline-block;
                                     vertical-align: top;
@@ -647,6 +671,7 @@ body.groups.students {
                                     margin: 0 4px 0 0;
                                     position: relative;
                                     overflow: hidden;
+
                                     &:before {
                                         content: '';
                                         left: 0;
@@ -659,6 +684,7 @@ body.groups.students {
                                         transform: scale(0);
                                         transition: transform .3s ease, background .3s ease;
                                     }
+
                                     svg {
                                         position: absolute;
                                         width: 12px;
@@ -669,9 +695,10 @@ body.groups.students {
                                         z-index: 1;
                                         fill: $green-success;
                                         opacity: 1;
-                                        transform: scale(1);                                                                    
+                                        transform: scale(1);
                                     }
-                                }                               
+                                }
+
                                 ul {
                                     padding: 0;
                                     margin: 0;
@@ -684,88 +711,100 @@ body.groups.students {
                                     position: relative;
                                     transform-style: preserve-3d;
                                     transition: transform .3s ease;
+
                                     li {
                                         --rotateX: 0deg;
                                         backface-visibility: hidden;
                                         position: absolute;
                                         top: 0;
                                         bottom: 0;
-                                        width: 100%;                                     
+                                        width: 100%;
                                     }
                                 }
                             }
                         }
+
                         // .column-kwf-student-status-kwf-inactive
-                        &-inactive{
+                        &-inactive {
+
                             //Unpaid School
-                            .formwrapkwf{
+                            .formwrapkwf {
                                 display: flex;
                                 margin: 0;
                                 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .2509803922);
                                 border-radius: 44px;
                                 margin: auto;
                                 position: relative;
-                                i.bb-icon-paste{
+
+                                i.bb-icon-paste {
                                     position: absolute;
                                     left: 10px;
                                     top: 10px;
                                     cursor: pointer;
                                 }
+
                                 .icon-container {
                                     display: none;
                                     position: absolute;
                                     right: 16px;
                                     top: calc(50% - 10px);
                                 }
-                                input{
-                                    &.licenseinpt{
+
+                                input {
+                                    &.licenseinpt {
                                         width: 100%;
                                         border-radius: 100px 0 0 100px;
                                         border: none;
-                                        background-color: $kwf-hard-grey-bg-color !important;
-                                        color: $kwf-text-color;
+                                        background-color: $tprm-hard-grey-bg-color !important;
+                                        color: $tprm-text-color;
                                         margin: 0;
                                         font-family: $primary-font-family;
                                         text-align: center;
-                                        font-size: 13px;                                        
-                                        padding: 0 27px;                                
+                                        font-size: 13px;
+                                        padding: 0 27px;
+
                                         &::placeholder {
                                             color: #333c;
                                         }
                                     }
-                                    &.licensebtn{
+
+                                    &.licensebtn {
                                         margin-top: 5px;
                                         color: #fff;
                                         border: none;
-                                        background-color: $kwf-primary-color !important;
-                                        border-color: $kwf-primary-color !important;
+                                        background-color: $tprm-primary-color !important;
+                                        border-color: $tprm-primary-color !important;
                                         margin-left: -10% !important;
                                         width: 80px;
                                         padding: 0 12px !important;
                                         margin-top: 0;
                                         font-size: 14px !important;
-                                        &:is(:hover, :focus, :active){
-                                            background-color: $kwf-secondary-color !important;
-                                            border-color: $kwf-secondary-color !important;
+
+                                        &:is(:hover, :focus, :active) {
+                                            background-color: $tprm-secondary-color !important;
+                                            border-color: $tprm-secondary-color !important;
                                         }
+
                                         &.loading {
                                             width: 51px !important;
                                             cursor: default !important;
-                                            background-color: $kwf-primary-color !important;
-                                            border-color: $kwf-primary-color !important;
+                                            background-color: $tprm-primary-color !important;
+                                            border-color: $tprm-primary-color !important;
                                             color: transparent !important;
-                                            + .icon-container {
+
+                                            +.icon-container {
                                                 display: block;
                                             }
                                         }
-                                    }                       
+                                    }
                                 }
                             }
+
                             // Paid School
                             .activate {
                                 display: table;
-                                background: $kwf-secondary-color;
-                                box-shadow: 0 4px 20px rgba($kwf-secondary-color, .15);
+                                background: $tprm-secondary-color;
+                                box-shadow: 0 4px 20px rgba($tprm-secondary-color, .15);
                                 line-height: 20px;
                                 padding: 12px;
                                 border-radius: 22px;
@@ -774,9 +813,11 @@ body.groups.students {
                                 cursor: pointer;
                                 transition: transform .2s ease, background .3s ease, box-shadow .3s ease;
                                 margin: auto;
-                                &[disabled]{
+
+                                &[disabled] {
                                     pointer-events: none;
                                 }
+
                                 span {
                                     display: inline-block;
                                     vertical-align: top;
@@ -787,6 +828,7 @@ body.groups.students {
                                     margin: 0 4px 0 0;
                                     position: relative;
                                     overflow: hidden;
+
                                     &:before {
                                         content: '';
                                         left: 0;
@@ -794,11 +836,12 @@ body.groups.students {
                                         width: 100%;
                                         height: 100%;
                                         position: absolute;
-                                        background: $kwf-secondary-color;
+                                        background: $tprm-secondary-color;
                                         border-radius: 50%;
                                         transform: scale(0);
                                         transition: transform .3s ease, background .3s ease;
                                     }
+
                                     svg {
                                         position: absolute;
                                         width: 12px;
@@ -807,6 +850,7 @@ body.groups.students {
                                         top: 50%;
                                         margin: -6px 0 0 -6px;
                                         z-index: 1;
+
                                         &:nth-child(1) {
                                             width: 20px;
                                             height: 20px;
@@ -819,71 +863,88 @@ body.groups.students {
                                             stroke-dashoffset: 47.124 * 2;
                                             stroke-dasharray: 47.124;
                                         }
+
                                         &:nth-child(2) {
-                                            fill: $kwf-secondary-color;
+                                            fill: $tprm-secondary-color;
                                             transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                                         }
+
                                         &:nth-child(3) {
-                                            fill: $kwf-secondary-color;
+                                            fill: $tprm-secondary-color;
                                             transform: translateY(20px);
                                             transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity .3s ease;
                                         }
                                     }
                                 }
+
                                 &:hover {
-                                    box-shadow: 0 8px 24px rgba($kwf-secondary-color, .15);
+                                    box-shadow: 0 8px 24px rgba($tprm-secondary-color, .15);
+
                                     span {
                                         svg {
                                             &:nth-child(2) {
                                                 transform: translateY(-20px);
                                             }
+
                                             &:nth-child(3) {
                                                 transform: translateY(0);
                                             }
                                         }
                                     }
                                 }
+
                                 &:active {
                                     transform: scale(.94);
                                     box-shadow: 0 4px 16px rgba($green-success, .18);
                                 }
+
                                 &.loading {
                                     span {
                                         background: none;
                                         transition: background .1s ease .3s;
+
                                         &:before {
                                             transform: scale(1);
                                         }
+
                                         svg {
                                             &:nth-child(1) {
                                                 animation: turn 1.6s linear infinite forwards, path 1.6s linear infinite forwards;
                                             }
+
                                             &:nth-child(2) {
                                                 transform: translateY(-20px);
                                             }
+
                                             &:nth-child(3) {
                                                 opacity: 0;
                                                 transform: translateY(0) scale(.6);
                                             }
                                         }
                                     }
+
                                     ul {
                                         transform: rotateX(90deg);
                                     }
+
                                     &.done {
                                         background: $green-success;
                                         box-shadow: 0 4px 20px rgba($green-success, .15);
+
                                         span {
                                             background: #fff;
                                             transition: background .1s ease 0s;
+
                                             &:before {
                                                 background: $green-success;
                                                 transform: scale(0);
                                             }
+
                                             svg {
                                                 &:nth-child(1) {
                                                     animation: none;
                                                 }
+
                                                 &:nth-child(3) {
                                                     fill: $green-success;
                                                     opacity: 1;
@@ -892,11 +953,13 @@ body.groups.students {
                                                 }
                                             }
                                         }
+
                                         ul {
                                             transform: rotateX(180deg);
                                         }
                                     }
                                 }
+
                                 ul {
                                     padding: 0;
                                     margin: 0;
@@ -909,6 +972,7 @@ body.groups.students {
                                     position: relative;
                                     transform-style: preserve-3d;
                                     transition: transform .3s ease;
+
                                     li {
                                         --rotateX: 0deg;
                                         backface-visibility: hidden;
@@ -918,15 +982,18 @@ body.groups.students {
                                         width: 100%;
                                         transform-origin: 50% 50%;
                                         transform: rotateX(var(--rotateX)) translateZ(10px);
+
                                         &:nth-child(2) {
                                             --rotateX: -90deg;
                                         }
+
                                         &:nth-child(3) {
                                             --rotateX: -180deg;
                                         }
                                     }
                                 }
                             }
+
                             .inactivated {
                                 display: table;
                                 background: $red-primary-color;
@@ -940,6 +1007,7 @@ body.groups.students {
                                 transition: transform .2s ease, background .3s ease, box-shadow .3s ease;
                                 margin: auto;
                                 pointer-events: none;
+
                                 span {
                                     display: inline-block;
                                     vertical-align: top;
@@ -950,6 +1018,7 @@ body.groups.students {
                                     margin: 0 4px 0 0;
                                     position: relative;
                                     overflow: hidden;
+
                                     &:before {
                                         content: '';
                                         left: 0;
@@ -962,6 +1031,7 @@ body.groups.students {
                                         transform: scale(0);
                                         transition: transform .3s ease, background .3s ease;
                                     }
+
                                     svg {
                                         position: absolute;
                                         width: 12px;
@@ -972,9 +1042,10 @@ body.groups.students {
                                         z-index: 1;
                                         fill: $red-primary-color;
                                         opacity: 1;
-                                        transform: scale(1);                                                                    
+                                        transform: scale(1);
                                     }
-                                }                               
+                                }
+
                                 ul {
                                     padding: 0;
                                     margin: 0;
@@ -987,13 +1058,14 @@ body.groups.students {
                                     position: relative;
                                     transform-style: preserve-3d;
                                     transition: transform .3s ease;
+
                                     li {
                                         --rotateX: 0deg;
                                         backface-visibility: hidden;
                                         position: absolute;
                                         top: 0;
                                         bottom: 0;
-                                        width: 100%;                                     
+                                        width: 100%;
                                     }
                                 }
                             }
@@ -1010,7 +1082,7 @@ body.groups.students {
                                 }
                             }
                         }
-                    }                                  
+                    }
                 }
 
                 //student_actions
@@ -1020,12 +1092,15 @@ body.groups.students {
                     gap: 15px;
                     align-items: center;
                     justify-content: space-evenly;
-                    .bb_more_options.member-dropdown{
+
+                    .bb_more_options.member-dropdown {
                         position: absolute !important;
-                        .bb_more_options_list{
+
+                        .bb_more_options_list {
                             top: -75px !important;
                             right: -80px !important;
-                            &.is_visible{
+
+                            &.is_visible {
                                 display: flex !important;
                                 align-items: center;
                                 justify-content: space-evenly;
@@ -1036,7 +1111,7 @@ body.groups.students {
                         }
                     }
                 }
-       
+
             }
         }
 
@@ -1056,17 +1131,19 @@ body.groups.students {
     display: inline-block;
     animation: around 5.4s infinite;
 }
-    
+
 @keyframes around {
     0% {
         transform: rotate(0deg)
     }
+
     100% {
         transform: rotate(360deg)
     }
 }
-    
-.loader::after, .loader::before {
+
+.loader::after,
+.loader::before {
     content: "";
     position: absolute;
     display: inline-block;
@@ -1081,13 +1158,8 @@ body.groups.students {
     left: 0;
     animation: around 0.7s ease-in-out infinite;
 }
-    
+
 .loader::after {
     animation: around 0.7s ease-in-out 0.1s infinite;
     background: transparent;
-} 
-
-  
-  
-  
-  
+}

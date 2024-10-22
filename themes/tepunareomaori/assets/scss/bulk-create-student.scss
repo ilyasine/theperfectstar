@@ -103,7 +103,7 @@ body .select2-container {
     text-align: center;
 
     &:focus {
-      border-color: $kwf-primary-color;
+      border-color: $tprm-primary-color;
       outline: none;
       color: #637373;
     }
@@ -115,7 +115,7 @@ body .select2-container {
 
   .action-button {
     width: 100px;
-    background: $kwf-secondary-color;
+    background: $tprm-secondary-color;
     font-weight: bold;
     color: #fff;
     transition: 150ms;
@@ -129,7 +129,7 @@ body .select2-container {
 
   .action-button:hover,
   .action-button:focus {
-    box-shadow: 0 0 0 2px $kwf-primary-hover, 0 0 0 3px $green-light-color;
+    box-shadow: 0 0 0 2px $tprm-primary-hover, 0 0 0 3px $green-light-color;
     color: #fff;
   }
 
@@ -141,7 +141,7 @@ body .select2-container {
       text-transform: uppercase;
       color: #ffffff;
       margin-bottom: 10px;
-      background: $kwf-primary-color;
+      background: $tprm-primary-color;
       position: absolute;
       width: 100%;
       margin-left: -30px;
@@ -151,7 +151,7 @@ body .select2-container {
       border-radius: 5px 5px 0 0;
 
       &.error {
-        background: $kwf-accent-color;
+        background: $tprm-accent-color;
         border-bottom: 1px solid;
       }
     }
@@ -161,7 +161,7 @@ body .select2-container {
       font-size: 13px;
       color: #ffffff;
       margin-bottom: 10px;
-      background: $kwf-secondary-color;
+      background: $tprm-secondary-color;
       position: absolute;
       width: 100%;
       margin-left: -30px;
@@ -170,7 +170,7 @@ body .select2-container {
       line-height: 30px;
 
       &.error {
-        background: $kwf-accent-color;
+        background: $tprm-accent-color;
       }
     }
   }
@@ -199,7 +199,7 @@ body .select2-container {
 
     li {
       list-style-type: none;
-      color: $kwf-primary-color;
+      color: $tprm-primary-color;
       text-transform: uppercase;
       font-size: 12px;
       width: 33.33%;
@@ -214,7 +214,7 @@ body .select2-container {
         display: block;
         font-size: 10px;
         color: #fff;
-        background: $kwf-primary-color;
+        background: $tprm-primary-color;
         border-radius: 3px;
         margin: 0 auto 5px auto;
       }
@@ -223,7 +223,7 @@ body .select2-container {
         content: "";
         width: 100%;
         height: 2px;
-        background: $kwf-primary-color;
+        background: $tprm-primary-color;
         position: absolute;
         left: -50%;
         top: 9px;
@@ -236,11 +236,11 @@ body .select2-container {
     }
 
     li.active {
-      color: $kwf-secondary-color;
+      color: $tprm-secondary-color;
 
       &:before,
       &:after {
-        background: $kwf-secondary-color;
+        background: $tprm-secondary-color;
         color: white;
       }
     }
@@ -276,19 +276,19 @@ body .select2-container {
 
   fieldset#template_file {
     a.button.download_template {
-      background-color: $kwf-primary-color;
-      border-color: $kwf-primary-color;
+      background-color: $tprm-primary-color;
+      border-color: $tprm-primary-color;
 
       &:is(:hover, :active, :focus) {
-        background-color: $kwf-secondary-color;
-        border-color: $kwf-secondary-color;
+        background-color: $tprm-secondary-color;
+        border-color: $tprm-secondary-color;
       }
     }
 
     #student_school {
       margin: 0;
       font-weight: 600;
-      color: $kwf-primary-color;
+      color: $tprm-primary-color;
     }
   }
 
@@ -304,12 +304,12 @@ body .select2-container {
     a.button.new_student_link {
       width: fit-content;
       margin: auto;
-      background-color: $kwf-primary-color;
-      border-color: $kwf-primary-color;
+      background-color: $tprm-primary-color;
+      border-color: $tprm-primary-color;
 
       &:is(:hover, :active, :focus) {
-        background-color: $kwf-secondary-color;
-        border-color: $kwf-secondary-color;
+        background-color: $tprm-secondary-color;
+        border-color: $tprm-secondary-color;
       }
     }
 
@@ -334,8 +334,8 @@ body .select2-container {
       margin-bottom: 15px;
 
       span {
-        background-color: $kwf-hard-grey-bg-color;
-        color: $kwf-text-color;
+        background-color: $tprm-hard-grey-bg-color;
+        color: $tprm-text-color;
         border: 1px solid rgba(0, 0, 0, .1);
         border-radius: 6px;
         padding: 7px 10px;
@@ -353,7 +353,7 @@ body .select2-container {
 
       .progress-bar {
         height: 20px;
-        background-color: $kwf-primary-color;
+        background-color: $tprm-primary-color;
         background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
         background-size: 1rem 1rem;
         text-align: center;
@@ -386,7 +386,7 @@ body .select2-container {
         &::file-selector-button {
           padding: 0.625rem 0.9375rem 0.625rem 2.125rem;
           color: #fff;
-          background-color: $kwf-primary-color;
+          background-color: $tprm-primary-color;
           border: none;
           border-radius: 0.25rem;
           cursor: pointer;
@@ -396,7 +396,7 @@ body .select2-container {
 
         &:hover {
           &::file-selector-button {
-            background-color: $kwf-primary-hover;
+            background-color: $tprm-primary-hover;
           }
         }
 

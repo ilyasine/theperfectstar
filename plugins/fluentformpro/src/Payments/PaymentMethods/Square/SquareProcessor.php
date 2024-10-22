@@ -17,7 +17,7 @@ class SquareProcessor extends BaseProcessor
     
     public function init()
     {
-        add_action('fluentform/process_payment_' . $this->method, array($this, 'handlePaymentAction'), 10, 6);
+        add_action('fluentform/process_payment_square_hosted', array($this, 'handlePaymentAction'), 10, 6);
         add_action('fluentform/payment_frameless_' . $this->method, array($this, 'handleSessionRedirectBack'));
         add_filter('fluentform/validate_payment_items_' . $this->method, [$this, 'validateSubmittedItems'], 10, 4);
     }

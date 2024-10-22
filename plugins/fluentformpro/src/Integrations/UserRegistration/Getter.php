@@ -6,6 +6,7 @@ use FluentForm\App\Services\ConditionAssesor;
 use FluentForm\Framework\Helpers\ArrayHelper as Arr;
 use FluentFormPro\Components\Post\AcfHelper;
 use FluentFormPro\Components\Post\JetEngineHelper;
+use FluentFormPro\Components\Post\MetaboxHelper;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -156,6 +157,8 @@ trait Getter
         AcfHelper::maybeUpdateUserMetas($userId, $formData, $form, $feed);
         // Maybe update Jet Engine metas
         JetEngineHelper::maybeUpdateUserMetas($userId, $formData, $form, $feed);
+        // Maybe update Metabox metas
+        MetaboxHelper::maybeUpdateUserMetas($userId, $formData, $form, $feed);
     }
 
 }

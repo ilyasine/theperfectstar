@@ -135,12 +135,10 @@ class InventoryValidation
         $parentName = Arr::get($item, 'attributes.name');
         
         $availableQuantity = 0;
-        $usedQuantity = 0;
-        $itemPrice = null;
+        $itemPrice = \FluentFormPro\Payments\PaymentHelper::convertToCents(Arr::get($item, 'attributes.value'));
         
         if ($inventoryType == 'simple') {
             $availableQuantity = (int)Arr::get($item, 'settings.single_inventory_stock');
-            $itemPrice = \FluentFormPro\Payments\PaymentHelper::convertToCents(Arr::get($item, 'attributes.value'));
         } elseif ($inventoryType == 'global') {
             $attachedGlobalInventory = Arr::get($this->globalInventoryFieldsName, $inputName);
             $availableQuantity = intval(Arr::get($this->globalInventoryItems, $attachedGlobalInventory . '.quantity'));

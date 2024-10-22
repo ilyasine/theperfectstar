@@ -11,7 +11,7 @@ if( isset($student_id) && function_exists('get_student_classroom_for_year')){
     <thead>
         <tr>
             <th class="classroom_name"><?php _e('Name', 'tprm-theme'); ?></th>
-            <th class="classroom_curriculum"><?php _e('Curriculum', 'tprm-theme'); ?></th>
+            <th class="classroom_type"><?php _e('Curriculum', 'tprm-theme'); ?></th>
             <th class="classroom_level"><?php _e('Level', 'tprm-theme'); ?></th>
             <th class="classroom_action"><?php _e('Action', 'tprm-theme'); ?></th>
         </tr>
@@ -28,7 +28,7 @@ if( isset($student_id) && function_exists('get_student_classroom_for_year')){
                         <?php echo esc_html($classroom->name); ?>
                     </a>
                 </td>
-                <td class="classroom_curriculum">
+                <td class="classroom_type">
                     <?php
                     $group_type = bp_groups_get_group_type($classroom->id);
                     $group_type_object = bp_groups_get_group_type_object($group_type);

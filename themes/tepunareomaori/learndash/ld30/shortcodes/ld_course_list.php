@@ -1199,7 +1199,6 @@ function ld_course_list( $attr = array(), $content = '', $shortcode_slug = 'ld_c
 	}
 	?>
 	<div class="ld-course-list-items row">
-		hhhhhhhhhhhhhhh
 	<?php
 
 	/**

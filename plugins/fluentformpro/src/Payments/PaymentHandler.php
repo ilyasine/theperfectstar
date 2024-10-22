@@ -32,6 +32,8 @@ use FluentFormPro\Payments\PaymentMethods\Stripe\Components\StripeInline;
 use FluentFormPro\Payments\PaymentMethods\Stripe\ConnectConfig;
 use FluentFormPro\Payments\PaymentMethods\Stripe\StripeHandler;
 use FluentFormPro\Payments\PaymentMethods\Stripe\StripeSettings;
+use FluentFormPro\Payments\PaymentMethods\Square\Components\SquareInline;
+use FluentFormPro\Payments\PaymentMethods\Paddle\PaddleHandler;
 
 class PaymentHandler
 {
@@ -58,6 +60,7 @@ class PaymentHandler
         (new RazorPayHandler())->init();
         (new PaystackHandler())->init();
         (new SquareHandler())->init();
+        (new PaddleHandler())->init();
 
         // Let's load the payment method component here
         new MultiPaymentComponent();
@@ -68,6 +71,7 @@ class PaymentHandler
         new PaymentSummaryComponent();
         new Coupon();
         new StripeInline();
+        new SquareInline();
 
         add_action('fluentform/before_insert_payment_form', array($this, 'maybeHandlePayment'), 10, 3);
 
@@ -169,6 +173,9 @@ class PaymentHandler
                     'publishable_key' => $publishableKey,
                     'inlineConfig'    => PaymentHelper::getStripeInlineConfig($form->id),
                     'custom_style'    => apply_filters('fluentform/stripe_inline_custom_css', $stripeCustomCss, $form->id)
+                ],
+                'square' => [
+                    'inline_config'    => PaymentHelper::getSquareInlineConfig($form->id),
                 ],
                 'stripe_app_info'   => array(
                     'name'       => 'Fluent Forms',

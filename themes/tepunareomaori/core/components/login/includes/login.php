@@ -12,16 +12,15 @@ function classroom_code_section($classroom_code) {
         </div>
 
         <div class="submit-classroom-code">
-            <input type="text" name="classroom_code" id="classroom_code" placeholder="<?php esc_attr_e('Classroom Code', 'tprm-theme') ?>">
-            <button type="button" data-security="<?php esc_attr_e($classroom_code_nonce); ?>" class="button button-primary button-large" id="classroom_code_submit"><?php _e('GO', 'tprm-theme') ?></button>
+            <input type="text" name="classroom_code" id="classroom_code" placeholder="<?php esc_attr_e('Enter Group Code', 'tprm-theme') ?>">
+            <button type="button" data-security="<?php esc_attr_e($classroom_code_nonce); ?>" class="button button-primary button-large" id="classroom_code_submit"><?php _e('Go', 'tprm-theme') ?></button>
         </div>      
 
         <div id="login_error" style="display: none;" class="notice classroom-code-notice notice-error"></div>
     </div>
     <?php
     $classroom_code = ob_get_clean();
-
-     return $classroom_code;
+    return $classroom_code;
 }
 
 add_filter('login_headertext', 'TPRM_login_headertext', 999, 1);
@@ -66,7 +65,7 @@ function login_type(){
     // Append support information
     $html .= "    jQuery('#login').append(`";
     $html .= "        <p class='support-div'>";
-    $html .= "            " . esc_html__( 'If you are having trouble logging in, please contact our support team at support@tepunareomaori.com', 'tprm-theme' ) . "";
+    $html .= "            " . esc_html__( 'Please contact your Programme Administrator or our support team on kiaora@tepunareomaori.co.nz if you’re having trouble logging in', 'tprm-theme' ) . "";
     $html .= "        </p>`";
     $html .= "    );";
 

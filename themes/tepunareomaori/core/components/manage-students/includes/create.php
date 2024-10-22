@@ -93,11 +93,6 @@ function create_student() {
         #Enroll student in the school
         groups_join_group($school_id, $student_id);     
 
-		//Update student lang :
-		$lang_meta = $wpdb->get_blog_prefix($blog_id) . 'lang';
-		$school_language = groups_get_groupmeta($school_id, 'ecole_lang');
-		update_user_meta( $student_id, $lang_meta, $school_language );
-
         // Student Password
         update_user_meta($student_id, 'password_type', $studentPasswordMode);
 

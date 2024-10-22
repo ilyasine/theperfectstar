@@ -153,6 +153,7 @@ class DraftSubmissionsManager
             $entry = wpFluent()->table(static::$tableName)
                 ->where('user_id', $userId)
                 ->where('form_id', $formId)
+                ->latest()
                 ->first();
         }
 
@@ -811,15 +812,54 @@ class DraftSubmissionsManager
         $form = wpFluent()->table('fluentform_forms')->find($formId);
         $formFields = FormFieldsParser::getFields($form, true);
 
-        $filteredArray = array_filter($formFields, function($field) use ($clickedBtnNameAttr) {
-            return isset($field['element']) && $field['element'] === 'save_progress_button' && isset($field['attributes']['name']) && $field['attributes']['name'] === $clickedBtnNameAttr;
-        });
+        // Function to search for the 'save_progress_button' inside fields or columns
+        $findSaveProgressButton = function($fields) use ($clickedBtnNameAttr) {
+            foreach ($fields as $field) {
+                // Check if it's a 'save_progress_button' directly in the field
+                if (
+                    isset($field['element']) &&
+                    $field['element'] === 'save_progress_button' &&
+                    isset($field['attributes']['name']) &&
+                    $field['attributes']['name'] === $clickedBtnNameAttr
+                ) {
+                    return $field;
+                }
 
-        if (empty($filteredArray)) {
+                // If it's a container, search inside the columns
+                if (
+                    isset($field['element']) &&
+                    $field['element'] === 'container' &&
+                    isset($field['columns'])
+                ) {
+                    foreach ($field['columns'] as $column) {
+                        if (isset($column['fields']) && is_array($column['fields'])) {
+                            foreach ($column['fields'] as $columnField) {
+                                if (
+                                    isset($columnField['element']) &&
+                                    $columnField['element'] === 'save_progress_button' &&
+                                    isset($columnField['attributes']['name']) &&
+                                    $columnField['attributes']['name'] === $clickedBtnNameAttr
+                                ) {
+                                    return $columnField;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return null;
+        };
+
+        // Find the save progress button in form fields
+        $saveProgressButton = $findSaveProgressButton($formFields);
+
+        // If no button is found, return false
+        if (!$saveProgressButton) {
             return false;
         }
 
-        return array_pop($filteredArray);
+        return $saveProgressButton;
     }
     
     private function verify()

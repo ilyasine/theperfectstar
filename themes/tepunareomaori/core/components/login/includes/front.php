@@ -246,102 +246,16 @@ function hide_bb_signup_button() {
       
 }
 
-add_filter('bp_core_change_privacy_policy_link_on_private_network', 'display_clear_cache_popup', 10, 2);
-
- /**
- * Display login session page
+/**
+ * Modify the 'and' text in the privacy policy link.
  *
  * @since V2
  */
-
- function display_clear_cache_popup($link, $privacy_policy_url) { 
-
-
-    $current_wpml_lang = apply_filters('wpml_current_language', NULL);
-
-    $browser = '';
-    $label_browser = '';
+function modify_privacy_policy_link_and_text( $link, $privacy_policy_url ) {
+    // Replace the plain 'and' with a span that has the grey-and class.
+    $link = str_replace( ' and ', ' <span class="grey-and">and</span> ', $link );
     
-    // Get the user agent string
-    $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
-    
-    // Detect the user's browser
-    if (strpos($user_agent, 'Firefox') !== false) {
-        $browser = 'firefox';
-        $label_browser = 'Mozilla Firefox';
-    } elseif (strpos($user_agent, 'Edg') !== false) {
-        $browser = 'edge';
-        $label_browser = 'Microsoft Edge';
-    } elseif (strpos($user_agent, 'Chrome') !== false) {
-        $browser = 'chrome';
-        $label_browser = 'Google Chrome';
-    } elseif (strpos($user_agent, 'Safari') !== false) {
-        $browser = 'safari';
-        $label_browser = 'Safari';
-    }
-
-    $images_dir = TPRM_IMG_ABS_PATH . 'clear_cache/' . $browser . '/' . $current_wpml_lang;
-
-    $image_paths = glob($images_dir . '/*.jpg');
-    
-    // HTML template
-    $html_template = '
-    <a class="TPRM_refresh popup-modal-login popup-refresh" style="display:none;" href="%s">%s</a>
-    <div id="TPRM_refresh" class="mfp-hide kwf-refresh-popup login-popup bb-modal">
-        <div class="header-container">
-            <span class="bb-icon-l bb-icon-exclamation-triangle"></span>
-            <h1 class="TPRM_troubleshooting">%s</h1>
-        </div>
-        <div class="kwf-refresh-popup-content">
-            <div class="popup-scroll">                  
-                <p>%s</p>
-                <p>%s</p>
-                <ul class="steps-list">';
-    $step = 1;
-    // Loop through each image path and add it to the HTML template
-    foreach ($image_paths as $image_path) {
-        // Convert absolute file path to web URL
-        $html_template .= '<li class="step_item">';
-        $image_url = str_replace(TPRM_IMG_ABS_PATH, TPRM_IMG_PATH, $image_path);
-        $html_template .= '<img src="' . $image_url . '" alt=""></li>';
-        //$step++;
-    }
-    
-    $html_template .= '</ul>
-            </div>
-            <div class="button-container">
-                <button type="button" class="button popup-troubleshooting-dismiss" id="continue-btn">%s</button>
-            </div>
-        </div>
-        
-    </div>';
-    
-    
-    // Other variables
-    $href = '#TPRM_refresh';
-    $link_text = __('tepunareomaori troubleshooting', 'tprm-theme');
-    $alert_title = __('tepunareomaori troubleshooting', 'tprm-theme');
-    $popup_content_1 = sprintf(
-        __('If you have any trouble navigating tepunareomaori on %s browser', 'tprm-theme'),
-        $label_browser
-    );
-    $popup_content_2 = __('Please try the following steps as described in the pictures below', 'tprm-theme');
-    $continue_button_text = __('I understand', 'tprm-theme');
-    
-    
-    // Generate the output
-    $troubleshooting_output = sprintf(
-        $html_template,
-        $href,
-        $link_text,
-        $alert_title,
-        $popup_content_1,
-        $popup_content_2,
-        //$popup_content_3, // Make sure $popup_content_3 is defined
-        $continue_button_text,
-    );
-
-    $link .= $troubleshooting_output;   
-
     return $link;
 }
+add_filter( 'bp_core_change_privacy_policy_link_on_private_network', 'modify_privacy_policy_link_and_text', 15, 2 );
+

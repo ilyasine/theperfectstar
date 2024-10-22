@@ -15,7 +15,6 @@ function duplicate_structure() {
         $this_year = get_option('school_year');
         $previous_year = get_previous_year();
         $school_id = intval($_POST['school_id']);
-        $school_lang = groups_get_groupmeta($school_id, 'ecole_lang');
         $classrooms_ids = get_school_classrooms_for_year($school_id, $previous_year);
         $school_object = groups_get_group($school_id);
 

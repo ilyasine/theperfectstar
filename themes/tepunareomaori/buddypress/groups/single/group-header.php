@@ -45,8 +45,8 @@ if(!is_school($group_id)){  // classroom
 				<span class="classroom_level_label"><?php _e('Level  ', 'tprm-theme') ?></span>
 				<span class="classroom_level_value"><?php echo groups_get_groupmeta($group_id, 'classroom_level') ?></span>			
 			</div>
-			<div class="classroom_curriculum">
-				<?php _e('Curriculum  ', 'tprm-theme') ?>
+			<div class="classroom_type">
+				<?php _e('Type  ', 'tprm-theme') ?>
 				<?php echo wp_kses( bp_nouveau_group_meta()->status, array( 'span' => array( 'class' => array() ) ) ); ?>			
 			</div>
 		</div>

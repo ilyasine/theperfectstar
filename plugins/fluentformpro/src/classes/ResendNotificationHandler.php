@@ -108,7 +108,7 @@ class ResendNotificationHandler
 
                     if ($feed && $feed->value) {
                         $feedValue = json_decode($feed->value, true);
-                        $isDisabled = ArrayHelper::get($feedValue, 'enabled') == 0;
+                        $isDisabled = !ArrayHelper::isTrue($feedValue, 'enabled');
                         if ($isDisabled && !$isMultipleActions) {
                             $message = __('Feed is disabled', 'fluentformpro');
                             wp_send_json_error(['message' => $message], 423);

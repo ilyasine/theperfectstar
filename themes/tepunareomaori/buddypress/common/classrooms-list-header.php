@@ -19,8 +19,8 @@
 	<div class="classroom_name">
 		<?php _e('Name', 'tprm-theme') ?>
 	</div>
-	<div class="classroom_curriculum">
-		<?php _e('Curriculum', 'tprm-theme') ?>
+	<div class="classroom_type">
+		<?php _e('Type', 'tprm-theme') ?>
 	</div>
 	<div class="classroom_level">
 		<?php _e('Level', 'tprm-theme') ?>
@@ -31,7 +31,7 @@
 	</div>
 
 	<div class="classroom_teachers">
-		<?php _e('Teacher', 'tprm-theme') ?>
+		<?php _e('Staff', 'tprm-theme') ?>
 	</div>
 
 	<div class="classroom_code">

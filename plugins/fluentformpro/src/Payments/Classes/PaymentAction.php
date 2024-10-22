@@ -395,7 +395,7 @@ class PaymentAction
             'Use fluentform/submission_order_items instead of fluentform_submission_order_items.'
         );
 
-        $this->orderItems = apply_filters('fluentform/submission_order_items', $this->orderItems, $this->submissionData, $this->form);
+        $this->orderItems = apply_filters('fluentform/submission_order_items', $this->orderItems, $this->submissionData, $this->form, $this->selectedPaymentMethod);
 
         return $this->orderItems;
     }

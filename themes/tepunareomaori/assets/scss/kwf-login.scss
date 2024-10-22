@@ -1,66 +1,95 @@
-@import "variables" ;
-@import "mixins" ;
+@import "variables";
+@import "mixins";
 
-body.login  {
+body.login {
+	background: none;
 	.kwf-preloader-login {
-        #tepunareomaori-preloader {
-          position: relative !important;
-          background: none !important;
-          min-height: 400px !important;
-          height: 100% !important;
-          margin-top: -60px !important;
-		  #nprogress .bar{
+		#tepunareomaori-preloader {
+			position: relative !important;
+			background: none !important;
+			min-height: 400px !important;
+			height: 100% !important;
+			margin-top: -60px !important;
+
+			#nprogress .bar {
+				display: none;
+			}
+		}
+	}
+	&.login-split-page{
+		.language-switcher{
 			display: none;
-		  }
-        }
-      }
-	&.login-split-page #login{
+		}
+		.login-split{
+			@include mobile {
+				display: none;
+			}		
+		} 
+	}
+
+	span.grey-and{
+		color: #4d586d;
+	}
+	a.terms-link{
+		span.grey-and{
+			color: inherit;
+		}
+	}
+
+	&.login-split-page #login {
 		top: 0;
 		transform: translateY(1%) !important;
 		overflow: hidden;
 	}
+
 	.login-heading {
 		display: none;
 	}
+
 	#login_error {
 		text-align: center;
 	}
 
-    input#user_login::placeholder,
-    input#user_pass::placeholder {
-        color: $kwf-text-color; 
+	input#user_login::placeholder,
+	input#user_pass::placeholder {
+		color: $tprm-text-color;
 		color: #333c;
-    }
+	}
 
-    input#classroom_code {
-        width: 100%;
-        border-radius: 100px 0 0 100px;
-        height: 56px;
-        border: none;
-		background-color: $kwf-hard-grey-bg-color !important;
-		color: $kwf-text-color;
+	input#classroom_code {
+		width: 100%;
+		border-radius: 100px 0 0 100px;
+		height: 56px;
+		border: none;
+		background-color: $tprm-hard-grey-bg-color !important;
+		color: $tprm-text-color;
 		margin: 0;
-		font-family: $primary-font-family;
+		font-family: $barlow-font-family;
+		font-size: $primary-font-size;
 		text-align: center;
-        &::placeholder {
-            color: #333c;
-        }
-    }
 
-	.classroom-code-section{
+		&::placeholder {
+			color: #333c;
+		}
+	}
+
+	.classroom-code-section {
 		margin: 20px 0 40px 0;
+
 		// .classroom-code-section-divider
-		&-divider{
+		&-divider {
 			display: flex;
 			align-items: center;
 			text-align: center;
 			margin: 40px 0;
+
 			span {
 				white-space: nowrap;
 				font-weight: bold;
 				font-size: 20px;
-				color: $kwf-text-color;
+				color: $tprm-text-color;
 			}
+
 			&::before,
 			&::after {
 				content: "";
@@ -69,8 +98,8 @@ body.login  {
 				margin: 0 10px;
 			}
 		}
-		
-		.submit-classroom-code{
+
+		.submit-classroom-code {
 			display: flex;
 			margin: 0;
 			box-shadow: 0px 4px 4px 0px #00000040;
@@ -80,81 +109,85 @@ body.login  {
 		}
 	}
 
-    #classroom_code_submit {
-        color: white;
-        border: none;
-        height: 56px;
-        background-color: $kwf-primary-color;
-        margin-left: -10% !important;
+	#classroom_code_submit {
+		color: white;
+		border: none;
+		height: 56px;
+		background-color: $tprm-primary-color;
+		margin-left: -10% !important;
 		width: 90px;
 		margin-top: 0;
 
-        &:hover {
-            background-color: $kwf-secondary-color;
-        }
-    }
+		&:hover {
+			background-color: $tprm-secondary-color;
+		}
+	}
 
-    &.login {
-        .login-heading {
-            display: none;
-        }
+	&.login {
+		.login-heading {
+			display: none;
+		}
 
-        #login_error {
-            text-align: center;
-        }
+		#login_error {
+			text-align: center;
+		}
 
-        form#loginform label[for="user_login"]:before {
+		form#loginform label[for="user_login"]:before {
 			font-size: 23px;
 			top: 17px;
 			font-weight: 300;
 			left: 20px;
-        }
+		}
 
-        .user-pass-wrap {
-            .wp-pwd {
-                &:before {
-                    font-size: 23px;
+		.user-pass-wrap {
+			.wp-pwd {
+				&:before {
+					font-size: 23px;
 					top: 17px;
 					font-weight: 300;
 					left: 20px;
-                }
+				}
 
-                .dashicons {
+				.dashicons {
 					top: 17px;
 					opacity: 1;
 					font-size: 20px;
-                }
-            }
-        }
+				}
+			}
+		}
 
-        &.login-split-page #login h1 a {
+		&.login-split-page #login h1 a {
 			margin: auto;
 			text-align: center;
 			font-size: 24px;
-			color: $kwf-text-color;
+			color: $tprm-text-color;
 			text-transform: uppercase;
 			font-family: 'Montserrat';
 			font-weight: 600;
-        }
+		}
 
-        .privacy-policy-page-link {
-            margin-bottom: 0 !important;
-            color: $kwf-primary-color !important;
+		.privacy-policy-page-link {
+			margin-bottom: 0 !important;
+			color: $tprm-primary-color !important;
 
-            a {
-                color: $kwf-primary-color !important;
-            }
-			
-        }
+			a {
+				color: $tprm-primary-color !important;
+			}
 
-        h1 a {
-            width: auto !important;
-        }
+		}
 
-       /*  .help-div {
+		h1 {	
+			color: $tprm-primary-color;
+			font-size: 40px;
+			a {
+				width: auto !important;
+			}
+		}
+
+		/*  .help-div {
             display: none;
         } */
-    }
+	}
 }
 
 .help-div {
@@ -162,10 +195,12 @@ body.login  {
 		font-size: 15px;
 	}
 }
+
 #login {
-	&.picture-mode{
+	&.picture-mode {
 		margin-top: 35px;
 	}
+
 	.welcome-div {
 		text-align: center;
 		margin: 10px auto 20px auto;
@@ -173,12 +208,14 @@ body.login  {
 		display: flex;
 		flex-direction: column;
 		gap: 14px;
+
 		h3 {
-			color: $kwf-primary-color;
+			color: $tprm-primary-color;
 			font-weight: 700;
 		}
-		.help-div{
-			a.privacy-link{
+
+		.help-div {
+			a.privacy-link {
 				color: #10A696;
 				font-family: Montserrat;
 				font-size: 20px;
@@ -189,65 +226,84 @@ body.login  {
 				margin: auto;
 				text-decoration: underline;
 				text-underline-offset: 4px;
+
 				&:hover,
 				&:active,
 				&:focus {
-					color: $kwf-secondary-color;				
+					color: $tprm-secondary-color;
 				}
-            
+
 			}
 		}
 	}
-	#login-tabs{
+
+	#login-tabs {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		&>ul{
+
+		&>ul {
 			list-style: none;
-			li{
-				background: $kwf-secondary-color;
+
+			li {
+				background: $tprm-secondary-color;
 				border-radius: 8px;
 				padding: 10px 30px !important;
-				font-size: 15px;
+				font-size: $primary-font-size !important;
 				font-weight: 500;
 				transition: .3 all ease-in-out;
-				a{
+				@include border-radius(50px);
+
+				a {
 					color: white !important;
 				}
+
 				&:hover,
 				&:active,
 				&:focus {
-					background: $kwf-primary-color;
-					a{
+					background: $tprm-primary-color;
+
+					a {
 						color: white !important;
 					}
-					
-				}				
+
+				}
 			}
 		}
 	}
-	input#user_login, 
-	input#user_pass{
+
+	input#user_login,
+	input#user_pass {
 		border-radius: 100px !important;
 		height: 55px;
-		background-color: $kwf-hard-grey-bg-color !important;
-		color: $kwf-text-color;
-		font-family: $primary-font-family;
+		background-color: $tprm-hard-grey-bg-color !important;
+		color: $tprm-text-color;
+		font-family: $barlow-font-family;
+		font-size: $primary-font-size;	
 		padding-left: 60px !important;
+
 		&:focus,
-		&:hover{
-			border:2px solid $kwf-primary-color;
+		&:hover {
+			border: 2px solid $tprm-primary-color;
 		}
 	}
-	p.submit{
-		input[type="submit"], #picture-submit{
+
+	p.submit {
+
+		input[type="submit"],
+		#picture-submit {
 			border: none;
 			box-shadow: 0px 4px 4px 0px #00000040;
 			padding: 10px;
 			margin: 30px 0 5px 0;
+			background-color: $tprm-primary-color;
+			border-color: $tprm-primary-color;		
+			font-family: $barlow-font-family;
 		}
 	}
+
 	-webkit-box-shadow: 0 0 0px 1000px white inset;
+
 	input:-webkit-autofill,
 	input:-webkit-autofill:hover,
 	input:-webkit-autofill:focus,
@@ -255,116 +311,128 @@ body.login  {
 		transition: background-color 5000s ease-in-out 0s;
 	}
 }
+
 #login {
 	p.support-div {
 		text-align: center;
 		line-height: 22px;
 	}
-	#picture-password-fields{
-		input#user_login{
+
+	#picture-password-fields {
+		input#user_login {
 			border-radius: 100px !important;
 			height: 55px;
-			background-color: $kwf-hard-grey-bg-color !important;
-			color: $kwf-text-color;
+			background-color: $tprm-hard-grey-bg-color !important;
+			color: $tprm-text-color;
+
 			&:focus,
-			&:hover{
-				border:2px solid $kwf-primary-color;
+			&:hover {
+				border: 2px solid $tprm-primary-color;
 			}
 		}
+
 		.picture-password {
 			max-height: 300px;
 			overflow-y: scroll;
 			overflow-x: hidden;
 			padding: 20px;
 			padding-right: 10px;
-	
+
 			.images-grid {
-			  display: grid;
-			  grid-template-columns: repeat(4, 1fr);
-			  gap: 10px;
-	
-			  .picture-container {
-				position: relative;
-	
-				img {
-				  width: 100%;
-				  height: 100%;
-				  max-height: 80px;
-				  object-fit: cover;
-				  cursor: pointer;
-				  filter: brightness(0.9);
-				  transition: .3s ease-in-out;
-	
-				  &:hover {
-					filter: brightness(1.1);
-					transform: scale(1.1);
-					box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-				  }
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 10px;
+
+				.picture-container {
+					position: relative;
+
+					img {
+						width: 100%;
+						height: 100%;
+						max-height: 80px;
+						object-fit: cover;
+						cursor: pointer;
+						filter: brightness(0.9);
+						transition: .3s ease-in-out;
+
+						&:hover {
+							filter: brightness(1.1);
+							transform: scale(1.1);
+							box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+						}
+					}
+
+					&.selected {
+						img {
+							filter: brightness(1.2) saturate(1.5) drop-shadow(2px 4px 6px black);
+							transform: scale(1.1);
+							box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+							border: 1px solid #fff;
+						}
+					}
+
+					.bb-icon-thumbtack-star {
+						display: none;
+						position: absolute;
+						width: 30px;
+						height: 30px;
+						border-radius: 50%;
+						top: 5px;
+						right: 5px;
+						background: #fff;
+						width: 25px;
+						height: 25px;
+					}
+
+					&.selected .bb-icon-thumbtack-star {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
 				}
-	
-				&.selected {
-				  img {
-					filter: brightness(1.2) saturate(1.5) drop-shadow(2px 4px 6px black);
-					transform: scale(1.1);
-					box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-					border: 1px solid #fff;
-				  }
-				}
-	
-				.bb-icon-thumbtack-star {
-				  display: none;
-				  position: absolute;
-				  width: 30px;
-				  height: 30px;
-				  border-radius: 50%;
-				  top: 5px;
-				  right: 5px;
-				  background: #fff;
-				  width: 25px;
-				  height: 25px;
-				}
-	
-				&.selected .bb-icon-thumbtack-star {
-				  display: flex;
-				  align-items: center;
-				  justify-content: center;
-				}
-			  }
 			}
-		  }
-	}
-}
-.wpml-login-ls {
-	input.button {
-		color: $kwf-primary-color;
-		border-color: $kwf-primary-color;
-		background: #f6f7f7;
-		vertical-align: top;
-		&:hover {
-			background: #f0f0f1;
-			border-color: $kwf-secondary-color;
-			color: $kwf-secondary-color;
 		}
 	}
 }
+
+.wpml-login-ls {
+	display: none;
+	input.button {
+		color: $tprm-primary-color;
+		border-color: $tprm-primary-color;
+		background: #f6f7f7;
+		vertical-align: top;
+
+		&:hover {
+			background: #f0f0f1;
+			border-color: $tprm-secondary-color;
+			color: $tprm-secondary-color;
+		}
+	}
+}
+
 ::selection {
-	background: $kwf-primary-color;
+	background: $tprm-primary-color;
 	color: #ffffff;
 }
+
 ::-moz-selection {
-	background: $kwf-primary-color;
+	background: $tprm-primary-color;
 	color: #ffffff;
 }
+
 body.login {
 	.login-popup.bb-modal {
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
+
 		>h1 {
 			&:first-of-type {
 				color: #ffffff;
 				font-family: $primary-font-family;
-				background-color: $kwf-dark-green;
+				background-color: $tprm-dark-green;
 			}
+
 			&.alert-title {
 				font-family: $primary-font-family;
 				color: red;
@@ -372,13 +440,20 @@ body.login {
 			}
 		}
 	}
+
+	button, .button, input[type="button"], input[type="submit"]{
+		font-size: $primary-font-size !important;
+		font-family: $barlow-font-family !important;
+	}
+
 	.login-popup {
 		.mfp-close {
 			color: #ffffff;
 		}
 	}
-	.login-session-content{
-		.header-container{
+
+	.login-session-content {
+		.header-container {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -386,20 +461,23 @@ body.login {
 			margin: 30px auto;
 			max-width: 130px;
 			height: 120px;
-			span.bb-icon-l{
+
+			span.bb-icon-l {
 				position: absolute;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				border-radius: 50%;
-				&.bb-icon-desktop{
+
+				&.bb-icon-desktop {
 					color: #FFD845;
-					background-color: #ffd8455c;				
+					background-color: #ffd8455c;
 					font-size: 92px;
 					width: 130px;
-					height: 130px;		
+					height: 130px;
 				}
-				&.bb-icon-exclamation{
+
+				&.bb-icon-exclamation {
 					color: red;
 					background-color: #ffd0d0;
 					border: 2px solid;
@@ -414,43 +492,44 @@ body.login {
 			}
 		}
 
-		.button-container{
+		.button-container {
 			display: flex;
 			align-items: center;
 			justify-content: space-evenly;
+
 			button.button {
-				background-color: $kwf-primary-color;
-				border-color: $kwf-primary-color;
+				background-color: $tprm-primary-color;
+				border-color: $tprm-primary-color;
 				color: #ffffff;
 				width: fit-content;
 				margin: 20px 0 0;
-				font-size: 14px;
+				font-size: $primary-font-size !important;
 				box-shadow: none;
 				text-shadow: none;
 				height: auto;
 				padding: 4px 50px;
-				@include border-radius($kwf-button-radius);
-		
+				@include border-radius($tprm-button-radius);
+
 				&#cancel-btn {
-				   
+
 					color: #a7aaad;
 					background: #f6f7f7;
 					border-color: #dcdcde;
 					box-shadow: none;
 					text-shadow: none;
 					position: relative;
-		
+
 					&:hover,
 					&:active,
 					&:focus {
-						background-color: $kwf-secondary-color;
-						border-color: $kwf-secondary-color;
+						background-color: $tprm-secondary-color;
+						border-color: $tprm-secondary-color;
 						color: #fff;
 					}
 				}
-		
+
 				&#continue-btn {
-		
+
 					&:hover,
 					&:active,
 					&:focus {
@@ -463,5 +542,3 @@ body.login {
 	}
 
 }
-
-

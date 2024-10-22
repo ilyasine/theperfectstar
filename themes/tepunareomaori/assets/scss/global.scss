@@ -92,14 +92,27 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('#{$font-path}BarlowCondensed-Medium.eot');
+  src: url('#{$font-path}BarlowCondensed-Medium.eot?#iefix') format('embedded-opentype'),
+  url('#{$font-path}BarlowCondensed-Medium.woff2') format('woff2'),
+  url('#{$font-path}BarlowCondensed-Medium.woff') format('woff'),
+  url('#{$font-path}BarlowCondensed-Medium.ttf') format('truetype'),
+  url('#{$font-path}BarlowCondensed-Medium.svg#BarlowCondensed-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 ::selection {
-  background: $kwf-primary-color;
-  color: $kwf-content-background-color;
+  background: $tprm-primary-color;
+  color: $tprm-content-background-color;
 }
 
 ::-moz-selection {
-  background: $kwf-primary-color;
-  color: $kwf-content-background-color;
+  background: $tprm-primary-color;
+  color: $tprm-content-background-color;
 }
 
 body {
@@ -134,7 +147,7 @@ body {
   display: flex;
   align-items: center;
   width: 200px;
-  background: $kwf-grey-bg-color;
+  background: $tprm-grey-bg-color;
   border: none !important;
 
   &:focus-within {
@@ -149,14 +162,14 @@ body {
   padding-top: 0;
   padding-bottom: 0;
   height: 38px;
-  background: $kwf-grey-bg-color;
+  background: $tprm-grey-bg-color;
   border: none !important;
   box-shadow: none !important;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $kwf-primary-color !important;
+  background: $tprm-primary-color !important;
   @include border-radius(20px);
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -165,7 +178,7 @@ body {
 
 .students-loop {
   ::-webkit-scrollbar-thumb {
-    background: $kwf-primary-color !important;
+    background: $tprm-primary-color !important;
     @include border-radius(10px);
     border-top-right-radius: 0px;
     //border-bottom-left-radius: 0px;
@@ -177,8 +190,8 @@ body {
   position: fixed;
   bottom: 30px;
   right: 20px;
-  background-color: $kwf-primary-color;
-  border: 1px solid $kwf-dark-green;
+  background-color: $tprm-primary-color;
+  border: 1px solid $tprm-dark-green;
   padding: 0 9px;
   line-height: 37px;
   height: 38px;
@@ -188,8 +201,8 @@ body {
 
   &:hover,
   &:focus {
-    background-color: $kwf-secondary-color;
-    border: 1px solid $kwf-secondary-color;
+    background-color: $tprm-secondary-color;
+    border: 1px solid $tprm-secondary-color;
   }
 }
 
@@ -201,7 +214,7 @@ body {
     &:first-of-type {
       color: #ffffff;
       font-family: cursive;
-      background-color: $kwf-dark-green;
+      background-color: $tprm-dark-green;
     }
 
     &.TPRM_troubleshooting {
@@ -266,7 +279,7 @@ body {
       }
 
       .question_title {
-        color: $kwf-secondary-color;
+        color: $tprm-secondary-color;
       }
 
       ul.steps-list {
@@ -323,8 +336,8 @@ body {
       justify-content: space-evenly;
 
       button.button {
-        background-color: $kwf-primary-color;
-        border-color: $kwf-primary-color;
+        background-color: $tprm-primary-color;
+        border-color: $tprm-primary-color;
         color: #ffffff;
         width: fit-content;
         margin: 20px 0 0;
@@ -332,7 +345,7 @@ body {
         box-shadow: none;
         text-shadow: none;
         height: auto;
-        @include border-radius($kwf-button-radius);
+        @include border-radius($tprm-button-radius);
 
         &#continue-btn {
           box-shadow: none;
@@ -355,7 +368,7 @@ input,
 textarea,
 select {
   outline: none;
-  border-color: $kwf-input-border-color;
+  border-color: $tprm-input-border-color;
 }
 
 .kwf-overlay-blur {
@@ -370,16 +383,33 @@ select {
   opacity: .4;
 }
 
-/* button, .button, input[type="button"], input[type="submit"], .buddypress .buddypress-wrap .comment-reply-link, .buddypress .buddypress-wrap .generic-button a, .buddypress .buddypress-wrap a.bp-title-button, .buddypress .buddypress-wrap a.button, .buddypress .buddypress-wrap button, .buddypress .buddypress-wrap input[type="button"], .buddypress .buddypress-wrap input[type="reset"], .buddypress .buddypress-wrap input[type="submit"], .buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a, .activity-list .comment-item .activity-meta .buddyboss_edit_activity_cancel, .activity-list .comment-item .activity-meta .buddyboss_edit_activity_comment, .activity-list .comment-item .activity-meta .buddyboss_edit_activity_comment.action-save{
-  background-color: $kwf-hard-grey-bg-color;
-  color: $kwf-text-color;
-  border: 1px solid $kwf-hard-grey-bg-color;
-  &:is(:hover, :active, :focus) {
-    background-color: $kwf-hard-grey-bg-color-hover;
-    border-color: $kwf-hard-grey-bg-color-hover;
-    color: $kwf-text-color;
-  }
-} */
+button,
+.button,
+input[type="button"],
+input[type="submit"],
+.buddypress .buddypress-wrap .comment-reply-link,
+.buddypress .buddypress-wrap .generic-button a,
+.buddypress .buddypress-wrap a.bp-title-button,
+.buddypress .buddypress-wrap a.button,
+.buddypress .buddypress-wrap button,
+.buddypress .buddypress-wrap input[type="button"],
+.buddypress .buddypress-wrap input[type="reset"],
+.buddypress .buddypress-wrap input[type="submit"],
+.buddypress .buddypress-wrap ul.button-nav:not(.button-tabs) li a,
+.activity-list .comment-item .activity-meta .buddyboss_edit_activity_cancel,
+.activity-list .comment-item .activity-meta .buddyboss_edit_activity_comment,
+.activity-list .comment-item .activity-meta .buddyboss_edit_activity_comment.action-save {
+  /*  background-color: $tprm-hard-grey-bg-color;
+  color: $tprm-text-color;
+  border: 1px solid $tprm-hard-grey-bg-color; */
+  font-size: $primary-font-size;
+  font-family: $barlow-font-family;
+  /*  &:is(:hover, :active, :focus) {
+    background-color: $tprm-hard-grey-bg-color-hover;
+    border-color: $tprm-hard-grey-bg-color-hover;
+    color: $tprm-text-color;
+  } */
+}
 
 .site-content,
 #page {
@@ -387,11 +417,11 @@ select {
 }
 
 .tepunareomaori-theme {
-  color: $kwf-text-color;
+  color: $tprm-text-color;
   font-family: $primary-font-family;
-  font-size: 18px;
-  font-weight: 400;
-  background-color: $kwf-white-color;
+  font-size: $primary-font-size;
+  //font-weight: 400;
+  background-color: $tprm-white-color;
 
   &.bb-sfwd-aside .site-header .container {
     max-width: 80%;
@@ -399,13 +429,13 @@ select {
   }
 
   a {
-    color: $kwf-primary-color;
+    color: $tprm-primary-color;
     font-family: $text-font-family;
     font-size: $text-font-size;
     font-weight: $text-font-weight;
 
     &.bp-parent-group-title {
-      color: $kwf-secondary-color;
+      color: $tprm-secondary-color;
       font-size: 18px;
     }
   }
@@ -803,44 +833,43 @@ select {
   }
 
   .list-title a {
-    color: $kwf-headings-color;
+    color: $tprm-headings-color;
   }
 
   .list-title a {
 
     &:hover,
     &:focus {
-      color: $kwf-text-color;
+      color: $tprm-text-color;
     }
   }
 
   h1 {
-    color: $kwf-primary-color;
+    color: $tprm-primary-color;
     font-family: $primary-font-family;
     font-size: 25px;
     font-weight: 500;
   }
 
   h2 {
-    color: $kwf-text-color;
+    color: $tprm-text-color;
     font-family: $primary-font-family;
     font-size: 20px;
     font-weight: 500;
   }
 
   h3 {
-    color: $kwf-text-color;
+    color: $tprm-text-color;
     font-family: $primary-font-family;
     font-size: 15px;
     font-weight: 500;
   }
 
-  /* button {
-    font-family: $secondary-font-family;
-    font-size: $secondary-font-size;
-    font-weight: $secondary-font-weight;
-    color: $kwf-white-color;
-    background-color: $kwf-accent-color;
+  /* button, .button {
+    font-family: "Trebuchet MS", Sans-serif !important;
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.6px !important;
   } */
 
   input {
@@ -848,27 +877,31 @@ select {
     &[type="button"],
     &[type="submit"] {
       font-family: $secondary-font-family;
-      font-size: $secondary-font-size;
+      font-size: $primary-font-size;
       font-weight: $secondary-font-weight;
-      color: $kwf-white-color;
-      background-color: $kwf-accent-color;
+      /* color: $tprm-white-color;
+      background-color: $tprm-accent-color;
+      font-family: "Trebuchet MS", Sans-serif !important;
+      font-size: 25px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.6px !important; */
     }
   }
 
-  .elementor-button {
+  /*   .elementor-button {
     font-family: $secondary-font-family;
-    font-size: $secondary-font-size;
+    font-size: $primary-font-size;
     font-weight: $secondary-font-weight;
-    color: $kwf-white-color;
-    background-color: $kwf-accent-color;
+    color: $tprm-white-color;
+    background-color: $tprm-accent-color;
     @include border-radius(100px);
-  }
+  } */
 
   /* button {
 
     &:hover,
     &:focus {
-      background-color: $kwf-text-color;
+      background-color: $tprm-text-color;
     }
   } */
 
@@ -877,7 +910,7 @@ select {
 
       &:hover,
       &:focus {
-        background-color: $kwf-text-color;
+        background-color: $tprm-text-color;
       }
     }
 
@@ -885,30 +918,30 @@ select {
 
       &:hover,
       &:focus {
-        background-color: $kwf-text-color;
+        background-color: $tprm-text-color;
       }
     }
 
   }
 
   .kwf-primary-btn {
-    background-color: $kwf-primary-color !important;
-    border-color: $kwf-primary-color !important;
+    background-color: $tprm-primary-color !important;
+    border-color: $tprm-primary-color !important;
   }
 
   .kwf-primary-btn:is(:hover, :active, :focus) {
-    background-color: $kwf-secondary-color !important;
-    border-color: $kwf-secondary-color !important;
+    background-color: $tprm-secondary-color !important;
+    border-color: $tprm-secondary-color !important;
   }
 
   .kwf-secondary-btn {
-    background-color: $kwf-header-background !important;
-    border-color: $kwf-header-background !important;
+    background-color: $tprm-header-background !important;
+    border-color: $tprm-header-background !important;
   }
 
   .kwf-secondary-btn:is(:hover, :active, :focus) {
-    background-color: $kwf-header-background !important;
-    border-color: $kwf-header-background !important;
+    background-color: $tprm-header-background !important;
+    border-color: $tprm-header-background !important;
   }
 
   .select2-container {
@@ -919,12 +952,12 @@ select {
     }
 
     &--default .select2-results__option--highlighted[aria-selected] {
-      background-color: $kwf-grey-bg-color;
+      background-color: $tprm-grey-bg-color;
       //color: white;
     }
 
     &--default .select2-results__option[aria-selected=true] {
-      background-color: $kwf-grey-bg-color;
+      background-color: $tprm-grey-bg-color;
       color: inherit;
     }
 
@@ -964,7 +997,7 @@ select {
     animation: ldrotating 1.2s linear infinite;
     border: 3px solid rgba(0, 0, 0, 0.2);
     border-radius: 50%;
-    border-top-color: $kwf-primary-color;
+    border-top-color: $tprm-primary-color;
     content: "";
     display: block;
     height: 40px;
@@ -1000,14 +1033,14 @@ h1.entry-title {
     }
 
     button {
-      font-size: $secondary-font-size;
+      font-size: $primary-font-size;
     }
 
     input {
 
       &[type="button"],
       &[type="submit"] {
-        font-size: $secondary-font-size;
+        font-size: $primary-font-size;
       }
     }
   }
@@ -1020,14 +1053,14 @@ h1.entry-title {
     }
 
     button {
-      font-size: $secondary-font-size;
+      font-size: $primary-font-size;
     }
 
     input {
 
       &[type="button"],
       &[type="submit"] {
-        font-size: $secondary-font-size;
+        font-size: $primary-font-size;
       }
     }
 

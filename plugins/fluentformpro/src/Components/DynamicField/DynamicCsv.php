@@ -39,7 +39,15 @@ class DynamicCsv
         }
 
         $csvParser->load_data($content);
-        $result = $csvParser->parse($csvParser->find_delimiter());
+        $csvDelimiter = Arr::get($config, 'csv_delimiter');
+        if ('comma' == $csvDelimiter) {
+            $csvDelimiter = ",";
+        } elseif ('semicolon' == $csvDelimiter) {
+            $csvDelimiter = ";";
+        } else {
+            $csvDelimiter = $csvParser->find_delimiter();
+        }
+        $result = $csvParser->parse($csvDelimiter);
 
         if(!$result) {
             throw new \Exception(__('Empty data', 'fluentformpro'));

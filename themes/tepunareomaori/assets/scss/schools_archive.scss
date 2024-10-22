@@ -21,7 +21,7 @@
             padding-right: 20px;
 
             a {
-                color: $kwf-text-color;
+                color: $tprm-text-color;
                 padding: 10px 0;
 
                 .nav-item {
@@ -31,8 +31,8 @@
                 }
 
                 .count {
-                    background-color: $kwf-header-background;
-                    color: $kwf-text-color;
+                    background-color: $tprm-header-background;
+                    color: $tprm-text-color;
                     border: 1px solid rgba(0, 0, 0, 0.1);
                     @include border-radius(6px);
                     min-width: 23px;
@@ -52,11 +52,11 @@
             &.ui-tabs-active,
             &.ui-state-active {
                 a {
-                    color: $kwf-primary-color;
+                    color: $tprm-primary-color;
                     padding: 10px 0;
 
                     .nav-item {
-                        border-bottom: 2px solid $kwf-primary-color;
+                        border-bottom: 2px solid $tprm-primary-color;
                     }
                 }
             }
@@ -76,7 +76,7 @@ table.schools_stats {
     tr {
         th {
             font-weight: bold;
-            background-color: $kwf-primary-button-background-regular;
+            background-color: $tprm-primary-button-background-regular;
             color: #ffffff;
 
             &:first-child {
@@ -137,7 +137,7 @@ table.schools_stats {
 
         td#kwf-active {
             font-weight: bold;
-            background-color: $kwf-primary-color;
+            background-color: $tprm-primary-color;
             color: #ffffff;
         }
     }
@@ -264,15 +264,15 @@ table.schools_stats {
             span.name {
                 font-size: 20px;
                 font-weight: 600;
-                color: $kwf-primary-color;
+                color: $tprm-primary-color;
                 letter-spacing: 0.5px;
                 font-weight: 600;
-                text-shadow: 0px 0.5px $kwf-primary-color !important;
+                text-shadow: 0px 0.5px $tprm-primary-color !important;
 
                 &:hover,
                 &:active,
                 &:focus {
-                    color: $kwf-primary-button-background-regular;
+                    color: $tprm-primary-button-background-regular;
                 }
             }
         }
@@ -290,13 +290,13 @@ table.schools_stats {
             }
 
             span.count-nbr {
-                background-color: $kwf-content-alternate-background-color;
+                background-color: $tprm-content-alternate-background-color;
                 @include border-radius(23px);
                 padding: 3px 9px;
                 font-size: 11px;
                 font-style: normal;
                 font-weight: 600;
-                color: $kwf-body-background-color;
+                color: $tprm-body-background-color;
                 letter-spacing: -0.55px;
                 color: #1D2327;
                 border: 1px solid rgba(0, 0, 0, .1);
@@ -309,8 +309,8 @@ table.schools_stats {
             text-align: center;
 
             span.bb-current-group-kwf-ecole {
-                background: $kwf-primary-button-background-regular;
-                color: $kwf-danger-color;
+                background: $tprm-primary-button-background-regular;
+                color: $tprm-danger-color;
                 font-size: 11px;
                 font-weight: 700;
                 @include border-radius(100px);

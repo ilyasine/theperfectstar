@@ -2,7 +2,7 @@
 
     //.bb-ldactivity__blank
     &__blank {
-        border: 1px solid $kwf-content-border-color;
+        border: 1px solid $tprm-content-border-color;
         background-color: #fff;
         @include border-radius(4px);
         padding: 1.25rem 0.9375rem;
@@ -20,7 +20,7 @@
 
         // .bb-no-data__link
         &__link {
-            color: $kwf-primary-color;
+            color: $tprm-primary-color;
         }
     }
 
@@ -29,7 +29,7 @@
 
         //.bb-la-block
         &-block {
-            border: 1px solid $kwf-content-border-color;
+            border: 1px solid $tprm-content-border-color;
             background-color: #fff;
             @include border-radius(4px);
             position: relative;
@@ -177,14 +177,14 @@
                 margin-bottom: 10px;
 
                 a {
-                    color: $kwf-body-background-color;
-                    background-color: $kwf-primary-color;
+                    color: $tprm-body-background-color;
+                    background-color: $tprm-primary-color;
                     font-size: 17px;
                     font-family: "Montserrat", Sans-serif;
                     font-weight: 500;
-                    border: 3px solid $kwf-content-border-color;
+                    border: 3px solid $tprm-content-border-color;
                     display: inline-block;
-                    @include border-radius($kwf-button-radius);
+                    @include border-radius($tprm-button-radius);
                     padding: 8px 20px;
                     @include transition(.2s linear background-color);
 
@@ -192,9 +192,9 @@
                     &:focus,
                     &:active,
                     &:focus-within {
-                        background-color: $kwf-content-background-color;
-                        color: $kwf-primary-color;
-                        border-color: $kwf-primary-color;
+                        background-color: $tprm-content-background-color;
+                        color: $tprm-primary-color;
+                        border-color: $tprm-primary-color;
                     }
                 }
             }

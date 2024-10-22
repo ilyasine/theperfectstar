@@ -37,6 +37,7 @@ class PostUpdate extends BaseFieldManager
         });
         add_filter('fluentform/white_listed_fields', [$this, 'addWhiteListedFields'], 10, 2);
 
+        add_filter('fluentform/validation_post_update_errors', [$this, 'validateUpdatePostForm'], 10, 4);
         new PopulatePostForm();
     }
 
@@ -224,4 +225,42 @@ class PostUpdate extends BaseFieldManager
         return $tags;
     }
 
+    public function validateUpdatePostForm($errors, $formData, $form, $fields)
+    {
+        $postUpdateFieldName = ArrayHelper::get(array_column($fields, null, 'element'), 'post_update.raw.attributes.name');
+        $postId = ArrayHelper::get($formData, $postUpdateFieldName);
+        foreach ($errors as $filedName => $message) {
+            $elementType = ArrayHelper::get($fields, $filedName . '.element');
+            // handle required validation
+            if (in_array($elementType, ['featured_image', 'input_file', 'input_image'])) {
+                $field = ArrayHelper::get($fields, $filedName);
+                $isRequired = ArrayHelper::isTrue($field, 'rules.required.value');
+                $hasValue = ArrayHelper::get($formData, $filedName);
+                if ($isRequired) {
+                    if ($hasValue) {
+                        // Error is not on require rule
+                        continue;
+                    }
+                    if ('featured_image' === $elementType) {
+                        if (ArrayHelper::isTrue($formData, 'remove_' . $filedName)) {
+                            continue;
+                        } elseif (has_post_thumbnail($postId)) {
+                            unset($errors[$filedName]['required']);
+                        }
+                    } else {
+                        $hasExistingValue = ArrayHelper::get($formData, 'existing-attachment-key-' . $filedName, []);
+                        $removeExistingValue = ArrayHelper::get($formData, 'remove-attachment-key-' . $filedName, []);
+                        $stillHasValue = array_diff($hasExistingValue, $removeExistingValue);
+                        if ($stillHasValue) {
+                            unset($errors[$filedName]['required']);
+                        }
+                    }
+                }
+            }
+            if (empty($errors[$filedName])) {
+               ArrayHelper::forget($errors, $filedName);
+            }
+        }
+        return $errors;
+    }
 }

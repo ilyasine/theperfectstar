@@ -524,7 +524,7 @@ class Uploader extends FormHandler
         // Remove old temp files
         if (is_dir($tempDir) and ($dir = opendir($tempDir))) {
             while (($file = readdir($dir)) !== false) {
-                $tempFilePath = $tempDir . DIRECTORY_SEPARATOR . $file;
+                $tempFilePath = $tempDir . $file;
                 if ((filemtime($tempFilePath) < time() - $maxFileAge)) {
                     @unlink($tempFilePath);
                 }

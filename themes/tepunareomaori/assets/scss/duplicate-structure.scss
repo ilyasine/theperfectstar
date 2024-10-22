@@ -8,7 +8,7 @@
     flex-direction: column;
     gap: 15px;
 
-    button.duplicate-structure span{
+    button.duplicate-structure span {
         font-size: 20px;
     }
 }
@@ -41,7 +41,7 @@
         text-align: center;
         border-radius: 20px;
         color: #fff;
-        background-color: $kwf-primary-color;
+        background-color: $tprm-primary-color;
         font-size: 25px;
         font-weight: 500;
         position: relative;
@@ -50,32 +50,39 @@
         gap: 10px;
         margin-bottom: 10px;
         align-items: center;
-        &.error{
-            background-color: $kwf-accent-color;
+
+        &.error {
+            background-color: $tprm-accent-color;
         }
     }
 
     .mfp-close {
         display: none;
     }
-    .kwf-preloader{
-        #tepunareomaori-preloader{
-          position: relative !important;
-          background: none !important;
-          min-height: 400px !important;
-          height: 100% !important;
-          margin-top: -60px !important;
-          #nprogress .bar{
-            display: none !important;
-          }
+
+    .kwf-preloader {
+        #tepunareomaori-preloader {
+            position: relative !important;
+            background: none !important;
+            min-height: 400px !important;
+            height: 100% !important;
+            margin-top: -60px !important;
+
+            #nprogress .bar {
+                display: none !important;
+            }
         }
-      }
+    }
+
     &-body {
-        span.bb-icon-user-arrow-up, span.bb-icon-cogs{
+
+        span.bb-icon-user-arrow-up,
+        span.bb-icon-cogs {
             font-size: 28px;
-            color: $kwf-primary-color;
+            color: $tprm-primary-color;
         }
-        .classroom-promote-student-note{
+
+        .classroom-promote-student-note {
             font-size: 18px;
             font-weight: 600;
             padding: 20px;
@@ -90,6 +97,7 @@
             margin-bottom: 15px;
         }
     }
+
     &-footer {
         display: flex;
         align-items: center;

@@ -193,9 +193,6 @@ function process_excel_rows() {
   
                 // Update user meta
                 update_user_meta($student_id, 'ecole', $school_id);   
-                $lang_meta = $wpdb->get_blog_prefix($blog_id) . 'lang';    
-                $school_language = groups_get_groupmeta($school_id, 'ecole_lang');            
-                update_user_meta($student_id, $lang_meta, $school_language);
 
                 // Student Password
                 update_user_meta($student_id, 'password_type', $passwordType);

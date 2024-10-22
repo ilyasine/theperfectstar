@@ -388,7 +388,7 @@ class JetEngineHelper
             $isUserUpdate = 'user_update' == Arr::get($feed, 'settings.list_id');
             $jetEngineMeta = [];
             if ($generalJetEngineFields = Arr::get($jetEngineFields, 'general')) {
-                $rawJetEngineGeneralFields = Arr::get($feed, 'settings.acf_mappings.general');
+                $rawJetEngineGeneralFields = Arr::get($feed, 'settings.jetengine_mappings.general');
                 $generalJetEngineFields = self::maybeResolveProcessedFeedDateFormat(self::resolveDateFieldFormat($rawJetEngineGeneralFields, $form), $generalJetEngineFields);
                 $jetEngineMeta = self::prepareGeneralFields($generalJetEngineFields, null, $isUserUpdate);
             }

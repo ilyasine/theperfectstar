@@ -2,14 +2,15 @@
 @import "mixins";
 
 body.groups.courses,
-body.bp-user.my-courses ,
-body.bp-user.additional-content ,
+body.groups.content,
+body.bp-user.my-courses,
+body.bp-user.additional-content,
 body.bp-user.exam {
     margin: 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
-    .bp-navs ul{
+    .bp-navs ul {
         border-radius: 8px;
         overflow: hidden;
     }
@@ -18,13 +19,13 @@ body.bp-user.exam {
         float: left;
         margin: 0;
         padding: 0;
-        //background: $kwf-hard-grey-bg-color;
-        background-color: $kwf-grey-bg-color;
+        //background: $tprm-hard-grey-bg-color;
+        background-color: $tprm-grey-bg-color;
         overflow: hidden;
 
         .bb-single-nav-item-point {
             &+span.count {
-                background: $kwf-primary-hover;
+                background: $tprm-primary-hover;
                 color: white;
             }
         }
@@ -35,21 +36,21 @@ body.bp-user.exam {
             font-weight: 500;
 
             &:hover {
-                background-color: $kwf-green-light-hover;
+                background-color: $tprm-green-light-hover;
                 color: #4f4d4d;
             }
         }
 
         &.selected {
-            background-color: $kwf-primary-color;
+            background-color: $tprm-primary-color;
 
             .bb-single-nav-item-point {
                 border-bottom: none;
                 color: #FFF;
 
                 &+span.count {
-                    background: $kwf-green-light;
-                    color: $kwf-text-color;
+                    background: $tprm-green-light;
+                    color: $tprm-text-color;
                 }
             }
 
@@ -57,7 +58,7 @@ body.bp-user.exam {
                 font-weight: 600;
 
                 &:hover {
-                    background-color: $kwf-primary-hover;
+                    background-color: $tprm-primary-hover;
                 }
             }
         }
@@ -68,6 +69,15 @@ body.bp-user.exam {
 
         &:first-child {
             border-radius: 8px 0 0 8px;
+        }
+    }
+
+    .bb-cover-list-item {
+        .assign-course-to-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
         }
     }
 
@@ -82,8 +92,8 @@ body.bp-user.exam {
             gap: 15px;
         }
 
-        #toggle-order{
-            /* background-color: $kwf-grey-bg-color;
+        #toggle-order {
+            /* background-color: $tprm-grey-bg-color;
             color: var(--bb-body-text-color);
             text-decoration: none;
             border: none;
@@ -91,27 +101,28 @@ body.bp-user.exam {
                 font-size: 18px;
             }
             &:hover {
-                background-color: $kwf-green-light-hover;
+                background-color: $tprm-green-light-hover;
                 color: #4f4d4d;
             } */
-            background-color: $kwf-hard-grey-bg-color;
-            color: $kwf-text-color;
-            border: 1px solid $kwf-hard-grey-bg-color;
+            background-color: $tprm-hard-grey-bg-color;
+            color: $tprm-text-color;
+            border: 1px solid $tprm-hard-grey-bg-color;
 
-            span#lock-icon{
+            span#lock-icon {
                 font-size: 18px;
             }
 
             &:is(:hover, :active, :focus) {
-                background-color: $kwf-hard-grey-bg-color-hover;
-                border-color: $kwf-hard-grey-bg-color-hover;
-                color: $kwf-text-color;
+                background-color: $tprm-hard-grey-bg-color-hover;
+                border-color: $tprm-hard-grey-bg-color-hover;
+                color: $tprm-text-color;
             }
         }
-       /*  .order-notice {
+
+        /*  .order-notice {
             max-width: 500px;
             text-align: center;
-            background-color: $kwf-hard-grey-bg-color;
+            background-color: $tprm-hard-grey-bg-color;
             margin: auto;
             padding: 10px;
             @include border-radius(var(--bb-block-radius));
@@ -129,7 +140,7 @@ body.bp-user.exam {
 
         .bb-course-item-wrap {
             position: relative;
-            border: 1px solid $kwf-border-color;
+            border: 1px solid $tprm-border-color;
             border-top: none;
             //overflow: auto;
             margin-bottom: 0;
@@ -169,7 +180,7 @@ body.bp-user.exam {
             }
 
             &:first-of-type {
-                border-top: 1px solid $kwf-border-color;
+                border-top: 1px solid $tprm-border-color;
             }
 
             .bb-card-course-details {
@@ -198,7 +209,7 @@ body.bp-user.exam {
                         color: black;
 
                         &:is(:hover, :active, :focus) {
-                            color: $kwf-primary-color;
+                            color: $tprm-primary-color;
                         }
                     }
                 }
@@ -285,7 +296,7 @@ body.bp-user.exam {
                             margin-top: 10px;
                             height: 40px;
                             overflow: hidden;
-                            background: $kwf-grey-bg-color;
+                            background: $tprm-grey-bg-color;
                             width: 150px;
                             border-radius: 20px;
 
@@ -327,12 +338,13 @@ body.bp-user.exam {
                         padding: 20px;
                         z-index: 10;
                         right: 0;
+
                         span {
                             font-size: 23px;
                             color: black;
 
                             &:is(:hover, :active, :focus) {
-                                color: $kwf-primary-color;
+                                color: $tprm-primary-color;
                             }
 
                         }
@@ -349,18 +361,23 @@ body.bp-user.exam {
                         left: 0;
 
                         &:is(:hover, :active, :focus) {
-                            color: $kwf-primary-color;
+                            color: $tprm-primary-color;
                         }
                     }
 
                     a.button,
                     button {
-                        background-color: $kwf-primary-color;
-                        border-color: $kwf-primary-color;
+                        background-color: $tprm-primary-color;
+                        border-color: $tprm-primary-color;
+
+                        font-family: "Trebuchet MS", Sans-serif;
+                        font-size: 30px;
+                        font-weight: 700;
+                        letter-spacing: 0.6px;
 
                         &:is(:hover, :active, :focus) {
-                            background-color: $kwf-secondary-color;
-                            border-color: $kwf-secondary-color;
+                            background-color: $tprm-secondary-color;
+                            border-color: $tprm-secondary-color;
                         }
 
                         &#cancel_selected_course {
@@ -446,7 +463,7 @@ body.bp-user.exam {
             // .see-related-courses-head-notices
             &-notices {
                 text-align: center;
-                background-color: $kwf-hard-grey-bg-color;
+                background-color: $tprm-hard-grey-bg-color;
                 width: 50%;
                 margin: auto;
                 padding: 5px;
@@ -463,12 +480,12 @@ body.bp-user.exam {
 
             a.button,
             button {
-                background-color: $kwf-primary-color;
-                border-color: $kwf-primary-color;
+                background-color: $tprm-primary-color;
+                border-color: $tprm-primary-color;
 
                 &:is(:hover, :active, :focus) {
-                    background-color: $kwf-secondary-color;
-                    border-color: $kwf-secondary-color;
+                    background-color: $tprm-secondary-color;
+                    border-color: $tprm-secondary-color;
                 }
 
                 &#cancel_selected_course {
@@ -524,7 +541,7 @@ body.bp-user.exam {
                 justify-content: space-between;
 
                 .ld-item-link {
-                    color: $kwf-primary-color !important;
+                    color: $tprm-primary-color !important;
                     font-family: "Montserrat", Sans-serif !important;
                     font-size: 15px;
                     font-weight: 400;

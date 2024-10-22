@@ -14,7 +14,7 @@
 		<?php _e('Password', 'tprm-theme') ?>
 	</div>
 	<div class="teacher_classrroms_count">
-		<?php _e('No. Classrooms', 'tprm-theme') ?>
+		<?php _e('No. Groups', 'tprm-theme') ?>
 	</div>
 	<div class="teacher_actions">
 		<?php _e('Actions', 'tprm-theme') ?>

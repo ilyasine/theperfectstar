@@ -16,7 +16,7 @@ class Bootstrap extends IntegrationManagerController
     {
         parent::__construct(
             $app,
-            'Telegram Messenger',
+            'Telegram ',
             'telegram',
             '_fluentform_telegram_settings',
             'telegram_feed',

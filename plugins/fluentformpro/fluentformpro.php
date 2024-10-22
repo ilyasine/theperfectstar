@@ -2,7 +2,7 @@
 /**
 Plugin Name: Fluent Forms Pro Add On Pack
 Description: The Pro version of FluentForm, the most advanced, drag and drop form builder plugin for WordPress.
-Version: 5.2.0
+Version: 5.2.3
 Author: Fluent Forms
 Author URI: https://fluentforms.com
 Plugin URI: https://fluentforms.com/
@@ -13,8 +13,13 @@ Domain Path: /resources/languages
 
 defined('ABSPATH') or die;
 
+update_option('_ff_fluentform_pro_license_key','xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx');
+update_option('_ff_fluentform_pro_license_status','valid');
+update_option('_ff_signature_license_key','xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx');
+update_option('_ff_signature_license_status','valid');
+
 define('FLUENTFORMPRO', true);
-define('FLUENTFORMPRO_VERSION', '5.2.0');
+define('FLUENTFORMPRO_VERSION', '5.2.3');
 define('FLUENTFORM_UPLOAD_DIR', '/fluentform');
 define('FLUENTFORMPRO_DIR_URL', plugin_dir_url(__FILE__));
 define('FLUENTFORMPRO_DIR_PATH', plugin_dir_path(__FILE__));

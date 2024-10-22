@@ -1,50 +1,58 @@
-.bb-dash{
+.bb-dash {
     font-family: 'Nunito';
-    > div{
-        @include mobile{
+
+    >div {
+        @include mobile {
             margin: 20px;
             @include flex-direction(column)
         }
-        
+
     }
-     //.bb-dash__welcome
-     &__welcome{
+
+    //.bb-dash__welcome
+    &__welcome {
         min-height: 240px;
-        > div {
-            @include responsive(600px){
-                flex-direction: column; 
+
+        >div {
+            @include responsive(600px) {
+                flex-direction: column;
                 gap: 20px;
             }
         }
     }
+
     //.bb-dash__avatar
-    &__avatar{
+    &__avatar {
         flex: 0 0 170px;
         margin-right: 25px;
+
         img {
             max-width: 170px;
             width: 170px;
             @include box-shadow(0px 0px 4px 0px rgba(0, 0, 0, 0.1));
             height: auto;
             padding: 5px;
-            border: 1px solid $kwf-content-border-color;
+            border: 1px solid $tprm-content-border-color;
         }
     }
+
     //.bb-dash__prior
-    &__prior{
-        color:  $kwf-primary-color !important;
+    &__prior {
+        color: $tprm-primary-color !important;
         margin-bottom: 0;
         font-family: 'Montserrat';
         font-size: 20px;
         font-weight: 500;
     }
+
     //.bb-dash__name
-    &__name{
+    &__name {
         font-family: 'Montserrat';
         font-weight: bold;
     }
+
     //.bb-dash__brief
-    &__brief{
+    &__brief {
         color: #5A5A5A;
         font-size: 22px;
         line-height: 1.5em;

@@ -6,6 +6,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+use FluentForm\App\Helpers\Helper;
 use FluentForm\Framework\Helpers\ArrayHelper as Arr;
 
 class MetaboxHelper
@@ -15,6 +16,29 @@ class MetaboxHelper
     public static function hasMetabox()
     {
         return defined('RWMB_VER');
+    }
+
+    public static function getUserFields()
+    {
+        if (!self::hasMetabox()) {
+            return [
+                'general'  => [],
+                'advanced' => []
+            ];
+        }
+        $meta_box_registry = rwmb_get_registry('meta_box');
+        $args = [
+            'object_type' => 'user'
+        ];
+        $meta_boxes = $meta_box_registry->get_by($args);
+        $validBoxes = [];
+        foreach ($meta_boxes as $key => $meta_box) {
+            if (empty($meta_box->meta_box)) {
+                continue;
+            }
+            $validBoxes[$key] = $meta_box;
+        }
+        return self::classifyFields($validBoxes);
     }
 
     public static function getPostFields($postType, $withRaw = false)
@@ -214,9 +238,11 @@ class MetaboxHelper
 
     public static function prepareFieldsData($fields, $postType, $formData, $isUpdate)
     {
-
-        $fieldGroups = self::getFields($postType, true);
-
+        if ('user' == $postType) {
+            $fieldGroups = self::getUserFields();
+        } else {
+            $fieldGroups = self::getPostFields($postType, true);
+        }
         $metaValues = [];
         $generalFields = $fieldGroups['general'];
         foreach ($fields['general'] as $field) {
@@ -293,9 +319,102 @@ class MetaboxHelper
 
     }
 
+    // Post update mapping
+    public static function maybePopulatePostUpdateMetaFields(&$metaFields, $feed, $postId, $formId)
+    {
+        $mbFields = self::getPostFields(self::getPostType($formId));
+        $args = [
+            'object_type' => 'post'
+        ];
+        if ($generalMetas = self::getMetBoxFieldsValue($mbFields['general'], Arr::get($feed->value, 'metabox_mappings', []), $args, $postId)) {
+            $metaFields['mb_general_metas'] = $generalMetas;
+        }
+        if ($advanceMetas = self::getMetBoxFieldsValue($mbFields['advanced'], Arr::get($feed->value, 'advanced_metabox_mappings', []), $args, $postId, 'advanced')) {
+            $metaFields['mb_advanced_metas'] = $advanceMetas;
+        }
+    }
+
+    // User update mapping
+    public static function getUserMappingValue($mappingFields)
+    {
+        $metas = [];
+        $mbFields = self::getUserFields();
+        $args = [
+            'object_type' => 'user'
+        ];
+
+        $userId = get_current_user_id();
+        if ($generalMetas = self::getMetBoxFieldsValue($mbFields['general'], Arr::get($mappingFields, 'general', []), $args, $userId)) {
+            $metas = $generalMetas;
+        }
+        if ($advanceMetas = self::getMetBoxFieldsValue($mbFields['advanced'], Arr::get($mappingFields, 'advanced', []), $args, $userId, 'advanced')) {
+            $metas = array_merge($metas, $advanceMetas);
+        }
+
+        return $metas;
+    }
+
+
+    private static function getMetBoxFieldsValue($mbFields, $mappingFields, $args, $objectId, $from = 'general')
+    {
+        $metaFields = [];
+        $mbFieldsKeys = array_keys($mbFields);
+        foreach ($mappingFields as $field) {
+            if (!in_array($field['field_key'], $mbFieldsKeys) || !function_exists('rwmb_get_value')) {
+                continue;
+            }
+
+            $fieldName = Arr::get($field, 'field_value', '');
+            $field = Arr::get($mbFields, $field['field_key'], '');
+
+            if ($from === 'advanced') {
+                $name = $fieldName;
+            } else {
+                $name = Helper::getInputNameFromShortCode($fieldName);
+            }
+
+            if (!$name && !$field) {
+                continue;
+            }
+            $value = rwmb_get_value($field['key'], $args, $objectId);
+
+            if (in_array($field['type'], ['file_upload', 'image_upload', 'image', 'file_advanced', 'file'])) {
+                if (count($value) > 0) {
+                    $value = array_values($value);
+                }
+            }
+            $metaFields[] = [
+                "name"  => $name,
+                "type"  => $field['type'],
+                "value" => $value
+            ];
+        }
+        return $metaFields;
+    }
+
+    public static function maybeUpdateUserMetas($userId, $formData, $form, $feed)
+    {
+        if (self::hasMetabox() && $metaboxFields = Arr::get($feed, 'settings.metabox_mappings')) {
+            $isUserUpdate = 'user_update' == Arr::get($feed, 'settings.list_id');
+            if (Arr::get($metaboxFields, 'general')) {
+                $metaboxFields['general'] = Arr::get($feed, 'processedValues.metabox_mappings.general');
+            }
+            $metaboxMeta = self::prepareFieldsData($metaboxFields, 'user', $formData, $isUserUpdate);
+            if ($metaboxMeta && function_exists('rwmb_set_meta')) {
+                $args = [
+                    'object_type' => 'user'
+                ];
+                foreach ($metaboxMeta as $fieldKey => $value) {
+                    rwmb_set_meta($userId, $fieldKey, $value, $args);
+                }
+            }
+        }
+    }
+
+
     private static function getFileIdsFromUrls($fieldValue)
     {
-        if (!array($fieldValue)) {
+        if (!is_array($fieldValue)) {
             return [];
         }
 

@@ -41,9 +41,6 @@ add_action('groups_create_group_step_save_group-settings', 'TPRM_group_save_sett
 
     //school
     $ecole_demo = groups_get_groupmeta($group_id, 'ecole_demo');
-    $ecole_lang = groups_get_groupmeta($group_id, 'ecole_lang');
-    $ecole_src = groups_get_groupmeta($group_id, 'ecole_src');
-    $school_type = groups_get_groupmeta($group_id, 'school_type');
     $school_trigram = groups_get_groupmeta($group_id, 'school_trigram');
     $school_code = groups_get_groupmeta($group_id, 'school_code');
     $school_seats = groups_get_groupmeta($group_id, 'school_seats');
@@ -76,10 +73,6 @@ add_action('groups_create_group_step_save_group-settings', 'TPRM_group_save_sett
                 <input type="text" name="classroom_code" value="<?php echo esc_attr($classroom_code); ?>">
             </label>
         <?php } else { //school ?>
-            <legend><?php _e('Language', 'tprm-theme'); ?></legend>
-            <label>
-                <input type="text" name="ecole_lang" value="<?php echo esc_attr($ecole_lang); ?>">
-            </label>
             <legend><?php _e('School Code', 'tprm-theme'); ?></legend>
             <label>
                 <input type="text" name="school_code" value="<?php echo esc_attr($school_code); ?>">
@@ -87,15 +80,6 @@ add_action('groups_create_group_step_save_group-settings', 'TPRM_group_save_sett
             <legend><?php _e('School Creation Year', 'tprm-theme'); ?></legend>
             <label>
                 <input type="text" name="school_creation_year" value="<?php echo esc_attr($school_creation_year); ?>">
-            </label>
-            <legend><?php _e('Source (KWF / Sochepress)', 'tprm-theme'); ?></legend>
-            <label>
-                <input type="text" name="ecole_src" value="<?php echo esc_attr($ecole_src); ?>">
-            </label>
-            <legend><?php _e('Paid or Unpaid', 'tprm-theme'); ?></legend>
-            <label>
-                <input type="radio" name="school_type" value="paid" <?php echo checked($school_type, 'paid', false); ?>> <?php _e('Paid', 'tprm-theme'); ?>
-                <input type="radio" name="school_type" value="unpaid" <?php echo checked($school_type, 'unpaid', false); ?>> <?php _e('Unpaid', 'tprm-theme'); ?>
             </label>
             <legend><?php _e('School Seats', 'tprm-theme'); ?></legend>
             <label>
@@ -132,9 +116,6 @@ function TPRM_group_save_metabox_fields($group_id) {
     $classroom_year = isset($_POST['classroom_year']) ? intval($_POST['classroom_year']) : '';
     $classroom_level = isset($_POST['classroom_level']) ? intval($_POST['classroom_level']) : '';
 	//school
-    $ecole_lang = isset($_POST['ecole_lang']) ? sanitize_text_field($_POST['ecole_lang']) : '';
-    $ecole_src  = isset($_POST['ecole_src'])  ? sanitize_text_field($_POST['ecole_src'])  : '';
-	$school_type = isset($_POST['school_type']) ? sanitize_text_field($_POST['school_type']) : '';
     $school_trigram = isset($_POST['school_trigram']) ? sanitize_text_field($_POST['school_trigram']) : '';
     $school_code = isset($_POST['school_code']) ? sanitize_text_field($_POST['school_code']) : '';
     $school_seats = isset($_POST['school_seats']) ? intval($_POST['school_seats']) : '';
@@ -145,9 +126,6 @@ function TPRM_group_save_metabox_fields($group_id) {
     groups_update_groupmeta($group_id, 'classroom_code', $classroom_code);
     groups_update_groupmeta($group_id, 'classroom_level', $classroom_level);
     groups_update_groupmeta($group_id, 'classroom_year', $classroom_year);
-    groups_update_groupmeta($group_id, 'ecole_lang', $ecole_lang);
-    groups_update_groupmeta($group_id, 'ecole_src', $ecole_src);
-	groups_update_groupmeta($group_id, 'school_type', $school_type);
     groups_update_groupmeta($group_id, 'school_trigram', $school_trigram);
     groups_update_groupmeta($group_id, 'school_code', $school_code);
     groups_update_groupmeta($group_id, 'school_seats', $school_seats);
@@ -225,10 +203,6 @@ function TPRM_group_save_metabox_fields($group_id) {
             <label>
                 <input type="number" min="1" max="5" name="classroom_year" value="">
             </label>
-            <legend><?php _e('Language', 'tprm-theme'); ?></legend>
-            <label>
-                <input type="text" name="ecole_lang" value="">
-            </label>
             <legend><?php _e('School Code', 'tprm-theme'); ?></legend>
             <label>
                 <input type="text" name="school_code" value="">
@@ -236,15 +210,6 @@ function TPRM_group_save_metabox_fields($group_id) {
             <legend><?php _e('School Creation', 'tprm-theme'); ?></legend>
             <label>
                 <input type="text" name="school_creation_year" value="">
-            </label>
-            <legend><?php _e('Source (KWF / Sochepress)', 'tprm-theme'); ?></legend>
-            <label>
-                <input type="text" name="ecole_src" value="">
-            </label>
-            <legend><?php _e('Paid or Unpaid', 'tprm-theme'); ?></legend>
-            <label>
-                <input type="radio" name="school_type" value="paid"> <?php _e('Paid', 'tprm-theme'); ?>
-                <input type="radio" name="school_type" value="unpaid"> <?php _e('Unpaid', 'tprm-theme'); ?>
             </label>
             <legend><?php _e('School Seats', 'tprm-theme'); ?></legend>
             <label>
@@ -280,9 +245,6 @@ function TPRM_group_render_settings_in_edit_form() {
 	$classroom_level = groups_get_groupmeta( $group_id, 'classroom_level' ) ;
 	//school
 	$ecole_demo = groups_get_groupmeta( $group_id, 'ecole_demo' ) ;
-	$ecole_lang = groups_get_groupmeta( $group_id, 'ecole_lang' ) ;
-	$ecole_src  = groups_get_groupmeta( $group_id, 'ecole_src' ) ;
-	$school_type = groups_get_groupmeta($group_id, 'school_type');
     $school_trigram = groups_get_groupmeta($group_id, 'school_trigram');
     $school_code = groups_get_groupmeta( $group_id, 'school_code' ) ;
     $school_seats = groups_get_groupmeta($group_id, 'school_seats');
@@ -317,17 +279,6 @@ function TPRM_group_render_settings_in_edit_form() {
 			</label>
 		<?php }else{ //school ?>
 
-			<legend><?php _e('Language', 'tprm-theme'); ?></legend>
-			<label>
-				<input type="text" name="ecole_lang" value="<?php echo esc_attr($ecole_lang); ?>" >
-			</label>
-
-			<legend><?php _e('Paid or Unpaid', 'tprm-theme'); ?></legend>
-            <label>
-                <input type="radio" name="school_type" value="paid" <?php echo checked($school_type, 'paid', false); ?>> <?php _e('Paid', 'tprm-theme'); ?>
-                <input type="radio" name="school_type" value="unpaid" <?php echo checked($school_type, 'unpaid', false); ?>> <?php _e('Unpaid', 'tprm-theme'); ?>
-            </label>
-
             <legend><?php _e('School Seats', 'tprm-theme'); ?></legend>
             <label>
                 <input type="number" min="0" name="school_seats" value="<?php echo esc_attr($school_seats); ?>">
@@ -346,11 +297,6 @@ function TPRM_group_render_settings_in_edit_form() {
             <legend><?php _e('School Creation Year', 'tprm-theme'); ?></legend>
 			<label>
 				<input type="text" name="school_creation_year" value="<?php echo esc_attr($school_creation_year); ?>">
-			</label>
-
-			<legend><?php _e('Source ( KWF / Sochepress )', 'tprm-theme'); ?></legend>
-			<label>
-				<input type="text" name="ecole_src" value="<?php echo esc_attr($ecole_src); ?>" >
 			</label>
 
 			<legend><?php _e('Demo ?', 'tprm-theme'); ?></legend>
@@ -378,9 +324,6 @@ function TPRM_group_save_settings_in_edit_form($group_id) {
     $classroom_year = isset($_POST['classroom_year']) ? intval($_POST['classroom_year']) : '';
     $classroom_level = isset($_POST['classroom_level']) ? intval($_POST['classroom_level']) : '';
 	//school
-    $ecole_lang = isset($_POST['ecole_lang']) ? sanitize_text_field($_POST['ecole_lang']) : '';
-    $ecole_src  = isset($_POST['ecole_src'])  ? sanitize_text_field($_POST['ecole_src'])  : '';
-	$school_type = isset($_POST['school_type']) ? sanitize_text_field($_POST['school_type']) : '';
     $school_trigram = isset($_POST['school_trigram']) ? sanitize_text_field($_POST['school_trigram']) : '';
     $school_code = isset($_POST['school_code']) ? sanitize_text_field($_POST['school_code']) : '';
     $school_seats = isset($_POST['school_seats']) ? intval($_POST['school_seats']) : '';
@@ -391,9 +334,6 @@ function TPRM_group_save_settings_in_edit_form($group_id) {
     groups_update_groupmeta($group_id, 'classroom_code', $classroom_code);
     groups_update_groupmeta($group_id, 'classroom_level', $classroom_level);
     groups_update_groupmeta($group_id, 'classroom_year', $classroom_year);
-    groups_update_groupmeta($group_id, 'ecole_lang', $ecole_lang);
-    groups_update_groupmeta($group_id, 'ecole_src', $ecole_src);
-	groups_update_groupmeta($group_id, 'school_type', $school_type);
     groups_update_groupmeta($group_id, 'school_trigram', $school_trigram);
     groups_update_groupmeta($group_id, 'school_code', $school_code);
     groups_update_groupmeta($group_id, 'school_seats', $school_seats);
@@ -460,9 +400,6 @@ function TPRM_group_save_settings_from_create_form() {
     $classroom_year = isset($_POST['classroom_year']) ? intval($_POST['classroom_year']) : '';
     $classroom_level = isset($_POST['classroom_level']) ? intval($_POST['classroom_level']) : '';
 	//school
-    $ecole_lang = isset($_POST['ecole_lang']) ? sanitize_text_field($_POST['ecole_lang']) : '';
-    $ecole_src  = isset($_POST['ecole_src'])  ? sanitize_text_field($_POST['ecole_src'])  : '';
-	$school_type = isset($_POST['school_type']) ? sanitize_text_field($_POST['school_type']) : '';
     $school_trigram = isset($_POST['school_trigram']) ? sanitize_text_field($_POST['school_trigram']) : '';
     $school_code = isset($_POST['school_code']) ? sanitize_text_field($_POST['school_code']) : '';
     $school_seats = isset($_POST['school_seats']) ? intval($_POST['school_seats']) : '';
@@ -474,9 +411,6 @@ function TPRM_group_save_settings_from_create_form() {
 	groups_update_groupmeta( $group_id, 'ecole_demo', $ecole_demo );
 	groups_update_groupmeta( $group_id, 'classroom_level', $classroom_level);
     groups_update_groupmeta( $group_id, 'classroom_year', $classroom_year);
-	groups_update_groupmeta( $group_id, 'ecole_lang', $ecole_lang );
-	groups_update_groupmeta( $group_id, 'ecole_src', $ecole_src );
-	groups_update_groupmeta( $group_id, 'school_type', $school_type );
 	groups_update_groupmeta( $group_id, 'school_trigram', $school_trigram );
     groups_update_groupmeta( $group_id, 'school_code', $school_code );
     groups_update_groupmeta( $group_id, 'school_seats', $school_seats);

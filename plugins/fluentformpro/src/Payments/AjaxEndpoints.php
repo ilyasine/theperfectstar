@@ -165,12 +165,16 @@ class AjaxEndpoints
         $form = wpFluent()->table('fluentform_forms')->find($formId);
         $addressFields = array_values(FormFieldsParser::getAddressFields($form));
 
-        wp_send_json_success([
+        $paymentSettings = [
             'settings'        => $settings,
             'currencies'      => PaymentHelper::getCurrencies(),
             'payment_methods' => PaymentHelper::getFormPaymentMethods($formId),
             'addressFields'   => array_filter($addressFields)
-        ], 200);
+        ];
+
+        $paymentSettings = apply_filters('fluentform/form_payment_settings', $paymentSettings, $formId);
+
+        wp_send_json_success($paymentSettings, 200);
     }
 
     public function saveFormSettings()

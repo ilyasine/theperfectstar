@@ -27,8 +27,29 @@ class SquareHandler extends BasePaymentMethod
         add_filter('fluentform/transaction_data_' . $this->key, array($this, 'modifyTransaction'), 10, 1);
         
         add_filter('fluentform/available_payment_methods', [$this, 'pushPaymentMethodToForm']);
-    
+
+        add_action('fluentform/rendering_payment_method_' . $this->key, [$this, 'enqueueAssets']);
+
+        add_action('fluentform/process_payment_' . $this->key, [$this, 'routeSquareProcessor'], 10, 6);
+
+        add_filter('fluentform/editor_init_element_payment_method', [$this, 'addInlineOption'], 10, 2);
+
         (new SquareProcessor())->init();
+        (new SquareInlineProcessor())->init();
+    }
+
+    public function addInlineOption($element, $form)
+    {
+        if (!isset($element['settings']['payment_methods']['square']['settings']['embedded_checkout'])) {
+            $element['settings']['payment_methods']['square']['settings']['embedded_checkout'] = [
+                'type'     => 'checkbox',
+                'template' => 'inputYesNoCheckbox',
+                'value'    => 'no',
+                'label'    => __('Embedded Checkout', 'fluentformpro')
+            ];
+        }
+
+        return $element;
     }
     
     public function pushPaymentMethodToForm($methods)
@@ -43,7 +64,13 @@ class SquareHandler extends BasePaymentMethod
                     'template' => 'inputText',
                     'value' => 'Pay with Square',
                     'label' => __('Method Label', 'fluentformpro')
-                ]
+                ],
+                'embedded_checkout' => [
+                    'type'     => 'checkbox',
+                    'template' => 'inputYesNoCheckbox',
+                    'value'    => 'no',
+                    'label'    => __('Embedded Checkout', 'fluentformpro')
+                ],
             ]
         ];
         
@@ -62,6 +89,10 @@ class SquareHandler extends BasePaymentMethod
         }
         
         if ($mode == 'test') {
+            if (!ArrayHelper::get($settings, 'test_application_id')) {
+                $errors['test_application_id'] = __('Please provide Test Application ID', 'fluentformpro');
+            }
+
             if (!ArrayHelper::get($settings, 'test_location_id')) {
                 $errors['test_location_id'] = __('Please provide Test Location ID', 'fluentformpro');
             }
@@ -70,6 +101,10 @@ class SquareHandler extends BasePaymentMethod
                 $errors['test_access_key'] = __('Please provide Test Access Secret', 'fluentformpro');
             }
         } elseif ($mode == 'live') {
+            if (!ArrayHelper::get($settings, 'live_application_id')) {
+                $errors['live_application_id'] = __('Please provide Live Application ID', 'fluentformpro');
+            }
+
             if (!ArrayHelper::get($settings, 'live_location_id')) {
                 $errors['live_location_id'] = __('Please Live Location ID', 'fluentformpro');
             }
@@ -125,6 +160,15 @@ class SquareHandler extends BasePaymentMethod
                     'html' => __('<h2>Your Test API Credentials</h2><p>If you use the test mode</p>', 'fluentformpro')
                 ],
                 [
+                    'settings_key' => 'test_application_id',
+                    'type' => 'input-text',
+                    'data_type' => 'text',
+                    'placeholder' => __('Test Application ID', 'fluentformpro'),
+                    'label' => __('Test Application ID', 'fluentformpro'),
+                    'inline_help' => __('Provide your sandbox application ID for your test payments', 'fluentformpro'),
+                    'check_status' => 'yes'
+                ],
+                [
                     'settings_key' => 'test_access_key',
                     'type' => 'input-text',
                     'data_type' => 'password',
@@ -147,6 +191,15 @@ class SquareHandler extends BasePaymentMethod
                     'settings_key' => 'live_payment_tips',
                     'type' => 'html',
                     'html' => __('<h2>Your Live API Credentials</h2><p>If you use the live mode</p>', 'fluentformpro')
+                ],
+                [
+                    'settings_key' => 'live_application_id',
+                    'type' => 'input-text',
+                    'data_type' => 'text',
+                    'placeholder' => __('Live Application ID', 'fluentformpro'),
+                    'label' => __('Live Application ID', 'fluentformpro'),
+                    'inline_help' => __('Provide your live application ID for your live payments', 'fluentformpro'),
+                    'check_status' => 'yes'
                 ],
                 [
                     'settings_key' => 'live_access_key',
@@ -177,5 +230,17 @@ class SquareHandler extends BasePaymentMethod
     public function getGlobalSettings()
     {
         return SquareSettings::getSettings();
+    }
+
+    public function enqueueAssets()
+    {
+        wp_enqueue_script('square-web-sdk', 'https://sandbox.web.squarecdn.com/v1/square.js', ['jquery'], '1.0', true);
+    }
+
+    public function routeSquareProcessor($submissionId, $submissionData, $form, $methodSettings, $hasSubscriptions, $totalPayable = 0)
+    {
+        $processor = ArrayHelper::get($methodSettings, 'settings.embedded_checkout.value', 'hosted') === 'yes' ? 'inline' : 'hosted';
+
+        do_action('fluentform/process_payment_square_' . $processor, $submissionId, $submissionData, $form, $methodSettings, $hasSubscriptions, $totalPayable);
     }
 }

@@ -13,6 +13,7 @@ use FluentForm\Framework\Foundation\Application;
 use FluentForm\Framework\Helpers\ArrayHelper as Arr;
 use FluentFormPro\Components\Post\AcfHelper;
 use FluentFormPro\Components\Post\JetEngineHelper;
+use FluentFormPro\Components\Post\MetaboxHelper;
 
 class Bootstrap extends IntegrationManagerController
 {
@@ -134,6 +135,21 @@ class Bootstrap extends IntegrationManagerController
                 ]
             ];
             $fields['acf_mappings']['advanced'] = [
+                [
+                    'field_key' => '',
+                    'field_value' => ''
+                ]
+            ];
+        }
+
+        if (MetaboxHelper::hasMetabox()) {
+            $fields['metabox_mappings']['general'] = [
+                [
+                    'field_key' => '',
+                    'field_value' => ''
+                ]
+            ];
+            $fields['metabox_mappings']['advanced'] = [
                 [
                     'field_key' => '',
                     'field_value' => ''
@@ -410,6 +426,20 @@ class Bootstrap extends IntegrationManagerController
                 ],
                 'component' => 'meta_plugin_mapping',
                 'fields' => AcfHelper::getAcfUserFields()
+            ];
+        }
+
+        if (MetaboxHelper::hasMetabox()) {
+            $fields[] = [
+                'require_list' => false,
+                'key' => 'metabox_mappings',
+                'labels' => [
+                    'section_title' => __('Metabox Meta Mapping', 'fluentformpro'),
+                    'remote_label' => __('Metabox Field', 'fluentformpro'),
+                    'local_label' => __('Form Field (Value)', 'fluentformpro'),
+                ],
+                'component' => 'meta_plugin_mapping',
+                'fields' => MetaboxHelper::getUserFields()
             ];
         }
 

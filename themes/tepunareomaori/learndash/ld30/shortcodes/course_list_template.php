@@ -17,7 +17,7 @@ $TPRM_ajax_nonce = wp_create_nonce( "TPRM_nonce" );
 
 if ( defined( 'LEARNDASH_COURSE_GRID_FILE' ) && isset( $shortcode_atts['course_grid'] ) && '' !== $shortcode_atts['course_grid'] ) {
 
-	include get_stylesheet_directory(). '/learndash/ld30/shortcodes/course_list_grid_template.php';
+	include get_stylesheet_directory(). '/learndash/ld30/shortcodes/course_list_grid_template.php';//
 
 } else {
 

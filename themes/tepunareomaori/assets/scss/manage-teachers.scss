@@ -30,13 +30,13 @@ body.groups.teachers {
                 align-items: center;
                 justify-content: center;
                 justify-items: center;
-                background-color: $kwf-primary-color;
+                background-color: $tprm-primary-color;
                 border-radius: 4px;
                 flex-wrap: wrap;
 
                 button {
-                    background-color: $kwf-primary-color;
-                    border-color: $kwf-primary-color;
+                    background-color: $tprm-primary-color;
+                    border-color: $tprm-primary-color;
                     border: 0;
                     height: 40px;
 
@@ -58,13 +58,13 @@ body.groups.teachers {
                     &:hover,
                     &:active,
                     &:focus {
-                        background-color: $kwf-primary-hover;
+                        background-color: $tprm-primary-hover;
                         box-shadow: none;
                     }
 
                     &.active-tab {
-                        //background-color: $kwf-primary-hover;
-                        background-color: $kwf-secondary-color;
+                        //background-color: $tprm-primary-hover;
+                        background-color: $tprm-secondary-color;
                         box-shadow: none;
                     }
                 }
@@ -86,7 +86,7 @@ body.groups.teachers {
         display: flex;
         justify-content: space-between;
         //background-color: var(--bb-content-background-color);
-        background-color: $kwf-grey-bg-color;
+        background-color: $tprm-grey-bg-color;
         //border: 1px solid var(--bb-content-border-color);
         @include border-radius(var(--bb-block-radius));
         padding: 15px 20px;
@@ -95,7 +95,7 @@ body.groups.teachers {
         div {
             font-size: 16px;
             font-weight: 500;
-            //color: $kwf-primary-color;
+            //color: $tprm-primary-color;
             border-right: 1px solid var(--bb-content-border-color);
             text-align: center;
             vertical-align: middle;
@@ -237,7 +237,7 @@ body.groups.teachers {
             text-align: center;
             border-radius: 20px;
             color: #fff;
-            background-color: $kwf-primary-color;
+            background-color: $tprm-primary-color;
             font-size: 25px;
             font-weight: 500;
             position: relative;
@@ -318,7 +318,7 @@ body.groups.teachers {
             text-align: center;
             border-radius: 20px;
             color: #fff;
-            background-color: $kwf-primary-color;
+            background-color: $tprm-primary-color;
             font-size: 25px;
             font-weight: 500;
             position: relative;
@@ -398,26 +398,26 @@ body.groups.teachers {
                 justify-content: center;
 
                 li.ui-tab {
-                    background-color: $kwf-grey-bg-color;
+                    background-color: $tprm-grey-bg-color;
                     float: left;
                     margin: 0;
                     padding: 10px;
                     overflow: hidden;
 
                     a {
-                        color: $kwf-text-color;
+                        color: $tprm-text-color;
                         font-size: 15px;
                         font-weight: 500;
                         padding: 20px 30px;
                     }
 
                     &:hover {
-                        background-color: $kwf-green-light-hover;
+                        background-color: $tprm-green-light-hover;
                         color: #4f4d4d;
                     }
 
                     &.ui-state-active {
-                        background-color: $kwf-primary-color;
+                        background-color: $tprm-primary-color;
 
                         a {
                             font-weight: 600;
@@ -539,13 +539,13 @@ body.groups.teachers {
                             padding: 5px;
                             cursor: pointer;
                             font-size: 20px;
-                            color: $kwf-primary-color;
+                            color: $tprm-primary-color;
                         }
                     }
 
                     .bb-icon-l,
                     .bb-icon {
-                        color: $kwf-primary-color !important;
+                        color: $tprm-primary-color !important;
                     }
                 }
 
@@ -554,8 +554,8 @@ body.groups.teachers {
                     width: 10%;
 
                     &_inner {
-                        background: $kwf-hard-grey-bg-color;
-                        color: $kwf-text-color;
+                        background: $tprm-hard-grey-bg-color;
+                        color: $tprm-text-color;
                         padding: 10px;
                         font-weight: 500;
                         border-radius: 50%;
@@ -585,13 +585,13 @@ body.groups.teachers {
 
                             .send-message {
                                 padding: 0 !important;
-                                color: $kwf-primary-color !important;
+                                color: $tprm-primary-color !important;
                                 background-color: transparent !important;
                                 border: none !important;
 
                                 &:hover,
                                 &:focus {
-                                    color: $kwf-secondary-color !important;
+                                    color: $tprm-secondary-color !important;
                                     box-shadow: none !important;
                                 }
                             }
@@ -605,10 +605,10 @@ body.groups.teachers {
                     a.manage-teacher-classrooms-btn span {
                         font-size: 23px;
                         font-weight: 200;
-                        color: $kwf-secondary-color;
+                        color: $tprm-secondary-color;
 
                         &:hover {
-                            color: $kwf-primary-color;
+                            color: $tprm-primary-color;
                         }
                     }
                 }

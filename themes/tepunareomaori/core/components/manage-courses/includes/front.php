@@ -425,7 +425,39 @@ function TPRM_ajax_replace_course(){
 		wp_die();
     }
  
- }
+}
+
+add_action('wp_ajax_assign_course_to_group', 'TPRM_ajax_assign_course_to_group');
+ 
+function TPRM_ajax_assign_course_to_group(){
+ 
+    if (isset($_POST['payload']) && $_POST['payload'] == 'assign_course_to_group' && $_POST['ld_group_id'] && $_POST['course_id']) {
+
+		check_ajax_referer('assign_course_to_group_nonce', 'security');
+		$selected_course_id = intval($_POST['course_id']);
+		$group_id = intval($_POST['ld_group_id']);
+		$classe_name = get_the_title($group_id);
+		$selected_course_name = get_the_title($selected_course_id);
+
+		// Add selected course to the group
+		update_post_meta($selected_course_id, 'learndash_group_enrolled_' . $group_id, time());
+
+		wp_update_post(array(
+			'ID' => $group_id
+		));
+
+		$success_msg = sprintf(__('<strong>%s</strong> has been successfully assigned to <strong>%s</strong> Group', 'tprm-theme'), $selected_course_name, $classe_name);
+
+		echo json_encode(array(
+			'success_msg' => $success_msg,
+			'selected_course_id' => $selected_course_id,
+			'group_id' => $group_id,
+		));
+
+		wp_die();
+    }
+ 
+}
 
  //TODO : V3
 

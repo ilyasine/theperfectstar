@@ -41,7 +41,7 @@ class PaymentEntries
 
     public function getPayments()
     {
-        Acl::verify('fluentform_view_payments');
+        Acl::verify('fluentform_view_payments', ArrayHelper::get($_REQUEST, 'form_id'));
         $perPage = intval($_REQUEST['per_page']);
         if(!$perPage) {
             $perPage = 10;
@@ -68,6 +68,11 @@ class PaymentEntries
 
         if ($selectedFormId = ArrayHelper::get($_REQUEST, 'form_id')) {
             $paymentsQuery = $paymentsQuery->where('fluentform_transactions.form_id', intval($selectedFormId));
+        }
+
+        $allowFormIds = apply_filters('fluentform/current_user_allowed_forms', false);
+        if ($allowFormIds && is_array($allowFormIds)) {
+            $paymentsQuery = $paymentsQuery->whereIn('fluentform_transactions.form_id', $allowFormIds);
         }
         if ($paymentStatus = ArrayHelper::get($_REQUEST, 'payment_statuses')) {
             $paymentsQuery = $paymentsQuery->where('fluentform_transactions.status', sanitize_text_field($paymentStatus));
@@ -216,8 +221,12 @@ class PaymentEntries
         foreach ($statuses as $status) {
             $formattedStatuses[] = ArrayHelper::get($statusTypes, $status->status, $status->status);
         }
+        $allowFormIds = apply_filters('fluentform/current_user_allowed_forms', false);
         $forms = wpFluent()->table('fluentform_transactions')
             ->select('fluentform_transactions.form_id', 'fluentform_forms.title')
+            ->when($allowFormIds && is_array($allowFormIds), function ($q) use ($allowFormIds){
+                return $q->whereIn('fluentform_transactions.form_id', $allowFormIds);
+            })
             ->groupBy('fluentform_transactions.form_id')
             ->orderBy('fluentform_transactions.form_id', 'DESC')
             ->join('fluentform_forms', 'fluentform_forms.id', '=', 'fluentform_transactions.form_id')

@@ -273,6 +273,14 @@ class FormStylerGenerator
             }
             <?php
         }
+
+        if ($backgroundColor = Arr::get($item, 'backgroundColor.value')) {
+            ?>
+            <?php echo $selector; ?> .ff_list_buttons .ff-el-form-check label > span {
+            background-color:  <?php echo $backgroundColor . ';' ?>
+            }
+            <?php
+        }
         $hasSmartUi = Arr::get($item, 'radio_checkbox.status') === 'yes';
         if ($itemSize && !$hasSmartUi) {
             ?>

@@ -7,6 +7,7 @@ use FluentForm\App\Modules\Form\FormFieldsParser;
 use FluentForm\Framework\Helpers\ArrayHelper as Arr;
 use FluentFormPro\Components\Post\AcfHelper;
 use FluentFormPro\Components\Post\JetEngineHelper;
+use FluentFormPro\Components\Post\MetaboxHelper;
 
 
 class UserUpdateFormHandler
@@ -42,7 +43,8 @@ class UserUpdateFormHandler
                     $fileOrImageTypeFields = FormFieldsParser::getElement($form, ['input_file', 'input_image'], ['raw']);
                     $acfFields = array_merge(Arr::get($feed->value, 'acf_mappings.general', []), Arr::get($feed->value, 'acf_mappings.advanced', []));
                     $jetEngineFields = array_merge(Arr::get($feed->value, 'jetengine_mappings.general', []), Arr::get($feed->value, 'jetengine_mappings.advanced', []));
-                    foreach (array_merge($acfFields, $jetEngineFields) as $field) {
+                    $metaboxFields = array_merge(Arr::get($feed->value, 'metabox_mappings.general', []), Arr::get($feed->value, 'metabox_mappings.advanced', []));
+                    foreach (array_merge($acfFields, $jetEngineFields, $metaboxFields) as $field) {
                         $name = Arr::get($field, 'field_value');
                         if ($name && preg_match('/{+(.*?)}/', $name)) {
                             $name = Helper::getInputNameFromShortCode($name);
@@ -96,6 +98,10 @@ class UserUpdateFormHandler
             $metas['jetengine_mappings'] = JetEngineHelper::getUserMappingValue($form, $jetEngineMapping);
         }
 
+        if (MetaboxHelper::hasMetabox() && $metaboxMapping = Arr::get($feed, 'metabox_mappings')) {
+            $metas['metabox_mappings'] = MetaboxHelper::getUserMappingValue($metaboxMapping);
+        }
+
         return $metas;
     }
 
@@ -110,7 +116,9 @@ class UserUpdateFormHandler
         return Arr::isTrue($feed, 'acf_mappings.general') ||
             Arr::isTrue($feed, 'acf_mappings.advanced') ||
             Arr::isTrue($feed, 'jetengine_mappings.general') ||
-            Arr::isTrue($feed, 'jetengine_mappings.advanced');
+            Arr::isTrue($feed, 'jetengine_mappings.advanced') ||
+            Arr::isTrue($feed, 'metabox_mappings.general') ||
+            Arr::isTrue($feed, 'metabox_mappings.advanced');
     }
 
     protected function populateUserUpdateForm($form, $feed)
@@ -486,7 +494,7 @@ class UserUpdateFormHandler
 
         $this->updateUserMeta($parsedData, $userId, $form->id);
 
-        // Update acf, jet-engine metas
+        // Update acf, jet-engine, metabox metas
         $this->updatePluginsMetas($formData, $userId, $feed, $form);
 
         $this->addLog(

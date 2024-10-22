@@ -20,14 +20,19 @@ body.groups.students {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: $kwf-hard-grey-bg-color;
-        color: $kwf-text-color;
-        border: 1px solid $kwf-hard-grey-bg-color;
+        background-color: $tprm-hard-grey-bg-color;
+        color: $tprm-text-color;
+        border: 1px solid $tprm-hard-grey-bg-color;
+
+        font-family: "Trebuchet MS", Sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
 
         &:is(:hover, :active, :focus) {
-          background-color: $kwf-hard-grey-bg-color-hover;
-          border-color: $kwf-hard-grey-bg-color-hover;
-          color: $kwf-text-color;
+          background-color: $tprm-hard-grey-bg-color-hover;
+          border-color: $tprm-hard-grey-bg-color-hover;
+          color: $tprm-text-color;
         }
 
         .print_students_inner,
@@ -54,7 +59,7 @@ body.groups.students {
     .account-stat-box {
       flex: 1;
       margin: 30px 20px;
-      border-right: 1px solid $kwf-border-color;
+      border-right: 1px solid $tprm-border-color;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -97,7 +102,7 @@ body.groups.students {
         padding-top: 0;
         padding-bottom: 0;
         height: 38px;
-        background: $kwf-grey-bg-color;
+        background: $tprm-grey-bg-color;
       }
     }
 
@@ -111,6 +116,7 @@ body.groups.students {
         #select2-bulk-action-selector-container {
           font-size: 14px;
         }
+
         width: 140px;
       }
     }
@@ -124,14 +130,14 @@ body.groups.students {
       margin: 0;
 
       button {
-        background-color: $kwf-hard-grey-bg-color;
-        color: $kwf-text-color;
-        border: 1px solid $kwf-hard-grey-bg-color;
+        background-color: $tprm-hard-grey-bg-color;
+        color: $tprm-text-color;
+        border: 1px solid $tprm-hard-grey-bg-color;
 
         &:is(:hover, :active, :focus) {
-          background-color: $kwf-hard-grey-bg-color-hover;
-          border-color: $kwf-hard-grey-bg-color-hover;
-          color: $kwf-text-color;
+          background-color: $tprm-hard-grey-bg-color-hover;
+          border-color: $tprm-hard-grey-bg-color-hover;
+          color: $tprm-text-color;
         }
       }
 

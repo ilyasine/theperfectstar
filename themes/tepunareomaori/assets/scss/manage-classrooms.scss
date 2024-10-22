@@ -56,13 +56,13 @@ body.groups {
                 align-items: center;
                 justify-content: center;
                 justify-items: center;
-                background-color: $kwf-primary-color;
+                background-color: $tprm-primary-color;
                 border-radius: 4px;
                 flex-wrap: wrap;
 
                 button {
-                    background-color: $kwf-primary-color;
-                    border-color: $kwf-primary-color;
+                    background-color: $tprm-primary-color;
+                    border-color: $tprm-primary-color;
                     border: 0;
                     height: 40px;
 
@@ -84,13 +84,13 @@ body.groups {
                     &:hover,
                     &:active,
                     &:focus {
-                        background-color: $kwf-primary-hover;
+                        background-color: $tprm-primary-hover;
                         box-shadow: none;
                     }
 
                     &.active-tab {
-                        //background-color: $kwf-primary-hover;
-                        background-color: $kwf-secondary-color;
+                        //background-color: $tprm-primary-hover;
+                        background-color: $tprm-secondary-color;
                         box-shadow: none;
                     }
                 }
@@ -102,21 +102,21 @@ body.groups {
         &-header {
             display: flex;
             justify-content: space-between;
-            background-color: $kwf-grey-bg-color;
-            color: $kwf-text-color;
+            background-color: $tprm-grey-bg-color;
+            color: $tprm-text-color;
             //border: 1px solid var(--bb-content-border-color);
             @include border-radius(var(--bb-block-radius));
             padding: 15px 20px;
             margin-bottom: 20px;
             width: 100%;
-            //border: 1px solid $kwf-green-border-color;
+            //border: 1px solid $tprm-green-border-color;
 
             div {
                 font-size: 16px;
                 font-weight: 500;
-                //color: $kwf-primary-color;
+                //color: $tprm-primary-color;
                 border-right: 1px solid var(--bb-content-border-color);
-                //border-right: 1px solid $kwf-green-border-color;
+                //border-right: 1px solid $tprm-green-border-color;
                 width: 12%;
                 text-align: center;
 
@@ -153,13 +153,15 @@ body.groups {
     .item-body {
         #subnav-filters {
             display: flex;
-            align-items: center;         
+            align-items: center;
             justify-content: space-between;
             gap: 20px;
             flex-wrap: wrap;
+
             &:after {
                 display: none;
             }
+
             .subnav-search {
                 display: block;
             }
@@ -253,7 +255,7 @@ body.groups {
             text-align: center;
             border-radius: 20px;
             color: #fff;
-            background-color: $kwf-primary-color;
+            background-color: $tprm-primary-color;
             font-size: 25px;
             font-weight: 500;
             position: relative;
@@ -345,7 +347,7 @@ body.groups {
                            
                             &.selected{
                                 @include border-radius(50px);
-                                background-color: $kwf-hard-grey-bg-color;        
+                                background-color: $tprm-hard-grey-bg-color;        
                             }
                         }
                     }
@@ -387,7 +389,7 @@ body.groups {
                            
                             &.selected{
                                 @include border-radius(50px);
-                                background-color: $kwf-hard-grey-bg-color;        
+                                background-color: $tprm-hard-grey-bg-color;        
                             }
                         }
                     } */
@@ -430,11 +432,11 @@ body.groups {
                             .assign-to-label {
                                 font-size: 17px;
                                 font-weight: 500;
-                                color: $kwf-primary-color;
+                                color: $tprm-primary-color;
 
                                 >span {
-                                    background-color: $kwf-hard-grey-bg-color;
-                                    color: $kwf-text-color;
+                                    background-color: $tprm-hard-grey-bg-color;
+                                    color: $tprm-text-color;
                                     border: 1px solid rgba(0, 0, 0, 0.1);
                                     border-radius: 6px;
                                     padding: 7px 10px;
@@ -457,7 +459,7 @@ body.groups {
                             overflow-y: scroll;
                             overflow-x: hidden;
                             flex: 1;
-                            border: 1px solid $kwf-border-color;
+                            border: 1px solid $tprm-border-color;
                             @include border-radius(10px 0 0 10px);
 
                             &.loading {
@@ -532,7 +534,7 @@ body.groups {
 
                                 &.selected {
                                     @include border-radius(50px);
-                                    background-color: $kwf-hard-grey-bg-color;
+                                    background-color: $tprm-hard-grey-bg-color;
                                 }
                             }
                         }
@@ -590,11 +592,11 @@ body.groups {
                             .promote-to-label {
                                 font-size: 17px;
                                 font-weight: 500;
-                                color: $kwf-primary-color;
+                                color: $tprm-primary-color;
 
                                 >span {
-                                    background-color: $kwf-hard-grey-bg-color;
-                                    color: $kwf-text-color;
+                                    background-color: $tprm-hard-grey-bg-color;
+                                    color: $tprm-text-color;
                                     border: 1px solid rgba(0, 0, 0, 0.1);
                                     border-radius: 6px;
                                     padding: 7px 10px;
@@ -617,7 +619,7 @@ body.groups {
                             overflow-y: scroll;
                             overflow-x: hidden;
                             flex: 1;
-                            border: 1px solid $kwf-border-color;
+                            border: 1px solid $tprm-border-color;
                             @include border-radius(10px 0 0 10px);
 
                             &.loading {
@@ -687,7 +689,7 @@ body.groups {
 
                                 &.selected {
                                     @include border-radius(50px);
-                                    background-color: $kwf-hard-grey-bg-color;
+                                    background-color: $tprm-hard-grey-bg-color;
                                 }
                             }
                         }
@@ -713,26 +715,26 @@ body.groups {
                 justify-content: center;
 
                 li.ui-tab {
-                    background-color: $kwf-grey-bg-color;
+                    background-color: $tprm-grey-bg-color;
                     float: left;
                     margin: 0;
                     padding: 10px;
                     overflow: hidden;
 
                     a {
-                        color: $kwf-text-color;
+                        color: $tprm-text-color;
                         font-size: 15px;
                         font-weight: 500;
                         padding: 20px 30px;
                     }
 
                     &:hover {
-                        background-color: $kwf-green-light-hover;
+                        background-color: $tprm-green-light-hover;
                         color: #4f4d4d;
                     }
 
                     &.ui-state-active {
-                        background-color: $kwf-primary-color;
+                        background-color: $tprm-primary-color;
 
                         a {
                             font-weight: 600;
@@ -787,7 +789,7 @@ body.groups {
             text-align: center;
             border-radius: 20px;
             color: #fff;
-            background-color: $kwf-primary-color;
+            background-color: $tprm-primary-color;
             font-size: 25px;
             font-weight: 500;
             position: relative;
@@ -870,11 +872,11 @@ body.groups {
                         .promote-to-label {
                             font-size: 17px;
                             font-weight: 500;
-                            color: $kwf-primary-color;
+                            color: $tprm-primary-color;
 
                             >span {
-                                background-color: $kwf-hard-grey-bg-color;
-                                color: $kwf-text-color;
+                                background-color: $tprm-hard-grey-bg-color;
+                                color: $tprm-text-color;
                                 border: 1px solid rgba(0, 0, 0, 0.1);
                                 border-radius: 6px;
                                 padding: 7px 10px;
@@ -897,7 +899,7 @@ body.groups {
                         overflow-y: scroll;
                         overflow-x: hidden;
                         flex: 1;
-                        border: 1px solid $kwf-border-color;
+                        border: 1px solid $tprm-border-color;
                         @include border-radius(10px 0 0 10px);
 
                         &.loading {
@@ -976,11 +978,11 @@ body.groups {
                                 .promote-all-label {
                                     font-size: 17px;
                                     font-weight: 500;
-                                    color: $kwf-primary-color;
+                                    color: $tprm-primary-color;
 
                                     >span {
-                                        background-color: $kwf-hard-grey-bg-color;
-                                        color: $kwf-text-color;
+                                        background-color: $tprm-hard-grey-bg-color;
+                                        color: $tprm-text-color;
                                         border: 1px solid rgba(0, 0, 0, 0.1);
                                         border-radius: 6px;
                                         padding: 7px 10px;
@@ -990,7 +992,7 @@ body.groups {
 
                             &.selected {
                                 @include border-radius(50px);
-                                background-color: $kwf-hard-grey-bg-color;
+                                background-color: $tprm-hard-grey-bg-color;
                             }
                         }
                     }
@@ -1004,26 +1006,26 @@ body.groups {
                 justify-content: center;
 
                 li.ui-tab {
-                    background-color: $kwf-grey-bg-color;
+                    background-color: $tprm-grey-bg-color;
                     float: left;
                     margin: 0;
                     padding: 10px;
                     overflow: hidden;
 
                     a {
-                        color: $kwf-text-color;
+                        color: $tprm-text-color;
                         font-size: 15px;
                         font-weight: 500;
                         padding: 20px 30px;
                     }
 
                     &:hover {
-                        background-color: $kwf-green-light-hover;
+                        background-color: $tprm-green-light-hover;
                         color: #4f4d4d;
                     }
 
                     &.ui-state-active {
-                        background-color: $kwf-primary-color;
+                        background-color: $tprm-primary-color;
 
                         a {
                             font-weight: 600;
@@ -1086,7 +1088,7 @@ body.groups {
                             width: 20%;
                         }
 
-                        //classroom_curriculum
+                        //classroom_type
                         &_curriculum {
                             width: 11%;
                         }
@@ -1098,10 +1100,10 @@ body.groups {
                             &_inner {
                                 width: 90%;
                                 margin: auto;
-                                //background-color: $kwf-hard-grey-bg-color;
-                                background-color: $kwf-grey-bg-color;
-                                color: $kwf-text-color;
-                                //border: 1px solid $kwf-hard-grey-bg-color;
+                                //background-color: $tprm-hard-grey-bg-color;
+                                background-color: $tprm-grey-bg-color;
+                                color: $tprm-text-color;
+                                //border: 1px solid $tprm-hard-grey-bg-color;
                                 border-radius: 8px;
                                 padding: 4px 2px;
                                 display: flex;
@@ -1117,7 +1119,7 @@ body.groups {
                                     padding: 5px;
                                     cursor: pointer;
                                     font-size: 20px;
-                                    color: $kwf-primary-color;
+                                    color: $tprm-primary-color;
                                 }
                             }
 
@@ -1178,8 +1180,8 @@ body.groups {
                             &_inner {
                                 width: 80%;
                                 margin: auto;
-                                background: $kwf-grey-bg-color;
-                                color: $kwf-text-color;
+                                background: $tprm-grey-bg-color;
+                                color: $tprm-text-color;
                                 padding: 10px;
                                 text-align: center;
                                 font-weight: 500;
@@ -1212,7 +1214,7 @@ body.groups {
 
                         }
 
-                        //classroom_curriculum
+                        //classroom_type
                         &_curriculum {
                             .group-visibility {
                                 display: none;
@@ -1246,7 +1248,7 @@ body.groups {
             display: flex;
             align-items: center;
             width: 200px;
-            background: $kwf-grey-bg-color;
+            background: $tprm-grey-bg-color;
             border: none;
         }
 
@@ -1261,7 +1263,7 @@ body.groups {
             padding-top: 0;
             padding-bottom: 0;
             height: 38px;
-            background: $kwf-grey-bg-color;
+            background: $tprm-grey-bg-color;
         }
     }
 
@@ -1270,7 +1272,7 @@ body.groups {
 .buddypress-wrap form.bp-dir-search-form,
 .buddypress-wrap form.bp-invites-search-form,
 .buddypress-wrap form.bp-messages-search-form {
-    background: $kwf-grey-bg-color;
+    background: $tprm-grey-bg-color;
     border: none !important;
     overflow: hidden;
 }

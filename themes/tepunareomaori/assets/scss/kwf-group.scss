@@ -19,8 +19,8 @@
     }
 
     &#buddypress.bp-dir-hori-nav .create-class-button a {
-        background-color: $kwf-primary-color;
-        border-color: $kwf-primary-color;
+        background-color: $tprm-primary-color;
+        border-color: $tprm-primary-color;
         color: #ffffff;
         border-radius: 50px;
         padding: 10px 20px 0px 20px;
@@ -29,8 +29,8 @@
         &:active,
         &:focus {
             color: #ffffff;
-            background-color: $kwf-secondary-color;
-            border-color: $kwf-secondary-color;
+            background-color: $tprm-secondary-color;
+            border-color: $tprm-secondary-color;
         }
     }
 
@@ -51,7 +51,7 @@
 
 #groups-list.bp-list.grid.bb-cover-enabled .list-title :is(:hover, :active, :focus),
 #groups-list.bp-list.grid.bb-cover-enabled .item-meta :is(:hover, :active, :focus) {
-    color: $kwf-primary-color;
+    color: $tprm-primary-color;
 }
 
 .buddypress-wrap .filter select,
@@ -116,28 +116,28 @@
                 color: #1D2327;
                 font-weight: 500;
                 padding: 20px;
-                border-right: 1px solid $kwf-border-color;
+                border-right: 1px solid $tprm-border-color;
             }
 
             .classroom_level {
                 font-size: 16px;
                 color: #2E2E2E;
                 padding: 20px;
-                border-right: 1px solid $kwf-border-color;
+                border-right: 1px solid $tprm-border-color;
             }
 
-            .classroom_curriculum {
+            .classroom_type {
                 font-size: 16px;
                 color: #2E2E2E;
                 padding: 20px;
-                border-right: 1px solid $kwf-border-color;
+                border-right: 1px solid $tprm-border-color;
 
                 span.group-visibility {
                     display: none !important;
                 }
 
                 span.group-type {
-                    background: $kwf-secondary-color;
+                    background: $tprm-secondary-color;
                     color: #ffffff;
                     font-size: 14px;
                     font-weight: 700;
@@ -160,10 +160,10 @@
 
                 &_inner {
                     margin: auto;
-                    //background-color: $kwf-hard-grey-bg-color;
-                    background-color: $kwf-grey-bg-color;
+                    //background-color: $tprm-hard-grey-bg-color;
+                    background-color: $tprm-grey-bg-color;
                     color: #333;
-                    //border: 1px solid $kwf-hard-grey-bg-color;
+                    //border: 1px solid $tprm-hard-grey-bg-color;
                     border-radius: 8px;
                     padding: 6px 16px;
                     display: flex;
@@ -174,7 +174,7 @@
                         padding: 5px;
                         cursor: pointer;
                         font-size: 20px;
-                        color: $kwf-primary-color;
+                        color: $tprm-primary-color;
                     }
                 }
 
@@ -195,84 +195,87 @@
 }
 
 .single-item.groups {
-    nav#object-nav  {
+    nav#object-nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        ul{
+
+        ul {
             flex: 1;
+
             li {
                 float: left;
                 margin: 0;
                 padding: 0;
-                //background: $kwf-hard-grey-bg-color;
-                background-color: $kwf-grey-bg-color;
+                //background: $tprm-hard-grey-bg-color;
+                background-color: $tprm-grey-bg-color;
                 overflow: hidden;
-        
+
                 .bb-single-nav-item-point {
                     &+span.count {
-                        background: $kwf-primary-hover;
+                        background: $tprm-primary-hover;
                         color: white;
-        
+
                     }
                 }
-        
+
                 a {
                     padding: 10px 30px !important;
                     font-size: 15px;
                     font-weight: 500;
-        
+
                     &:hover {
-                        background-color: $kwf-green-light-hover;
+                        background-color: $tprm-green-light-hover;
                         color: #4f4d4d;
                     }
                 }
-        
+
                 &.selected {
-                    background-color: $kwf-primary-color;
-        
+                    background-color: $tprm-primary-color;
+
                     .bb-single-nav-item-point {
                         border-bottom: none;
                         color: #FFF;
-        
+
                         &+span.count {
-                            background: $kwf-green-light;
-                            color: $kwf-text-color;
+                            background: $tprm-green-light;
+                            color: $tprm-text-color;
                         }
                     }
-        
+
                     a {
                         font-weight: 600;
-        
+
                         &:hover {
-                            background-color: $kwf-primary-hover;
+                            background-color: $tprm-primary-hover;
                         }
                     }
                 }
-        
+
                 &:nth-last-child(2) {
                     border-radius: 0 8px 8px 0 !important;
                 }
-        
+
                 &:first-child {
                     border-radius: 8px 0 0 8px;
+
                     &:nth-last-child(2) {
                         border-radius: 8px !important;
                     }
                 }
             }
         }
-       
+
         .school_code {
             display: flex;
             align-items: center;
 
             &_inner {
                 margin: auto;
-                //background-color: $kwf-hard-grey-bg-color;
-                background-color: $kwf-grey-bg-color;
+                //background-color: $tprm-hard-grey-bg-color;
+                background-color: $tprm-grey-bg-color;
                 color: #333;
-                //border: 1px solid $kwf-hard-grey-bg-color;
+                //border: 1px solid $tprm-hard-grey-bg-color;
                 border-radius: 8px;
                 padding: 6px 16px;
                 display: flex;
@@ -283,7 +286,7 @@
                     padding: 5px;
                     cursor: pointer;
                     font-size: 20px;
-                    color: $kwf-primary-color;
+                    color: $tprm-primary-color;
                 }
             }
 
@@ -300,10 +303,10 @@
             }
         }
     }
- 
+
 
 }
 
 .tepunareomaori-theme.groups .select2-container--default .select2-selection--single .select2-selection__rendered {
-    background: $kwf-grey-bg-color;
+    background: $tprm-grey-bg-color;
 }

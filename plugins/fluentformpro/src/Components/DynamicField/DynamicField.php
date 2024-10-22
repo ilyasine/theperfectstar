@@ -69,6 +69,13 @@ class DynamicField extends BaseFieldManager
         add_filter('fluentform/dynamic_field_re_fetch_result_and_resolve_value', [
             $this, 'reFetchResultAndResolveValue',
         ]);
+
+        add_filter('fluentform/editor_init_element_' . $this->key, function ($element) {
+            if (!isset($element['settings']['dynamic_default_value'])) {
+                $element['settings']['dynamic_default_value'] = '';
+            }
+            return $element;
+        });
     }
 
     public function mergerI18n($i18n)
@@ -96,6 +103,7 @@ class DynamicField extends BaseFieldManager
                 'label_placement'    => '',
                 'admin_field_label'  => '',
                 'container_class'    => '',
+                'dynamic_default_value'=> '',
                 'field_type'         => 'select',
                 'advanced_options'   => array(),
                 'dynamic_config'     => [
@@ -150,6 +158,7 @@ class DynamicField extends BaseFieldManager
     public function getAdvancedEditorElements()
     {
         return [
+            'dynamic_default_value',
             'help_message',
             'container_class',
             'class',

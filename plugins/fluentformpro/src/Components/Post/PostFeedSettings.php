@@ -15,7 +15,11 @@ class PostFeedSettings
     {
         $ignoredPostTypes = ['attachment'];
 
-        $publicPostTypes = get_post_types(['public' => true]);
+        $args = [
+            'public' => true
+        ];
+
+        $publicPostTypes = get_post_types(apply_filters('fluentform/get_post_type_on_form_create', $args));
 
         return array_keys(array_diff($publicPostTypes, $ignoredPostTypes));
     }

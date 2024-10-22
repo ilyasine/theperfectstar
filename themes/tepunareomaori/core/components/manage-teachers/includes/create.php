@@ -96,11 +96,6 @@ function create_teacher() {
         // Update user meta
         update_user_meta($teacher_id, 'ecole', $school_id);
 
-		//Update teacher lang :
-		$lang_meta = $wpdb->get_blog_prefix($blog_id) . 'lang';
-		$school_language = groups_get_groupmeta($school_id, 'ecole_lang');
-		update_user_meta( $teacher_id, $lang_meta, $school_language );
-
         bp_set_member_type($teacher_id, 'teacher');	
 
         // Store credentials in students_credentials table

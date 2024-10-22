@@ -10,7 +10,7 @@
   <?php 
 
   if( function_exists('bp_is_group_subgroups') && bp_is_group_subgroups()){
-    $classroom_curriculum_nonce = wp_create_nonce('generate_classroom_curriculum');
+    $classroom_type_nonce = wp_create_nonce('generate_classroom_type');
     $classroom_create_nonce = wp_create_nonce('classroom_create_nonce');
     $school_id = bp_get_current_group_id();
   }

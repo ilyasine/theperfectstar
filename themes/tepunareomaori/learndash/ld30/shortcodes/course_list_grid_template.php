@@ -417,7 +417,7 @@ $types_array = array( 'sfwd-lessons', 'sfwd-topic', 'sfwd-quiz', 'sfwd-assignmen
 			}
 			if ( isset( $button_text ) && ! empty( $button_text ) ) {
 				?>
-                <p class="ld_course_grid_button"><a class="btn btn-primary" role="button" href="<?php echo esc_url( $button_link ); ?>" rel="bookmark"><?php echo esc_attr( $button_text ); ?></a></p>
+                <p class="ld_course_grid_button"><a class="btn btn-primary button" role="button" href="<?php echo esc_url( $button_link ); ?>" rel="bookmark"><?php echo esc_attr( $button_text ); ?></a></p>
 				<?php
 			}
 
@@ -438,9 +438,20 @@ $types_array = array( 'sfwd-lessons', 'sfwd-topic', 'sfwd-quiz', 'sfwd-assignmen
 			?>
 
 		</div><!-- .entry-header -->
+		<?php  
+		$assign_course_to_group_nonce = wp_create_nonce('assign_course_to_group_nonce');
+		$ld_group_id = bp_ld_sync( 'buddypress' )->helpers->getLearndashGroupId( bp_get_current_group_id() );
+		?>
 		<div class="assign-course-to-group">
-			<button>
-				<?php _e('Assign Course to group', 'tprm-theme') ?>
+			<button class="assign-course-to-group-btn"				
+				data-balloon-pos="up"
+                data-balloon="<?php echo sprintf(esc_attr__('Assign this Course to the %s group', 'tprm-theme'), bp_get_group_name()); ?>"
+                data-security="<?php esc_attr_e($assign_course_to_group_nonce); ?>"
+                data-course-id="<?php echo esc_attr($post->ID) ?>" data-ld-group-id="<?php echo esc_attr($ld_group_id) ?>"
+                type="button"
+                id="assign-course-to-group-btn"
+                class="assign-course-to-group-btn">
+                <?php _e('Assign Course to group', 'tprm-theme') ?>
 			</button>		
 		</div>
 	</div><!-- #post-## -->

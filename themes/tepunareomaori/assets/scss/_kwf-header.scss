@@ -1,4 +1,3 @@
-
 .content-area {
     padding-top: 0;
 }
@@ -11,6 +10,7 @@
     color: var(--bb-headings-color);
     position: relative;
     padding-bottom: 10px;
+
     ::after {
         content: '';
         display: block;
@@ -26,14 +26,14 @@
 
 .bb-template-v2 .buddypanel .bb-toggle-panel:hover {
     background-color: #ffffff !important;
-    color: $kwf-primary-color !important;
+    color: $tprm-primary-color !important;
 }
 
 .buddypanel .side-panel-menu li.current-menu-item a,
-.bb-template-v2 .buddypanel .side-panel-menu li.current-menu-item > a,
-.buddypanel .side-panel-menu li a:is(:hover,:active,:focus) {
+.bb-template-v2 .buddypanel .side-panel-menu li.current-menu-item>a,
+.buddypanel .side-panel-menu li a:is(:hover, :active, :focus) {
     background-color: #ffffff; // White background on hover or active
-    color: $kwf-primary-color !important; // Change text color on hover or active
+    color: $tprm-primary-color; // Change text color on hover or active
     border-bottom-left-radius: 28px;
     border-top-left-radius: 28px;
 }
@@ -41,129 +41,98 @@
 .bb-template-v2.buddypanel-open .buddypanel .side-panel-inner li:not(.current-menu-item) a i:not(.bb-icon-angle-down) {
     opacity: 1 !important;
 }
+.bb-template-v2.buddypanel-open .buddypanel .side-panel-inner li a i:not(.bb-icon-angle-down) {
+    min-width: 48px;
+}
+.bb-template-v2 .buddypanel .side-panel-inner li a i:not(.bb-icon-angle-down) {
+    min-width: 24px;
+}
 
 .buddypanel {
     box-shadow: none;
-    .side-panel-menu {
-        a {
-            color: white;
-            background-color: $kwf-primary-color;
-            width: calc(100% - 10px);
+    background-color: #ffffff;
 
-            &:is(:hover, :active, :focus) {
-                color: $kwf-primary-color !important;
-                background-color: white !important;
+    header.panel-head, .site-branding{
+        background-color: #ffffff;
+    }
+
+    .side-panel-menu {
+        // Styling for the overall menu
+        a {
+            color: $tprm-grey-color;
+            background-color: #ffffff !important;
+            width: calc(100% - 10px);
+            font-family: $barlow-font-family;
+            font-size: $barlow-font-size;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border: 2px solid $tprm-grey-color;
+            border-radius: 0 !important;
+            border-bottom-right-radius: 28px !important;
+            border-top-right-radius: 28px !important;
+            margin-left: -12px;
+            text-decoration: none;
+    
+            i {
+                margin-right: 10px;   // Space between icon and text
+                font-size: 1.5rem;    // Make the icon slightly larger for emphasis
+                color: $tprm-grey-color;
+            }
+    
+            span {
+                text-transform: uppercase;   // Uppercase text style
+            }
+    
+            &:hover {
+                color: $tprm-secondary-color !important;
+                border-color: $tprm-secondary-color;  // Change border color on hover
+                i {
+                    color: $tprm-secondary-color !important;     // Change icon color on hover
+                }
+            }
+    
+            &:active, &:focus {
+                color: $tprm-primary-color;
+                border-color: $tprm-primary-color;    // Border color on focus/active
+                i {
+                    color: $tprm-primary-color;       // Icon color on focus/active
+                }
             }
         }
-
+    
         li {
-            margin-bottom: 10px;
-            /* &.logout-last{
-                ::before {
-                    content: '';
-                    display: block;
-                    width: 100%;
-                    height: 2px;
-                    background-color: #66bfba;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    border-radius: 50%;
-                }
-                a{
-                    padding-top: 20px;
-                }
-            } */
+            margin-bottom: 10px;      // Space between each button
+    
             &.current-menu-item {
                 a {
-                    background-color: #ffffff; // White background on hover or active
-                    color: $kwf-primary-color !important; // Change text color on hover or active
-
-                    &::after {
-                        content: '';
-                        background: $kwf-primary-color; // Use primary color for the effect
-                        height: 2em;
-                        width: 2em;
-                        position: absolute;
-                        bottom: -2em;
-                        right: 0em;
-                        border-radius: 0 15px 0 0; // Curve at the bottom-right corner
-                        box-shadow: 0 -16px 0 0 #ffffff; // Matches background color
-                        z-index: -1;
+                    color: $tprm-primary-color;  // Active state text color
+                    border-color: $tprm-primary-color;
+                    i {
+                        color: $tprm-primary-color;  // Active state icon color
                     }
-
-                    &::before {
-                        content: '';
-                        background: $kwf-primary-color; // Use primary color for the effect
-                        height: 2em;
-                        width: 2em;
-                        position: absolute;
-                        top: -2em;
-                        right: 0em;
-                        border-radius: 0 0 15px 0; // Curve at the top-right corner
-                        box-shadow: 0 16px 0 0 #ffffff; // Matches background color
-                        z-index: -1;
+                    &:hover{
+                        color: $tprm-secondary-color;  // Active state text color
+                        border-color: $tprm-secondary-color;
+                        i {
+                            color: $tprm-secondary-color !important;  // Active state icon color
+                        }
                     }
-                }
-
-                a:hover {
-                    background-color: #ffffff; // White background on hover or active
-                    color: $kwf-primary-color !important;
-                }
-            }
-
-            a:hover {
-                background-color: #ffffff; // White background on hover or active
-                color: $kwf-primary-color !important;
-
-                &::after {
-                    content: '';
-                    background: $kwf-primary-color; // Use primary color for the effect
-                    height: 2em;
-                    width: 2em;
-                    position: absolute;
-                    bottom: -2em;
-                    right: 0em;
-                    border-radius: 0 15px 0 0; // Curve at the bottom-right corner
-                    box-shadow: 0 -16px 0 0 #ffffff; // Matches background color
-                    z-index: -1;
-                }
-
-                &::before {
-                    content: '';
-                    background: $kwf-primary-color; // Use primary color for the effect
-                    height: 2em;
-                    width: 2em;
-                    position: absolute;
-                    top: -2em;
-                    right: 0em;
-                    border-radius: 0 0 15px 0; // Curve at the top-right corner
-                    box-shadow: 0 16px 0 0 #ffffff; // Matches background color
-                    z-index: -1;
                 }
             }
 
             a {
-                i {
-                    margin-right: 10px;
-                    transition: color 0.3s ease;
-                }
-            }
-
-            &.current-menu-item {
-                a {
+                &:hover{
+                    color: $tprm-secondary-color;  // Active state text color
+                    border-color: $tprm-secondary-color;
                     i {
-                        color: $kwf-primary-color !important; // Ensure icons change color as well
+                        color: $tprm-secondary-color !important;  // Active state icon color
                     }
                 }
             }
-
-            a:hover {
-                i {
-                    color: $kwf-primary-color !important; // Ensure icons change color as well
-                }
-            }
+            
         }
+        
     }
 
 
@@ -180,16 +149,21 @@
     }
 
     .side-panel-menu {
-        li:not(.current-menu-item) {
-            a:hover {
-                i:not(.bb-icon-angle-down),
-                > .bs-submenu-toggle {
-                    color: $kwf-primary-color !important;
+        li{
+            &:not(.current-menu-item){
+                a:hover {
+                    i:not(.bb-icon-angle-down),
+                    >.bs-submenu-toggle {
+                        color: $tprm-primary-color;
+                    }
                 }
+            }
+            &.current-menu-item>a i{
+                color: $tprm-primary-color !important;
             }
         }
     }
-    
+
 }
 
 
@@ -206,7 +180,8 @@
     .welcome-message {
         display: flex;
         align-items: flex-end;
-        div{
+
+        div {
             display: flex;
             align-items: baseline;
             flex-direction: column;
@@ -223,7 +198,8 @@
                 font-weight: normal;
             }
         }
-        span.user-mention{
+
+        span.user-mention {
             font-size: 13px;
             margin-top: -7px;
         }
@@ -256,7 +232,7 @@
             }
         }
 
-        #selected-school-avatar{
+        #selected-school-avatar {
             height: 80px;
             width: 80px;
             border-radius: 50%;
@@ -268,53 +244,62 @@
             margin-left: 10px;
             position: relative;
 
-            .select2-container{
+            .select2-container {
                 //width: 220px !important;
                 display: flex;
                 align-items: center;
                 position: relative;
-                span.selection{
+
+                span.selection {
                     position: relative;
                 }
-                #select2-school-select-container{
+
+                #select2-school-select-container {
                     min-width: 160px;
                     font-size: 16px;
                     font-weight: bold;
-                    color: $kwf-primary-color;
+                    color: $tprm-primary-color;
                     font-family: "Montserrat", Sans-serif;
                     background: transparent;
                 }
-                &.select2-container--open{
+
+                &.select2-container--open {
                     .select2-dropdown {
                         top: 10px;
                         //min-width: 220px;
                     }
+
                     .select2-selection--single {
                         .select2-selection__rendered {
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            img{
+
+                            img {
                                 margin-right: 8px;
                             }
                         }
-                        .select2-selection__arrow b{
-                            border-color: transparent transparent $kwf-text-color transparent;
-                        }  
-                    }             
-                } 
-                .select2-selection__arrow{
+
+                        .select2-selection__arrow b {
+                            border-color: transparent transparent $tprm-text-color transparent;
+                        }
+                    }
+                }
+
+                .select2-selection__arrow {
                     //left: 181px;
-                    background-color: $kwf-grey-bg-color;
+                    background-color: $tprm-grey-bg-color;
                     border-radius: 50%;
                     width: 26px;
                     position: absolute;
                     right: -15px;
-                    b{
-                        border-color: $kwf-text-color transparent transparent transparent;
+
+                    b {
+                        border-color: $tprm-text-color transparent transparent transparent;
                     }
                 }
             }
+
             #school-select {
                 display: none;
                 position: absolute;
@@ -335,12 +320,14 @@
     }
 }
 
-.select2-dropdown.school-select.select2-dropdown{
+.select2-dropdown.school-select.select2-dropdown {
     padding: 0;
+
     &--below {
         top: 10px !important;
         min-width: 220px;
-        li.select2-results__option{
+
+        li.select2-results__option {
             img.img-avatar {
                 width: 50px;
                 height: 50px;
@@ -359,6 +346,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             img {
                 margin-right: 8px;
             }

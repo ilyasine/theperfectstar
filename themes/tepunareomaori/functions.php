@@ -26,12 +26,12 @@ add_action( 'after_setup_theme', 'TPRM_theme_languages' );
 
 /****************************** Define constants and global variables ******************************/
 
-require_once 'core/kwf-global-variables.php';
+require_once 'core/tprm-global-variables.php';
 
 /****************************** Enqueue styles and scripts ******************************/
 
-require_once 'core/kwf-styles-scripts.php';
+require_once 'core/tprm-styles-scripts.php';
 
 /****************************** Components ******************************/
 
-require_once 'core/kwf-components.php';
+require_once 'core/tprm-components.php';

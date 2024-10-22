@@ -70,13 +70,15 @@ class StripeInlineProcessor extends StripeProcessor
                 'payment_method'              => $paymentMethodId,
                 'amount'                      => $transaction->payment_total,
                 'currency'                    => $transaction->currency,
-                'confirmation_method'         => 'manual',
-                'confirm'                     => 'true',
+                'confirmation_method'          => 'manual',
+                'confirm'                      => 'true',
                 'description'                 => $this->getProductNames(),
                 'statement_descriptor_suffix' => StripeSettings::getPaymentDescriptor($form),
                 'metadata'                    => $this->getIntentMetaData($submission, $form, $transaction, $paymentSettings),
                 'customer'                    => $customer->id
             ];
+            $intentArgs = apply_filters('fluentform/stripe_checkout_args_inline', $intentArgs, $submission, $transaction, $form);
+    
             $this->handlePaymentIntent($transaction, $submission, $intentArgs);
         }
     }

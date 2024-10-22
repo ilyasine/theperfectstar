@@ -94,7 +94,7 @@ $args = array(
 							<?php bp_group_link(); ?>
 						</div>
 
-						<div class="classroom_curriculum">
+						<div class="classroom_type">
 							<?php echo bp_get_group_type(); ?>
 						</div>
 

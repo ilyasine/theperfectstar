@@ -105,7 +105,7 @@ class API
         }
     }
     
-    public function makeApiCall($path, $args, $formId, $method = 'GET')
+    public function makeApiCall($path, $args, $formId, $method = 'GET', $isInline = false)
     {
         $keys = SquareSettings::getApiKeys();
         $headers = [
@@ -113,7 +113,16 @@ class API
             'Accept'        => 'application/json',
             'Content-type'  => 'application/json'
         ];
+
         $baseUrl = ArrayHelper::get($keys, 'api_url');
+        if ($isInline) {
+            if (SquareSettings::isLive()) {
+                $baseUrl = 'https://connect.squareup.com/v2/';
+            } else {
+                $baseUrl = 'https://connect.squareupsandbox.com/v2/';
+            }
+        }
+
         if ($method == 'POST') {
             $response = wp_remote_post($baseUrl . $path, [
                 'headers' => $headers,

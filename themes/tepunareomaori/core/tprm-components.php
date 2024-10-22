@@ -49,6 +49,12 @@ require_once TPRM_COMPONENT . 'login.php';
 require_once TPRM_COMPONENT . 'woocommerce.php';
 
 /* 
+* *** school component ***
+*/
+
+require_once TPRM_COMPONENT . 'manage-school.php';
+
+/* 
 * *** resources component ***
 */
 

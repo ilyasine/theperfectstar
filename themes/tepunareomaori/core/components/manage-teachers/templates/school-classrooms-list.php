@@ -29,7 +29,7 @@ $sorted_classrooms = array_merge($teacher_classrooms, $other_classrooms);
     <thead>
         <tr>
             <th class="classroom_name"><?php _e('Name', 'tprm-theme'); ?></th>
-            <th class="classroom_curriculum"><?php _e('Curriculum', 'tprm-theme'); ?></th>
+            <th class="classroom_type"><?php _e('Curriculum', 'tprm-theme'); ?></th>
             <th class="classroom_level"><?php _e('Level', 'tprm-theme'); ?></th>
             <th class="classroom_action">
                 <div class="toggle-btn toggle-classroom-teacher-all"
@@ -55,7 +55,7 @@ $sorted_classrooms = array_merge($teacher_classrooms, $other_classrooms);
                             <?php echo esc_html($classroom->name); ?>
                         </a>
                     </td>
-                    <td class="classroom_curriculum">
+                    <td class="classroom_type">
                         <?php                 
                             $group_type = bp_groups_get_group_type($classroom->id);
                             $group_type_object = bp_groups_get_group_type_object($group_type);

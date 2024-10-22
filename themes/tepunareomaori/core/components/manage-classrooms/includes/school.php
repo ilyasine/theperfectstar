@@ -795,7 +795,7 @@ function TPRM_set_group_default_tab(){
 	if(is_school(bp_get_current_group_id())){
 		buddypress()->groups->nav->edit_nav( 
             array( 
-                'name' => __('Classrooms', 'tprm-theme'),
+                'name' => __('Groups', 'tprm-theme'),
                 'position' => 0, 
             ),
                 'subgroups', bp_current_item()

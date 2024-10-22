@@ -231,8 +231,8 @@ class FormStyler
     
     public function getStylerSettings()
     {
-        Acl::verify('fluentform_forms_manager');
         $formId = intval($this->request->get('form_id'));
+        Acl::verify('fluentform_forms_manager', $formId);
         $presetStyle = Helper::getFormMeta($formId, '_ff_selected_style', '');
         $styles = Helper::getFormMeta($formId, '_ff_form_styles', []);
         $preSets = $this->getPresets();
@@ -263,9 +263,8 @@ class FormStyler
     
     public function saveStylerSettings()
     {
-        Acl::verify('fluentform_forms_manager');
-        
         $formId = intval($this->request->get('form_id'));
+        Acl::verify('fluentform_forms_manager', $formId);
         $styles = wp_unslash($this->request->get('form_styles'));
         if (is_string($styles) && Helper::isJson($styles)) {
             $styles = json_decode($styles, true);

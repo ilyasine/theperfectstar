@@ -6,8 +6,8 @@
 
 add_action('after_setup_theme', 'TPRM_theme_textdomain_languages' );
 add_filter('body_class', 'TPRM_body_class');
-add_action('wp_footer', 'add_button_to_footer');
-add_action('login_footer', 'add_button_to_footer' );
+//add_action('wp_footer', 'add_button_to_footer');
+//add_action('login_footer', 'add_button_to_footer' );
 
 /**
  * Sets up theme for translation

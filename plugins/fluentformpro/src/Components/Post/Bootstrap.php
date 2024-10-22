@@ -82,7 +82,7 @@ class Bootstrap
             $postFormHandler, 'renderTaxonomyFields'
         ], 10, 2);
 
-        add_action('fluentform/submission_inserted_post_form', [
+        add_action('fluentform/before_form_actions_processing', [
             $postFormHandler, 'onFormSubmissionInserted'
         ], 10, 3);
 

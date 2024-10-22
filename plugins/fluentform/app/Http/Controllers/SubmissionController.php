@@ -52,8 +52,14 @@ class SubmissionController extends Controller
         try {
             $status = $submissionService->updateStatus($this->request->all());
 
+            $new_status = $status; // Define a default status message
+    
+            // Apply a filter to allow modifying the status before sending the success response
+            $new_status = apply_filters('fluentform_modify_submission_status', $new_status, $status);
+    
+            // Return the success message
             return $this->sendSuccess([
-                'message' => __('The submission has been marked as ' . $status, 'fluentform'),
+                'message' => __('The submission has been marked as ' . $new_status, 'fluentform'),
                 'status'  => $status,
             ]);
         } catch (Exception $e) {

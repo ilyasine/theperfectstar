@@ -96,4 +96,16 @@ trait Getter
         return $processedFields;
     }
 
+    private static function getPostType($formId)
+    {
+        $postSettings = wpFluent()->table('fluentform_form_meta')
+            ->where('form_id', $formId)
+            ->where('meta_key', 'post_settings')
+            ->first()->value;
+
+        $postSettings = json_decode($postSettings);
+
+        return $postSettings->post_type;
+    }
+
 }

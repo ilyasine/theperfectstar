@@ -1,4 +1,63 @@
 jQuery(document).ready(function ($) {
+
+    //Assign course to group
+    $(document).on('click', '.assign-course-to-group-btn', function (e) {
+        e.preventDefault();
+
+        var button = $(this);
+        var security = button.data('security');
+        var ld_group_id = button.data('ld-group-id');
+        var course_id = button.data('course-id');
+        var course_container = button.closest('.ld_course_grid')
+
+        if (course_id) {
+            NProgress.start();
+            NProgress.set(0.4);
+            var interval = setInterval(function () { NProgress.inc(); }, 1000);
+            clearInterval(interval);          
+
+            $.ajax({
+                url: ajaxurl,
+                data: {
+                    action: 'assign_course_to_group',
+                    security: security,
+                    payload: 'assign_course_to_group',
+                    course_id: course_id,
+                    ld_group_id: ld_group_id,
+                },
+                type: 'post',
+                dataType: 'json',
+                success: function (result, textstatus) {
+                    console.log(result);
+                    console.log(textstatus);
+                    course_container.fadeOut();
+                    if (result) {
+                        $(document).trigger(
+                            'bb_trigger_toast_message',
+                            ['', '<div>' + result.success_msg + '</div>', 'success', null, true]
+                        );                     
+                    } else {
+                        $(document).trigger(
+                            'bb_trigger_toast_message',
+                            ['', '<div>' + result.success_msg + '</div>', 'success', null, true]
+                        );
+                    }
+                    NProgress.done();
+                },
+                error: function (result) {
+                    console.log(result);
+                    console.log('fail');
+                    NProgress.done();
+                }
+            });
+        } else {
+            $(document).trigger(
+                'bb_trigger_toast_message',
+                ['', '<div>' + manage_courses_data.no_course_selected_alert + '</div>', 'warning', null, true]
+            );
+        }    
+
+    })
     
     // open related courses popup
     window.BBLMS.switchLdGridList = function () { };
