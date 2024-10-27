@@ -24,15 +24,15 @@ function manage_classrooms_scripts() {
         $students_tab = $group_link . 'students';
         
        //Enqueue create classroom
-        wp_enqueue_script('create-classroom-script', MCL_JS_DIR . 'create-classroom.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'kwf-bp-groups-js' ), TPRM_THEME_VERSION, true );
+        wp_enqueue_script('create-classroom-script', MCL_JS_DIR . 'create-classroom.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'tprm-bp-groups-js' ), TPRM_THEME_VERSION, true );
         wp_enqueue_style('create-classroom-style', TPRM_CSS_PATH .'create-classroom.css' );
 
         //Enqueue manage classroom
         wp_enqueue_style('manage-classrooms-style', TPRM_CSS_PATH .'manage-classrooms.css' );        
-        wp_enqueue_script('manage-classroom-script', MCL_JS_DIR . 'manage-classroom.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'kwf-bp-groups-js' ), TPRM_THEME_VERSION, true );
+        wp_enqueue_script('manage-classroom-script', MCL_JS_DIR . 'manage-classroom.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'tprm-bp-groups-js' ), TPRM_THEME_VERSION, true );
 
        //Duplicate Structure
-        wp_enqueue_script('duplicate-structure-script', MCL_JS_DIR . 'duplicate-structure.js', array( 'kwf-nprogress-script','jquery' ), TPRM_THEME_VERSION, true );
+        wp_enqueue_script('duplicate-structure-script', MCL_JS_DIR . 'duplicate-structure.js', array( 'tprm-nprogress-script','jquery' ), TPRM_THEME_VERSION, true );
         wp_enqueue_style('duplicate-structure-style', TPRM_CSS_PATH .'duplicate-structure.css' );
 
         $creating_classrrom_header = __('CREATING CLASSROOM', 'tprm-theme');

@@ -28,7 +28,7 @@ $students = array_intersect($students_last_year, $students_not_enrolled_this_yea
 ?>
 
 <div class="outer-students-container">
-    <div class="kwf-preloader-promote" style="display: none;">
+    <div class="tprm-preloader-promote" style="display: none;">
         <?php echo $preloader; ?>
     </div>
     <div class="students-container">
@@ -63,7 +63,7 @@ $students = array_intersect($students_last_year, $students_not_enrolled_this_yea
         </div>
         
         <ul class="students-list">
-            <li class="kwf-preloader" style="display: none;">
+            <li class="tprm-preloader" style="display: none;">
                 <?php echo $preloader;  ?>
             </li>
             <?php

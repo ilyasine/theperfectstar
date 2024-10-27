@@ -22,7 +22,7 @@ $is_school = is_school(bp_get_current_group_id()) ? true : false;
 if($is_school){
 	$school_id = bp_get_current_group_id();
 	//$group_role = 'mod';
-	$group_role = array('admin', 'mod');// for teachers having role of school-admin or director
+	$group_role = array('admin', 'mod');// for teachers having role of school_leader or director
 }else{
 	$school_id = bp_get_parent_group_id(bp_get_current_group_id());
 	$group_role = 'admin';
@@ -69,7 +69,7 @@ $follow_class     = $is_follow_active ? 'follow-active' : '';
 			$user_roles = $user->roles;
 
 			// Skip users who do not have the "teacher" role
-			if ( ! in_array( 'teacher', $user_roles ) ) {
+			if ( ! in_array( 'school_staff', $user_roles ) ) {
 				continue;
 			}
 

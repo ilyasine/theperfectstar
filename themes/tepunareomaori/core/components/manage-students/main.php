@@ -22,14 +22,14 @@ function manage_students_scripts() {
             
         wp_enqueue_style('manage-students-style', TPRM_CSS_PATH .'manage-students.css' );
         wp_enqueue_script('jquery-effects-core');
-        wp_enqueue_script('manage-students-script', MST_JS_DIR . 'manage-students.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'kwf-bp-groups-js' ), TPRM_THEME_VERSION, true );
+        wp_enqueue_script('manage-students-script', MST_JS_DIR . 'manage-students.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'tprm-bp-groups-js' ), TPRM_THEME_VERSION, true );
 
         /* include styles and script for creating students only in school */
         if( is_school(bp_get_current_group_id()) ){
-            wp_enqueue_script('create-student-script', MST_JS_DIR . 'create-student.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'kwf-bp-groups-js' ), TPRM_THEME_VERSION, true );       
+            wp_enqueue_script('create-student-script', MST_JS_DIR . 'create-student.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'tprm-bp-groups-js' ), TPRM_THEME_VERSION, true );       
             wp_enqueue_style('create-student-style', TPRM_CSS_PATH .'create-student.css' );
-            if( is_TPRM_manager() ) :
-                wp_enqueue_script('bulk-create-student-script', MST_JS_DIR . 'bulk-create-student.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'kwf-bp-groups-js' ), TPRM_THEME_VERSION, true );       
+            if( is_tprm_manager() ) :
+                wp_enqueue_script('bulk-create-student-script', MST_JS_DIR . 'bulk-create-student.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'tprm-bp-groups-js' ), TPRM_THEME_VERSION, true );       
                 wp_enqueue_style('bulk-create-student-style', TPRM_CSS_PATH .'bulk-create-student.css' );
             endif;
         }

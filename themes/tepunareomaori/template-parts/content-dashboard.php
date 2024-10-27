@@ -63,7 +63,7 @@ $dash_classe = is_student() ? 'block' : 'flex';
 
 		$user = wp_get_current_user();
 
-		$valid_roles = ['director', 'teacher', 'group_leader', 'administrator', 'kwf-admin', 'school-admin'];
+		$valid_roles = ['school_principal', 'school_staff', 'group_leader', 'administrator', 'school_leader'];
 
 		$the_roles = array_intersect($valid_roles, $user->roles);
 
@@ -72,18 +72,18 @@ $dash_classe = is_student() ? 'block' : 'flex';
 
 			$grid_list = [];
 
-			// Check if the user is a School Administrator
-			$is_school_admin = in_array('school-admin', $the_roles);
+			// Check if the user is a School Leader
+			$is_school_leader = in_array('school_leader', $the_roles);
 
-			// Check if the user is a 'director'
-			$is_director = in_array('director', $the_roles);
+			// Check if the user is a 'school_principal'
+			$is_school_principal = in_array('school_principal', $the_roles);
 
 			// Check if the user is a 'teacher
-			$is_teacher = in_array('teacher', $the_roles);
+			$is_teacher = in_array('school_staff', $the_roles);
 
-			if (is_TPRM_admin()) {
+			if (is_tprm_admin()) {
 
-				$schools_count = count(get_TPRM_schools());
+				$schools_count = count(get_tprm_schools());
 		
 				 // Add the Support div for directors
 				$grid_list = [
@@ -125,7 +125,7 @@ $dash_classe = is_student() ? 'block' : 'flex';
 				];
 			} 
 
-			if ($is_school_admin) {
+			if ($is_school_leader) {
 
 				
 				// Add the content of 'ecole-group-container' for directors
@@ -136,7 +136,7 @@ $dash_classe = is_student() ? 'block' : 'flex';
 
 					$group_type = bp_groups_get_group_type($bp_group);
 
-					if ($group_type === 'kwf-ecole') {
+					if ($group_type === 'tprm-school') {
 
 						// get all details about groups we want to display
 						$ecole = groups_get_group($bp_group);
@@ -194,7 +194,7 @@ $dash_classe = is_student() ? 'block' : 'flex';
 								<!-- ecole-group-main -->
 								<div class="ecole-group-main">
 									<div class="ecole-group-desc">
-										<span class="bb-current-group-kwf-ecole"><?php _e('School group', 'tprm-theme') ?></span>
+										<span class="bb-current-group-tprm-school"><?php _e('School group', 'tprm-theme') ?></span>
 									</div>
 									<div class="ecole-group-name">
 										<a href="<?php echo esc_url($ecole_permalink); ?>" rel="noopener noreferrer">
@@ -224,7 +224,7 @@ $dash_classe = is_student() ? 'block' : 'flex';
 				];
 			} 
 
-			if ($is_director) {
+			if ($is_school_principal) {
 				// Add the content of 'ecole-group-container' for directors
 				$bp_group_ids = BP_Groups_Member::get_group_ids(get_current_user_id());
 				$bp_groups = $bp_group_ids['groups'];
@@ -233,7 +233,7 @@ $dash_classe = is_student() ? 'block' : 'flex';
 
 					$group_type = bp_groups_get_group_type($bp_group);
 
-					if ($group_type === 'kwf-ecole') {
+					if ($group_type === 'tprm-school') {
 
 						// get all details about groups we want to display
 						$ecole = groups_get_group($bp_group);
@@ -291,7 +291,7 @@ $dash_classe = is_student() ? 'block' : 'flex';
 								<!-- ecole-group-main -->
 								<div class="ecole-group-main">
 									<div class="ecole-group-desc">
-										<span class="bb-current-group-kwf-ecole"><?php _e('School group', 'tprm-theme') ?></span>
+										<span class="bb-current-group-tprm-school"><?php _e('School group', 'tprm-theme') ?></span>
 									</div>
 									<div class="ecole-group-name">
 										<a href="<?php echo esc_url($ecole_permalink); ?>" rel="noopener noreferrer">
@@ -366,7 +366,7 @@ $dash_classe = is_student() ? 'block' : 'flex';
 				if( is_fr_user(get_current_user_id()) || is_bilingual_user(get_current_user_id())){
 					$status = $fr_onboarding_course_progress['status'];
 				}
-				if( is_en_user(get_current_user_id()) || is_TPRM_admin() || is_bilingual_user(get_current_user_id())){
+				if( is_en_user(get_current_user_id()) || is_tprm_admin() || is_bilingual_user(get_current_user_id())){
 					$status = $en_onboarding_course_progress['status'];
 				}
 
@@ -376,7 +376,7 @@ $dash_classe = is_student() ? 'block' : 'flex';
 
 				
 				/* // Add forum link for teacher, group leader, or administrator
-				if (in_array('teacher', $the_roles) || in_array('group_leader', $the_roles) || in_array('administrator', $the_roles)) {
+				if (in_array('school_staff', $the_roles) || in_array('group_leader', $the_roles) || in_array('administrator', $the_roles)) {
 					// Add the new item to the grid list.
 					$grid_list[] = [
 						'title' => __('Forums', 'tprm-theme'),
@@ -412,14 +412,14 @@ $dash_classe = is_student() ? 'block' : 'flex';
 											<!-- start if item grid is schools -->
 											<?php if (!empty($item['id']) && $item['id'] === 'schools-grid') : ?>
 												<div class="ecole-group-desc">												
-													<span class="bb-current-group-kwf-ecole"><?php echo $schools_count; ?></span>
+													<span class="bb-current-group-tprm-school"><?php echo $schools_count; ?></span>
 												</div>
 											<?php endif; ?>
 											<!-- end if item grid is schools -->
 											<!-- start if item grid is school year -->
 											<?php if (!empty($item['id']) && $item['id'] === 'year-grid') : ?>
 												<div class="ecole-group-desc">												
-													<span class="bb-current-group-kwf-ecole"><?php echo get_option('school_year'); ?></span>
+													<span class="bb-current-group-tprm-school"><?php echo get_option('school_year'); ?></span>
 												</div>
 											<?php endif; ?>
 											<!-- end if item grid is school year -->

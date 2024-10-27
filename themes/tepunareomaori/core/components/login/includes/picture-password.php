@@ -26,7 +26,7 @@ function validate_picture_password() {
     }
 
     // Check if the user has the student role
-    if (!in_array('student', (array) $user->roles) && !in_array('kwf-student', (array) $user->roles)) {
+    if (!in_array('school_student', (array) $user->roles)) {
         wp_send_json_error(array(
             'message' => __('Login with picture is available only for students. Please use the regular login method.', 'tprm-theme')
         ));
@@ -35,7 +35,7 @@ function validate_picture_password() {
     $userId = $user->ID;
     $imagePassword = get_user_meta($userId, 'picture_password_image', true); // Retrieve the stored image file name
     $wrongAttempts = get_user_meta($userId, 'wrong_password_attempts', true);
-    $maxAttempts = 300; // Maximum allowed attempts
+    $maxAttempts = 7; // Maximum allowed attempts
 
     if ($wrongAttempts >= $maxAttempts) {
         wp_send_json_error(array(

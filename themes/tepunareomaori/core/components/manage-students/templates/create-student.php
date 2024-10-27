@@ -5,7 +5,7 @@ $school_seats = !is_null(get_school_seats($school_id)) ? intval(get_school_seats
 $this_year = get_option('school_year');
 $students_with_classroom = count(get_students_classroom_for_year($school_id, $this_year));
 // Define the path to the helper class
-$helper_class_path = WP_PLUGIN_DIR . '/kwf-membership-coupon/includes/classes/helper-class.php';
+$helper_class_path = WP_PLUGIN_DIR . '/tprm-membership-coupon/includes/classes/helper-class.php';
 
 // Check if the file exists and include it
 if ( file_exists( $helper_class_path ) ) {
@@ -69,7 +69,7 @@ if( is_students_page() ) : ?>
         </button>
     </div>
     <!-- manage -->
-     <?php if ( is_TPRM_manager() && $is_school) : ?>
+     <?php if ( is_tprm_manager() && $is_school) : ?>
     <div class="manage-students">
       <button class="all-students">
         <span class="bb-icon-l bb-icon-home"></span>
@@ -87,7 +87,7 @@ if( is_students_page() ) : ?>
 
   </div>
   <!-- end student management header -->
-  <?php if (is_TPRM_manager() && $is_school) : /* start create student form */ ?>
+  <?php if (is_tprm_manager() && $is_school) : /* start create student form */ ?>
     <div id="create-student" class="students-management-content" style="display: none;">
        
         <form id="multistepsform">
@@ -199,7 +199,7 @@ if( is_students_page() ) : ?>
                 <h3 class="fs-subtitle"><?php _e('Assign Classroom to the student:', 'tprm-theme') ?></h3>
             </div>
             <div class="fieldset-body">
-                  <div class="kwf-preloader" style="display: none;">
+                  <div class="tprm-preloader" style="display: none;">
                     <?php echo $preloader;  ?>
                   </div>
                   <div class="notice" style="display: none;"></div>            
@@ -352,7 +352,7 @@ if( is_students_page() ) : ?>
                 <h3 class="fs-subtitle"><?php _e('Upload and Submit Students File', 'tprm-theme') ?></h3>
             </div>
             <div class="fieldset-body">
-                  <div class="kwf-preloader" style="display: none;">
+                  <div class="tprm-preloader" style="display: none;">
                     <?php echo $preloader; ?>
                     <div class="proccessed-data" style="display: none">
                       <?php _e('Importing', 'tprm-theme') ?> 

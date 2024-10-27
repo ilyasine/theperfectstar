@@ -1378,7 +1378,7 @@ class TPRM_importer_Import{
 
                     $school_name_formatted = strtolower(str_replace(' ', '_', $school_name));
 
-                    $company = 'tepunareomaori <support@tepunareomaori.com>';
+                    $company = 'tepunareomaori <kiaora@tepunareomaori.co.nz>';
 
                     $title = sprintf( __( 'Import school : %s %s at %s', 'tprm-theme' ), $school_name, date('d-m-Y'), date('H:i:s') );
 

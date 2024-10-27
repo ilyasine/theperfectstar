@@ -25,7 +25,7 @@ if( !empty($teachers) ) { //there is at least a teacher
     ?>
 
     <div class="outer-teachers-container">
-        <div class="kwf-preloader-assign" style="display: none;">
+        <div class="tprm-preloader-assign" style="display: none;">
             <?php echo $preloader; ?>
         </div>
         <div class="teachers-container">
@@ -35,7 +35,7 @@ if( !empty($teachers) ) { //there is at least a teacher
                 </div>
             </div>          
             <ul class="teachers-list">
-                <li class="kwf-preloader" style="display: none;">
+                <li class="tprm-preloader" style="display: none;">
                     <?php echo $preloader;  ?>
                 </li>
                 <?php

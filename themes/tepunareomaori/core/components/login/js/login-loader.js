@@ -3,6 +3,13 @@ jQuery(document).ready(function ($) {
     // Attach a click event to the login button
     $(document).on('click', '#wp-submit', function (e) {
 
+        var submitValue = $(this).val();
+
+        // If the action is "lostpassword" Or update Password, don't run the custom logic
+        if (submitValue === 'Request reset link' || submitValue === 'Save') {
+            return; // Exit the function, allow normal behavior
+        }
+
         e.preventDefault();
         // Disable the login button
         $(this).prop('disabled', true);

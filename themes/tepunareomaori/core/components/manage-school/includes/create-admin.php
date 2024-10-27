@@ -1,9 +1,11 @@
 <?php 
+use FluentCrm\App\Models\Subscriber;
+use FluentCrm\App\Models\Tag;
 
-function create_admins($school_name, $school_id, $demo_group_id, $principal_details, $accounts_details, $ipl_details) {
+function create_admins($school_name, $school_id, $demo_group_id, $principal_details, $school_leaders, $fluentcrm_tag) {
 
     // Utility function to create a user
-    function create_school_admin($first_name, $last_name, $email, $phone, $role, $member_type, $school_id, $demo_group_id, $school_name) {
+    function create_school_leader($first_name, $last_name, $email, $phone, $role, $school_id, $demo_group_id, $school_name, $fluentcrm_tag) {
 
         // Check if the user already exists by email
         $existing_user = get_user_by('email', $email);
@@ -16,7 +18,7 @@ function create_admins($school_name, $school_id, $demo_group_id, $principal_deta
             $user->set_role($role); 
 
             // Assign BuddyPress member type
-            bp_set_member_type($user_id, $member_type);
+            bp_set_member_type($user_id, $role); // Use role as member type
         
             // Get existing user's first and last name
             $existing_user_data = get_userdata($user_id);
@@ -59,6 +61,8 @@ function create_admins($school_name, $school_id, $demo_group_id, $principal_deta
         
             // Send the email to the existing user
             wp_mail($email, $subject, $message, $headers);
+
+            fluentcrm_add_contact_tags($user_id, $fluentcrm_tag);
         
             return $user_id; // Return the existing user's ID
         }        
@@ -88,6 +92,8 @@ function create_admins($school_name, $school_id, $demo_group_id, $principal_deta
 
         $user_id = wp_insert_user($userdata);
 
+        fluentcrm_add_contact_tags($user_id, $fluentcrm_tag);
+
         // Check for errors in user creation
         if (is_wp_error($user_id)) {
             error_log('User creation failed: ' . $user_id->get_error_message());
@@ -95,9 +101,9 @@ function create_admins($school_name, $school_id, $demo_group_id, $principal_deta
         }
 
         // Assign BuddyPress member type
-        bp_set_member_type($user_id, $member_type);
+        bp_set_member_type($user_id, $role); // Use role as member type
 
-        // Enroll the user in the school group as moderator
+        // Enroll the user in the school group as admin
         $enroll_school = groups_join_group($school_id, $user_id);
         if ($enroll_school) {
             groups_promote_member($user_id, $school_id, 'admin');
@@ -139,49 +145,77 @@ function create_admins($school_name, $school_id, $demo_group_id, $principal_deta
     }
 
 
-    // Principal details
-    $principal_id = create_school_admin(
+    // Create principal
+    $principal_id = create_school_leader(
         $principal_details['first_name'],
         $principal_details['last_name'],
         $principal_details['email'],
         $principal_details['phone'],
-        'school-admin',   // WordPress role
-        'principal',      // BuddyPress member type
+        'school_principal',   // WordPress role and BuddyPress member type
         $school_id,
         $demo_group_id,
-        $school_name
+        $school_name,
+        $fluentcrm_tag
     );
 
-    // Accounts person details
-    $accounts_id = create_school_admin(
-        $accounts_details['first_name'],
-        $accounts_details['last_name'],
-        $accounts_details['email'],
-        '',               // No phone number provided for Accounts person
-        'school-admin',   // WordPress role
-        'accounts-person', // BuddyPress member type
-        $school_id,
-        $demo_group_id,
-        $school_name
-    );
-
-    // Programme Leader details (IPL)
-    $ipl_id = create_school_admin(
-        $ipl_details['first_name'],
-        $ipl_details['last_name'],
-        $ipl_details['email'],
-        $ipl_details['phone'],
-        'school-admin',     // WordPress role
-        'programme-leader', // BuddyPress member type
-        $school_id,
-        $demo_group_id,
-        $school_name
-    );
+    // Create school leaders from the provided array
+    foreach ($school_leaders as $leader_details) {
+        create_school_leader(
+            $leader_details['first_name'],
+            $leader_details['last_name'],
+            $leader_details['email'],
+            isset($leader_details['phone']) ? $leader_details['phone'] : '', // Handle optional phone number
+            'school_leader',     // WordPress role and BuddyPress member type
+            $school_id,
+            $demo_group_id,
+            $school_name,
+            $fluentcrm_tag
+        );
+    }
 
     // Logging for success or failure
-    if ($principal_id && $accounts_id && $ipl_id) {
-        error_log('Admins created successfully.');
+    if ($principal_id) {
+        error_log('Principal created successfully with ID: ' . $principal_id);
+        fluentcrm_add_contact_tags($user_id, $fluentcrm_tag);
+        return $principal_id;
     } else {
-        error_log('Failed to create one or more admins.');
+        error_log('Failed to create principal.');
+    }
+}
+
+function get_or_create_fluentcrm_tag($tag_name) {
+    $tag = Tag::firstOrCreate(['title' => $tag_name]);
+    return $tag->id;
+}
+
+// Helper function to add tags in FluentCRM
+function fluentcrm_add_contact_tags($user_id, $fluentcrm_tag) {
+    $new_tags = [$fluentcrm_tag];
+    $new_tag_ids = array_map('get_or_create_fluentcrm_tag', $new_tags);
+
+    // Convert new tag IDs to strings
+    $new_tag_ids = array_map('strval', $new_tag_ids);
+
+    // Get the subscriber by user ID
+    $subscriber = Subscriber::where('user_id', $user_id)->first();
+
+    // Check if the subscriber exists
+    if ($subscriber) {
+        // Attach new tags to the subscriber
+        $subscriber->attachTags($new_tag_ids);
+        $subscriber->save();
+
+        // Retrieve existing tags from user meta
+        $existing_tags = get_user_meta($user_id, 'fluentcrm_tags', true);
+        if (!is_array($existing_tags)) {
+            $existing_tags = [];
+        }
+
+        // Merge existing tags with new tags
+        $updated_tags = array_unique(array_merge($existing_tags, $new_tag_ids));
+
+        // Update the user meta with the combined list of tag IDs
+        update_user_meta($user_id, 'fluentcrm_tags', $updated_tags);
+
     }
 }

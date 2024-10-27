@@ -168,7 +168,7 @@ jQuery(document).ready(function ($) {
     });
 
     // hard reload
-    $('#kwf-refresh').on("click", function () {
+    $('#tprm-refresh').on("click", function () {
 
         /*  $('head').append('<meta http-equiv="cache-control" content="no-cache">');
          $('head').append('<meta http-equiv="expires" content="0">');

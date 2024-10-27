@@ -1,6 +1,6 @@
 <?php 
 
-function get_TPRM_user_groups($student_id) {
+function get_tprm_user_groups($student_id) {
     global $wpdb;
     $bp = buddypress();
 
@@ -33,14 +33,14 @@ function get_student_school($student_id = null) {
 
     // Get the user object
     $user = get_userdata($student_id);
-    $group_ids = get_TPRM_user_groups($student_id);
+    $group_ids = get_tprm_user_groups($student_id);
   
     // Check if the user is a student
     if (is_student($user)) {
         // Get all group IDs the user belongs to
         /* $group_ids = groups_get_user_groups($student_id)['groups']; */
 
-        $group_ids = get_TPRM_user_groups($student_id);  
+        $group_ids = get_tprm_user_groups($student_id);  
 
         // Iterate through the groups
         foreach ($group_ids as $group_id) {
@@ -169,8 +169,8 @@ function classroom_member_pagination_count( $message, $from_num, $to_num, $total
             $user_id = $member->ID;
             $user    = get_userdata( $user_id );
 
-            // Count only users with the 'teacher' role
-            if ( $user && in_array( 'teacher', $user->roles ) ) {
+            // Count only users with the 'school_staff' role
+            if ( $user && in_array( 'school_staff', $user->roles ) ) {
                 $teacher_count++;
             }
         }
@@ -186,7 +186,7 @@ function classroom_member_pagination_count( $message, $from_num, $to_num, $total
                 $user_id = $member->ID;
                 $user    = get_userdata( $user_id );
 
-                if ( $user && in_array( 'teacher', $user->roles ) ) {
+                if ( $user && in_array( 'school_staff', $user->roles ) ) {
                     $teacher_count++;
                 }
             }
@@ -237,8 +237,8 @@ function get_classroom_students($classroom_id){
     if (!empty($members['members'])) {
         foreach ($members['members'] as $member) {
             $user_id = $member->ID;
-            // Check if the user has the 'student' role
-            if ((user_has_role($user_id, 'student') || user_has_role($user_id, 'kwf-student')) ) {
+            // Check if the user has the 'school_student' role
+            if ((user_has_role($user_id, 'school_student') || user_has_role($user_id, 'tprm-student')) ) {
                 $student_ids[] = $user_id; // Track the student ID to avoid duplicates
             }
         }

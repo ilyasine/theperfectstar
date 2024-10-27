@@ -18,9 +18,9 @@ add_action('wp_enqueue_scripts', 'manage_courses_front' );
 function manage_courses_front(){
     // group default page (courses) or courses profile page 
     if( is_group_courses_page() || is_group_content_page() ){//
-        wp_enqueue_script('kwf-manage-courses-script', MC_JS_PATH . 'front.js' , array('jquery'), TPRM_THEME_VERSION, true);
+        wp_enqueue_script('tprm-manage-courses-script', MC_JS_PATH . 'front.js' , array('jquery'), TPRM_THEME_VERSION, true);
         wp_enqueue_script('jquery-dragsort.min', TPRM_JS_PATH . 'dragsort.min.js' , array('jquery'), TPRM_THEME_VERSION, true);
-        wp_enqueue_style('kwf-manage-courses-style', TPRM_CSS_PATH .'manage-courses.css' );
+        wp_enqueue_style('tprm-manage-courses-style', TPRM_CSS_PATH .'manage-courses.css' );
         $translation_array = array(
           'course_selected' => __('You have selected the following Course : ', 'tprm-theme' ),
           'no_course_selected' => __('No Course has been Selected', 'tprm-theme' ),
@@ -35,7 +35,7 @@ function manage_courses_front(){
           'order_unlocked_info' => __('The course order is currently <strong>enabled</strong>. Once you\'ve finished ordering the courses, please press the <strong>Lock Order</strong> button.', 'tprm-theme'),
         );
         // Localize the script with translated strings
-        wp_localize_script( 'kwf-manage-courses-script', 'manage_courses_data', $translation_array );
+        wp_localize_script( 'tprm-manage-courses-script', 'manage_courses_data', $translation_array );
     }
     // courses profile page 
     if( function_exists('bp_is_my_profile') && bp_is_my_profile() && function_exists('bb_learndash_profile_courses_slug') && strpos($_SERVER['REQUEST_URI'], bb_learndash_profile_courses_slug() ) !== false ){
@@ -54,13 +54,13 @@ function manage_courses_admin($hook){
     if ( 'edit.php' !== $hook ) {
       return;
     }
-    wp_enqueue_script('kwf-manage-courses-script', MC_JS_PATH . 'admin.js' , array('jquery'), TPRM_THEME_VERSION, true);
+    wp_enqueue_script('tprm-manage-courses-script', MC_JS_PATH . 'admin.js' , array('jquery'), TPRM_THEME_VERSION, true);
    
     $manage_courses_data = array(
       'nonce' => wp_create_nonce( 'manage_courses_bulk_edit_nonce' ),
     );
     // Localize the script with translated strings
-    wp_localize_script( 'kwf-manage-courses-script', 'manage_courses_data', $manage_courses_data );
+    wp_localize_script( 'tprm-manage-courses-script', 'manage_courses_data', $manage_courses_data );
     
 }
 

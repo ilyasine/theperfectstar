@@ -61,7 +61,7 @@ function create_student() {
             'user_email' => $studentEmail,
             'first_name' => $studentFirstName,
             'last_name' => $studentLastName,
-            'role' => 'student' // Set default role, add 'student' role later
+            'role' => 'school_student' // Set default role, add 'school_student' role later
         );
 
         $student_id = wp_insert_user($userdata);
@@ -82,7 +82,7 @@ function create_student() {
             // Check if the user was added successfully
             if ($result) {
                 // Promote the user to group admin               
-                bp_set_member_type($student_id, 'student');	
+                bp_set_member_type($student_id, 'school_student');	
             } else {
                 wp_send_json_error('Failed to add student ID ' . $student_id . ' to group ID ' . $ClassroomId);
                 error_log("Failed to add student ID {$student_id} to group ID {$ClassroomId}");

@@ -46,7 +46,7 @@ function create_teacher() {
             'user_email' => $TeacherEmail,
             'first_name' => $TeacherFirstName,
             'last_name' => $TeacherLastName,
-            'role' => 'group_leader' // Set default role, add 'teacher' role later
+            'role' => 'group_leader' // Set default role, add 'school_staff' role later
         );
 
         $teacher_id = wp_insert_user($userdata);
@@ -62,9 +62,9 @@ function create_teacher() {
             return;
         }
 
-        // Assign 'teacher' role to the user
+        // Assign 'school_staff' role to the user
         $user = new WP_User($teacher_id);
-        $user->add_role('teacher');
+        $user->add_role('school_staff');
 
         # Assign Classrooms to the teacher only if there are
         if(!empty($ClassroomIds)){
@@ -96,7 +96,7 @@ function create_teacher() {
         // Update user meta
         update_user_meta($teacher_id, 'ecole', $school_id);
 
-        bp_set_member_type($teacher_id, 'teacher');	
+        bp_set_member_type($teacher_id, 'school_staff');	
 
         // Store credentials in students_credentials table
         $std_cred_tbl = $wpdb->prefix . "students_credentials";

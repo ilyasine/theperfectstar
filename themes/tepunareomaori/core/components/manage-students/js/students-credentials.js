@@ -327,7 +327,7 @@ jQuery(document).ready(function ($) {
         var selectedStudents = [];
 
         // Iterate through each checked checkbox within the .student_avatar elements
-        $('#members-list .student_avatar .kwf-checkbox input[type="checkbox"]:checked').each(function () {
+        $('#members-list .student_avatar .tprm-checkbox input[type="checkbox"]:checked').each(function () {
             // Find the closest li element and retrieve its data-bp-item-id attribute
             var studentId = $(this).closest('li').data('bp-item-id');
             // Push the student ID into the selectedStudents array
@@ -348,15 +348,15 @@ jQuery(document).ready(function ($) {
         var isChecked = $(this).is(':checked');
 
         // Check or uncheck all student checkboxes without triggering the change event
-        $('.student_avatar .kwf-checkbox input[type="checkbox"]').prop('checked', isChecked);
+        $('.student_avatar .tprm-checkbox input[type="checkbox"]').prop('checked', isChecked);
 
         // Optionally, add or remove a class based on the checkbox state
         $('.student_avatar').toggleClass('checked', isChecked);
     });
 
     // Handle individual checkbox changes
-    $('.student_avatar .kwf-checkbox input[type="checkbox"]').on('change', function () {
-        var allChecked = $('.student_avatar .kwf-checkbox input[type="checkbox"]').length === $('.student_avatar .kwf-checkbox input[type="checkbox"]:checked').length;
+    $('.student_avatar .tprm-checkbox input[type="checkbox"]').on('change', function () {
+        var allChecked = $('.student_avatar .tprm-checkbox input[type="checkbox"]').length === $('.student_avatar .tprm-checkbox input[type="checkbox"]:checked').length;
 
         // Sync header checkbox with all checkboxes
         $('#check-all-students').prop('checked', allChecked);
@@ -368,11 +368,11 @@ jQuery(document).ready(function ($) {
 
 function copyToClipboard() {
     // the text you want to copy
-    var username_th = document.querySelector('th.column-kwf-student-username').innerText;
-    var password_th = document.querySelector('th.column-kwf-student-password').innerText;
+    var username_th = document.querySelector('th.column-tprm-student-username').innerText;
+    var password_th = document.querySelector('th.column-tprm-student-password').innerText;
     // Select the text you want to copy
-    var username = document.querySelector('td.column-kwf-student-username').innerText;
-    var password = document.querySelector('td.column-kwf-student-password input#password-cell').value;
+    var username = document.querySelector('td.column-tprm-student-username').innerText;
+    var password = document.querySelector('td.column-tprm-student-password input#password-cell').value;
 
     // Combine username and password
     var credentials = username_th + ' : ' + username + '\n\n' + password_th + ' : ' + password;

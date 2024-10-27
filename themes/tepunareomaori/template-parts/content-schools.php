@@ -8,12 +8,12 @@
  */
 
 
-$schools = get_TPRM_schools();
+$schools = get_tprm_schools();
 $schools_count = count($schools);
 
 ?>
 
-<div id="tabs" class='kwf-schools-navigation'>
+<div id="tabs" class='tprm-schools-navigation'>
 	<ul class="component-navigation groups-nav">
 		<li>
 			<a href="#schools-tab">

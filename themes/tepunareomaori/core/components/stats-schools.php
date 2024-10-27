@@ -1,6 +1,6 @@
 <?php     
 
-$schools = get_TPRM_schools();
+$schools = get_tprm_schools();
 $schools_count = count($schools);
 
 $global_active_count = 0;
@@ -42,7 +42,7 @@ function TPRM_states(){
 	
 	if ($schools) { ?>
 
-		<div class="kwf-school-stats">
+		<div class="tprm-school-stats">
 
 			<table class="schools-accounts schools_stats" cellspacing="0">
 				<tbody>
@@ -161,7 +161,7 @@ function TPRM_states(){
 			</table>
 		</div>
 			<!-- Display total stats for all schools in an HTML table -->
-		<div class="kwf-global-schools-stats">
+		<div class="tprm-global-schools-stats">
 
 			<table class="schools-accounts schools_stats" cellspacing="0">
 				<tbody>
@@ -258,7 +258,7 @@ function schools_loop(){
                         <!-- ecole-group-main -->
                         <div class="ecole-group-main">
                             <div class="ecole-group-desc">
-                                <span class="bb-current-group-kwf-ecole"><?php _e('School group', 'tprm-theme') ?></span>
+                                <span class="bb-current-group-tprm-school"><?php _e('School group', 'tprm-theme') ?></span>
                             </div>
                             <div class="ecole-group-name">
                                 <a href="<?php echo esc_url($school_permalink); ?>" rel="noopener noreferrer">

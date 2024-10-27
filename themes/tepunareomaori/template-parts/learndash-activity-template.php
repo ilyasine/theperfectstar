@@ -196,7 +196,7 @@ $helper = buddyboss_theme()->learndash_helper();
                     $explore_link = bp_loggedin_user_domain() . bb_learndash_profile_courses_slug() . '/';
 
                     // link for directors and teachers == groupes
-                    if (is_teacher() || is_director() ) {
+                    if (is_teacher() || is_school_principal() ) {
                         $explore_text = __('Explore Classes', 'tprm-theme' );
                         $explore_link = bp_get_groups_directory_permalink();
                     }

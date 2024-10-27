@@ -22,11 +22,11 @@ function loading_login_script() {
       include TPRM_THEME_PATH . 'template-parts/preloader.php';
       $preloader = ob_get_clean();
       
-      wp_enqueue_style('kwf-nprogress-style', TPRM_CSS_PATH .'nprogress.css', '', TPRM_THEME_VERSION );
-      wp_enqueue_style('kwf-login-style', TPRM_CSS_PATH .'kwf-login.css' );
-      wp_enqueue_script('kwf-nprogress-script', TPRM_JS_PATH . 'nprogress.js', array('jquery' ), TPRM_THEME_VERSION, true );
-      wp_enqueue_script('loading-login-script', LC_JS_DIR . 'login-loader.js', array( 'kwf-nprogress-script','jquery' ), TPRM_THEME_VERSION, true );     
-      wp_enqueue_script('login-page-script', LC_JS_DIR . 'login-page.js', array( 'kwf-nprogress-script','jquery' ), TPRM_THEME_VERSION, true );
+      wp_enqueue_style('tprm-nprogress-style', TPRM_CSS_PATH .'nprogress.css', '', TPRM_THEME_VERSION );
+      wp_enqueue_style('tprm-login-style', TPRM_CSS_PATH .'tprm-login.css' );
+      wp_enqueue_script('tprm-nprogress-script', TPRM_JS_PATH . 'nprogress.js', array('jquery' ), TPRM_THEME_VERSION, true );
+      wp_enqueue_script('loading-login-script', LC_JS_DIR . 'login-loader.js', array( 'tprm-nprogress-script','jquery' ), TPRM_THEME_VERSION, true );     
+      wp_enqueue_script('login-page-script', LC_JS_DIR . 'login-page.js', array( 'tprm-nprogress-script','jquery' ), TPRM_THEME_VERSION, true );
       wp_add_inline_script('loading-login-script', 'var ajaxurl = ' . wp_json_encode($ajaxurl) . ';', 'before');
       wp_add_inline_script('login-page-script', 'var preloader = ' . wp_json_encode($preloader) . ';', 'before');
 
@@ -49,7 +49,7 @@ function loading_login_script() {
 // Enqueue picture password scripts and styles
 function picture_password_scripts() {
 	if( is_page('group-account-access') ){	
-      wp_enqueue_script('picture-password-script', LC_JS_DIR . 'picture-password.js', array( 'kwf-nprogress-script','jquery' ), TPRM_THEME_VERSION, true );
+      wp_enqueue_script('picture-password-script', LC_JS_DIR . 'picture-password.js', array( 'tprm-nprogress-script','jquery' ), TPRM_THEME_VERSION, true );
     	//wp_enqueue_style('picture-password-style', LC_CSS_DIR .'picture-password.css' );
 	}
 }

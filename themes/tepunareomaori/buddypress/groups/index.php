@@ -19,7 +19,7 @@
 	<?php endif; ?>
     
 	<div class="flex flex-wrap bp-secondary-header align-items-center">
-		<div class="push-left kwf-nav flex flex-wrap align-items-center">
+		<div class="push-left tprm-nav flex flex-wrap align-items-center">
             <div class="bp-group-filter-wrap flex subnav-filters filters no-ajax">
 				<?php bp_get_template_part( 'common/filters/group-filters' ); ?>
             </div>

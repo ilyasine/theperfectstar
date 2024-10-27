@@ -1,7 +1,7 @@
 
 <div class="manage-students-header">
 	<div class="student_avatar <?php echo $is_school ? 'school' : ''; ?>">
-		<div class="kwf-checkbox">
+		<div class="tprm-checkbox">
 			<div class="round">
 				<input type="checkbox" id="check-all-students" />
 				<label for="check-all-students"></label>

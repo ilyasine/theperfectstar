@@ -21,7 +21,7 @@
         return $first_word_part . $second_word_part;
     }
 
-    function create_school($school_name, $school_seats){
+    function create_school($school_name, $school_seats, $school_year, $fluentcrm_tag){
             // Create School
            global $wpdb;
 
@@ -30,6 +30,8 @@
 
             $school_slug = sanitize_title_with_dashes(esc_attr($school_name));
 
+            $description = sprintf(esc_attr__('Welcome to our Whakamānawatia te reo Māori programme for %s', 'tprm-theme'),$school_year);
+
             $school_creation_year = get_option('school_year');
 
             $school_search_args = array(
@@ -37,9 +39,10 @@
             );
 
             $args = array(
-                'name'     => $school_name,
-                'slug'     => groups_check_slug($school_slug),
-                'status'   => 'hidden',
+                'name'        => $school_name,
+                'description' => $description,
+                'slug'        => groups_check_slug($school_slug),
+                'status'      => 'hidden',
             );
 
             //$existing_school = groups_get_groups($school_search_args);
@@ -86,7 +89,7 @@
                         'meta_query' => array(
                             array(
                                 'key' => '_bp_group_type_key',
-                                'value' => 'kwf-ecole'
+                                'value' => 'tprm-school'
                                 /* 'key' => '_bp_group_type_label_singular_name',
                                 'value' => 'School group' */
                             )
@@ -108,19 +111,19 @@
                     $base_code = $school_trigram . $ld_school_id . $school_slug;
                     $school_code = substr(md5($base_code), 0, 10);
                     
-                    # set invite status
+                    # set invite status 
                     groups_update_groupmeta($new_school_id, 'invite_status', 'admins');
                     # generated school trigram
                     groups_update_groupmeta($new_school_id, 'school_trigram', $school_trigram);
+                    # fluentcrm_tag for school //TODO will be used if new user is created within the school
+                    groups_update_groupmeta($new_school_id, 'fluentcrm_tag', $fluentcrm_tag);
                     # generated school code
                     groups_update_groupmeta($new_school_id, 'school_code', $school_code);
                     # generated school seats
                     groups_update_groupmeta($new_school_id, 'school_seats', $school_seats);
                     # school year ( gotten from get_option('school_year'))
                     groups_update_groupmeta($new_school_id, 'school_creation_year', $school_creation_year);
-
-
-                    
+                  
                     //Now School is created
                     error_log(' school created : ' . $new_school_id);
 
@@ -135,9 +138,11 @@
                     $group_search_args = array(
                         'slug' => $classe_slug,
                     );
+
                     error_log('$classe_slug : ' . $classe_slug);
                     $args = array (
                         'name'          => $classroom_name,
+                        'description'   => $description,
                         'slug'          => groups_check_slug($classe_slug),
                         'status'        => 'hidden',
                     );

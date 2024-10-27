@@ -29,8 +29,8 @@ jQuery(document).ready(function ($) {
                         var school_id = $(this).data('school-id');
                         var title_content = $('.duplicate-structure-content-title_text');
                         var footer_content = $('.duplicate-structure-content-footer');
-                        var preloader = $('.kwf-preloader');
-                        var body_content = $('.duplicate-structure-content-body');                   
+                        var preloader = $('.tprm-preloader');
+                        var body_content = $('.duplicate-structure-content-body');
 
                         if (school_id) {
 
@@ -61,7 +61,7 @@ jQuery(document).ready(function ($) {
                                     $('#close_duplicate_structure').on('click', function (e) {
                                         $.magnificPopup.close();
 
-                                        setTimeout(() => {                                             
+                                        setTimeout(() => {
                                             bp.Nouveau.objectRequest({
                                                 object: 'groups',
                                                 scope: 'personal',
@@ -73,7 +73,7 @@ jQuery(document).ready(function ($) {
                                                 var count = response.data.scopes.all;
                                                 $('#subgroups-groups-li').find('span.count').text(count)
                                             });
-                                        $(document).trigger(
+                                            $(document).trigger(
                                                 'bb_trigger_toast_message',
                                                 [
                                                     '',
@@ -83,18 +83,18 @@ jQuery(document).ready(function ($) {
                                                     true,
                                                 ]
                                             );
-                                        }, 2000);     
-                                    })                                                         
-                                    
+                                        }, 2000);
+                                    })
+
                                 },
                                 error: function (result) {
                                     console.log(result);
                                     $(title_content).text(result);
-                                        $(body_content).find('.change_after_complete').text(result);
-                                        $(body_content).find('.hide_after_complete').hide();
-                                        $(body_content).show();
-                                        $(preloader).hide();
-                                        $('#close_duplicate_structure').show();
+                                    $(body_content).find('.change_after_complete').text(result);
+                                    $(body_content).find('.hide_after_complete').hide();
+                                    $(body_content).show();
+                                    $(preloader).hide();
+                                    $('#close_duplicate_structure').show();
                                     $(document).trigger(
                                         'bb_trigger_toast_message',
                                         [
@@ -129,7 +129,7 @@ jQuery(document).ready(function ($) {
             }
         });
     });
-   
+
 });
 
 

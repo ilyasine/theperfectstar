@@ -1,7 +1,7 @@
 @import "variables";
 @import "mixins";
 
-.kwf-schools-navigation {
+.tprm-schools-navigation {
     font-size: 14px;
     margin: 0;
     padding: 0;
@@ -90,8 +90,8 @@ table.schools_stats {
 
             }
 
-            &.column-kwf-student-username,
-            &.column-kwf-student-password {
+            &.column-tprm-student-username,
+            &.column-tprm-student-password {
                 min-width: 180px;
             }
         }
@@ -123,8 +123,8 @@ table.schools_stats {
                 }
             }
 
-            &.column-kwf-student-username,
-            &.column-kwf-student-password {
+            &.column-tprm-student-username,
+            &.column-tprm-student-password {
                 cursor: pointer;
             }
 
@@ -135,7 +135,7 @@ table.schools_stats {
             background-color: #ececec;
         }
 
-        td#kwf-active {
+        td#tprm-active {
             font-weight: bold;
             background-color: $tprm-primary-color;
             color: #ffffff;
@@ -308,7 +308,7 @@ table.schools_stats {
         &-desc {
             text-align: center;
 
-            span.bb-current-group-kwf-ecole {
+            span.bb-current-group-tprm-school {
                 background: $tprm-primary-button-background-regular;
                 color: $tprm-danger-color;
                 font-size: 11px;

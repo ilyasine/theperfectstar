@@ -290,11 +290,11 @@ jQuery(document).ready(function ($) {
 
 function copyToClipboard() {
     // the text you want to copy
-    var username_th = document.querySelector('th.column-kwf-student-username').innerText;
-    var password_th = document.querySelector('th.column-kwf-student-password').innerText;
+    var username_th = document.querySelector('th.column-tprm-student-username').innerText;
+    var password_th = document.querySelector('th.column-tprm-student-password').innerText;
     // Select the text you want to copy
-    var username = document.querySelector('td.column-kwf-student-username').innerText;
-    var password = document.querySelector('td.column-kwf-student-password input#password-cell').value;
+    var username = document.querySelector('td.column-tprm-student-username').innerText;
+    var password = document.querySelector('td.column-tprm-student-password input#password-cell').value;
 
     // Combine username and password
     var credentials = username_th + ' : ' + username + '\n\n' + password_th + ' : ' + password;

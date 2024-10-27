@@ -5,8 +5,8 @@ const driverObj = driver({
 });
 
 /* for both School Admin and Teacher */
-if ((document.body.className.match('role-school-admin') || document.body.className.match('role-director')) && document.body.className.match('role-teacher')) {
-    
+if ((document.body.className.match('role-school_leader') || document.body.className.match('role-school_principal')) && document.body.className.match('role-teacher')) {
+
     // In Classroom Page
     if (document.body.className.match('subgroups')) {
         const driverObj = driver({
@@ -28,7 +28,7 @@ if ((document.body.className.match('role-school-admin') || document.body.classNa
                 }
             ]
         });
-        
+
         driverObj.drive();
     }
 
@@ -74,7 +74,7 @@ if ((document.body.className.match('role-school-admin') || document.body.classNa
 }
 
 /* for School Admin only */
-if ((document.body.className.match('role-school-admin') || document.body.className.match('role-director')) && !document.body.className.match('role-teacher')) {
+if ((document.body.className.match('role-school_leader') || document.body.className.match('role-school_principal')) && !document.body.className.match('role-teacher')) {
     // In Classroom Page
     if (document.body.className.match('subgroups')) {
         driverObj.highlight({
@@ -108,7 +108,7 @@ if ((document.body.className.match('role-school-admin') || document.body.classNa
 }
 
 /* for Teacher only */
-if (document.body.className.match('role-teacher') && !(document.body.className.match('role-school-admin') || document.body.className.match('role-director'))) {
+if (document.body.className.match('role-teacher') && !(document.body.className.match('role-school_leader') || document.body.className.match('role-school_principal'))) {
     // In Classroom Page
     if (document.body.className.match('subgroups')) {
         driverObj.highlight({

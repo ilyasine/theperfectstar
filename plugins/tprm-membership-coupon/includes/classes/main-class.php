@@ -35,7 +35,7 @@ defined( 'ABSPATH' ) || exit;  // Exit if accessed directly
             add_filter('help_text_print', array( $this, 'TPRM_help_text_print_coupon'), 10 , 1);
             add_filter('woocommerce_add_to_cart_validation', array( $this, 'empty_cart_before_add_new_item') );               
             add_action('woocommerce_checkout_update_order_meta', array($this, 'save_school_details_to_order_meta'), 10, 2);         
-            add_action('woocommerce_admin_order_data_after_order_details', array($this, 'display_order_school_details_on_admin'));
+            //add_action('woocommerce_admin_order_data_after_order_details', array($this, 'display_order_school_details_on_admin'));
         }   
 
         /**
@@ -370,7 +370,7 @@ defined( 'ABSPATH' ) || exit;  // Exit if accessed directly
                 }
         
                 if ($couponObj->get_usage_count() >= $couponObj->get_usage_limit()) {
-                    wp_send_json_error(['msg' => __('You have used all the available seats. You can no longer activate student accounts. Please contact support@tepunareomaori.com to purchase more seats for your students.', 'TPRM_-membership-coupon')]);
+                    wp_send_json_error(['msg' => __('You have used all the available seats. You can no longer activate student accounts. Please contact kiaora@tepunareomaori.co.nz to purchase more seats for your students.', 'TPRM_-membership-coupon')]);
                 }
             }
         
@@ -523,7 +523,7 @@ defined( 'ABSPATH' ) || exit;  // Exit if accessed directly
          * 
          */
 
-        function  display_order_school_details_on_admin( $order ){  
+        function display_order_school_details_on_admin( $order ){  
 
             $email_class = TPRM_membership_email::get_instance();
 

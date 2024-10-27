@@ -40,7 +40,7 @@ $login_url = isset($login_url) ? $login_url : wp_login_url();
                                         <li><?php echo sprintf(__('Password: <span style="font-family: cursive; font-weight: bold;margin: 0 0 10px;">%s</span>', 'tprm-theme'), $TeacherPassword); ?></li>
                                         <li><?php echo sprintf(__('Link: <a href="%s" style="font-family: cursive; color: #2e9e9e;text-decoration: none;margin: 0 0 10px;">Click here to log in</a>', 'tprm-theme'), $login_url); ?></li>
                                     </ul>
-                                    <p><?php echo sprintf(__('We sincerely thank you for your trust and cooperation. If you have any additional questions or concerns, please do not hesitate to contact us or reach out to your school administrator at <span style="font-family: &quot;Helvetica Neue&quot;,Helvetica,Roboto,Arial,sans-serif;font-weight: bold;margin: 0 0 10px;">%s</span>.', 'tprm-theme'), $school_name); ?></p>
+                                    <p><?php echo sprintf(__('We sincerely thank you for your trust and cooperation. If you have any additional questions or concerns, please do not hesitate to contact us or reach out to your School Leader at <span style="font-family: &quot;Helvetica Neue&quot;,Helvetica,Roboto,Arial,sans-serif;font-weight: bold;margin: 0 0 10px;">%s</span>.', 'tprm-theme'), $school_name); ?></p>
                                     <p><?php echo __('Sincerely,', 'tprm-theme'); ?></p>
                                     <p><strong style="color: #1c5cb2; font-size: 20px;">tepunareomaori.com</strong></p>
                                 </td>
@@ -51,7 +51,7 @@ $login_url = isset($login_url) ? $login_url : wp_login_url();
                                     <div class="woo_email_footer">
                                         <p class="TPRM_footer_border" style="border-top: solid 0.5px #dee0e1; font-size: 1px; width: 100%; margin: 40px auto 15px auto !important;"></p>         
                                         <p class="TPRM_copyright_footer" style="font-family: system-ui,Segoe UI,sans-serif; font-size: 11px; line-height: 1.6; text-align: center; color: #939598;">
-                                            <?php echo __('This email was sent to you by ', 'kwf-membership-coupon'); ?>
+                                            <?php echo __('This email was sent to you by ', 'tprm-membership-coupon'); ?>
                                             <a href="<?php echo esc_url(home_url()); ?>" target="_blank" style="color: #2e9e9e !important" >tepunareomaori</a>
                                         </p>
                                         <div class="footer-bg" style="background-image: url('<?php echo esc_attr(TPRM_IMG_PATH) . 'koding-cool.png'; ?>'); background-position: center; background-repeat: no-repeat; background-size: contain; height: 30px;"></div>

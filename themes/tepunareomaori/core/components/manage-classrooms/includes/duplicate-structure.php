@@ -26,7 +26,7 @@ function duplicate_structure() {
             $classroom_level = groups_get_groupmeta($classroom_id, 'classroom_level');
             $classroom_teachers = get_classroom_teachers($classroom_id);
             $school_directors = get_school_directors($school_id);
-            $school_admins = get_school_admins($school_id);
+            $school_leaders = get_school_leaders($school_id);
             $school_slug = $school_object->slug;
             $classe_slug = sanitize_title_with_dashes($classroom_name);
             $classroom_slug = $classe_slug . '-' . $this_year . '-' . $school_slug;
@@ -205,19 +205,19 @@ function duplicate_structure() {
                     }
 
                     // Enroll school admins
-                    foreach ($school_admins as $school_admin) {
+                    foreach ($school_leaders as $school_leader) {
                         // Add the user to the group
-                        $result = groups_join_group($classroom_id, $school_admin);
+                        $result = groups_join_group($classroom_id, $school_leader);
 
                         // Check if the user was added successfully
                         if ($result) {
                            // Promote the user to group admin
-                           $member    = new BP_Groups_Member( $school_admin, $classroom_id);
+                           $member    = new BP_Groups_Member( $school_leader, $classroom_id);
                            $member->promote( 'admin' );
 
                         } else {
-                            wp_send_json_error('Failed to add director ID ' . $school_admin . ' to group ID ' . $classroom_id);
-                            error_log("Failed to add director ID {$school_admin} to group ID {$classroom_id}");
+                            wp_send_json_error('Failed to add director ID ' . $school_leader . ' to group ID ' . $classroom_id);
+                            error_log("Failed to add director ID {$school_leader} to group ID {$classroom_id}");
                             wp_die();
                         }
                     }

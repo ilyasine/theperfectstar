@@ -1,5 +1,5 @@
 
-<?php if( is_TPRM_manager() && bp_is_group()  && strpos($_SERVER['REQUEST_URI'], "teachers") !== false ): 
+<?php if( is_tprm_manager() && bp_is_group()  && strpos($_SERVER['REQUEST_URI'], "teachers") !== false ): 
   /* start .teachers-management */
   ?>
   <div class="teachers-management">
@@ -106,7 +106,7 @@
                 <h3 class="fs-subtitle"><?php _e('Assign Classroom(s) to the teacher:', 'tprm-theme') ?></h3>
             </div>
             <div class="fieldset-body">
-                  <div class="kwf-preloader" style="display: none;">
+                  <div class="tprm-preloader" style="display: none;">
                     <?php echo $preloader;  ?>
                   </div>
                   <div class="notice" style="display: none;">

@@ -111,7 +111,7 @@ function resources_learndash_content_tabs($tabs, $context, $course_id, $user_id)
 			'icon'      => 'bb-icon-airplay', 
 			'label'     => __('Slides', 'tprm-theme'),
 			'content'   => tab_content($post, 'slides'),
-			'condition' => is_ressource_enabled($post, 'slides') && ( is_teacher() || is_TPRM_admin() ), 
+			'condition' => is_ressource_enabled($post, 'slides') && ( is_teacher() || is_tprm_admin() ), 
 		);
 
 		// Add script tab
@@ -120,7 +120,7 @@ function resources_learndash_content_tabs($tabs, $context, $course_id, $user_id)
 			'icon'      => 'bb-icon-article', 
 			'label'     => __('Script', 'tprm-theme'),
 			'content'   => tab_content($post, 'script'),
-			'condition' => is_ressource_enabled($post, 'script') && ( is_teacher() || is_TPRM_admin() ), 
+			'condition' => is_ressource_enabled($post, 'script') && ( is_teacher() || is_tprm_admin() ), 
 		);
 
 		// Add video tab
@@ -129,7 +129,7 @@ function resources_learndash_content_tabs($tabs, $context, $course_id, $user_id)
 			'icon'      => 'bb-icon-brand-youtube', 
 			'label'     => __('Video', 'tprm-theme'),
 			'content'   => tab_content($post, 'video'),
-			'condition' => is_ressource_enabled($post, 'video') && ( is_teacher() || is_TPRM_admin() ), 
+			'condition' => is_ressource_enabled($post, 'video') && ( is_teacher() || is_tprm_admin() ), 
 		);
 
 		// Add resources tab
@@ -138,7 +138,7 @@ function resources_learndash_content_tabs($tabs, $context, $course_id, $user_id)
 			'icon'      => 'bb-icon-file-bookmark', 
 			'label'     => __('Resources', 'tprm-theme'),
 			'content'   => tab_content($post, 'resources'),
-			'condition' => is_ressource_enabled($post, 'resources') && ( is_teacher() || is_TPRM_admin() ), 
+			'condition' => is_ressource_enabled($post, 'resources') && ( is_teacher() || is_tprm_admin() ), 
 		);
 
 		// Add quiz tab
@@ -147,10 +147,10 @@ function resources_learndash_content_tabs($tabs, $context, $course_id, $user_id)
 			'icon'      => 'bb-icon-quiz', 
 			'label'     => __('Quiz', 'tprm-theme'),
 			'content'   => tab_content($post, 'quiz'),
-			'condition' => is_ressource_enabled($post, 'quiz') && ( is_teacher() || is_TPRM_admin() ), 
+			'condition' => is_ressource_enabled($post, 'quiz') && ( is_teacher() || is_tprm_admin() ), 
 		);
 
-		$is_teacher_or_admin = is_teacher() || is_TPRM_admin();
+		$is_teacher_or_admin = is_teacher() || is_tprm_admin();
 
 		// If the user is not a teacher or admin, remove the 'materials' tab
 		if (!$is_teacher_or_admin) {

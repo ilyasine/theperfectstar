@@ -23,7 +23,7 @@ if ( bp_has_profile() ) :
 					<h1 class="entry-title bb-profile-title"><?php bp_the_profile_group_name(); ?></h1>
 
 					<?php
-					if ( bp_is_my_profile() && is_TPRM_admin() ) {
+					if ( bp_is_my_profile() && is_tprm_admin() ) {
 						?>
 						<a href="<?php echo esc_url( $edit_profile_link . bp_get_the_profile_group_id() ); ?>" class="push-right button outline small"><?php esc_attr_e( 'Edit', 'buddyboss-theme' ); ?></a>
 						<?php

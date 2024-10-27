@@ -44,29 +44,29 @@ jQuery(document).ready(function ($) {
     }
 
     /* Manage Teacher Classrooms on Create Teacher page */
-   /*  $('fieldset#classrooms_setup').find('.toggle-classroom-teacher').on('click', function () {
-        var $this = $(this);
-    
-        $this.toggleClass('active');
-        $this.closest('tr.classroom').toggleClass('selected');
-    
-        if ($this.hasClass('active')) {
-            $this.attr('data-bp-tooltip', MTE_data.remove_classroom);
-            $this.find('.bp-screen-reader-text').text(MTE_data.remove_classroom);
-        } else {
-            $this.attr('data-bp-tooltip', MTE_data.assign_classroom);
-            $this.find('.bp-screen-reader-text').text(MTE_data.assign_classroom);
-        }
-    
-        $('#confirm-classroom-selection').fadeIn();
-    }); */
+    /*  $('fieldset#classrooms_setup').find('.toggle-classroom-teacher').on('click', function () {
+         var $this = $(this);
+     
+         $this.toggleClass('active');
+         $this.closest('tr.classroom').toggleClass('selected');
+     
+         if ($this.hasClass('active')) {
+             $this.attr('data-bp-tooltip', MTE_data.remove_classroom);
+             $this.find('.bp-screen-reader-text').text(MTE_data.remove_classroom);
+         } else {
+             $this.attr('data-bp-tooltip', MTE_data.assign_classroom);
+             $this.find('.bp-screen-reader-text').text(MTE_data.assign_classroom);
+         }
+     
+         $('#confirm-classroom-selection').fadeIn();
+     }); */
 
     $(document).on('click mouseenter mouseleave', '.toggle-classroom-teacher', function (event) {
         var $btn = $(this);
         var $tr = $btn.closest('tr.classroom');
         var $prevTr = $tr.prev('tr.classroom');
         var isActive = $btn.hasClass('active'); // Determine if it should be active after the click
-    
+
         if (event.type === 'click') {
             // Toggle active state after the click
             var willBeActive = !isActive;
@@ -102,12 +102,12 @@ jQuery(document).ready(function ($) {
             }
         }
     });
-    
+
     // Add the event listener for the "Select All" button
     $('th.classroom_action .toggle-classroom-teacher-all').on('click', function () {
         var $this = $(this);
-        var allSelected = $('fieldset#classrooms_setup').find('.toggle-classroom-teacher').length  === $('fieldset#classrooms_setup').find('.toggle-classroom-teacher.active').length;
-       // console.log( ' all' ,  $('fieldset#classrooms_setup').find('.toggle-classroom-teacher').length );
+        var allSelected = $('fieldset#classrooms_setup').find('.toggle-classroom-teacher').length === $('fieldset#classrooms_setup').find('.toggle-classroom-teacher.active').length;
+        // console.log( ' all' ,  $('fieldset#classrooms_setup').find('.toggle-classroom-teacher').length );
         //console.log( ' active only' , $('fieldset#classrooms_setup').find('.toggle-classroom-teacher.active').length);
         $('fieldset#classrooms_setup').find('.toggle-classroom-teacher').each(function () {
             var $btn = $(this);
@@ -125,7 +125,7 @@ jQuery(document).ready(function ($) {
                 $btn.find('.bp-screen-reader-text').text(MTE_data.remove_all_classrooms);
             }
         });
-    
+
         // Toggle the state of the "Select All" button itself
         if (!allSelected) {
             $this.removeClass('active');
@@ -136,11 +136,11 @@ jQuery(document).ready(function ($) {
             $this.attr('data-bp-tooltip', MTE_data.remove_classroom_all);
             $this.find('.bp-screen-reader-text').text(MTE_data.remove_classroom_all);
         }
-    
+
         $table.find('#confirm-classroom-selection').fadeIn();
     });
-    
-    
+
+
     $('#confirm-classroom-selection').on('click', function () {
         ClassroomIds = [];
 
@@ -277,11 +277,11 @@ jQuery(document).ready(function ($) {
                 validatePasswordStrength(newPassword);
             });
 
-            $('#teacher_password').on('input', function() {
+            $('#teacher_password').on('input', function () {
                 var password = $(this).val();
                 validatePasswordStrength(password);
             });
-        
+
             function randomPassword(length) {
                 var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
                 var password = "";
@@ -291,18 +291,18 @@ jQuery(document).ready(function ($) {
                 }
                 return password;
             }
-        
+
             function validatePasswordStrength(password) {
                 var strength = getPasswordStrength(password);
                 var $passwordStrength = $('#password_strength');
-                
+
                 if (strength >= 4) {
                     $passwordStrength.text(MTE_data.strong_teacher_password).css('color', 'green');
                 } else {
                     $passwordStrength.text(MTE_data.weak_teacher_password).css('color', 'red');
                 }
             }
-        
+
             function getPasswordStrength(password) {
                 var strength = 0;
                 if (password.length >= 8) strength++;
@@ -312,26 +312,26 @@ jQuery(document).ready(function ($) {
                 if (password.match(/[^a-zA-Z0-9]/)) strength++;
                 return strength;
             }
-        
-            $('#teacher_form').on('submit', function(event) {
+
+            $('#teacher_form').on('submit', function (event) {
                 var password = $('#TeacherPassword').val();
                 var strength = getPasswordStrength(password);
-        
+
                 if (strength < 4) {
                     event.preventDefault();
                     alert('Please generate a stronger password.');
                 }
             });
-            
-            
-            
+
+
+
         }
 
         // teacher credentials
         if (current_fs.attr('id') === 'teacher_credentials') {
-            var teacherCredentials = $(this).closest('fieldset#teacher_credentials');      
+            var teacherCredentials = $(this).closest('fieldset#teacher_credentials');
             TeacherEmail = $(teacherCredentials).find('#teacher_email').val();
-            TeacherPassword = $(teacherCredentials).find('#teacher_password').val();            
+            TeacherPassword = $(teacherCredentials).find('#teacher_password').val();
         }
 
         animating = true;
@@ -512,7 +512,7 @@ jQuery(document).ready(function ($) {
             fieldset_notice = fieldset_body.find('.notice')
 
             //Creating
-            $('.kwf-preloader').fadeIn();
+            $('.tprm-preloader').fadeIn();
             current_fs.find('.classrooms-list').hide();
             $('.no-classrooms-list').hide();
             fieldset_footer.find('#submit-create-teacher').hide();
@@ -540,7 +540,7 @@ jQuery(document).ready(function ($) {
                 dataType: 'json',
                 success: function (result, textstatus) {
                     if (result) {
-                        $('.kwf-preloader').hide();
+                        $('.tprm-preloader').hide();
                         // Created
                         NProgress.done();
 
@@ -634,17 +634,17 @@ jQuery(document).ready(function ($) {
                                 current_fs.find('.new_teacher_link').fadeOut();
                                 $("#create-new-teacher").hide();
 
-                               /*  bp.Nouveau.objectRequest({
-                                    object: 'groups',
-                                    scope: 'personal',
-                                    filter: 'active',
-                                    page: 1,
-                                    extras: false,
-                                    //group_year: selectedYear
-                                }).done(function (response) {
-                                    var count = response.data.scopes.all;
-                                    $('#subgroups-groups-li').find('span.count').text(count)
-                                }); */
+                                /*  bp.Nouveau.objectRequest({
+                                     object: 'groups',
+                                     scope: 'personal',
+                                     filter: 'active',
+                                     page: 1,
+                                     extras: false,
+                                     //group_year: selectedYear
+                                 }).done(function (response) {
+                                     var count = response.data.scopes.all;
+                                     $('#subgroups-groups-li').find('span.count').text(count)
+                                 }); */
                                 setTimeout(() => {
                                     window.location.reload();
                                 }, 2000);
@@ -658,7 +658,7 @@ jQuery(document).ready(function ($) {
                     console.log(result);
                     console.log('fail');
 
-                    $('.kwf-preloader').hide();
+                    $('.tprm-preloader').hide();
                     NProgress.done();
 
                     title.addClass('error').text(MTE_data.error_creating_classrrom);

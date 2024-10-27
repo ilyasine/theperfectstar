@@ -8,7 +8,7 @@
             <button type="submit" class="student_search"><?php esc_html_e( 'Search', 'tprm-theme' ); ?></button>
         </form>
 
-        <?php if(is_TPRM_manager() && 0) : //TODO After prod ?>
+        <?php if(is_tprm_manager() && 0) : //TODO After prod ?>
         <div class="bulk-actions">      
             <!-- Bulk Actions Dropdown -->
             <div class="select-wrap">

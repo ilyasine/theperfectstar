@@ -21,7 +21,7 @@ $this_classroom_year = groups_get_groupmeta($classrooom_id,'ecole_year');
 //if( !empty($students) ) { //there is at least a student
     ?>
     <div class="outer-students-container">
-        <div class="kwf-preloader-assign" style="display: none;">
+        <div class="tprm-preloader-assign" style="display: none;">
             <?php echo $preloader; ?>
         </div>
         <div class="students-container">
@@ -67,7 +67,7 @@ $this_classroom_year = groups_get_groupmeta($classrooom_id,'ecole_year');
             </div>
             
             <ul class="students-list">
-                <li class="kwf-preloader" style="display: none;">
+                <li class="tprm-preloader" style="display: none;">
                     <?php echo $preloader; ?>
                 </li>
                 <li class="nostudent"><?php _e(sprintf('Please select a classroom to assign students from or create new student(s) from <a target="_blank" href="%s">here</a>.', $students_tab), 'tprm-theme'); ?></li>

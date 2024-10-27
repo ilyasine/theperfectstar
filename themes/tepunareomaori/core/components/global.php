@@ -43,7 +43,7 @@ function TPRM_body_class($classes) {
 	// show only for plateform pages
 	if( ! TPRM_is_public() ) {
 
-        $button_markup = '<button id="kwf-refresh"';
+        $button_markup = '<button id="tprm-refresh"';
 
         if (is_user_logged_in()) {
             // Add attributes if user is logged in
@@ -100,12 +100,12 @@ function TPRM_body_class($classes) {
         // HTML template
         $html_template = '
         <a class="TPRM_refresh popup-modal-login popup-refresh" style="display:none;" href="%s">%s</a>
-        <div id="TPRM_refresh" class="mfp-hide kwf-refresh-popup login-popup bb-modal">
+        <div id="TPRM_refresh" class="mfp-hide tprm-refresh-popup login-popup bb-modal">
             <div class="header-container">
                 <span class="bb-icon-l bb-icon-exclamation-triangle"></span>
                 <h1 class="TPRM_troubleshooting">%s</h1>
             </div>
-            <div class="kwf-refresh-popup-content">
+            <div class="tprm-refresh-popup-content">
                 <div class="popup-scroll">                  
                     <p>%s</p>
                     <p>%s</p>
@@ -213,7 +213,7 @@ function TPRM_body_class($classes) {
  * @return array 
  */
 
-function get_TPRM_schools() {
+function get_tprm_schools() {
     global $wpdb;
     $schools_sql = "
         SELECT g.*
@@ -221,7 +221,7 @@ function get_TPRM_schools() {
         INNER JOIN {$wpdb->prefix}term_relationships tr ON g.id = tr.object_id
         INNER JOIN {$wpdb->prefix}term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
         INNER JOIN {$wpdb->prefix}terms t ON tt.term_id = t.term_id
-        WHERE tt.taxonomy = 'bp_group_type' AND t.slug = 'kwf-ecole'
+        WHERE tt.taxonomy = 'bp_group_type' AND t.slug = 'tprm-school'
         AND NOT EXISTS (
             SELECT 1
             FROM {$wpdb->prefix}bp_groups_groupmeta gm

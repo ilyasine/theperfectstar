@@ -16,7 +16,7 @@ function setup_teachers_group_nav(){
         $group_link = $bp->root_domain . '/' . bp_get_groups_root_slug() . '/' . $bp->groups->current_group->slug . '/';
         $user_access = $bp->groups->current_group->user_has_access;
 	
-		if ( is_TPRM_manager() ) {
+		if ( is_tprm_manager() ) {
 			bp_core_new_subnav_item( array( 
 				'name' =>  __( 'Teachers', 'tprm-theme' ),
 				'slug' => 'teachers',
@@ -108,8 +108,8 @@ function teachers_count_int($count, $nav_item, $displayed_nav) {
             $user_id = $member->ID;
             $user = get_userdata($user_id);
             
-            // Check if user roles include 'teacher' role
-            if ($user && in_array('teacher', $user->roles)) {
+            // Check if user roles include 'school_staff' role
+            if ($user && in_array('school_staff', $user->roles)) {
                 $teacher_count++;
             }
         }
@@ -126,8 +126,8 @@ function teachers_count_int($count, $nav_item, $displayed_nav) {
                 $user_id = $member->ID;
                 $user = get_userdata($user_id);
                 
-                // Check if user roles include 'teacher' role
-                if ($user && in_array('teacher', $user->roles)) {
+                // Check if user roles include 'school_staff' role
+                if ($user && in_array('school_staff', $user->roles)) {
                     $teacher_count++;
                 }
             }

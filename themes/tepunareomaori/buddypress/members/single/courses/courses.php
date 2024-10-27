@@ -69,7 +69,7 @@ $user_groups = learndash_get_users_group_ids($user_id);
 $allgroups = count($user_groups);
 
 
-if (is_TPRM_admin()) {
+if (is_tprm_admin()) {
 	$user_courses = apply_filters('bp_learndash_user_courses', ld_get_mycourses($user_id, $atts));
 } else {
 	$user_courses = learndash_get_group_courses_list(this_year_group());

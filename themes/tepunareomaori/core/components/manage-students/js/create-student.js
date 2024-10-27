@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
     var selectedPicture = '';
     var classroom_selection_confirmed = false;
     var picture_selection_confirmed = false;
-    
+
 
     // Function to handle tab switching
     function switchTab(activeButton, showDiv) {
@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
 
     //curriculum level select
     $("#password_type").select2();
-    $('#password_type').one('select2:open', function(e) {
+    $('#password_type').one('select2:open', function (e) {
         $('input.select2-search__field').prop('placeholder', MST_data.choose_password_type);
     });
 
@@ -62,10 +62,10 @@ jQuery(document).ready(function ($) {
     /* Manage student Classrooms on Create student page */
     $('fieldset#classrooms_setup').find('.toggle-classroom-student').on('click', function () {
         var $this = $(this);
-    
+
         $this.toggleClass('active');
         $this.closest('tr.classroom').toggleClass('selected');
-    
+
         if ($this.hasClass('active')) {
             $this.attr('data-bp-tooltip', MST_data.remove_classroom);
             $this.find('.bp-screen-reader-text').text(MST_data.remove_classroom);
@@ -73,21 +73,21 @@ jQuery(document).ready(function ($) {
             $this.attr('data-bp-tooltip', MST_data.assign_classroom);
             $this.find('.bp-screen-reader-text').text(MST_data.assign_classroom);
         }
-    
+
         $('#confirm-classroom-selection').fadeIn();
     });
-    
+
 
     $(document).on('click', '.toggle-classroom-student', function () {
         var $btn = $(this);
         var $checkbox = $btn.find('input.cb-value');
         var $parentRow = $btn.closest('tr.classroom');
         var isActive = $btn.hasClass('active');
-    
+
         // Deselect all other classrooms
         $('.toggle-classroom-student.active').removeClass('active').find('input.cb-value').prop('checked', false);
         $('tr.classroom.selected').removeClass('selected');
-    
+
         // Select the clicked classroom if it was not already active
         if (!isActive) {
             $btn.addClass('active');
@@ -96,16 +96,16 @@ jQuery(document).ready(function ($) {
         } else {
             $parentRow.removeClass('selected');
         }
-    
+
         // Show or hide the confirm button based on selection
         var anySelected = $('.toggle-classroom-student.active').length > 0;
         $('#confirm-classroom-selection').toggle(anySelected);
     });
-   
-    
+
+
     $('#confirm-classroom-selection').on('click', function () {
         selectedClassroomId = $('tr.classroom.selected').attr('id');
-    
+
         if (!selectedClassroomId) {
             $(document).trigger(
                 'bb_trigger_toast_message',
@@ -129,11 +129,11 @@ jQuery(document).ready(function ($) {
                     true,
                 ]
             );
-    
+
         }
     });
-    
-    
+
+
     $('#confirm-picture-password').on('click', function () {
         if (selectedPicture === '') {
             $(document).trigger(
@@ -159,11 +159,11 @@ jQuery(document).ready(function ($) {
                 ]
             );
         }
-    
+
         checkNextButtonState();
     });
 
-    $('fieldset#student_credentials').find('#student_password').on('change', function() {
+    $('fieldset#student_credentials').find('#student_password').on('change', function () {
         checkNextButtonState();
     });
 
@@ -241,10 +241,10 @@ jQuery(document).ready(function ($) {
 
     }
 
-    $('.picture-password .images-grid .picture-container img').on('click', function() {
+    $('.picture-password .images-grid .picture-container img').on('click', function () {
         var $container = $(this).closest('.picture-container');
         var imageUrl = $(this).attr('src');
-    
+
         if ($container.hasClass('selected')) {
             $container.removeClass('selected');
             selectedPicture = '';
@@ -257,8 +257,8 @@ jQuery(document).ready(function ($) {
             $('#confirm-picture-password').fadeIn();
         }
 
-         //console.log('selectedPicture : ', selectedPicture); // Log the selected picture URL (if any)
-    
+        //console.log('selectedPicture : ', selectedPicture); // Log the selected picture URL (if any)
+
         checkNextButtonState();
     });
 
@@ -311,7 +311,7 @@ jQuery(document).ready(function ($) {
             $('.text-password').fadeIn();
             $('.picture-password').hide();
             $('#confirm-picture-password').hide();
-            selectedPicture = '';          
+            selectedPicture = '';
 
         } else if (selectedType === 'picture') {
             $('.text-password').hide();
@@ -324,8 +324,8 @@ jQuery(document).ready(function ($) {
             $('.text-password').fadeOut();
             $('.picture-password').fadeOut();
             $('#confirm-picture-password').hide();
-            selectedPicture = '';         
-        }     
+            selectedPicture = '';
+        }
         selectedPasswordMode = selectedType;
         checkNextButtonState();
     })
@@ -333,8 +333,8 @@ jQuery(document).ready(function ($) {
     function checkSelectedPicture() {
         var $nextButton = $('fieldset#student_credentials').find('input.next');
         var selectedType = $('#password_type').val();
-        var $textPasswordInput =  $('fieldset#student_credentials').find('#student_password');
-        
+        var $textPasswordInput = $('fieldset#student_credentials').find('#student_password');
+
         if (selectedType === 'picture' && selectedPicture == '') {
             $nextButton.addClass('disabled');
             $('#confirm-picture-password').hide();
@@ -348,7 +348,7 @@ jQuery(document).ready(function ($) {
             $('#confirm-picture-password').hide();
         }
         else {
-          $nextButton.removeClass('disabled');
+            $nextButton.removeClass('disabled');
         }
     }
 
@@ -356,7 +356,7 @@ jQuery(document).ready(function ($) {
         var selectedType = $('#password_type').val();
         var $textPasswordInput = $('fieldset#student_credentials').find('#student_password');
         var $nextButton = $('fieldset#student_credentials').find('input.next');
-    
+
         if (selectedType === 'text') {
             // If the selected type is text, check if the password input is filled
             if ($textPasswordInput.val() === '') {
@@ -399,10 +399,10 @@ jQuery(document).ready(function ($) {
 
             $('fieldset#student_credentials').on('click', '#generate_student_password', function () {
                 var newPassword = randomStudentPassword();
-            
+
                 // Ensure studentPassword is correctly referencing the password input field
                 var studentPassword = $('#student_password');
-                
+
                 // Check if studentPassword is a valid jQuery object and has length > 0
                 if (studentPassword.length > 0) {
                     studentPassword.val(newPassword).trigger('input');
@@ -410,26 +410,26 @@ jQuery(document).ready(function ($) {
                 } else {
                     console.error("Password input field not found.");
                 }
-            });            
+            });
 
-            $('#student_password').on('input change', function() {
+            $('#student_password').on('input change', function () {
                 var password = $(this).val();
                 validatePasswordStrength(password);
             });
-            
+
             function randomStudentPassword() {
                 var prefix = "ks";
                 var numbers = "0123456789";
                 var randomDigits = "";
-            
+
                 for (var i = 0; i < 4; i++) {
                     var randomIndex = Math.floor(Math.random() * numbers.length);
                     randomDigits += numbers[randomIndex];
                 }
-            
+
                 return prefix + randomDigits;
             }
-            
+
             function validatePasswordStrength(password) {
                 var strength = getPasswordStrength(password);
                 var $passwordStrength = $('#password_strength');
@@ -446,7 +446,7 @@ jQuery(document).ready(function ($) {
                     $passwordStrength.text(MST_data.weak_student_password).css('color', 'red');
                 }
             }
-            
+
             function getPasswordStrength(password) {
                 var strength = 0;
                 if (password.length >= 8) strength++;
@@ -456,35 +456,35 @@ jQuery(document).ready(function ($) {
                 if (password.match(/[^a-zA-Z0-9]/)) strength++;
                 return strength;
             }
-            
+
             function validatePasswordFormat(password) {
                 // Regex to check the format: 'ks' followed by 4 or more digits
                 var regex = /^ks\d{4,}$/;
                 return regex.test(password);
             }
-                           
-            $('#student_form').on('submit', function(event) {
+
+            $('#student_form').on('submit', function (event) {
                 var password = $('#student_password').val();
                 var strength = getPasswordStrength(password);
                 var isValidFormat = validatePasswordFormat(password);
-            
+
                 if (strength < 4 || !isValidFormat) {
                     event.preventDefault();
                     alert('Please enter a valid and strong password. It should start with "ks" followed by 4 digits and meet strength criteria.');
                 }
             });
-            
-     
+
+
         }
 
         checkSelectedPicture();
 
         // student credentials
         if (current_fs.attr('id') === 'student_credentials') {
-            var studentCredentials = $(this).closest('fieldset#student_credentials');      
+            var studentCredentials = $(this).closest('fieldset#student_credentials');
             studentEmail = $(studentCredentials).find('#student_email').val();
-            studentPassword = $(studentCredentials).find('#student_password').val();            
-            checkSelectedPicture();  
+            studentPassword = $(studentCredentials).find('#student_password').val();
+            checkSelectedPicture();
 
             if (selectedPasswordMode === 'text') {
                 selectedPasswordValue = $('#student_password').val();
@@ -581,82 +581,82 @@ jQuery(document).ready(function ($) {
         if (current_fs.attr('id') === 'classrooms_setup') {
             e.preventDefault();
 
-        // Check for student first name
-        if (!studentFirstName) {
-            $(document).trigger(
-                'bb_trigger_toast_message',
-                [
-                    '',
-                    '<div>' + MST_data.missing_student_first_name + '</div>',
-                    'error',
-                    null,
-                    true,
-                ]
-            );
-            return; // Stop further execution if studentFirstName is missing
-        }
-
-        // Check for student last name
-        if (!studentLastName) {
-            $(document).trigger(
-                'bb_trigger_toast_message',
-                [
-                    '',
-                    '<div>' + MST_data.missing_student_last_name + '</div>',
-                    'error',
-                    null,
-                    true,
-                ]
-            );
-            return; // Stop further execution if studentLastName is missing
-        }
-
-        // Check for student password based on the selected password mode
-        if (selectedPasswordMode === 'text') {
-            if (!selectedPasswordValue) {
+            // Check for student first name
+            if (!studentFirstName) {
                 $(document).trigger(
                     'bb_trigger_toast_message',
                     [
                         '',
-                        '<div>' + MST_data.missing_student_password + '</div>',
+                        '<div>' + MST_data.missing_student_first_name + '</div>',
                         'error',
                         null,
                         true,
                     ]
                 );
-                return; // Stop further execution if password is missing
+                return; // Stop further execution if studentFirstName is missing
             }
-        } else if (selectedPasswordMode === 'picture') {
-            // Check for unconfirmed picture password selection
-            if ($('.picture-password .images-grid .picture-container.selected').length === 0 || !picture_selection_confirmed) {
+
+            // Check for student last name
+            if (!studentLastName) {
                 $(document).trigger(
                     'bb_trigger_toast_message',
                     [
                         '',
-                        '<div>unconfirmed picture selection</div>',
+                        '<div>' + MST_data.missing_student_last_name + '</div>',
                         'error',
                         null,
                         true,
                     ]
                 );
-                return; // Stop further execution if picture password is not confirmed
+                return; // Stop further execution if studentLastName is missing
             }
-        }
 
-        // Check for selected classroom
-        if (!selectedClassroomId || !classroom_selection_confirmed) {
-            $(document).trigger(
-                'bb_trigger_toast_message',
-                [
-                    '',
-                    '<div>' + MST_data.no_classroom_selected + '</div>',
-                    'error',
-                    null,
-                    true,
-                ]
-            );
-            return; // Stop further execution if no classroom is selected or confirmed
-        }
+            // Check for student password based on the selected password mode
+            if (selectedPasswordMode === 'text') {
+                if (!selectedPasswordValue) {
+                    $(document).trigger(
+                        'bb_trigger_toast_message',
+                        [
+                            '',
+                            '<div>' + MST_data.missing_student_password + '</div>',
+                            'error',
+                            null,
+                            true,
+                        ]
+                    );
+                    return; // Stop further execution if password is missing
+                }
+            } else if (selectedPasswordMode === 'picture') {
+                // Check for unconfirmed picture password selection
+                if ($('.picture-password .images-grid .picture-container.selected').length === 0 || !picture_selection_confirmed) {
+                    $(document).trigger(
+                        'bb_trigger_toast_message',
+                        [
+                            '',
+                            '<div>unconfirmed picture selection</div>',
+                            'error',
+                            null,
+                            true,
+                        ]
+                    );
+                    return; // Stop further execution if picture password is not confirmed
+                }
+            }
+
+            // Check for selected classroom
+            if (!selectedClassroomId || !classroom_selection_confirmed) {
+                $(document).trigger(
+                    'bb_trigger_toast_message',
+                    [
+                        '',
+                        '<div>' + MST_data.no_classroom_selected + '</div>',
+                        'error',
+                        null,
+                        true,
+                    ]
+                );
+                return; // Stop further execution if no classroom is selected or confirmed
+            }
 
             // if everything is fine, we can start creating our student
 
@@ -675,7 +675,7 @@ jQuery(document).ready(function ($) {
             fieldset_notice = fieldset_body.find('.notice')
 
             //Creating
-            $('.kwf-preloader').fadeIn();
+            $('.tprm-preloader').fadeIn();
             current_fs.find('.classrooms-list').hide();
             $('.no-classrooms-list').hide();
             fieldset_footer.find('#submit-create-student').hide();
@@ -703,7 +703,7 @@ jQuery(document).ready(function ($) {
                 dataType: 'json',
                 success: function (result, textstatus) {
                     if (result) {
-                        $('.kwf-preloader').hide();
+                        $('.tprm-preloader').hide();
                         // Created
                         NProgress.done();
 
@@ -797,17 +797,17 @@ jQuery(document).ready(function ($) {
                                 current_fs.find('.new_student_link').fadeOut();
                                 $("#create-new-student").hide();
 
-                               /*  bp.Nouveau.objectRequest({
-                                    object: 'groups',
-                                    scope: 'personal',
-                                    filter: 'active',
-                                    page: 1,
-                                    extras: false,
-                                    //group_year: selectedYear
-                                }).done(function (response) {
-                                    var count = response.data.scopes.all;
-                                    $('#subgroups-groups-li').find('span.count').text(count)
-                                }); */
+                                /*  bp.Nouveau.objectRequest({
+                                     object: 'groups',
+                                     scope: 'personal',
+                                     filter: 'active',
+                                     page: 1,
+                                     extras: false,
+                                     //group_year: selectedYear
+                                 }).done(function (response) {
+                                     var count = response.data.scopes.all;
+                                     $('#subgroups-groups-li').find('span.count').text(count)
+                                 }); */
                                 setTimeout(() => {
                                     window.location.reload();
                                 }, 2000);
@@ -821,7 +821,7 @@ jQuery(document).ready(function ($) {
                     console.log(result);
                     console.log('fail');
 
-                    $('.kwf-preloader').hide();
+                    $('.tprm-preloader').hide();
                     NProgress.done();
 
                     title.addClass('error').text(MST_data.error_creating_classrrom);

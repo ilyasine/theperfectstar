@@ -77,12 +77,12 @@ add_action('wp_ajax_nopriv_std_cred_generate_pdf_file', 'generate_students_crede
 
 			if (is_active_student($id)) {
 				$account_status = __('Active', 'tprm-theme');
-				$text_status = 'kwf-active';
+				$text_status = 'tprm-active';
 				$status_color = '#ffffff';
 				$status_bg_color = '#2e9e9e';
 			} else {
 				$account_status = __('Inactive', 'tprm-theme');
-				$text_status = 'kwf-inactive';
+				$text_status = 'tprm-inactive';
 				$status_color = '#000000';
 				$status_bg_color = '';
 			}
@@ -92,7 +92,7 @@ add_action('wp_ajax_nopriv_std_cred_generate_pdf_file', 'generate_students_crede
 			$std_emails[] = $email;
 			$std_usernames[] = $username;
 			$std_passwords[] = $stdcred;
-			$std_classroms[] = ($group_type == 'kwf-ecole') ? $classe : bp_get_current_group_name();
+			$std_classroms[] = ($group_type == 'tprm-school') ? $classe : bp_get_current_group_name();
 			$std_status[] = $account_status;
 			$status_colors[] = $status_color;
 			$status_bg_colors[] = $status_bg_color;
@@ -165,7 +165,7 @@ add_action('wp_ajax_nopriv_std_cred_generate_pdf_file', 'generate_students_crede
 			$lastModifiedBy = $author;
 
 			$parent_id = bp_get_parent_group_id(bp_get_current_group_id());
-			if ($group_type == 'kwf-ecole') {
+			if ($group_type == 'tprm-school') {
 				$ecole_name = bp_get_current_group_name();
 			} else {
 				if (!empty($parent_id)) {
@@ -179,7 +179,7 @@ add_action('wp_ajax_nopriv_std_cred_generate_pdf_file', 'generate_students_crede
 
 			$ecole_name_formatted = strtolower(str_replace(' ', '_', $ecole_name));
 
-			$company = 'tepunareomaori <support@tepunareomaori.com>';
+			$company = 'tepunareomaori <kiaora@tepunareomaori.co.nz>';
 
 			$title = sprintf( __( 'Students Credentials : %s %s at %s', 'tprm-theme' ), $ecole_name, date('d-m-Y'), date('H:i:s') );
 
@@ -333,12 +333,12 @@ function generate_students_credentials_pdf_file(){
 
 			if (is_active_student($id)) {
 				$account_status = __('Active', 'tprm-theme');
-				$text_status = 'kwf-active';
+				$text_status = 'tprm-active';
 				$status_color = '#ffffff';
 				$status_bg_color = '#2e9e9e';
 			} else {
 				$account_status = __('Inactive', 'tprm-theme');
-				$text_status = 'kwf-inactive';
+				$text_status = 'tprm-inactive';
 				$status_color = '#000000';
 				$status_bg_color = '';
 			}
@@ -348,7 +348,7 @@ function generate_students_credentials_pdf_file(){
 			$std_emails[] = $email;
 			$std_usernames[] = $username;
 			$std_passwords[] = $stdcred;
-			$std_classroms[] = ($group_type == 'kwf-ecole') ? $classe : bp_get_current_group_name();
+			$std_classroms[] = ($group_type == 'tprm-school') ? $classe : bp_get_current_group_name();
 			$std_status[] = $account_status;
 			$status_colors[] = $status_color;
 			$status_bg_colors[] = $status_bg_color;
@@ -403,7 +403,7 @@ function generate_students_credentials_pdf_file(){
 			$author = $author_name . ' <' . $author_email . '>';
 
 			$parent_id = bp_get_parent_group_id(bp_get_current_group_id());
-			if ($group_type == 'kwf-ecole') {
+			if ($group_type == 'tprm-school') {
 				$ecole_name = bp_get_current_group_name();
 			} else {
 				if (!empty($parent_id)) {
@@ -418,11 +418,11 @@ function generate_students_credentials_pdf_file(){
 
 			$ecole_name_formatted = strtolower(str_replace(' ', '_', $ecole_name));
 
-			$company = '© tepunareomaori <support@tepunareomaori.com>';
+			$company = '© tepunareomaori <kiaora@tepunareomaori.co.nz>';
 
 			$title = sprintf( __( 'Students Credentials : %s ', 'tprm-theme' ), $ecole_name );
 
-			$description = sprintf( __( 'This document is the property of tepunareomaori © %s and contains confidential student credentials from %s. Unauthorized reproduction, distribution, or transmission in any form is strictly prohibited. For permissions, please reach out to support@tepunareomaori.com.', 'tprm-theme' ), $year, $ecole_name );
+			$description = sprintf( __( 'This document is the property of tepunareomaori © %s and contains confidential student credentials from %s. Unauthorized reproduction, distribution, or transmission in any form is strictly prohibited. For permissions, please reach out to kiaora@tepunareomaori.co.nz.', 'tprm-theme' ), $year, $ecole_name );
 
 			$imprinted_by = sprintf( __( 'This document was printed by : ', 'tprm-theme' ) );
 

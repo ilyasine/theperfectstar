@@ -45,7 +45,7 @@ if ( ! defined( 'THEME_HOOK_PREFIX' ) ) {
 }
 
 if ( ! defined( 'TPRM_SUPPORT' ) ) {
-    define('TPRM_SUPPORT', sprintf( __('Please get in touch with <a href="mailto:%s">tepunareomaori support</a> or contact your school Administrator', 'tprm-theme'), 'support@tepunareomaori.com' ) );
+    define('TPRM_SUPPORT', sprintf( __('Please get in touch with <a href="mailto:%s">tepunareomaori support</a> or contact your School Leader', 'tprm-theme'), 'kiaora@tepunareomaori.co.nz' ) );
 }
 
 if ( ! defined( 'TPRM_icon' ) ) {

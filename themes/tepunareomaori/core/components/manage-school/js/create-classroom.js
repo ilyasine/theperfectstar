@@ -24,10 +24,10 @@ jQuery(document).ready(function ($) {
 
     $('fieldset#teachers_setup').find('.toggle-classroom-teacher').on('click', function () {
         var $this = $(this);
-        
+
         $this.toggleClass('active');
         $this.closest('li.teacher').toggleClass('selected');
-        
+
         if ($this.hasClass('active')) {
             $this.attr('data-bp-tooltip', MCL_data.remove_teacher);
             $this.find('.bp-screen-reader-text').text(MCL_data.remove_teacher);
@@ -39,10 +39,10 @@ jQuery(document).ready(function ($) {
         $('#confirm-teacher-selection').fadeIn();
     });
 
-    $('#confirm-teacher-selection').on('click', function() {
+    $('#confirm-teacher-selection').on('click', function () {
         TeacherIds = [];
-        
-        $('li.teacher.selected').each(function() {
+
+        $('li.teacher.selected').each(function () {
             TeacherIds.push($(this).attr('id'));
         });
 
@@ -63,7 +63,7 @@ jQuery(document).ready(function ($) {
                 'bb_trigger_toast_message',
                 [
                     '',
-                    '<div>' + MCL_data.teacher_selected +  '</div>',
+                    '<div>' + MCL_data.teacher_selected + '</div>',
                     'success',
                     null,
                     true,
@@ -83,7 +83,7 @@ jQuery(document).ready(function ($) {
     function resetToFirstFieldsetGlobal() {
         // Hide all fieldsets
         $('fieldset').hide();
-        
+
         // Reset any form state here (input values, selection states, etc.)
 
         // Show the first fieldset and style it correctly
@@ -97,51 +97,51 @@ jQuery(document).ready(function ($) {
         });
 
         $('fieldset').css({
-            'transform': 'scale(1)', 
-            'opacity': 1, 
+            'transform': 'scale(1)',
+            'opacity': 1,
             'left': '0%'
         });
     }
 
     function resetToFirstFieldset() {
-        if (animating) return false; 
-        animating = true; 
-    
-        var current_fs = $('fieldset:visible'); 
-        var first_fs = $('fieldset').first(); 
-    
+        if (animating) return false;
+        animating = true;
+
+        var current_fs = $('fieldset:visible');
+        var first_fs = $('fieldset').first();
+
         // Reset progressbar 
-        $("#progressbar li").removeClass("active"); 
+        $("#progressbar li").removeClass("active");
         $("#progressbar li").first().addClass("active");
-    
+
         // Reset styles for all fieldsets
         $('fieldset').css({
-            'transform': 'scale(1)', 
-            'opacity': 1, 
+            'transform': 'scale(1)',
+            'opacity': 1,
             'left': '0%'
         });
-    
+
         // Show the first fieldset with animation 
         first_fs.show();
-        first_fs.css('display', 'flex'); 
-        current_fs.animate({ opacity: 0 }, { 
-            step: function (now, mx) { 
+        first_fs.css('display', 'flex');
+        current_fs.animate({ opacity: 0 }, {
+            step: function (now, mx) {
                 // As the opacity of current_fs reduces to 0 - stored in "now" 
                 // 1. Scale first_fs from 80% to 100% 
-                var scale = 0.8 + (1 - now) * 0.2; 
+                var scale = 0.8 + (1 - now) * 0.2;
                 // 2. Take current_fs to the right(50%) - from 0% 
-                var left = ((1 - now) * 50) + "%"; 
+                var left = ((1 - now) * 50) + "%";
                 // 3. Increase opacity of first_fs to 1 as it moves in 
-                var opacity = 1 - now; 
-                current_fs.css({ 'left': left }); 
-                first_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity }); 
-            }, 
-            duration: 800, 
-            complete: function () { 
-                current_fs.hide(); 
-                animating = false; 
-            }, 
-            easing: 'easeInOutBack' 
+                var opacity = 1 - now;
+                current_fs.css({ 'left': left });
+                first_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
+            },
+            duration: 800,
+            complete: function () {
+                current_fs.hide();
+                animating = false;
+            },
+            easing: 'easeInOutBack'
         });
 
     }
@@ -165,7 +165,7 @@ jQuery(document).ready(function ($) {
             school_name = $(classroomDetails).find('#classroom_school').text();
             classroomName = $(classroomDetails).find('#classroom_name').val();
         }
-    
+
 
         animating = true;
 
@@ -255,7 +255,7 @@ jQuery(document).ready(function ($) {
             }
 
             // Check for unconfirmed teachers
-            if ($('li.teacher.selected').length > 0  && !teacher_selection_confirmed) {
+            if ($('li.teacher.selected').length > 0 && !teacher_selection_confirmed) {
                 $(document).trigger(
                     'bb_trigger_toast_message',
                     [
@@ -270,7 +270,7 @@ jQuery(document).ready(function ($) {
             }
 
             // Check for nonselected teachers
-            if ($('li.teacher').length > 0  && !teacher_selection_confirmed) {
+            if ($('li.teacher').length > 0 && !teacher_selection_confirmed) {
                 $(document).trigger(
                     'bb_trigger_toast_message',
                     [
@@ -293,7 +293,7 @@ jQuery(document).ready(function ($) {
             fieldset_notice = fieldset_body.find('.notice');
 
             //Creating
-            $('.kwf-preloader').fadeIn();
+            $('.tprm-preloader').fadeIn();
             current_fs.find('.teachers-list').hide();
             $('.no-teachers-list').hide();
             fieldset_footer.find('#submit-create-classroom').hide();
@@ -319,7 +319,7 @@ jQuery(document).ready(function ($) {
                 success: function (result, textstatus) {
                     console.log(result);
                     if (result) {
-                       $('.kwf-preloader').hide();
+                        $('.tprm-preloader').hide();
                         // Created
                         //NProgress.done();
 
@@ -331,7 +331,7 @@ jQuery(document).ready(function ($) {
                             current_fs.find('input.previous').fadeIn();
                             current_fs.find('input.back').fadeIn();
                             fieldset_notice.fadeIn();
-   
+
                             fieldset_footer.find('.previous').on('click', function () {
                                 fieldset_notice.hide();
                                 title.removeClass('error').text(MCL_data.teachers_setup_title);
@@ -355,16 +355,16 @@ jQuery(document).ready(function ($) {
                                 current_fs.find('input.previous').fadeOut();
                                 current_fs.find('input.back').fadeOut();
                             })
-                        } else {                    
+                        } else {
 
                             // Handle success : Classroom Created
                             var classroom_name = result.classroom_name;
                             var classroom_link = result.classroom_link;
-        
+
                             // Change h2 inner text
                             title.text(MCL_data.classroom_created_title);
                             subtitle.text(MCL_data.classroom_created_subtitle);
-        
+
                             // Create new button and append it after the h2 element
                             var newButton = '<a href="' + classroom_link + '" class="button new_classroom_link" style="width: fit-content; margin: auto;"\
                             target = "_blank" rel = "noopener noreferrer" > '
@@ -375,9 +375,9 @@ jQuery(document).ready(function ($) {
                             fieldset_notice.fadeIn();
 
                             $("#create-new-classroom").fadeIn()
-        
+
                             // Attach event to the new "Create New Classroom" button
-                            $("#create-new-classroom").click(function() {
+                            $("#create-new-classroom").click(function () {
                                 // Reset form or redirect to classroom creation page
                                 resetForm();
                                 resetToFirstFieldset();
@@ -396,7 +396,7 @@ jQuery(document).ready(function ($) {
                                 $(this).hide();
                             });
 
-                            $('.manage-classrooms button.all-classrooms').on('click', function() {
+                            $('.manage-classrooms button.all-classrooms').on('click', function () {
                                 // Trigger click event on the "Create New Classroom" button
                                 resetForm();
                                 resetToFirstFieldsetGlobal();
@@ -411,8 +411,8 @@ jQuery(document).ready(function ($) {
                                 current_fs.find('input.previous').fadeOut();
                                 current_fs.find('input.back').fadeOut();
                                 current_fs.find('.new_classroom_link').fadeOut();
-                                $("#create-new-classroom").hide();                      
-                        
+                                $("#create-new-classroom").hide();
+
                                 bp.Nouveau.objectRequest({
                                     object: 'groups',
                                     scope: 'personal',
@@ -425,7 +425,7 @@ jQuery(document).ready(function ($) {
                                     $('#subgroups-groups-li').find('span.count').text(count)
                                 });
                             });
-                            
+
                         }
 
                     }
@@ -434,7 +434,7 @@ jQuery(document).ready(function ($) {
                     console.log(result);
                     console.log('fail');
 
-                    $('.kwf-preloader').hide();
+                    $('.tprm-preloader').hide();
                     //NProgress.done();
 
                     title.addClass('error').text(MCL_data.error_creating_classrrom);

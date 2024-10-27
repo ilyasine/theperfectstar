@@ -88,12 +88,12 @@ function setup_students_credentials_group_nav(){
 
 		$is_school = is_school($bp->groups->current_group->id) ? true : false;
 
-		$user_access = $is_school ? is_TPRM_manager() : $bp->groups->current_group->user_has_access;
+		$user_access = $is_school ? is_tprm_manager() : $bp->groups->current_group->user_has_access;
 		
         $group_link = $bp->root_domain . '/' . bp_get_groups_root_slug() . '/' . $bp->groups->current_group->slug . '/';
         //$user_access = $bp->groups->current_group->user_has_access;
 	
-		if ( is_TPRM_leader() ) {
+		if ( is_tprm_leader() ) {
 			bp_core_new_subnav_item( array( 
 				'name' =>  __( 'Students', 'tprm-theme' ),
 				'slug' => 'students',

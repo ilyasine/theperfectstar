@@ -103,11 +103,11 @@ function redirect_after_login($redirect_to, $request, $user) {
       $roles = $user->roles;
       if (isset($roles) && is_array($roles)) {
           // Check for admins
-          if (in_array('administrator', $roles) || in_array('kwf-admin', $roles)) {
+          if (in_array('administrator', $roles)) {
               $redirect_to = site_url('/fr/dashboard/');
           } else if (in_array('library', $roles) || in_array('libraries_manager', $roles)) {
               $redirect_to = site_url('/fr/library/');
-          } else if (in_array('director', $roles) || in_array('teacher', $roles) || in_array('school-admin', $roles)) {
+          } else if (in_array('school_principal', $roles) || in_array('school_leader', $roles) || in_array('school_staff', $roles)) {
               $selected_school_url = get_user_meta($user->ID, 'selected_school_url', true);
               if ($selected_school_url && get_user_school()[0] != get_last_user_school()) {
                   $redirect_to = esc_url($selected_school_url);

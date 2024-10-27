@@ -1,9 +1,9 @@
 <?php 
 
 
-add_action('user_register', 'TPRM_onboarding_course_user_update');
-add_action('set_user_role', 'TPRM_onboarding_course_user_update');
-add_action('profile_update', 'TPRM_onboarding_course_user_update');
+add_action('user_register', 'tprm_onboarding_course_user_update');
+add_action('set_user_role', 'tprm_onboarding_course_user_update');
+add_action('profile_update', 'tprm_onboarding_course_user_update');
 
 /**
  * Enroll teachers and admins in all onboarding courses
@@ -11,7 +11,7 @@ add_action('profile_update', 'TPRM_onboarding_course_user_update');
  * @since V2
  */
 
-function TPRM_onboarding_course_user_update($user_id) {
+function tprm_onboarding_course_user_update($user_id) {
 	// Check if the user ID is valid
 	if (!empty($user_id)) {
 		//Teacher :
@@ -28,17 +28,17 @@ function TPRM_onboarding_course_user_update($user_id) {
 				$user_roles = get_userdata($user_id)->roles;
 
 				// Check if the user has any of the specified roles
-				if (array_intersect($user_roles, array('administrator', 'kwf-admin', 'teacher'))) {
+				if (array_intersect($user_roles, array('administrator', 'school_staff'))) {
 					ld_update_course_access($user_id, $onboarding_course_id);
 				}
 			}
 		}
 		// School Admin :
 		// First: get all onboarding courses ( for school admins )
-		$school_admin_onboarding_course_slugs = array('support-for-the-administrator', 'support-pour-ladministrateur');
+		$school_leader_onboarding_course_slugs = array('support-for-the-administrator', 'support-pour-ladministrateur');
 
-		foreach($school_admin_onboarding_course_slugs as $school_admin_onboarding_course_slug) {
-			$onboarding_course = get_page_by_path($school_admin_onboarding_course_slug, OBJECT, 'sfwd-courses');
+		foreach($school_leader_onboarding_course_slugs as $school_leader_onboarding_course_slug) {
+			$onboarding_course = get_page_by_path($school_leader_onboarding_course_slug, OBJECT, 'sfwd-courses');
 
 			if ($onboarding_course) {
 				$onboarding_course_id = $onboarding_course->ID;
@@ -47,7 +47,7 @@ function TPRM_onboarding_course_user_update($user_id) {
 				$user_roles = get_userdata($user_id)->roles;
 
 				// Check if the user has any of the specified roles
-				if (array_intersect($user_roles, array('administrator', 'kwf-admin', 'school-admin', 'director'))) {
+				if (array_intersect($user_roles, array('administrator', 'school_leader', 'school_principal'))) {
 					ld_update_course_access($user_id, $onboarding_course_id);
 				}
 			}
@@ -55,7 +55,7 @@ function TPRM_onboarding_course_user_update($user_id) {
 	}
 }
 
-add_action('wp_insert_post', 'TPRM_admins_course_access', 99999, 1);
+add_action('wp_insert_post', 'tprm_admins_course_access', 99999, 1);
 /**
  * Set admins Enrolled in all courses by default
  *
@@ -64,7 +64,7 @@ add_action('wp_insert_post', 'TPRM_admins_course_access', 99999, 1);
 
  //TODO : should be hooked into update or create course
 
- function TPRM_admins_course_access($course_id){
+ function tprm_admins_course_access($course_id){
 
 	$post_type = get_post_type($course_id);
 
@@ -72,33 +72,33 @@ add_action('wp_insert_post', 'TPRM_admins_course_access', 99999, 1);
 
 		$user_query = new WP_User_Query(
 			array(
-				'role__in' => array('administrator', 'kwf-admin'),
+				'role__in' => array('administrator'),
 			)
 		);
 
 		$administrators = $user_query->get_results();
 
-		$TPRM_admin = '';
+		$tprm_admin = '';
 
 		foreach ($administrators as $administrator) {
-			$TPRM_admin = $administrator->ID;
-			ld_update_course_access($TPRM_admin, $course_id);
+			$tprm_admin = $administrator->ID;
+			ld_update_course_access($tprm_admin, $course_id);
 		}
 	}
 
 }
 
 
-add_action('wp_insert_post', 'TPRM_update_course_groups', 99999, 1);
+add_action('wp_insert_post', 'tprm_update_course_groups', 99999, 1);
 
 /**
  *  Update course groups lists after update or publish course
  *
  * @since V2
  */
-/* $kwf-green-light: #D6FCF4;
-$kwf-green-hover: #7cddca; */
- function TPRM_update_course_groups($post_id) {
+/* $tprm-green-light: #D6FCF4;
+$tprm-green-hover: #7cddca; */
+ function tprm_update_course_groups($post_id) {
 
     $post_type = get_post_type($post_id);
 
@@ -303,7 +303,7 @@ function rewrite_course_curriculum( $taxonomy, $object_type, $args ) {
 }
 add_action( 'registered_taxonomy_ld_course_category', 'rewrite_course_curriculum', 10, 3 );
 
-function TPRM_create_course_taxonomies() {
+function tprm_create_course_taxonomies() {
     // Define taxonomies in an array for easier management
     $taxonomies = array(
         array(
@@ -365,8 +365,8 @@ function TPRM_create_course_taxonomies() {
     }
 }
 
-// Hook into the init action and call TPRM_create_course_taxonomies when it fires
-add_action('init', 'TPRM_create_course_taxonomies', 0);
+// Hook into the init action and call tprm_create_course_taxonomies when it fires
+add_action('init', 'tprm_create_course_taxonomies', 0);
 
 
 

@@ -20,7 +20,7 @@ get_header();
 
 				do_action( THEME_HOOK_PREFIX . '_template_parts_content_top' );
 		
-					if ( is_page_template('schools.php') && is_TPRM_admin() ) {
+					if ( is_page_template('schools.php') && is_tprm_admin() ) {
 						do_action( THEME_HOOK_PREFIX . '_single_template_part_content', 'schools' );
 					}else{
 						bp_do_404();

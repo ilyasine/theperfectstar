@@ -26,7 +26,7 @@ if ( $TPRM_school_year > 1 && !empty($classrooms_for_previous_year) ) {
 </a>
 <?php
 // classroom_actions
-if(is_TPRM_manager()) :
+if(is_tprm_manager()) :
     // Start Promote students 
     if($can_promote_students) :
     ?>

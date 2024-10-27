@@ -166,7 +166,7 @@ endif;
 	
 ?>
 
-<?php if( function_exists('is_TPRM_manager') && is_TPRM_manager() && function_exists('bp_is_group_subgroups') && bp_is_group_subgroups() ): ?>
+<?php if( function_exists('is_tprm_manager') && is_tprm_manager() && function_exists('bp_is_group_subgroups') && bp_is_group_subgroups() ): ?>
 <div class="manage-classrooms">
 	<button class="all-classrooms">
 		<span class="bb-icon-l bb-icon-home"></span>

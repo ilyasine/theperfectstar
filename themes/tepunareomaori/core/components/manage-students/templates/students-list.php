@@ -73,7 +73,7 @@ $follow_class     = $is_follow_active ? 'follow-active' : '';
 			$user_roles = $user->roles;
 
 			// Skip users who do not have the "student" role
-			if ( ! in_array( 'student', $user_roles ) && ! in_array( 'kwf-student', $user_roles )  ) {
+			if ( ! in_array( 'school_student', $user_roles ) && ! in_array( 'tprm-student', $user_roles )  ) {
 				continue;
 			}
 
@@ -103,7 +103,7 @@ $follow_class     = $is_follow_active ? 'follow-active' : '';
 
 					<div class="list-wrap-inner">
 						<div class="item-avatar student_avatar <?php echo $is_school ? 'school' : ''; ?>">
-							<div class="kwf-checkbox">
+							<div class="tprm-checkbox">
 								<div class="round">
 									<input type="checkbox" id="checkbox-<?php echo bp_get_group_member_id(); ?>" />
 									<label for="checkbox-<?php echo bp_get_group_member_id(); ?>"></label>
@@ -250,7 +250,7 @@ $follow_class     = $is_follow_active ? 'follow-active' : '';
 														</ul>
 													</a>
 												';
-                                $text_status = 'kwf-active';
+                                $text_status = 'tprm-active';
                                 $active_count++;
                             } else {
 
@@ -265,7 +265,7 @@ $follow_class     = $is_follow_active ? 'follow-active' : '';
 								}
 
 								$school_seats = get_school_seats($school_id);
-								if(is_TPRM_manager()){
+								if(is_tprm_manager()){
 									$membershipID = get_this_year_membership_id();
 									$account_status = '<a class="activate" data-studentID="' . esc_attr($student_id) . '" data-schoolID="' . esc_attr($school_id) . '" data-security="' . esc_attr($activate_paid_student_nonce) . '">  
 														<span>
@@ -304,11 +304,11 @@ $follow_class     = $is_follow_active ? 'follow-active' : '';
 											';
 								}
 								
-								$text_status = 'kwf-inactive';
+								$text_status = 'tprm-inactive';
 								$inactive_count++;
                             }
                             ?>
-                            <div class="column-kwf-student-status-<?php echo esc_attr($text_status); ?>" id="<?php echo esc_attr($text_status); ?>"><?php echo $account_status; ?></div>
+                            <div class="column-tprm-student-status-<?php echo esc_attr($text_status); ?>" id="<?php echo esc_attr($text_status); ?>"><?php echo $account_status; ?></div>
                         </div>
 
 

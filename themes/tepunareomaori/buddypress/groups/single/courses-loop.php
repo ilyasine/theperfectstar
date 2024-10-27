@@ -43,7 +43,7 @@ foreach ($members as $member) {
 }
 
 // if admins are enrolled
-if (is_TPRM_admin() && $admin_enrolled === 'yes') {
+if (is_tprm_admin() && $admin_enrolled === 'yes') {
 	$is_enrolled = true;
 }
 

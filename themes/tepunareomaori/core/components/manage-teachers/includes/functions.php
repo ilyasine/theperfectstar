@@ -45,9 +45,9 @@ function get_teacher_classrooms_count($teacher_id) {
         return new WP_Error('missing_teacher_id', __('Teacher ID is required', 'tprm-theme'));
     }
 
-    // Check if the user has the 'teacher' role
+    // Check if the user has the 'school_staff' role
     $user = get_userdata($teacher_id);
-    if (!$user || !in_array('teacher', (array) $user->roles)) {
+    if (!$user || !in_array('school_staff', (array) $user->roles)) {
         return new WP_Error('not_a_teacher', __('User is not a teacher', 'tprm-theme'));
     }
 
@@ -55,7 +55,7 @@ function get_teacher_classrooms_count($teacher_id) {
     $this_year = get_option('school_year');
 
     // Get groups where the user is an admin
-    $groups = get_TPRM_user_groups($teacher_id);
+    $groups = get_tprm_user_groups($teacher_id);
     $admin_groups_count = 0;
 
     foreach ($groups as $group_id) {
@@ -67,9 +67,9 @@ function get_teacher_classrooms_count($teacher_id) {
         $group_type = bp_groups_get_group_type($group_id);
         $group_year = groups_get_groupmeta($group_id, 'ecole_year');
 
-        // Exclude parent groups of type 'kwf-ecole' and include only groups for the current year
+        // Exclude parent groups of type 'tprm-school' and include only groups for the current year
         if ($is_admin && 
-            ($group_type !== 'kwf-ecole' || $group->parent_id != 0) && 
+            ($group_type !== 'tprm-school' || $group->parent_id != 0) && 
             $group_year == $this_year) {
             $admin_groups_count++;
         }

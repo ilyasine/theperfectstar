@@ -15,11 +15,11 @@ add_filter('hide_groups_search', 'TPRM_hide_groups_search_for_non_admin', 1);
 add_filter('hide_header_forum', '__return_true');
 add_action('bp_template_redirect', 'hide_all_members_directory' );
 add_filter('wp_get_nav_menu_items', 'hide_menu_items_based_subscription', 10, 3 );
-add_filter('bp_nouveau_get_nav_count', 'exclude_TPRM_admins_from_members_count', 99, 3);
+add_filter('bp_nouveau_get_nav_count', 'exclude_tprm_admins_from_members_count', 99, 3);
 add_filter('bp_after_has_groups_parse_args', 'exclude_parent_groups_from_groups_loop');
 add_filter('bp_nouveau_get_nav_count', 'exclude_parent_groups_from_groups_count', 99, 3);
 add_action('wp_ajax_send_students_ids', 'send_students_ids');
-add_action('wp_ajax_TPRM_ajax_logout_group', 'TPRM_ajax_logout_group');
+add_action('wp_ajax_tprm_ajax_logout_group', 'TPRM_ajax_logout_group');
 
 /**
  *  Remove edit Tab
@@ -29,7 +29,7 @@ add_action('wp_ajax_TPRM_ajax_logout_group', 'TPRM_ajax_logout_group');
 
 function TPRM_remove_profile_settings_general_tab() {
 
-	if( bp_is_active( 'xprofile' ) && ! is_TPRM_admin() ) :	
+	if( bp_is_active( 'xprofile' ) && ! is_tprm_admin() ) :	
 
 		bp_core_remove_subnav_item( 'settings', 'general' );
 		bp_core_remove_subnav_item( 'profile', 'edit' );
@@ -53,7 +53,7 @@ function hide_menu_items_based_subscription( $items, $menu, $args ) {
 		$current_user = wp_get_current_user();
 
 		// Check if the user has a specific role (e.g., teacher or director)
-		if ( in_array( 'teacher', $current_user->roles ) || in_array( 'director', $current_user->roles ) ) {
+		if ( in_array( 'school_staff', $current_user->roles ) || in_array( 'school_principal', $current_user->roles ) ) {
 			// Hide items for teachers and directors
 			if ( $menu->term_id === 344 ) { // english menu
 				$items_to_unset = array( 16195, 17830 ); // courses + student textbook
@@ -75,7 +75,7 @@ function hide_menu_items_based_subscription( $items, $menu, $args ) {
 					}
 				}
 			}
-		} elseif ( in_array( 'student', $current_user->roles ) || in_array( 'kwf-student', $current_user->roles ) ) {
+		} elseif ( in_array( 'school_student', $current_user->roles ) || in_array( 'tprm-student', $current_user->roles ) ) {
 
 			// Hide items for students
 			if ( $menu->term_id === 344 ) { // english menu
@@ -102,7 +102,7 @@ function hide_menu_items_based_subscription( $items, $menu, $args ) {
 	}
 
 	// handle subscription
-	if ( ! is_TPRM_admin() && ! is_active_member() && is_user_logged_in() ) {
+	if ( ! is_tprm_admin() && ! is_active_member() && is_user_logged_in() ) {
 		if ( $menu->term_id === 344 || $menu->term_id === 345 ) {
 			foreach ( $items as $key => $item ) {		
 				unset( $items[$key] );
@@ -124,7 +124,7 @@ function TPRM_remove_group_tabs() {
     $slug = bp_get_current_group_slug();
     bp_core_remove_subnav_item( $slug, 'invite' );
     
-    if ( ! bp_is_group() || is_super_admin() || is_TPRM_admin() ) {
+    if ( ! bp_is_group() || is_super_admin() || is_tprm_admin() ) {
         return;
     }
 
@@ -166,7 +166,7 @@ function TPRM_remove_group_tabs() {
 
 function TPRM_hide_all_groups_create($nav_items) {
 
-	if( ! is_TPRM_admin() && is_user_logged_in() ){
+	if( ! is_tprm_admin() && is_user_logged_in() ){
 
 		echo '<style>.buddypress-wrap .bp-subnavs .component-navigation li#groups-personal a .count {display: inline-block !important;}</style>';
 		echo '<style>.buddypress-wrap .bp-subnavs .component-navigation li#groups-personal a:after {display: none !important;}</style>';
@@ -195,7 +195,7 @@ function TPRM_hide_all_groups_create($nav_items) {
 
 function TPRM_hide_groups_search_for_non_admin($hide){
 
-	if( ! is_TPRM_manager() ) $hide = true;
+	if( ! is_tprm_manager() ) $hide = true;
 	
 	return $hide;
 }
@@ -210,7 +210,7 @@ function TPRM_hide_groups_search_for_non_admin($hide){
  * @return int the group members count
  */ 
 
-function exclude_TPRM_admins_from_members_count( $count, $nav_item, $displayed_nav ) {
+function exclude_tprm_admins_from_members_count( $count, $nav_item, $displayed_nav ) {
 
     if ('groups' === $displayed_nav && ('members' === $nav_item->slug || 'all-members' === $nav_item->slug)) {
         // Exclude KWF admins count
@@ -248,7 +248,6 @@ function get_tepunareomaori_admins_count() {
     foreach ( $group_members['members'] as $member ) {
         $user = get_userdata( $member->ID );
 		if ( in_array( 'administrator', (array) $user->roles ) || 
-		in_array('kwf-admin', (array) $user->roles ) || 
 		bp_get_member_type( $member->ID ) == 'tepunareomaori' ) {
 			$count++;
 		}
@@ -275,7 +274,7 @@ function TPRM_custom_disable_group_members() {
 		return;
 	} */
 
-    if( ! is_TPRM_admin() ){
+    if( ! is_tprm_admin() ){
         bp_core_remove_subnav_item( groups_get_current_group()->slug, 'members' );
     }
 	
@@ -291,7 +290,7 @@ function TPRM_custom_disable_group_members() {
  * @since V2
  */
 function hide_all_members_directory() {
-    if ( bp_is_members_directory() && ! is_TPRM_admin()) {
+    if ( bp_is_members_directory() && ! is_tprm_admin()) {
         bp_do_404();
         load_template( get_404_template() );
         exit( 0 );
@@ -351,7 +350,7 @@ function get_schools(){
 
     $parent_groups = array();
     
-    if( is_TPRM_admin()){       
+    if( is_tprm_admin()){       
         $schools = groups_get_groups($args)["groups"];
     }else{
         $groups = groups_get_user_groups(bp_loggedin_user_id());
@@ -498,27 +497,27 @@ function modify_groups_loop_none_message( $feedback_messages ) {
             $TPRM_school_year = school_implementation_year($school_id);
             $classrooms_for_previous_year = get_school_classrooms_for_year($school_id, $previous_year);
             if ($TPRM_school_year > 1 && !empty($classrooms_for_previous_year)) {
-                if(is_TPRM_manager()){
+                if(is_tprm_manager()){
                     $feedback_messages['groups-loop-none']['message'] = __(
                         'Sorry, no classrooms were found for this year. Please press the ❝<strong>Duplicate Previous Year Structure</strong>❞ button bellow to duplicate all classrooms from the previous year with one click.', 
                         'tprm-theme'
                     );
                 }else{
                     $feedback_messages['groups-loop-none']['message'] = __(
-                        'Sorry, no classrooms were found for this year. Please contact your school Administrator to create Classrooms', 
+                        'Sorry, no classrooms were found for this year. Please contact your School Leader to create Classrooms', 
                         'tprm-theme'
                     );
                 }
                 
             } else {
-                if(is_TPRM_manager()){
+                if(is_tprm_manager()){
                     $feedback_messages['groups-loop-none']['message'] = __(
                         'Sorry, no classrooms were found for this year, and this is your first year on tepunareomaori. Please press the ❝<strong>Create Classroom</strong>❞ button above to start creating your classrooms.', 
                         'tprm-theme'
                     );
                 }else{
                     $feedback_messages['groups-loop-none']['message'] = __(
-                        'Sorry, no classrooms were found for this year. Please contact your school Administrator to create Classrooms', 
+                        'Sorry, no classrooms were found for this year. Please contact your School Leader to create Classrooms', 
                         'tprm-theme'
                     );
                 }
@@ -617,7 +616,7 @@ function get_groups_type() {
 		$group_type = bp_groups_get_group_type( $group_id );
 
 		// Get the group type id for non schools
-		if ( $group_type != 'kwf-ecole' ) {
+		if ( $group_type != 'tprm-school' ) {
 			$group_type = bp_group_get_group_type_id( $group_type );
 		}
 
@@ -683,7 +682,7 @@ function exclude_parent_groups_from_groups_loop($query_args) {
 
 function exclude_parent_groups_from_groups_count($count, $nav_item, $displayed_nav) {
 
-	if (bp_is_groups_directory() && 'directory' === $displayed_nav && is_director()) {
+	if (bp_is_groups_directory() && 'directory' === $displayed_nav && is_school_principal()) {
 		$schools_id = get_schools();
  
 		if (count($schools_id) > 0) {

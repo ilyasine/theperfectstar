@@ -49,7 +49,7 @@ if ( sfwd_lms_has_access( $course_id, $current_user_id ) ) {
 }
 
 // if admins are enrolled.
-if ( is_TPRM_admin() && is_TPRM_manager() && 'yes' === $admin_enrolled ) {
+if ( is_tprm_admin() && is_tprm_manager() && 'yes' === $admin_enrolled ) {
 	$is_enrolled = true;
 }
 

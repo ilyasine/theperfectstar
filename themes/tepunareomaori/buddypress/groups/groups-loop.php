@@ -181,7 +181,7 @@ else : ?>
 		$previous_year = get_previous_year();
 		$TPRM_school_year = school_implementation_year($school_id);
 		$classrooms_for_previous_year = get_school_classrooms_for_year($school_id, $previous_year);
-		if ( $TPRM_school_year > 1 && !empty($classrooms_for_previous_year) && is_TPRM_manager() ) :	?>		
+		if ( $TPRM_school_year > 1 && !empty($classrooms_for_previous_year) && is_tprm_manager() ) :	?>		
 			<a data-balloon-pos="up"
 				data-balloon="<?php esc_attr_e('Duplicate Structure', 'tprm-theme'); ?>"														
 				href="#duplicate-structure-content" id="duplicate-structure" class="button duplicate-structure" target="_blank">
@@ -207,7 +207,7 @@ else : ?>
 						<?php _e('<strong>You should Promote students later for each Classroom from the button with the following icon </strong><span class="bb-icon-user-arrow-up"></span> .', 'tprm-theme'); ?>
 					</p>
 				</div>
-				<div class="kwf-preloader" style="display: none;">
+				<div class="tprm-preloader" style="display: none;">
 					<?php echo $preloader;  ?>
 				</div>
 				<div class="duplicate-structure-content-footer">

@@ -36,7 +36,7 @@ add_action('learndash-quiz-row-title-after', 'final_quiz_row_course' );
 	$quiz_button = '';
 	$data_ballon = '';
 
-	if( is_TPRM_admin() || is_teacher() ) : 	
+	if( is_tprm_admin() || is_teacher() ) : 	
 		
 		if (bp_is_group()):
 
@@ -503,7 +503,7 @@ function final_quiz_is_enabled_for_group($quiz_id) {
 
     if ($quiz_enabled && !empty($associated_group_id)) {
         // Check if the user is a teacher or admin
-        if (is_teacher() || is_TPRM_admin()) {
+        if (is_teacher() || is_tprm_admin()) {
             return $associated_group_id; // Return the associated group ID
         }
 

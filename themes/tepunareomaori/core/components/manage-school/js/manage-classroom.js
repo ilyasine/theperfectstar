@@ -220,7 +220,7 @@ jQuery(document).ready(function ($) {
 
                     $('#promote-students-dropdown-' + classroom_id).on('change', function () {
                         var classroomId = $(this).val();
-                        var $preloader = $studentsList.find('.kwf-preloader');
+                        var $preloader = $studentsList.find('.tprm-preloader');
                         $preloader.show();
                         $studentsList.addClass('loading');
 
@@ -239,7 +239,7 @@ jQuery(document).ready(function ($) {
                                 },
                                 success: function (response) {
                                     // Clear existing students and the preloader
-                                    $studentsList.find('li:not(.kwf-preloader)').remove();
+                                    $studentsList.find('li:not(.tprm-preloader)').remove();
 
                                     // Parse response to get student data
                                     var newStudents = $(response).filter('li.student');
@@ -305,7 +305,7 @@ jQuery(document).ready(function ($) {
                         var title_content = $list.find('.promote-students-content-title_text');
                         var title_content_original_text = $list.find('.promote-students-content-title_text').text();
                         var footer_content = $list.find('.promote-students-content-footer');
-                        var preloader = $list.find('.kwf-preloader-promote');
+                        var preloader = $list.find('.tprm-preloader-promote');
                         var body_content = $list.find('.promote-students-content-body');
                         var students_container = $(body_content).find('.students-container');
                         var added_students_container = $(body_content).find('.added-students-container');
@@ -587,7 +587,7 @@ jQuery(document).ready(function ($) {
             var current_classroom_name = $(this).data('current-classroom-name');
             var school_id = $(this).data('school_id');
             var this_classroom_year = $(this).data('this_classroom_year');
-            var $preloader = $studentsList.find('.kwf-preloader');
+            var $preloader = $studentsList.find('.tprm-preloader');
             $preloader.show();
             $studentsList.addClass('loading');
 
@@ -612,7 +612,7 @@ jQuery(document).ready(function ($) {
                         console.log(this_classroom_year);
                         console.log(classroom_id);
                         // Clear existing students and the preloader
-                        $studentsList.find('li:not(.kwf-preloader)').remove();
+                        $studentsList.find('li:not(.tprm-preloader)').remove();
 
                         // Parse response to get student data
                         var newStudents = $(response).filter('li.student');
@@ -661,7 +661,7 @@ jQuery(document).ready(function ($) {
             var title_content = $list.find('.classroom-manage-content-title_text');
             var title_content_original_text = $list.find('.classroom-manage-content-title_text').text();
             var footer_content = $list.find('.assign-teachers-footer');
-            var preloader = $list.find('.kwf-preloader-assign');
+            var preloader = $list.find('.tprm-preloader-assign');
             var body_content = $list.find('.outer-teachers-container');
             var teachers_container = $(body_content).find('.teachers-container');
             var added_teachers_container = $(body_content).find('.added-teachers-container');
@@ -759,7 +759,7 @@ jQuery(document).ready(function ($) {
             var title_content = $list.find('.classroom-manage-content-title_text');
             var title_content_original_text = $list.find('.classroom-manage-content-title_text').text();
             var footer_content = $list.find('.assign-students-footer');
-            var preloader = $list.find('.kwf-preloader-assign');
+            var preloader = $list.find('.tprm-preloader-assign');
             var body_content = $list.find('.outer-students-container');
             var students_container = $(body_content).find('.students-container');
             var added_students_container = $(body_content).find('.added-students-container');

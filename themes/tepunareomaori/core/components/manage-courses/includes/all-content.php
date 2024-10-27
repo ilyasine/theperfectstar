@@ -67,12 +67,12 @@ function setup_content_courses_group_nav(){
 
 		$is_school = is_school($bp->groups->current_group->id) ? true : false;
 
-		$user_access = $is_school ? is_TPRM_manager() : $bp->groups->current_group->user_has_access;
+		$user_access = $is_school ? is_tprm_manager() : $bp->groups->current_group->user_has_access;
 		
         $group_link = $bp->root_domain . '/' . bp_get_groups_root_slug() . '/' . $bp->groups->current_group->slug . '/';
         //$user_access = $bp->groups->current_group->user_has_access;
 	
-		if ( is_TPRM_leader() && !$is_school ) {
+		if ( is_tprm_leader() && !$is_school ) {
 			bp_core_new_subnav_item( array( 
 				'name' =>  __( 'Content', 'tprm-theme' ),
 				'slug' => 'content',

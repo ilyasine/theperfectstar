@@ -6,12 +6,12 @@ add_filter('gettext', 'TPRM_login_placeholder_username', 20, 3 );
 add_action('login_head', 'TPRM_help_for_connection', 150 );
 add_filter('bp_core_change_privacy_policy_link_on_private_network', 'display_help_for_first_connection_page', 10, 2);
 add_filter('wp_die_handler', 'TPRM_wp_die_handler');
-add_action("login_form_lostpassword", 'disable_lost_password_action');
-if( ! current_user_can('administrator') ) :
+/*add_action("login_form_lostpassword", 'disable_lost_password_action');
+ if( ! current_user_can('administrator') ) :
 	add_filter( 'show_password_fields', 'TPRM_lost_pass_disable'  );
 	add_filter( 'allow_password_reset', 'TPRM_lost_pass_disable' );
-	//add_filter( 'gettext', 'TPRM_lost_pass_remove' );
-endif;
+	add_filter( 'gettext', 'TPRM_lost_pass_remove' );
+endif; */
 
 
 /* 
@@ -80,18 +80,16 @@ function TPRM_help_for_connection(){
     $html = "<script>";
     $html .= "jQuery( document ).ready( function () {";
     $html .= "jQuery('.login #login_error a').remove();";
-    $html .= "jQuery('.login form .lostmenot').remove();"; // remove lost password button
     $html = "<script>";
     $html .= "jQuery( document ).ready( function () {";
     $html .= "    jQuery('.login #login_error a').remove();";
-    $html .= "    jQuery('.login form .lostmenot').remove();"; // remove lost password button
     $html .= "    jQuery('.login-heading').after(";
     $html .= "        `<div class='welcome-div'>";
     $html .= "        </div>`";
     $html .= "    );";
     $html .= "    jQuery('#login').append(";
     $html .= "        `<p class='support-div'>";
-    $html .= "            " . esc_html__( 'If you are having trouble logging in, please contact our support team at support@tepunareomaori.com', 'tprm-theme' ) . "";
+    $html .= "            " . esc_html__( 'If you are having trouble logging in, please contact our support team at kiaora@tepunareomaori.co.nz', 'tprm-theme' ) . "";
     $html .= "        </p>`";
     $html .= "    );";
     $html .= "} )</script>";

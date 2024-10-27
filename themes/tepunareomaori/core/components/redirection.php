@@ -313,12 +313,12 @@ function TPRM_subscription_redirect() {
     if (is_user_logged_in()) {
         // Redirect if the user is logged in and on the subscription page
         if (is_subscription()) {
-            if (is_TPRM_admin() || TPRM_is_public() ) {
+            if (is_tprm_admin() || TPRM_is_public() ) {
                 return;
             }
 
             // Define the main page constants based on the user's role
-            if (is_director() || is_teacher() || is_school_admin()) {
+            if (is_school_principal() || is_teacher() || is_school_leader()) {
                 wp_redirect($manager_main_page);
                 exit();
             }
@@ -340,7 +340,7 @@ function TPRM_subscription_redirect() {
         }
         if (is_page('dashboard')) {
             // Define the main page constants based on the user's role
-            if (is_director() || is_teacher() || is_school_admin()) {
+            if (is_school_principal() || is_teacher() || is_school_leader()) {
                 wp_redirect($manager_main_page);
                 exit();
             }
@@ -362,7 +362,7 @@ function TPRM_subscription_redirect() {
         }
 
         // Other redirects based on different conditions
-        if (!is_TPRM_admin() && !is_active_member() && !is_active_student(get_current_user_id()) && !is_subscription() && !TPRM_is_public() && !TPRM_is_ecom() && !is_TPRM_leader()) {
+        if (!is_tprm_admin() && !is_active_member() && !is_active_student(get_current_user_id()) && !is_subscription() && !TPRM_is_public() && !TPRM_is_ecom() && !is_tprm_leader()) {
             wp_redirect(home_url('/subscription/'));
             exit();
         }

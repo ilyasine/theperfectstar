@@ -36,7 +36,7 @@ function TPRM_post_meta_boxes_setup() {
 
 function TPRM_add_post_meta_boxes() {
 	add_meta_box(
-		'kwf-hide-title',
+		'tprm-hide-title',
 		esc_html__( 'Hide Title ?', 'tprm-theme' ),
 		'TPRM_render_metabox',
 		null,
@@ -49,10 +49,10 @@ function TPRM_render_metabox( $post ) {
 	$curr_value = get_post_meta( $post->ID, 'TPRM_hide_title', true );
 	wp_nonce_field( basename( __FILE__ ), 'TPRM_meta_nonce' );
 	?>
-	<input type="hidden" name="kwf-hide-title-checkbox" value="0"/>
-	<input type="checkbox" name="kwf-hide-title-checkbox" id="kwf-hide-title-checkbox"
+	<input type="hidden" name="tprm-hide-title-checkbox" value="0"/>
+	<input type="checkbox" name="tprm-hide-title-checkbox" id="tprm-hide-title-checkbox"
 	       value="1" <?php checked( $curr_value, '1' ); ?> />
-	<label for="kwf-hide-title-checkbox"><?php esc_html_e( 'Hide the title for this item', 'tprm-theme' ); ?></label>
+	<label for="tprm-hide-title-checkbox"><?php esc_html_e( 'Hide the title for this item', 'tprm-theme' ); ?></label>
 	<?php
 }
 
@@ -72,7 +72,7 @@ function TPRM_save_meta( $post_id, $post ) {
 	}
 
 	/* Get the posted data and sanitize it for use as an HTML class. */
-	$form_data = ( isset( $_POST['kwf-hide-title-checkbox'] ) ? $_POST['kwf-hide-title-checkbox'] : '0' );
+	$form_data = ( isset( $_POST['tprm-hide-title-checkbox'] ) ? $_POST['tprm-hide-title-checkbox'] : '0' );
 	update_post_meta( $post_id, 'TPRM_hide_title', $form_data );
 }
 
@@ -90,7 +90,7 @@ function TPRM_nav_menu($items, $args) {
         $links = [];
 
         // Role-Specific Links
-        if (is_TPRM_admin()) {
+        if (is_tprm_admin()) {
             $links = [
                 'dashboard' => [
                     'url' => esc_url(home_url('/dashboard/')),
@@ -113,7 +113,7 @@ function TPRM_nav_menu($items, $args) {
             ];
         }
 
-        if (is_director() || is_school_admin()) {
+        if (is_school_principal() || is_school_leader()) {
             $links['classrooms'] = [
                 'url' => esc_url($manager_main_page),
                 'icon' => 'bb-icon-users',

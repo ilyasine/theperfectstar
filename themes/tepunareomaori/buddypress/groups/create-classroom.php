@@ -54,7 +54,7 @@
     </div>
    
     <div class="fieldset-body">
-          <div class="kwf-preloader" style="display: none;">
+          <div class="tprm-preloader" style="display: none;">
             <?php echo $preloader;  ?>
           </div>
 

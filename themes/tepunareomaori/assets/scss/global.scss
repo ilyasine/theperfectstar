@@ -1,6 +1,6 @@
 @import "variables";
 @import "mixins";
-@import "kwf-header";
+@import "tprm-header";
 
 // wordpress/wp-content/themes/tepunareomaori/assets/fonts/Montserrat-Bold.eot
 
@@ -186,7 +186,7 @@ body {
   }
 }
 
-#kwf-refresh {
+#tprm-refresh {
   position: fixed;
   bottom: 30px;
   right: 20px;
@@ -206,7 +206,7 @@ body {
   }
 }
 
-.kwf-refresh-popup.bb-modal {
+.tprm-refresh-popup.bb-modal {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
@@ -226,7 +226,7 @@ body {
   }
 }
 
-.kwf-refresh-popup {
+.tprm-refresh-popup {
   .mfp-close {
     color: #ffffff;
   }
@@ -371,7 +371,7 @@ select {
   border-color: $tprm-input-border-color;
 }
 
-.kwf-overlay-blur {
+.tprm-overlay-blur {
   top: 0;
   left: 0;
   width: 100%;
@@ -924,22 +924,22 @@ input[type="submit"],
 
   }
 
-  .kwf-primary-btn {
+  .tprm-primary-btn {
     background-color: $tprm-primary-color !important;
     border-color: $tprm-primary-color !important;
   }
 
-  .kwf-primary-btn:is(:hover, :active, :focus) {
+  .tprm-primary-btn:is(:hover, :active, :focus) {
     background-color: $tprm-secondary-color !important;
     border-color: $tprm-secondary-color !important;
   }
 
-  .kwf-secondary-btn {
+  .tprm-secondary-btn {
     background-color: $tprm-header-background !important;
     border-color: $tprm-header-background !important;
   }
 
-  .kwf-secondary-btn:is(:hover, :active, :focus) {
+  .tprm-secondary-btn:is(:hover, :active, :focus) {
     background-color: $tprm-header-background !important;
     border-color: $tprm-header-background !important;
   }
@@ -988,7 +988,7 @@ input[type="submit"],
 
 }
 
-.kwf-loading {
+.tprm-loading {
   position: relative;
   vertical-align: middle;
   display: contents;
@@ -1018,11 +1018,11 @@ h1.entry-title {
   background-color: #FFBC7D;
 }
 
-.is_TPRM_mobile {
+.is_tprm_mobile {
   @include mobile-only;
 }
 
-.is_TPRM_desktop {
+.is_tprm_desktop {
   @include desktop-only;
 }
 
@@ -1141,7 +1141,7 @@ h1.entry-title {
 
 /* checkbox */
 
-.kwf-checkbox {
+.tprm-checkbox {
 
   /* position: absolute;
     top: 6px;
@@ -1193,14 +1193,14 @@ h1.entry-title {
   }
 }
 
-/* .kwf-checkbox 
+/* .tprm-checkbox 
 
-.kwf-checkbox .round 
+.tprm-checkbox .round 
 
-.kwf-checkbox .round label
+.tprm-checkbox .round label
 
-.kwf-checkbox .round 
+.tprm-checkbox .round 
 
-.kwf-checkbox .round input[type="checkbox"]
+.tprm-checkbox .round input[type="checkbox"]
 
-.kwf-checkbox .round input[type="checkbox"]:checked + label */
+.tprm-checkbox .round input[type="checkbox"]:checked + label */

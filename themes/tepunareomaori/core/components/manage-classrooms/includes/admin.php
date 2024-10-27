@@ -51,7 +51,7 @@ add_action('groups_create_group_step_save_group-settings', 'TPRM_group_save_sett
     ?>
     <div class="bp-groups-settings-section" id="bp-groups-settings-section-content-protection">
         <fieldset>
-        <?php if ($group_type !== 'kwf-ecole') { //classroom ?>
+        <?php if ($group_type !== 'tprm-school') { //classroom ?>
             <legend><?php _e('School Name', 'tprm-theme'); ?></legend>
             <label>
                 <input type="text" name="ecole_name" value="<?php echo esc_attr($ecole_name); ?>">
@@ -255,7 +255,7 @@ function TPRM_group_render_settings_in_edit_form() {
 
 	<div class="bp-groups-settings-section" id="bp-groups-settings-section-content-protection">
 		<fieldset>
-		<?php if($group_type !== 'kwf-ecole') { //classroom ?>
+		<?php if($group_type !== 'tprm-school') { //classroom ?>
 			<legend><?php _e('School Name', 'tprm-theme'); ?></legend>
 			<label>
 				<input type="text" name="ecole_name" value="<?php echo esc_attr($ecole_name); ?>">

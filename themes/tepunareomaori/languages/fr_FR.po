@@ -102,8 +102,8 @@ msgid "This document was imprinted by : "
 msgstr "Ce document a été imprimé par :"
 
 # wpml-name: 25707bf2e0956c92fe99b6dab7ced7dd
-msgid "This document is the property of tepunareomaori © %s and contains confidential student credentials from %s. Unauthorized reproduction, distribution, or transmission in any form is strictly prohibited. For permissions, please reach out to support@tepunareomaori.com."
-msgstr "Ce document est la propriété de tepunareomaori © %s et contient des informations confidentielles sur les étudiants de l'école %s. Toute reproduction, distribution ou transmission non autorisée sous quelque forme que ce soit est strictement interdite. Pour obtenir des autorisations, veuillez contacter support@tepunareomaori.com."
+msgid "This document is the property of tepunareomaori © %s and contains confidential student credentials from %s. Unauthorized reproduction, distribution, or transmission in any form is strictly prohibited. For permissions, please reach out to kiaora@tepunareomaori.co.nz."
+msgstr "Ce document est la propriété de tepunareomaori © %s et contient des informations confidentielles sur les étudiants de l'école %s. Toute reproduction, distribution ou transmission non autorisée sous quelque forme que ce soit est strictement interdite. Pour obtenir des autorisations, veuillez contacter kiaora@tepunareomaori.co.nz."
 
 # wpml-name: eca06c63f71743f1faff9d602aaa540b
 msgid "Students Credentials : %s "
@@ -229,8 +229,8 @@ msgid "Forums"
 msgstr "Forums"
 
 # wpml-name: b80c00d2c365fc89cc5009924c6643f8
-msgid "If you are having trouble logging in, please contact our support team at support@tepunareomaori.com"
-msgstr "Si vous rencontrez des problèmes de connexion, veuillez contacter notre service d'assistance à l'adresse suivante : support@tepunareomaori.com"
+msgid "If you are having trouble logging in, please contact our support team at kiaora@tepunareomaori.co.nz"
+msgstr "Si vous rencontrez des problèmes de connexion, veuillez contacter notre service d'assistance à l'adresse suivante : kiaora@tepunareomaori.co.nz"
 
 # wpml-name: b8fcfb2cb52292fa3705bda53000252f
 msgid "Help for the first connection"

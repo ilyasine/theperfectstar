@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
 
     // hard reload
-    $('#kwf-refresh').on("click", function () {
+    $('#tprm-refresh').on("click", function () {
 
         $('.TPRM_refresh').magnificPopup({
             type: 'inline',
@@ -71,7 +71,7 @@ jQuery(document).ready(function ($) {
     </div>
     <div id="picture-password-fields" style="display: none;">
         <div class="picture_password" style="max-height: 300px; overflow-y: scroll; overflow-x: hidden; padding: 20px; padding-right: 10px; margin-bottom: 16px;">
-            <div class="kwf-preloader-login" style="display: none;">
+            <div class="tprm-preloader-login" style="display: none;">
                  ${preloader}
             </div>
             <div class="images-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;"></div>
@@ -132,7 +132,7 @@ jQuery(document).ready(function ($) {
             // Picture Password Mode
             $('#loginform .user-pass-wrap').hide();
             $('#loginform .user-pass-wrap').before($('#picture-password-fields'));
-            /* $('#loginform p:not(".submit, .forgetmenot"), #loginform .user-pass-wrap').hide(); */
+            //$('#loginform p:not(".submit, .forgetmenot"), #loginform .user-pass-wrap').hide();
             $('#picture-password-fields').show();
             $('#login').addClass('picture-mode');
             // Create and append the picture submit button
@@ -217,7 +217,7 @@ jQuery(document).ready(function ($) {
             selectedPicture = imageUrl; // Store the selected picture URL
         }
 
-        console.log('selectedPicture : ', selectedPicture); // Log the selected picture URL (if any)
+        //console.log('selectedPicture : ', selectedPicture); // Log the selected picture URL (if any)
     });
 
 
@@ -227,7 +227,7 @@ jQuery(document).ready(function ($) {
         $('#user_pass').val('');
         // Load images via AJAX when the tab is activated
         if (!$('.images-grid .picture-container img').length) {
-            $('#picture-password-fields .picture_password .kwf-preloader-login').show();
+            $('#picture-password-fields .picture_password .tprm-preloader-login').show();
             $('#picture-password-fields .picture_password').css('overflow', 'hidden');
 
             $.ajax({
@@ -241,7 +241,7 @@ jQuery(document).ready(function ($) {
                 success: function (response) {
                     if (response.html) {
                         $('.images-grid').html(response.html);
-                        $('#picture-password-fields .picture_password .kwf-preloader-login').fadeOut();
+                        $('#picture-password-fields .picture_password .tprm-preloader-login').fadeOut();
                         $('#picture-password-fields .picture_password').css('overflow', 'auto');
                     }
                 },

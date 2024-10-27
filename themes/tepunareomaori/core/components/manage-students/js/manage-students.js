@@ -65,7 +65,7 @@ jQuery(document).ready(function ($) {
 
                         if (student_id) {
                             //process suspend
-                            $('.kwf-preloader').show();
+                            $('.tprm-preloader').show();
                             bodyparagraphs.hide();
                             $(title).text(MST_data.student_being_suspended_message);
                             footer_container.find('button').addClass('disabled');
@@ -85,7 +85,7 @@ jQuery(document).ready(function ($) {
                                 success: function (result, textstatus) {
                                     if (result) {
                                         console.log(result);
-                                        $('.kwf-preloader').hide();
+                                        $('.tprm-preloader').hide();
                                         footer_container.find('button').removeClass('disabled');
                                         bodyparagraphs.show();
                                         $(title).text(result.data.message);
@@ -115,7 +115,7 @@ jQuery(document).ready(function ($) {
                                     }
                                 },
                                 error: function (result) {
-                                    $('.kwf-preloader').hide();
+                                    $('.tprm-preloader').hide();
                                     bodyparagraphs.show();
                                     $(title).text(original_title);
                                     footer_container.find('button').removeClass('disabled');
@@ -491,7 +491,7 @@ jQuery(document).ready(function ($) {
                             NProgress.start();
                             NProgress.set(0.4);
 
-                            $('.kwf-preloader').show();
+                            $('.tprm-preloader').show();
                             classroomTable.css('visibility', 'collapse');
                             $(title).text(MST_data.updating_student_classrooms_message);
                             footer_container.find('button').addClass('disabled');
@@ -516,7 +516,7 @@ jQuery(document).ready(function ($) {
                                 dataType: 'json',
                                 success: function (result, textstatus) {
                                     if (result) {
-                                        $('.kwf-preloader').hide();
+                                        $('.tprm-preloader').hide();
                                         classroomTable.css('visibility', 'visible');
 
                                         setTimeout(() => {
@@ -544,7 +544,7 @@ jQuery(document).ready(function ($) {
                                 },
                                 error: function (result) {
                                     console.log(result);
-                                    $('.kwf-preloader').hide();
+                                    $('.tprm-preloader').hide();
                                     classroomTable.css('visibility', 'visible');
                                     $(title).text(original_title);
                                     $(document).trigger(
@@ -560,7 +560,7 @@ jQuery(document).ready(function ($) {
                                 },
                             });
                         } else {
-                            $('.kwf-preloader').hide();
+                            $('.tprm-preloader').hide();
                             classroomTable.css('visibility', 'visible');
                             $(document).trigger(
                                 'bb_trigger_toast_message',
@@ -679,8 +679,8 @@ jQuery(document).ready(function ($) {
                             true,
                         ]
                     );
-                    $(formThis).closest('.column-kwf-student-status-kwf-inactive').replaceWith(
-                        `<div class="column-kwf-student-status-kwf-active" id="kwf-active">
+                    $(formThis).closest('.column-tprm-student-status-tprm-inactive').replaceWith(
+                        `<div class="column-tprm-student-status-tprm-active" id="tprm-active">
                             <a class="activated">
                               <span>                                                        
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" id="check">

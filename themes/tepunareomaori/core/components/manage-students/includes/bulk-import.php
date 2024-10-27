@@ -163,7 +163,7 @@ function process_excel_rows() {
                     'user_email' => $studentEmail,
                     'first_name' => $studentFirstName,
                     'last_name' => $studentLastName,
-                    'role' => 'student'
+                    'role' => 'school_student'
                 );
 
                 // Create the student user
@@ -180,7 +180,7 @@ function process_excel_rows() {
                     $result = groups_join_group($selectedClassroom, $student_id);
                     if ($result) {
                         // Set Student Profile               
-                        bp_set_member_type($student_id, 'student');	
+                        bp_set_member_type($student_id, 'school_student');	
                     }else{              
                         $skippedRows++;
                         continue;

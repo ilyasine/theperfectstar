@@ -14,7 +14,7 @@ add_action('learndash_init', 'remove_courses_tab_for_leaders' );
 
 	global $bp_ld_sync;
 
-	if ( ! is_TPRM_admin() && ! is_student() ) {
+	if ( ! is_tprm_admin() && ! is_student() ) {
 	
 		remove_action( 'bp_setup_nav', array( $bp_ld_sync, 'setup_nav' ), 100 );
 		remove_filter( 'nav_menu_css_class', array( $bp_ld_sync, 'bb_ld_active_class' ), PHP_INT_MAX, 2 );
@@ -28,7 +28,7 @@ add_action('learndash_init', 'remove_courses_tab_for_leaders' );
  */
 
 function remove_extra_tabs_for_leaders() {
-	if ( ! is_TPRM_admin() && ! is_student() ) {
+	if ( ! is_tprm_admin() && ! is_student() ) {
 		bp_core_remove_nav_item('additional-content');
 		bp_core_remove_nav_item('exam');
     }

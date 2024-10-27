@@ -39,15 +39,15 @@ $enabled_joined_date   = ! function_exists( 'bb_enabled_member_directory_element
 			/*
 			* Exclude KWF Admins from the members loop
 			*/
-			if( ! is_TPRM_admin() ) :
+			if( ! is_tprm_admin() ) :
 
 				// Get the user's role
 				$user_id = bp_get_member_user_id();
 				$user = get_userdata($user_id);
 				$user_roles = $user->roles;
 			
-				// Check if the user has the "administrator" or "kwf-admin" role and skip them
-				if (in_array('administrator', $user_roles) || in_array('kwf-admin', $user_roles)) {
+				// Check if the user has the "administrator" role and skip them
+				if (in_array('administrator', $user_roles) ) {
 					continue;
 				}
 
@@ -62,7 +62,7 @@ $enabled_joined_date   = ! function_exists( 'bb_enabled_member_directory_element
 				$user = get_userdata($user_id);
 				$user_roles = $user->roles;
 			
-				if (in_array('teacher', $user_roles) ) {
+				if (in_array('school_staff', $user_roles) ) {
 					continue;
 				}
 

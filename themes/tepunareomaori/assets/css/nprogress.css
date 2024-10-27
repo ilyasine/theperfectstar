@@ -17,6 +17,8 @@ body.elementor-default.elementor-template-canvas .elementor-sticky--active{
 }
 .sticky-header .site-header {
   padding-top: 8px;
+  padding-top: 50px;
+  height: 200px;
 }
 #site-logo .site-title img {
   padding-bottom: 18px;

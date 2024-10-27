@@ -237,7 +237,7 @@ body.groups.students {
         }
 
         .student-delete-content-body {
-            .kwf-preloader {
+            .tprm-preloader {
                 #tepunareomaori-preloader {
                     position: relative !important;
                     background: none !important;
@@ -283,7 +283,7 @@ body.groups.students {
         flex-direction: column;
 
         .classrooms-list {
-            .kwf-preloader {
+            .tprm-preloader {
                 #tepunareomaori-preloader {
                     position: relative !important;
                     background: none !important;
@@ -643,9 +643,9 @@ body.groups.students {
                     width: 20%;
                     text-align: center;
 
-                    .column-kwf-student-status-kwf {
+                    .column-tprm-student-status-tprm {
 
-                        // .column-kwf-student-status-kwf-active
+                        // .column-tprm-student-status-tprm-active
                         &-active {
                             .activated {
                                 display: table;
@@ -724,7 +724,7 @@ body.groups.students {
                             }
                         }
 
-                        // .column-kwf-student-status-kwf-inactive
+                        // .column-tprm-student-status-tprm-inactive
                         &-inactive {
 
                             //Unpaid School

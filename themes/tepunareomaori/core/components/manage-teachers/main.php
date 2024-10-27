@@ -23,8 +23,8 @@ function manage_teachers_scripts() {
         //manage-teachers global style
         wp_enqueue_style('manage-teachers-style', TPRM_CSS_PATH .'manage-teachers.css' );
        //Enqueue create teacher
-        wp_enqueue_script('create-teacher-script', MTE_JS_DIR . 'create-teacher.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'kwf-bp-groups-js' ), TPRM_THEME_VERSION, true );
-        wp_enqueue_script('manage-teacher-script', MTE_JS_DIR . 'manage-teacher.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'kwf-bp-groups-js' ), TPRM_THEME_VERSION, true );
+        wp_enqueue_script('create-teacher-script', MTE_JS_DIR . 'create-teacher.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'tprm-bp-groups-js' ), TPRM_THEME_VERSION, true );
+        wp_enqueue_script('manage-teacher-script', MTE_JS_DIR . 'manage-teacher.js', array( 'jquery', 'jquery-effects-core' , 'jquery-ui-tabs' , 'tprm-bp-groups-js' ), TPRM_THEME_VERSION, true );
         wp_enqueue_style('create-teacher-style', TPRM_CSS_PATH .'create-teacher.css' );
 
         $creating_classrrom_header = __('CREATING Teacher', 'tprm-theme');

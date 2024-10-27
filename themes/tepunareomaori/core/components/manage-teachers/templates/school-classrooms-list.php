@@ -3,7 +3,7 @@ $teacher_classroom_ids = []; // Array to store classroom IDs where the teacher i
 
 // Retrieve classrooms where the teacher is a member
 if( isset($teacher_id)){
-    $teacher_groups = get_TPRM_user_groups($teacher_id); // Replace $teacher_id with the actual teacher ID variable
+    $teacher_groups = get_tprm_user_groups($teacher_id); // Replace $teacher_id with the actual teacher ID variable
     if (!empty($teacher_groups)) {
         $teacher_classroom_ids = $teacher_groups;
     }

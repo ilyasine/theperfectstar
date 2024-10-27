@@ -9,11 +9,11 @@ jQuery(document).ready(function ($) {
 
     //curriculum level select
     $("#classroom_select").select2();
-    $('#classroom_select').one('select2:open', function(e) {
+    $('#classroom_select').one('select2:open', function (e) {
         $('input.select2-search__field').prop('placeholder', MST_data.choose_classroom_select);
     });
 
-    $('fieldset#classroom_setup').find('#classroom_select').on('change', function() {
+    $('fieldset#classroom_setup').find('#classroom_select').on('change', function () {
         checkNextButtonState();
     });
 
@@ -102,7 +102,7 @@ jQuery(document).ready(function ($) {
         $('fieldset#file_submit').find('.selected_classroom_text span').text(selectedClassroomName);
         checkNextButtonState();
     });
-    
+
 
     function checkNextButtonState() {
         selectedClassroom = $('fieldset#classroom_setup').find('#classroom_select').val();
@@ -112,17 +112,17 @@ jQuery(document).ready(function ($) {
         if (fileInput[0]) {
             file = fileInput[0].files[0];
         }
-       
-    
+
+
         if (selectedClassroom == '') {
             $nextButton.addClass('disabled');
-        } else{
+        } else {
             $nextButton.removeClass('disabled');
         }
 
-        if (file) {         
+        if (file) {
             $submitButton.removeClass('disabled');
-        } else{
+        } else {
             $submitButton.addClass('disabled');
         }
     }
@@ -143,20 +143,20 @@ jQuery(document).ready(function ($) {
                     true,
                 ]
             );
-        }     
+        }
     });
 
 
     $("#submit-students-file").click(function (e) {
         current_fs = $(this).closest('fieldset');
-        var security = $(this).data('security'); 
-    
+        var security = $(this).data('security');
+
         var fileInput = $('fieldset#file_submit').find('#excel_file');
         file = fileInput[0].files[0]; // Get the first file
-    
+
         if (current_fs.attr('id') === 'file_submit') {
             e.preventDefault();
-    
+
             if (!school_id) {
                 $(document).trigger(
                     'bb_trigger_toast_message',
@@ -170,7 +170,7 @@ jQuery(document).ready(function ($) {
                 );
                 return;
             }
-    
+
             if (!selectedClassroom || !selectedClassroomslug) {
                 $(document).trigger(
                     'bb_trigger_toast_message',
@@ -184,7 +184,7 @@ jQuery(document).ready(function ($) {
                 );
                 return;
             }
-    
+
             if (!file) {
                 $(document).trigger(
                     'bb_trigger_toast_message',
@@ -198,9 +198,9 @@ jQuery(document).ready(function ($) {
                 );
                 return;
             }
-    
-            $('.kwf-preloader').fadeIn();
-            $('.kwf-preloader #tepunareomaori-preloader').fadeIn();
+
+            $('.tprm-preloader').fadeIn();
+            $('.tprm-preloader #tepunareomaori-preloader').fadeIn();
             current_fs.find('.template-file-text').hide();
             current_fs.find('.file_upload_Container').hide();
             current_fs.find('.classrooms-notice').hide();
@@ -210,7 +210,7 @@ jQuery(document).ready(function ($) {
             fieldset_body = current_fs.find('.fieldset-body');
             fieldset_footer = current_fs.find('.fieldset-footer');
             fieldset_notice = fieldset_body.find('.notice');
-    
+
             // Create FormData object
             var formData = new FormData();
             formData.append('action', 'upload_import_file');
@@ -235,7 +235,7 @@ jQuery(document).ready(function ($) {
                 success: function (result) {
 
                     if (result.success) {
-            
+
                         var totalRows = result.data.totalRows || 0;
                         if (totalRows) {
                             // Creating Students
@@ -258,7 +258,7 @@ jQuery(document).ready(function ($) {
                                     action: 'process_excel_rows',
                                     security: security,
                                     selectedClassroom: selectedClassroom,
-                                    startRow: startRow,                  
+                                    startRow: startRow,
                                     school_id: school_id,
                                     excelfile: excelfile,
                                     processedRows: processedRows,
@@ -267,7 +267,7 @@ jQuery(document).ready(function ($) {
                                 type: 'post',
                                 dataType: 'json',
                                 success: function (result) {
-                                    console.log(' processExcelBatch ' , result);
+                                    console.log(' processExcelBatch ', result);
                                     if (result.success) {
                                         // Update your progress indicators
                                         processedRows = result.data.processedRows || 0;
@@ -276,27 +276,27 @@ jQuery(document).ready(function ($) {
 
                                         // Update processed data and total rows
                                         $('#process_data').text(processedRows);
-                                                                                   
+
                                         // Update progress bar
                                         var progressPercentage = Math.min((processedRows / totalRows) * 100, 100); // Ensure it doesn't exceed 100%
                                         $('.progress-bar').css('width', progressPercentage + '%').text(Math.round(progressPercentage) + '%');
-                
+
                                         /* console.log('totalRows : ' , totalRows);
                                         console.log('skippedRows : ' , skippedRows);
                                         console.log(' progressPercentage : ' , progressPercentage);
                                         console.log(' nextStartRow : ', nextStartRow); */
 
                                         $('.skipped_student_notice').find('#ignored_students_count').text(skippedRows);
-                                        
-                                        if (skippedRows > 0) {                           
+
+                                        if (skippedRows > 0) {
                                             $('.skipped_student_notice').fadeIn();
                                         }
-                
+
                                         if (nextStartRow <= totalRows + 1) { // Use totalRows from response
                                             // Process the next batch
                                             processExcelBatch(nextStartRow, processedRows, skippedRows);
                                         } else {
-                                            $('.kwf-preloader #tepunareomaori-preloader').hide();
+                                            $('.tprm-preloader #tepunareomaori-preloader').hide();
                                             console.log('Import completed.');
                                             $('.progress-bar').css('animation', 'none');
                                             title.text(MST_data.bulk_student_created_title);
@@ -304,18 +304,18 @@ jQuery(document).ready(function ($) {
                                             var classroom_students_name = result.data.classroom_students_name;
                                             var classroom_students_tab = result.data.classroom_students_tab;
                                             if (skippedRows == 0) {
-                                                fieldset_notice.html( processedRows + ' ' + MST_data.processed_students + ', ' + skippedRows  + ' ' + MST_data.skipped_students).addClass('success');
+                                                fieldset_notice.html(processedRows + ' ' + MST_data.processed_students + ', ' + skippedRows + ' ' + MST_data.skipped_students).addClass('success');
                                             } else {
-                                                fieldset_notice.html('<span class="success"> ' + processedRows + ' ' + MST_data.processed_students + '</span>, <span class="error"> ' + skippedRows  + ' ' + MST_data.skipped_students + '</span>');
+                                                fieldset_notice.html('<span class="success"> ' + processedRows + ' ' + MST_data.processed_students + '</span>, <span class="error"> ' + skippedRows + ' ' + MST_data.skipped_students + '</span>');
                                             }
                                             var newButton = '<a href="' + classroom_students_tab + '" class="button new_student_link" target="_blank" rel="noopener noreferrer">' + classroom_students_name + ' <span class="bb-icon-l bb-icon-external-link"></span></a>';
-                                           
+
                                             fieldset_notice.after(newButton);
                                             fieldset_notice.fadeIn();
                                             fieldset_footer.css('visibility', 'visible');
                                             fieldset_footer.find('#submit-students-file').hide();
                                             $("#submit-new-students-file").fadeIn()
-                
+
                                             // Attach event to the new "Create New student" button
                                             $("#submit-new-students-file").click(function () {
                                                 // Reset form or redirect to student creation page
@@ -323,7 +323,7 @@ jQuery(document).ready(function ($) {
                                                 resetToFirstFieldsetBulk();
                                                 fieldset_notice.hide();
                                                 title.removeClass('error').text(originalFileSubmitTitle);
-                                                subtitle.removeClass('error').text(originalFileSubmitSubtitle);                                             
+                                                subtitle.removeClass('error').text(originalFileSubmitSubtitle);
                                                 current_fs.find('.template-file-text').fadeIn();
                                                 current_fs.find('.classrooms-notice').fadeIn();
                                                 current_fs.find('.file_upload_Container').fadeIn();
@@ -341,14 +341,14 @@ jQuery(document).ready(function ($) {
                                                 $('.progress-bar').css('animation', 'f 2s linear infinite');
                                                 checkNextButtonState();
                                             });
-                
+
                                             $('.manage-students button.all-students').on('click', function () {
                                                 // Trigger click event on the "Create New student" button
                                                 resetForm();
                                                 resetToFirstFieldsetBulkGlobal();
                                                 fieldset_notice.hide();
                                                 title.removeClass('error').text(originalFileSubmitTitle);
-                                                subtitle.removeClass('error').text(originalFileSubmitSubitle);                                              
+                                                subtitle.removeClass('error').text(originalFileSubmitSubitle);
                                                 current_fs.find('.classrooms-list').fadeIn();
                                                 current_fs.find('.classrooms-notice').fadeIn();
                                                 current_fs.find('#confirm-classroom-selection').fadeIn();
@@ -357,15 +357,15 @@ jQuery(document).ready(function ($) {
                                                 current_fs.find('input.back').fadeOut();
                                                 current_fs.find('.new_student_link').remove();
                                                 $("#submit-new-students-file").hide();
-                                                $('.kwf-preloader #tepunareomaori-preloader').show();
+                                                $('.tprm-preloader #tepunareomaori-preloader').show();
                                                 $('.skipped_student_notice').fadeOut();
                                                 checkNextButtonState();
-                
+
                                                 setTimeout(() => {
                                                     window.location.reload();
                                                 }, 2000);
                                             });
-                
+
                                         }
                                     } else {
                                         console.error('An error occurred:', result.data);
@@ -400,8 +400,8 @@ jQuery(document).ready(function ($) {
                                 }
                             });
                         }
-        
-                   
+
+
                     } else {
                         console.error('An error occurred:', result.data);
                         title.addClass('error').text(MST_data.error_creating_student_from_file);
@@ -434,7 +434,7 @@ jQuery(document).ready(function ($) {
                 },
                 error: function (xhr, status, error) {
                     console.error('AJAX Error:', status, error);
-                    $('.kwf-preloader #tepunareomaori-preloader').hide();
+                    $('.tprm-preloader #tepunareomaori-preloader').hide();
                     title.addClass('error').text(MST_data.error_creating_student_from_file);
                     subtitle.addClass('error').text(xhr.responseText);
                     fieldset_notice.text(MST_data.error_submiting_students_file).removeClass('success').addClass('error');
@@ -464,7 +464,7 @@ jQuery(document).ready(function ($) {
                     });
                 }
             });
-    
+
         }
     });
 

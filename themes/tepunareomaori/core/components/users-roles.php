@@ -1,11 +1,11 @@
 <?php 
 
-add_action('init', 'register_TPRM_roles');
-add_action('set_user_role', 'assign_group_leader_role_to_teacher_director_admin', 10, 2);
-add_action('user_register', 'assign_group_leader_role_to_teacher_director_admin', 10, 1);
-add_action('profile_update', 'assign_group_leader_role_to_teacher_director_admin', 10, 1);
+add_action('init', 'register_tprm_roles');
+add_action('set_user_role', 'assign_group_leader_role_to_teacher_school_principal_admin', 10, 2);
+add_action('user_register', 'assign_group_leader_role_to_teacher_school_principal_admin', 10, 1);
+add_action('profile_update', 'assign_group_leader_role_to_teacher_school_principal_admin', 10, 1);
 add_filter('pre_option_default_role', 'set_student_as_default_role',99,1);
-//add_action('init', 'is_user_id_TPRM_member');  
+//add_action('init', 'is_user_id_tprm_member');  
 
 /* 
 * *** Users & roles Helper functions   ***
@@ -135,7 +135,7 @@ add_action('manage_users_custom_column', 'display_user_language_column', 10, 3);
 	};
 
 	// Check if the user has the "student" role and has an active in Membership
-	if ($user_has_role('student') && function_exists('wc_memberships_is_user_active_member') && wc_memberships_is_user_active_member($id_user, 'access-' . get_option('school_year'))) {
+	if ($user_has_role('school_student') && function_exists('wc_memberships_is_user_active_member') && wc_memberships_is_user_active_member($id_user, 'access-' . get_option('school_year'))) {
 		return true;
 	}
 
@@ -154,7 +154,7 @@ function is_active_member(){
 
 	$user = wp_get_current_user();
 
-	$valid_roles = ['administrator', 'kwf-admin', 'director', 'teacher', 'school-admin', 'library', 'libraries_manager'];
+	$valid_roles = ['administrator', 'school_principal', 'school_staff', 'school_leader', 'library', 'libraries_manager'];
 
 	if (function_exists('wc_memberships_is_user_active_member') && isset($user->roles) && is_array($user->roles)) {
 		// Check for valid roles or member had an active subscription
@@ -191,11 +191,11 @@ function user_has_active_membership(){
  * @return Boolean
  */
 
-function is_TPRM_member(){
+function is_tprm_member(){
 
 	$user = wp_get_current_user();
 
-	$valid_roles = ['administrator', 'kwf-admin', 'director', 'teacher', 'school-admin', 'library', 'libraries_manager'];
+	$valid_roles = ['administrator', 'school_principal', 'school_staff', 'school_leader', 'library', 'libraries_manager'];
 
 	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
 		//check for valid roles or member had a valid subscription
@@ -215,11 +215,11 @@ function is_TPRM_member(){
  * @return Boolean
  */
 
-function is_user_id_TPRM_member($user_id){
+function is_user_id_tprm_member($user_id){
 
 	$user = get_user_by( 'id', $user_id);
 
-	$valid_roles = ['administrator', 'kwf-admin', 'director', 'teacher', 'school-admin', 'library', 'libraries_manager'];
+	$valid_roles = ['administrator', 'school_principal', 'school_staff', 'school_leader', 'library', 'libraries_manager'];
 
 	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
 		//check for valid roles or member had a valid subscription
@@ -255,17 +255,17 @@ function role_exists( $role ) {
 }
 
 /**
- * Create main roles to be used  : Director , Teacher , Student
+ * Create main roles to be used  : school_principal , Teacher , Student
  *
  * @since V2
  * @return void
  */
 
-function register_TPRM_roles() {
+function register_tprm_roles() {
 
 	global $wp_roles;
 
-	$existed_roles = array('director', 'teacher', 'student', 'kwf-admin', 'school-admin', 'library', 'libraries_manager');
+	$existed_roles = array('school_principal', 'school_staff', 'school_student', 'school_leader', 'library', 'libraries_manager');
 
 	foreach( $existed_roles as $existed_role ){
 
@@ -279,33 +279,11 @@ function register_TPRM_roles() {
 	if (!isset($wp_roles))
 		$wp_roles = new WP_Roles();
 
-	if (!role_exists('kwf-admin')) {
-		$adm = $wp_roles->get_role('administrator');
-		//Adding a 'kwf-admin' with all admin capabilities
-		$wp_roles->add_role('kwf-admin', 'KWF Admin', $adm->capabilities);
-		
-		// Get the role object
-		$role = get_role( 'kwf-admin' );
-		
-		// Remove the capability of managing plugins for this role only
-		$role->remove_cap( 'activate_plugins' );
-		$role->remove_cap( 'install_plugins' );
-		$role->remove_cap( 'upload_plugins' );
-		$role->remove_cap( 'update_plugins' );
-		$role->remove_cap( 'delete_plugins' );
-
-		// Remove the capability of managing users for this role only
-		$role->remove_cap( 'list_users' );
-		$role->remove_cap( 'create_users' );
-		$role->remove_cap( 'edit_users' );
-		$role->remove_cap( 'delete_users' );
-
-	}
 
     $TPRM_roles = array(		
-		'school-admin' => array(
-			'role_slug' => 'school-admin',
-			'role_name' => __( 'School Administrator', 'tprm-theme' ),
+		'school_leader' => array(
+			'role_slug' => 'school_leader',
+			'role_name' => __( 'School Leader', 'tprm-theme' ),
 			'capabilities' => array(
 				"read" => true,
 				"manage_school" => true,
@@ -342,12 +320,11 @@ function register_TPRM_roles() {
 				"view_h5p_results" => true
 			),
 		),
-		'director' => array(
-			'role_slug' => 'director',
-			'role_name' => __( 'Director', 'tprm-theme' ),
+		'school_principal' => array(
+			'role_slug' => 'school_principal',
+			'role_name' => __( 'School Principal', 'tprm-theme' ),
 			'capabilities' => array(
-				"read" => true,
-				
+				"read" => true,			
 				"group_leader" => true,
 				"level_1" => false,
 				"level_0" => true,
@@ -381,9 +358,9 @@ function register_TPRM_roles() {
 				"view_h5p_results" => true
 			),
 		),
-		'teacher' => array(
-			'role_slug' => 'teacher',
-			'role_name' => __( 'Teacher', 'tprm-theme' ),
+		'school_staff' => array(
+			'role_slug' => 'school_staff',
+			'role_name' => __( 'School Staff', 'tprm-theme' ),
 			'capabilities' => array(
 				"read" => true,
 				"group_leader" => true,
@@ -419,9 +396,9 @@ function register_TPRM_roles() {
 				"view_h5p_results" => true
 			),
 		),
-		'student' => array(
-			'role_slug' => 'student',
-			'role_name' => __( 'Student', 'tprm-theme' ),
+		'school_student' => array(
+			'role_slug' => 'school_student',
+			'role_name' => __( 'School Student', 'tprm-theme' ),
 			'capabilities' => array(
 				"level_0"=> true,
 				"read"=> true,
@@ -465,24 +442,24 @@ var_dump( $TPRM_roles );
 echo '</pre>'; */
 
 /**
- * Check if the user has the role of 'administrator' or 'kwf-admin'.
+ * Check if the user has the role of 'administrator'.
  *
  * @since V2
  * @param int|WP_User $user User ID or WP_User object to check.
  * @return bool True if the user has the role, false otherwise.
  */
-function is_TPRM_admin($user = null) {
+function is_tprm_admin($user = null) {
     // If $user is not provided, use the current user.
     if (null === $user) {
         $user = wp_get_current_user();
     }
 
-	 // Check if the user has either 'administrator' ( super admin with full privileges) or 'kwf-admin' role.
-	 return in_array('administrator', (array)$user->roles) || in_array('kwf-admin', (array)$user->roles);
+	 // Check if the user has either 'administrator' ( super admin with full privileges).
+	 return in_array('administrator', (array)$user->roles);
 }
 
 /**
- * Check if the user has the role of 'student' or 'kwf-student'.
+ * Check if the user has the role of 'school_student' .
  *
  * @since V2
  * @param int|WP_User $user User ID or WP_User object to check.
@@ -494,12 +471,12 @@ function is_student($user = null) {
         $user = wp_get_current_user();
     }
 
-    // Check if the user has either 'student' or 'kwf-student' role.
-    return in_array('student', (array)$user->roles) || in_array('kwf-student', (array)$user->roles);
+    // Check if the user has either 'school_student'
+    return in_array('school_student', (array)$user->roles);
 }
 
 /**
- * Check if the passed user ID or WP_User object has the role of 'student' or 'kwf-student'.
+ * Check if the passed user ID or WP_User object has the role of 'school_student'.
  *
  * @since V2
  * @param int|WP_User|null $user User ID or WP_User object to check. If null, return false.
@@ -521,43 +498,43 @@ function is_student_user($user = null) {
         return false;
     }
 
-    // Check if the user has either 'student' or 'kwf-student' role.
-    return in_array('student', (array)$user->roles) || in_array('kwf-student', (array)$user->roles);
+    // Check if the user has either 'school_student' or 'tprm-student' role.
+    return in_array('school_student', (array)$user->roles);
 }
 
 
 /**
- * Check if the user is a director.
+ * Check if the user is a School Principal.
  *
  * @since V2
  * @param int|WP_User $user User ID or WP_User object to check.
  * @return bool True if the user has the role, false otherwise.
  */
-function is_director($user = null) {
+function is_school_principal($user = null) {
     // If $user is not provided, use the current user.
     if (null === $user) {
         $user = wp_get_current_user();
     }
 
-    // Check if the user has both 'director' and 'group_leader' roles.
-    return in_array('director', (array)$user->roles) && in_array('group_leader', (array)$user->roles);
+    // Check if the user has both 'school_principal' and 'group_leader' roles.
+    return in_array('school_principal', (array)$user->roles) && in_array('group_leader', (array)$user->roles);
 }
 
 /**
- * Check if the user is a director.
+ * Check if the user is a School Leader.
  *
  * @since V2
  * @param int|WP_User $user User ID or WP_User object to check.
  * @return bool True if the user has the role, false otherwise.
  */
-function is_school_admin($user = null) {
+function is_school_leader($user = null) {
     // If $user is not provided, use the current user.
     if (null === $user) {
         $user = wp_get_current_user();
     }
 
-    // Check if the user has both 'director' and 'group_leader' roles.
-    return in_array('school-admin', (array)$user->roles) && in_array('group_leader', (array)$user->roles);
+    // Check if the user has both 'school_principal' and 'group_leader' roles.
+    return in_array('school_leader', (array)$user->roles) && in_array('group_leader', (array)$user->roles);
 }
 
 /**
@@ -573,25 +550,25 @@ function is_teacher($user = null) {
         $user = wp_get_current_user();
     }
 
-    // Check if the user has both 'teacher' and 'group_leader' roles.
-    return in_array('teacher', (array)$user->roles) && in_array('group_leader', (array)$user->roles);
+    // Check if the user has both 'school_staff' and 'group_leader' roles.
+    return in_array('school_staff', (array)$user->roles) && in_array('group_leader', (array)$user->roles);
 }
 
 /**
- *  Assign group_leader role to teacher and director
+ *  Assign group_leader role to teacher and school_principal
  *
  * @since V2
  * @param int $user User ID.
  * @return void
  */
-function assign_group_leader_role_to_teacher_director_admin($user_id) {
+function assign_group_leader_role_to_teacher_school_principal_admin($user_id) {
     $user = get_userdata($user_id);
     
     if ($user) {
         $user_roles = $user->roles;
 
-        // Check if the user has the roles 'teacher' or 'Director'
-        if (in_array('teacher', $user_roles) || in_array('director', $user_roles) || in_array('school-admin', $user_roles)) {
+        // Check if the user has the roles 'school_staff' or 'school_principal'
+        if (in_array('school_staff', $user_roles) || in_array('school_principal', $user_roles) || in_array('school_leader', $user_roles)) {
             $user->add_role('group_leader'); // Assign the 'group_leader' role
         }
     }	
@@ -602,14 +579,14 @@ function assign_group_leader_role_to_teacher_director_admin($user_id) {
  * Helper function to check if the current user is a KWF leader
  *
  * @since V2
- * @since V3 , Updated to add new School Administrator Role
+ * @since V3 , Updated to add new School Leader Role
  * @return Boolean
  */
 
- function is_TPRM_leader() {
+ function is_tprm_leader() {
     $user = wp_get_current_user();
 
-    $valid_roles = ['administrator', 'kwf-admin', 'director', 'teacher', 'group_leader', 'school-admin', 'library', 'libraries_manager'];
+    $valid_roles = ['administrator', 'school_principal', 'school_staff', 'group_leader', 'school_leader', 'library', 'libraries_manager'];
 
     foreach ($valid_roles as $role) {
         if (in_array($role, $user->roles)) {
@@ -627,10 +604,10 @@ function assign_group_leader_role_to_teacher_director_admin($user_id) {
  * @return Boolean
  */
 
- function is_TPRM_manager() {
+ function is_tprm_manager() {
     $user = wp_get_current_user();
 
-    $valid_roles = ['administrator', 'kwf-admin', 'director', 'school-admin'];
+    $valid_roles = ['administrator', 'school_principal', 'school_leader'];
 
     foreach ($valid_roles as $role) {
         if (in_array($role, $user->roles)) {
@@ -650,7 +627,7 @@ function assign_group_leader_role_to_teacher_director_admin($user_id) {
  * @return string
  */
 function set_student_as_default_role($default_role){
-	$default_role = 'student';
+	$default_role = 'school_student';
     return $default_role;
 }
 
@@ -667,7 +644,7 @@ function is_library($user = null) {
         $user = wp_get_current_user();
     }
 
-    // Check if the user has both 'teacher' and 'group_leader' roles.
+    // Check if the user has both 'school_staff' and 'group_leader' roles.
     return in_array('library', (array)$user->roles);
 }
 
@@ -684,7 +661,7 @@ function is_libraries_manager($user = null) {
         $user = wp_get_current_user();
     }
 
-    // Check if the user has both 'teacher' and 'group_leader' roles.
+    // Check if the user has both 'school_staff' and 'group_leader' roles.
     return in_array('libraries_manager', (array)$user->roles);
 }
 

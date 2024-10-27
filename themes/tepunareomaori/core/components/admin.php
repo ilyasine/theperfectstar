@@ -3,7 +3,7 @@
 add_filter('site_transient_update_plugins', 'remove_update_notifications');
 add_filter('all_plugins', 'TPRM_hide_plugins_network');
 add_action('admin_bar_menu', 'TPRM_theme_add_admin_bar_link', 999);
-add_filter('show_admin_bar', 'show_admin_bar_to_TPRM_admin',99,1);
+//add_filter('show_admin_bar', 'show_admin_bar_to_tprm_admin',99,1);
 
 /**
  * Remove plugin update notifications
@@ -90,20 +90,6 @@ function TPRM_theme_add_admin_bar_link($wp_admin_bar) {
 		'class' => 'tprm-theme-dashboard', // Node class
 	  )
 	));
-}
-
-/**
- * Show admin bar to users with 'kwf-admin' role
- *
- * @since V2
- * @param bool $show Current state of the admin bar visibility.
- * @return bool Updated state of the admin bar visibility.
- */
-function show_admin_bar_to_TPRM_admin($show) {
-    if (current_user_can('kwf-admin')) {
-        return true;
-    }
-    return $show;
 }
 
 //callback to print the school year input field

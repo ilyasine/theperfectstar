@@ -31,7 +31,7 @@ $student_name = bp_core_get_user_displayname($student_id); ?>
         <div class="manage-student-classrooms-content-body">
 
             <div class="classrooms-list">
-                <div class="kwf-preloader" style="display: none"><?php echo $preloader; ?></div>
+                <div class="tprm-preloader" style="display: none"><?php echo $preloader; ?></div>
                 <?php
                 include 'school-classrooms-list.php';
                 ?>
@@ -326,7 +326,7 @@ $student_name = bp_core_get_user_displayname($student_id); ?>
     </div>
     <!-- Popup content here -->
     <div class="student-delete-content-body">
-        <div class="kwf-preloader" style="display: none"><?php echo $preloader; ?></div>
+        <div class="tprm-preloader" style="display: none"><?php echo $preloader; ?></div>
         <p><?php _e('Please be aware that this action will suspend the student from the school and all classrooms and will not have access to it’s account.', 'tprm-theme'); ?></p>
         <p><?php _e('This should only be done when a student is no longer part of the school.', 'tprm-theme'); ?></p>
         <p><?php _e('If you only wish to remove the student from a classroom(s), please press cancel and use the button with the following icon <span class="bb-icon-exchange"></span> .', 'tprm-theme'); ?></p>

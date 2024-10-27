@@ -30,12 +30,12 @@ function activate_student() {
         }
        
         if ($schoolSeats <= 0) {
-            wp_send_json_error(['msg' => __("You don't have enough seats. Please contact <strong>support@tepunareomaori.com</strong> to purchase more seats for your students.", 'tprm-theme')]);
+            wp_send_json_error(['msg' => __("You don't have enough seats. Please contact <strong>kiaora@tepunareomaori.co.nz</strong> to purchase more seats for your students.", 'tprm-theme')]);
             return;
         }
 
        /*  if ($couponObj->get_usage_count() >= $couponObj->get_usage_limit()) {
-            wp_send_json_error(['msg' => __('You have used all the available seats. You can no longer activate student accounts. Please contact support@tepunareomaori.com to purchase more seats for your students.', 'kwf-membership-coupon')]);
+            wp_send_json_error(['msg' => __('You have used all the available seats. You can no longer activate student accounts. Please contact kiaora@tepunareomaori.co.nz to purchase more seats for your students.', 'tprm-membership-coupon')]);
         } */
 
         if ( ! function_exists( 'wc_memberships' ) ) {

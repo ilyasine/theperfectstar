@@ -182,7 +182,7 @@ function get_last_user_school() {
             $group = groups_get_group($user_group);
             if( $group->parent_id == 0 ){
                 $group_type = bp_groups_get_group_type($user_group);
-                if ($group_type === 'kwf-ecole') {
+                if ($group_type === 'tprm-school') {
                     $user_school[] = $user_group;
                 }
             } 
@@ -284,8 +284,8 @@ function get_school_teachers_from_classrooms_and_move_them_to_school($school_id)
         foreach ($admins as $admin) {
             $teacher_id = $admin->user_id;
 
-            // Check if the user has the 'teacher' role
-            if (user_has_role($teacher_id, 'teacher') && !in_array($teacher_id, $teacher_ids)) {
+            // Check if the user has the 'school_staff' role
+            if (user_has_role($teacher_id, 'school_staff') && !in_array($teacher_id, $teacher_ids)) {
 
                  // Enroll the user in the school group as moderator
                 $enroll_school = groups_join_group($school_id, $teacher_id);
@@ -320,8 +320,8 @@ function get_school_students_from_classrooms_and_move_them_to_school($school_id)
             foreach ($members['members'] as $member) {
                 $user_id = $member->ID;
 
-                // Check if the user has the 'student' role
-                if ((user_has_role($user_id, 'student') || user_has_role($user_id, 'kwf-student')) && !in_array($user_id, $student_ids)) {
+                // Check if the user has the 'school_student' role
+                if ((user_has_role($user_id, 'school_student') || user_has_role($user_id, 'tprm-student')) && !in_array($user_id, $student_ids)) {
                     $student_ids[] = $user_id; // Track the student ID to avoid duplicates
 
                     // Enroll the student in the parent group
@@ -353,11 +353,11 @@ function get_school_teachers($school_id){
 
     $teachers = array();
 
-    // Loop through members and check if they have the 'teacher' role
+    // Loop through members and check if they have the 'school_staff' role
     foreach ($group_members['members'] as $member) {
         $user = new WP_User($member->ID);
 
-        if (in_array('teacher', (array) $user->roles)) {
+        if (in_array('school_staff', (array) $user->roles)) {
             $teachers[] = $member->ID;
         }
     }
@@ -386,11 +386,11 @@ function get_school_students($school_id){
 
     $students = array();
 
-    // Loop through members and check if they have the 'student' role
+    // Loop through members and check if they have the 'school_student' role
     foreach ($group_members['members'] as $member) {
         $user = new WP_User($member->ID);
 
-        if (in_array('student', (array) $user->roles) || in_array('kwf-student', (array) $user->roles)) {
+        if (in_array('school_student', (array) $user->roles) || in_array('tprm-student', (array) $user->roles)) {
             $students[] = $member->ID;
         }
     }
@@ -451,7 +451,7 @@ function get_students_classroom_for_year($school_id, $year) {
 function is_school($school_id){
     $group_type = bp_groups_get_group_type($school_id);
     $group = groups_get_group($school_id);
-    if ($group_type == 'kwf-ecole' && $group->parent_id == 0) {
+    if ($group_type == 'tprm-school' && $group->parent_id == 0) {
         return true;
     }
 
@@ -465,8 +465,8 @@ function get_classroom_teachers($classroom_id) {
 
     foreach ($admins as $admin) {
         $user_id = $admin->user_id;
-        // Check if the user has the 'teacher' role
-        if (user_has_role($user_id, 'teacher') && !in_array($user_id, $teachers)) {
+        // Check if the user has the 'school_staff' role
+        if (user_has_role($user_id, 'school_staff') && !in_array($user_id, $teachers)) {
             $teachers[] = $user_id; // Track the teacher ID to avoid duplicates
         }
     }
@@ -481,8 +481,8 @@ function get_school_directors($school_id) {
 
     foreach ($admins as $admin) {
         $user_id = $admin->user_id;
-        // Check if the user has the 'director' role
-        if (user_has_role($user_id, 'director') && !in_array($user_id, $directors)) {
+        // Check if the user has the 'school_principal' role
+        if (user_has_role($user_id, 'school_principal') && !in_array($user_id, $directors)) {
             $directors[] = $user_id; // Track the director ID to avoid duplicates
         }
     }  
@@ -491,19 +491,19 @@ function get_school_directors($school_id) {
 }
 
 
-function get_school_admins($school_id) {
-    $school_admins = array();   
+function get_school_leaders($school_id) {
+    $school_leaders = array();   
     $admins = groups_get_group_admins($school_id);
 
     foreach ($admins as $admin) {
         $user_id = $admin->user_id;
-        // Check if the user has the 'school-admin' role
-        if (user_has_role($user_id, 'school-admin') && !in_array($user_id, $school_admins)) {
-            $school_admins[] = $user_id; // Track the school-admin ID to avoid duplicates
+        // Check if the user has the 'school_leader' role
+        if (user_has_role($user_id, 'school_leader') && !in_array($user_id, $school_leaders)) {
+            $school_leaders[] = $user_id; // Track the school_leader ID to avoid duplicates
         }
     }  
 
-    return $school_admins;
+    return $school_leaders;
 }
 
 
@@ -597,7 +597,7 @@ function school_header() {
 
     foreach ($groups['groups'] as $group_id) {
         $group_types = bp_groups_get_group_type($group_id, false); // Fetch all types as an array
-        if (is_array($group_types) && in_array('kwf-ecole', $group_types)) {
+        if (is_array($group_types) && in_array('tprm-school', $group_types)) {
             $group = groups_get_group(array('group_id' => $group_id));
             if (!is_wp_error($group)) {
                 $TPRM_ecole_groups[] = $group;
@@ -610,15 +610,16 @@ function school_header() {
     }
 
     if ($is_library || $is_libraries_manager) {
+        $first_name = get_user_meta($user_id, 'first_name', true);
         $display_name = function_exists('bp_core_get_user_displayname') ? bp_core_get_user_displayname($user_id) : $user->display_name;
         // Display different headers for library and libraries manager
         ?>
-        <div class="kwf-header">
+        <div class="tprm-header">
             <div class="welcome-message">
                 <p>
-                    <?php _e('Welcome', 'tprm-theme'); ?>, 
+                    <?php _e('Tēnā koe', 'tprm-theme'); ?>, 
                     <div>
-                        <span class="user-name"><?php echo esc_html($display_name); ?></span>
+                        <span class="user-name"><?php echo esc_html($first_name); ?></span>
                         <?php if (function_exists('bp_is_active') && function_exists('bp_activity_get_user_mentionname')) : ?>
                             <span class="user-mention"><?php echo '@' . esc_html(bp_activity_get_user_mentionname($user_id)); ?></span>
                         <?php else : ?>
@@ -669,22 +670,18 @@ function school_header() {
             $display_group = $TPRM_ecole_groups[0];
         }
 
+        $first_name = get_user_meta($user_id, 'first_name', true);
         $display_name = function_exists('bp_core_get_user_displayname') ? bp_core_get_user_displayname($user_id) : $user->display_name;
         $display_group_name = $display_group->name;
         $display_group_url = bp_get_group_permalink($display_group);
         $display_group_image = bp_core_fetch_avatar(array('item_id' => $display_group->id, 'object' => 'group', 'type' => 'full', 'html' => false));
         ?>
-        <div class="kwf-header">
+        <div class="tprm-header">
             <div class="welcome-message">
                 <p>
-                    <?php _e('Welcome', 'tprm-theme'); ?>, 
+                    <?php _e('Tēnā koe', 'tprm-theme'); ?> 
                     <div>
-                        <span class="user-name"><?php echo esc_html($display_name); ?></span>
-                        <?php if (function_exists('bp_is_active') && function_exists('bp_activity_get_user_mentionname')) : ?>
-                            <span class="user-mention"><?php echo '@' . esc_html(bp_activity_get_user_mentionname($user_id)); ?></span>
-                        <?php else : ?>
-                            <span class="user-mention"><?php echo '@' . esc_html($user->user_login); ?></span>
-                        <?php endif; ?>
+                        <span class="user-name"><?php echo esc_html($first_name); ?></span>
                     </div>
                 </p>
             </div>
@@ -769,10 +766,10 @@ function TPRM_set_group_default_tab(){
 	$group = groups_get_current_group();
 	$group_type = bp_groups_get_group_type( $group->id );
 	$user_id = bp_loggedin_user_id();
-		if( is_TPRM_leader() ){
-			if ( $group_type !== 'kwf-ecole') {
+		if( is_tprm_leader() ){
+			if ( $group_type !== 'tprm-school') {
 				return 'content';
-			}elseif( $group_type == 'kwf-ecole' && bp_get_descendent_groups( $group->id, $user_id )) {
+			}elseif( $group_type == 'tprm-school' && bp_get_descendent_groups( $group->id, $user_id )) {
 				return 'subgroups';
 			}
 		}

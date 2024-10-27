@@ -8,7 +8,7 @@
         //return false;
     //}
     $user = get_userdata( $user_id );
-    if ( in_array( 'administrator', $user->roles ) || in_array( 'kwf-admin', $user->roles ) ) {
+    if ( in_array( 'administrator', $user->roles ) ) {
         return false;
     }
     // Sessions token instance.
@@ -28,7 +28,7 @@
 
     // Check if user data is valid and has roles
     if ( $user && isset( $user->roles ) ) {
-        if ( in_array( 'administrator', $user->roles ) || in_array( 'kwf-admin', $user->roles ) ) {
+        if ( in_array( 'administrator', $user->roles ) ) {
             return false;
         }
     } else {
@@ -78,8 +78,8 @@ function destroy_sessions_and_login_callback() {
     // Get user data.
     $user_data = get_userdata($user_id);
 
-    // Check if user is an administrator or kwf-admin.
-    if (!in_array('administrator', $user_data->roles) && !in_array('kwf-admin', $user_data->roles)) {
+    // Check if user is an administrator or tprm-admin.
+    if (!in_array('administrator', $user_data->roles)) {
         // Destroy other sessions.
         $manager = WP_Session_Tokens::get_instance($user_id);
         $manager->destroy_all();

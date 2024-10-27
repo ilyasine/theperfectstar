@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
             NProgress.start();
             NProgress.set(0.4);
             var interval = setInterval(function () { NProgress.inc(); }, 1000);
-            clearInterval(interval);          
+            clearInterval(interval);
 
             $.ajax({
                 url: ajaxurl,
@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
                         $(document).trigger(
                             'bb_trigger_toast_message',
                             ['', '<div>' + result.success_msg + '</div>', 'success', null, true]
-                        );                     
+                        );
                     } else {
                         $(document).trigger(
                             'bb_trigger_toast_message',
@@ -55,10 +55,10 @@ jQuery(document).ready(function ($) {
                 'bb_trigger_toast_message',
                 ['', '<div>' + manage_courses_data.no_course_selected_alert + '</div>', 'warning', null, true]
             );
-        }    
+        }
 
     })
-    
+
     // open related courses popup
     window.BBLMS.switchLdGridList = function () { };
 
@@ -100,15 +100,15 @@ jQuery(document).ready(function ($) {
         closeOnContentClick: false,
         removalDelay: 300,
         mainClass: 'mfp-move-horizontal related-courses',
-        callbacks: {         
+        callbacks: {
             open: function () {
                 var mp = $.magnificPopup.instance,
-                    t = $(mp.currItem);         
+                    t = $(mp.currItem);
                 parent_course = t.attr('src').replace('#see-related-courses-', '');
-                
+
                 // Now, bind the click events inside the popup after it opens
                 var $popupContent = $('#see-related-courses-' + parent_course);
-    
+
                 // Apply click event on '.ld-item-name'
                 $popupContent.find('.ld-item-name').off('click').on('click', function (e) {
                     e.preventDefault();
@@ -117,11 +117,11 @@ jQuery(document).ready(function ($) {
                     var notices = $popupContent.find('.see-related-courses-head-notices');
                     var $statusIcon = $(this).find('.ld-status-icon');
                     var isSelected = $statusIcon.hasClass('ld-status-complete');
-                    
+
                     // Toggle completion status
                     $statusIcon.toggleClass('ld-status-complete', !isSelected);
                     $statusIcon.toggleClass('ld-status-incomplete', isSelected);
-                    
+
                     // Toggle the checkmark icon based on completion status
                     if (!isSelected) {
                         $statusIcon.append('<span class="ld-icon ld-icon-checkmark"></span>');
@@ -140,28 +140,28 @@ jQuery(document).ready(function ($) {
                         $(this).removeClass('ld-primary-color');
                         notices.text(manage_courses_data.no_course_selected);
                     }
-    
+
                     // Update the data-selected_course_id attribute
                     $('#confirm_selected_course').attr('data-selected_course_id', isSelected ? '' : related_course);
                 });
-    
+
                 // Apply click event on '.confirm_selected_course'
                 $popupContent.find('.confirm_selected_course').off('click').on('click', function (e) {
                     e.preventDefault();
-    
+
                     var button = $(this);
                     var security = button.data('security');
                     var current_course_id = button.data('current_course_id');
                     var ld_group_id = button.data('group');
                     var course_position = button.data('position');
                     var selected_course_id = button.attr('data-selected_course_id');
-    
+
                     if (selected_course_id) {
                         NProgress.start();
                         NProgress.set(0.4);
                         var interval = setInterval(function () { NProgress.inc(); }, 1000);
                         clearInterval(interval);
-    
+
                         $.ajax({
                             url: ajaxurl,
                             data: {
@@ -201,7 +201,7 @@ jQuery(document).ready(function ($) {
             }
         }
     });
-    
+
 
     // Click event handler for opening the second popup
     $(document).on('click', '.preview-course', function (e) {
@@ -219,9 +219,9 @@ jQuery(document).ready(function ($) {
 
         // Update the close button mfp-src to back to the previous popup
         $(popupId).find('.mfp-close').attr('data-mfp-src', '#see-related-courses-' + parent_course)
-        
+
         // Show loader before the ajax request is proccessed
-        $(popupId).find('.popup-scroll').html('<div class="kwf-loading"></div>');
+        $(popupId).find('.popup-scroll').html('<div class="tprm-loading"></div>');
 
         // Fetch course video using AJAX
         $.ajax({
@@ -232,26 +232,26 @@ jQuery(document).ready(function ($) {
                 course_id: courseId,
                 security: security // Add nonce for security
             },
-            success: function(response) {
+            success: function (response) {
                 // Replace loader with fetched content
                 $(popupId).find('.popup-scroll').html(response);
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 // Handle errors
                 console.error(error);
             }
         });
-    });  
-    
+    });
+
 
     /* Course Order */
 
     var dragsortEnabled = false; // Initially, dragsort is disabled
-    var toggleOrderBtn= $('.courses-order-container #toggle-order');
+    var toggleOrderBtn = $('.courses-order-container #toggle-order');
     var toggleOrderBtnText = toggleOrderBtn.children('.toggle-order-text');
     var lockIcon = $('.courses-order-container #toggle-order span#lock-icon');
     var toggle_order_notice = $('.courses-order-container .order-notice');
-    
+
     toggleOrderBtnText.text(manage_courses_data.unlock_order);
     toggleOrderBtn.click(function () {
         // Toggle bar for course order
@@ -259,7 +259,7 @@ jQuery(document).ready(function ($) {
         $('.bb-course-item-wrap').toggleClass('order-enabled');
         if (dragsortEnabled) {
             // If dragsort is enabled, disable it       
-            toggleOrderBtnText.text(manage_courses_data.unlock_order);          
+            toggleOrderBtnText.text(manage_courses_data.unlock_order);
             toggle_order_notice.html(manage_courses_data.order_locked_info);
             lockIcon.removeClass('bb-icon-lock-alt-open').addClass('bb-icon-lock-alt');
             $("#courses-list").dragsort("destroy");
@@ -269,7 +269,7 @@ jQuery(document).ready(function ($) {
                 'bb_trigger_toast_message',
                 [
                     manage_courses_data.order_locked_notice_title,
-                    '<div>' + manage_courses_data.order_locked_notice  + '</div>', 
+                    '<div>' + manage_courses_data.order_locked_notice + '</div>',
                     'info',
                     null,
                     true,
@@ -284,31 +284,31 @@ jQuery(document).ready(function ($) {
                 'bb_trigger_toast_message',
                 [
                     manage_courses_data.order_unlocked_notice_title,
-                    '<div>' + manage_courses_data.order_unlocked_notice  + '</div>', 
+                    '<div>' + manage_courses_data.order_unlocked_notice + '</div>',
                     'info',
                     null,
                     false
                 ]
             );
             setTimeout(() => {
-                $(' .item-list:last-child').removeClass( 'pull-animation' ).addClass( 'close-item' ).delay( 500 ).remove();
+                $(' .item-list:last-child').removeClass('pull-animation').addClass('close-item').delay(500).remove();
             }, 15000);
             //Process Courses order
             $("#courses-list .bb-course-item-wrap .bb-cover-list-item").css('pointer-events', 'none');
             $("#courses-list").dragsort({
                 dragSelector: ".bb-course-item-wrap",
 
-                dragEnd: function() {
+                dragEnd: function () {
                     // Get the new order of course items after sorting
                     var totalRequests = $("#courses-list .bb-course-item-wrap").length;
                     var completedRequests = 0;
 
-                    $("#courses-list .bb-course-item-wrap").map(function(index) {
+                    $("#courses-list .bb-course-item-wrap").map(function (index) {
                         var courseId = $(this).data('course-id');
                         var group_id = $(this).data('group-id');
                         var security = $(this).data('security');
                         var courseindex = index + 1; // Index starts from 0, so add 1 to start from 1
-                        
+
                         // Update the position meta data for each course item
                         $.ajax({
                             url: ajaxurl,
@@ -325,26 +325,26 @@ jQuery(document).ready(function ($) {
                                 // Handle success response if needed
                                 completedRequests++;
 
-                                if (completedRequests === totalRequests) {                         
+                                if (completedRequests === totalRequests) {
                                     $(document).trigger(
                                         'bb_trigger_toast_message',
                                         [
                                             '',
-                                            '<div>' + response.data +  '</div>',
+                                            '<div>' + response.data + '</div>',
                                             'success',
                                             null,
                                             true,
                                         ]
-                                    );                               
+                                    );
                                 }
                             },
-                            error: function(xhr, status, error) {
+                            error: function (xhr, status, error) {
                                 // Handle error response if needed
                                 $(document).trigger(
                                     'bb_trigger_toast_message',
                                     [
                                         '',
-                                        '<div>' + error +  '</div>',
+                                        '<div>' + error + '</div>',
                                         'success',
                                         null,
                                         true,
@@ -359,7 +359,7 @@ jQuery(document).ready(function ($) {
             dragsortEnabled = true;
         }
     });
-  
+
 });
 
 
